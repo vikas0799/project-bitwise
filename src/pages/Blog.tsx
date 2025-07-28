@@ -17,7 +17,7 @@ const Blog = () => {
       date: 'Dec 15, 2024',
       readTime: '5 min read',
       category: 'Programming',
-      image: '/src/assets/computer-programming.jpg'
+      image: '/computer-programming.jpg'
     },
     {
       id: '2',
@@ -27,7 +27,7 @@ const Blog = () => {
       date: 'Dec 12, 2024',
       readTime: '8 min read',
       category: 'DSA',
-      image: '/src/assets/data-structures.jpg'
+      image: '/data-structures.jpg'
     },
     {
       id: '3',
@@ -37,7 +37,7 @@ const Blog = () => {
       date: 'Dec 10, 2024',
       readTime: '6 min read',
       category: 'Web Development',
-      image: '/src/assets/fullstack-development.jpg'
+      image: '/fullstack-development.jpg'
     },
     {
       id: '4',
@@ -47,7 +47,7 @@ const Blog = () => {
       date: 'Dec 8, 2024',
       readTime: '7 min read',
       category: 'Programming',
-      image: '/src/assets/computer-programming.jpg'
+      image: '/computer-programming.jpg'
     },
     {
       id: '5',
@@ -57,7 +57,7 @@ const Blog = () => {
       date: 'Dec 5, 2024',
       readTime: '6 min read',
       category: 'Web Development',
-      image: '/src/assets/react-development.jpg'
+      image: '/react-development.jpg'
     },
     {
       id: '6',
@@ -67,7 +67,7 @@ const Blog = () => {
       date: 'Dec 3, 2024',
       readTime: '9 min read',
       category: 'Data Science',
-      image: '/src/assets/python-coding.jpg'
+      image: '/python-coding.jpg'
     }
   ];
 

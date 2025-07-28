@@ -17,23 +17,23 @@ const Footer = () => {
               Hands-on learning, expert mentorship, and job-ready skills to excel in the tech industry.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://www.facebook.com/profile.php?id=61578938786384" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Facebook size={20} />
                 <span className="sr-only">Facebook</span>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://x.com/bitwiseschool" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Twitter size={20} />
-                <span className="sr-only">Twitter</span>
+                <span className="sr-only">X (Twitter)</span>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://www.instagram.com/bitwiseschooloftechnology/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Instagram size={20} />
                 <span className="sr-only">Instagram</span>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://www.linkedin.com/in/bitwise-school-of-technology-5a5296377/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin size={20} />
                 <span className="sr-only">LinkedIn</span>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://www.youtube.com/@bitwiseschool" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Youtube size={20} />
                 <span className="sr-only">YouTube</span>
               </a>
@@ -94,7 +94,7 @@ const Footer = () => {
             </address>
             <p className="flex items-center text-gray-300 mb-2">
               <Mail className="h-4 w-4 mr-2" />
-              <a href="mailto:info@bitwiseschool.com" className="hover:text-white">info@bitwiseschool.com</a>
+              <a href="mailto:bitwiseschool@gmail.com" className="hover:text-white">bitwiseschool@gmail.com</a>
             </p>
             <p className="text-gray-300">
               <a href="tel:+919876543210" className="hover:text-white">+91 987 654 3210</a>

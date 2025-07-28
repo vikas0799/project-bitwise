@@ -57,7 +57,7 @@ int main() {
     date: 'Dec 15, 2024',
     readTime: '5 min read',
     category: 'Programming',
-    image: '/src/assets/computer-programming.jpg',
+    image: '/computer-programming.jpg',
     excerpt: 'Learn the fundamentals of C++ programming language and start your journey as a software developer.'
   };
 

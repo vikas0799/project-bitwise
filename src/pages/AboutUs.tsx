@@ -46,7 +46,7 @@ const AboutUs = () => {
               <div className="mt-10 lg:mt-0">
                 <div className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden shadow-lg">
                   <img
-                    src="/src/assets/students-coding.jpg"
+                    src="/students-coding.jpg"
                     alt="Students learning at Bitwise School of Technology"
                     className="w-full h-full object-cover"
                   />

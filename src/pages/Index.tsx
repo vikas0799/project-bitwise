@@ -14,7 +14,7 @@ const Index = () => {
       id: 'cpp',
       title: 'C++ Programming Masterclass',
       description: 'Master C++ from basics to advanced concepts with hands-on projects and practice sessions.',
-      image: '/src/assets/computer-programming.jpg',
+      image: '/computer-programming.jpg',
       duration: '8 weeks',
       students: 1250,
       level: 'All Levels' as const,
@@ -24,7 +24,7 @@ const Index = () => {
       id: 'java',
       title: 'Java Full Course',
       description: 'Comprehensive Java course covering core concepts, OOP, data structures, and web development.',
-      image: '/src/assets/computer-programming.jpg',
+      image: '/computer-programming.jpg',
       duration: '10 weeks',
       students: 1840,
       level: 'Beginner' as const,
@@ -34,7 +34,7 @@ const Index = () => {
       id: 'dsa',
       title: 'Data Structures & Algorithms',
       description: 'In-depth learning of DSA concepts with problem-solving techniques for coding interviews.',
-      image: '/src/assets/data-structures.jpg',
+      image: '/data-structures.jpg',
       duration: '12 weeks',
       students: 2150,
       level: 'Intermediate' as const,
@@ -154,7 +154,7 @@ const Index = () => {
               <div className="mt-12 lg:mt-0">
                 <div className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden shadow-lg">
                   <img
-                    src="/src/assets/students-coding.jpg"
+                    src="/students-coding.jpg"
                     alt="Students learning programming"
                     className="w-full h-full object-cover"
                   />
