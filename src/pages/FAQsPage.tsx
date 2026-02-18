@@ -7,16 +7,16 @@ import Footer from '../components/Footer';
 const FAQsPage = () => {
   const [openCategory, setOpenCategory] = useState<string | null>('general');
   const [openQuestion, setOpenQuestion] = useState<number | null>(null);
-  
+
   const toggleCategory = (category: string) => {
     setOpenCategory(openCategory === category ? null : category);
     setOpenQuestion(null);
   };
-  
+
   const toggleQuestion = (id: number) => {
     setOpenQuestion(openQuestion === id ? null : id);
   };
-  
+
   const faqCategories = [
     {
       id: 'general',
@@ -24,8 +24,8 @@ const FAQsPage = () => {
       questions: [
         {
           id: 1,
-          question: 'What is Bitwise School of Technology?',
-          answer: 'Bitwise School of Technology is a premier software training institute based in Delhi, India. We offer comprehensive coding courses, focusing on programming languages, data structures & algorithms, web development, and more. Our mission is to transform students into job-ready developers through hands-on learning and industry-aligned curriculum.'
+          question: 'What is Bitwise School?',
+          answer: 'Bitwise School is a premier software training institute based in Delhi, India. We offer comprehensive coding courses, focusing on programming languages, data structures & algorithms, web development, and more. Our mission is to transform students into job-ready developers through hands-on learning and industry-aligned curriculum.'
         },
         {
           id: 2,
@@ -34,7 +34,7 @@ const FAQsPage = () => {
         },
         {
           id: 3,
-          question: 'How are Bitwise School of Technology courses different from free online tutorials?',
+          question: 'How are Bitwise School courses different from free online tutorials?',
           answer: 'Unlike free tutorials, we offer a structured learning path with live interactive sessions, personalized mentorship, doubt resolution, hands-on projects, and placement assistance. Our curriculum is designed by industry experts to focus on practical skills that employers value, and we provide a supportive community of fellow learners.'
         }
       ]
@@ -92,7 +92,7 @@ const FAQsPage = () => {
         },
         {
           id: 11,
-          question: 'What companies hire from Bitwise School of Technology?',
+          question: 'What companies hire from Bitwise School?',
           answer: 'Our students have been placed in companies like Microsoft, Google, Amazon, Infosys, TCS, Wipro, IBM, Accenture, and many startups and mid-sized tech companies. The range of roles includes software developers, web developers, data analysts, and more.'
         },
         {
@@ -128,7 +128,7 @@ const FAQsPage = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-[#f4f5f7] to-white text-gray-900 py-16">
@@ -141,7 +141,7 @@ const FAQsPage = () => {
             </p>
           </div>
         </section>
-        
+
         {/* Quick Links */}
         <section className="bg-white shadow">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -151,11 +151,10 @@ const FAQsPage = () => {
                   <button
                     key={category.id}
                     onClick={() => toggleCategory(category.id)}
-                    className={`px-4 py-2 rounded-full whitespace-nowrap ${
-                      openCategory === category.id
+                    className={`px-4 py-2 rounded-full whitespace-nowrap ${openCategory === category.id
                         ? 'bg-purple-100 text-purple-800 font-medium'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                    }`}
+                      }`}
                   >
                     {category.title}
                   </button>
@@ -164,7 +163,7 @@ const FAQsPage = () => {
             </div>
           </div>
         </section>
-        
+
         {/* FAQs Content */}
         <section className="py-12 bg-gray-50">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -173,7 +172,7 @@ const FAQsPage = () => {
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                   {category.title}
                 </h2>
-                
+
                 <div className="space-y-4">
                   {category.questions.map(item => (
                     <div key={item.id} className="border rounded-lg overflow-hidden">
@@ -188,7 +187,7 @@ const FAQsPage = () => {
                           <ChevronDown className="h-5 w-5 text-gray-500" />
                         )}
                       </button>
-                      
+
                       {openQuestion === item.id && (
                         <div className="bg-gray-50 px-6 py-4">
                           <p className="text-gray-600">{item.answer}</p>
@@ -199,7 +198,7 @@ const FAQsPage = () => {
                 </div>
               </div>
             ))}
-            
+
             {/* Didn't find your answer? */}
             <div className="mt-12 bg-white rounded-lg shadow-md p-8 text-center">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
@@ -209,14 +208,14 @@ const FAQsPage = () => {
                 Contact our support team and we'll get back to you as soon as possible.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <a 
-                  href="/contact" 
+                <a
+                  href="/contact"
                   className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700"
                 >
                   Contact Us
                 </a>
-                <a 
-                  href="mailto:info@bitwiseschool.com" 
+                <a
+                  href="mailto:info@bitwiseschool.com"
                   className="inline-flex items-center justify-center px-5 py-3 border border-purple-600 text-base font-medium rounded-md text-purple-600 bg-white hover:bg-purple-50"
                 >
                   Email Support
@@ -226,7 +225,7 @@ const FAQsPage = () => {
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </div>
   );

@@ -15,20 +15,20 @@ const Index = () => {
       title: 'C++ Programming Masterclass',
       description: 'Master C++ from basics to advanced concepts with hands-on projects and practice sessions.',
       image: '/computer-programming.jpg',
-      duration: '8 weeks',
+      duration: '5 months',
       students: 1250,
       level: 'All Levels' as const,
-      price: 5000
+      price: 20000
     },
     {
       id: 'java',
       title: 'Java Full Course',
       description: 'Comprehensive Java course covering core concepts, OOP, data structures, and web development.',
       image: '/computer-programming.jpg',
-      duration: '10 weeks',
+      duration: '5 months',
       students: 1840,
       level: 'Beginner' as const,
-      price: 5000
+      price: 20000
     },
     {
       id: 'dsa',
@@ -38,7 +38,17 @@ const Index = () => {
       duration: '12 weeks',
       students: 2150,
       level: 'Intermediate' as const,
-      price: 5000
+      price: 20000
+    },
+    {
+      id: 'full-stack',
+      title: 'Full Stack Web Development',
+      description: 'Become a full-stack developer with MERN stack. Build real-world projects and get job-ready.',
+      image: '/fullstack-development.jpg',
+      duration: '5 months',
+      students: 1500,
+      level: 'All Levels' as const,
+      price: 20000
     }
   ];
 
@@ -47,14 +57,14 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       <main className="flex-grow">
         {/* Hero Section */}
         <HomeHero />
-        
+
         {/* Program Highlights */}
         <ProgramHighlights />
-        
+
         {/* Featured Courses */}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,16 +76,16 @@ const Index = () => {
                 Start your coding journey with our most popular courses
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {featuredCourses.map((course) => (
                 <CourseCard key={course.id} {...course} />
               ))}
             </div>
-            
+
             <div className="text-center mt-12">
-              <Link 
-                to="/courses" 
+              <Link
+                to="/courses"
                 className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-[#0052CC] hover:bg-[#0747A6]"
               >
                 Explore All Courses
@@ -84,7 +94,7 @@ const Index = () => {
             </div>
           </div>
         </section>
-        
+
         {/* Stats Section */}
         <section className="bg-[#0052CC] py-12 text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,20 +118,20 @@ const Index = () => {
             </div>
           </div>
         </section>
-        
+
         {/* Why Choose Us */}
         <section className="py-16 bg-[#f4f5f7]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="lg:grid lg:grid-cols-2 lg:gap-12">
               <div>
                 <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                  Why Choose Bitwise School of Technology?
+                  Why Choose Bitwise School?
                 </h2>
                 <p className="mt-4 text-lg text-gray-500">
-                  At Bitwise School of Technology, we focus on creating job-ready developers through hands-on 
+                  At Bitwise School, we focus on creating job-ready developers through hands-on
                   learning, real-world projects, and personalized mentorship.
                 </p>
-                
+
                 <div className="mt-8">
                   {[
                     'Industry-experienced faculty with 8+ years average experience',
@@ -139,18 +149,18 @@ const Index = () => {
                     </div>
                   ))}
                 </div>
-                
+
                 <div className="mt-10">
-                  <Link 
-                    to="/about" 
+                  <Link
+                    to="/about"
                     className="text-[#0052CC] font-medium hover:text-[#0747A6] flex items-center"
                   >
-                    Learn more about Bitwise School of Technology
+                    Learn more about Bitwise School
                     <ArrowRight className="ml-1 h-5 w-5" />
                   </Link>
                 </div>
               </div>
-              
+
               <div className="mt-12 lg:mt-0">
                 <div className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden shadow-lg">
                   <img
@@ -159,7 +169,7 @@ const Index = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                
+
                 <div className="mt-8 grid grid-cols-2 gap-4">
                   <div className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden shadow-md">
                     <img
@@ -180,9 +190,9 @@ const Index = () => {
             </div>
           </div>
         </section>
-        
 
-        
+
+
         {/* CTA Section */}
         <section className="bg-[#0052CC] text-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -193,14 +203,14 @@ const Index = () => {
               Join Delhi's premier coding institute and transform your career
             </p>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-[#0052CC] bg-white hover:bg-gray-50"
               >
                 Schedule a Free Demo
               </Link>
-              <Link 
-                to="/courses" 
+              <Link
+                to="/courses"
                 className="inline-flex items-center justify-center px-5 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-[#0747A6]"
               >
                 Browse Courses
@@ -209,7 +219,7 @@ const Index = () => {
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </div>
   );

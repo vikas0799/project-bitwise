@@ -53,7 +53,7 @@ const ProgramHighlights = () => {
             Program Highlights
           </h2>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-            What makes Bitwise School of Technology the premier choice for aspiring developers in Delhi
+            What makes Bitwise School the premier choice for aspiring developers in Delhi
           </p>
         </div>
 

@@ -16,10 +16,10 @@ const CoursesPage = () => {
       title: 'C++ Programming Masterclass',
       description: 'Master C++ from basics to advanced concepts with hands-on projects and practice sessions.',
       image: '/computer-programming.jpg',
-      duration: '8 weeks',
+      duration: '5 months',
       students: 1250,
       level: 'All Levels' as const,
-      price: 12999,
+      price: 20000,
       category: 'programming'
     },
     {
@@ -27,10 +27,10 @@ const CoursesPage = () => {
       title: 'Java Full Course',
       description: 'Comprehensive Java course covering core concepts, OOP, data structures, and web development.',
       image: '/computer-programming.jpg',
-      duration: '10 weeks',
+      duration: '5 months',
       students: 1840,
       level: 'Beginner' as const,
-      price: 14999,
+      price: 20000,
       category: 'programming'
     },
     {
@@ -38,10 +38,10 @@ const CoursesPage = () => {
       title: 'Data Structures & Algorithms',
       description: 'In-depth learning of DSA concepts with problem-solving techniques for coding interviews.',
       image: '/data-structures.jpg',
-      duration: '12 weeks',
+      duration: '5 months',
       students: 2150,
       level: 'Intermediate' as const,
-      price: 16999,
+      price: 20000,
       category: 'dsa'
     },
     {
@@ -49,10 +49,10 @@ const CoursesPage = () => {
       title: 'Full-Stack Web Development',
       description: 'Become a complete web developer with MERN stack (MongoDB, Express, React, Node.js).',
       image: '/fullstack-development.jpg',
-      duration: '16 weeks',
+      duration: '5 months',
       students: 1560,
       level: 'Intermediate' as const,
-      price: 24999,
+      price: 20000,
       category: 'web'
     },
     {
@@ -60,10 +60,10 @@ const CoursesPage = () => {
       title: 'Python for Beginners',
       description: 'Start your programming journey with Python, perfect for beginners and data science enthusiasts.',
       image: '/python-coding.jpg',
-      duration: '6 weeks',
+      duration: '5 months',
       students: 2340,
       level: 'Beginner' as const,
-      price: 9999,
+      price: 20000,
       category: 'programming'
     },
     {
@@ -71,10 +71,10 @@ const CoursesPage = () => {
       title: 'React.js Bootcamp',
       description: 'Master modern frontend development with React.js, Redux, and related technologies.',
       image: '/react-development.jpg',
-      duration: '8 weeks',
+      duration: '5 months',
       students: 1120,
       level: 'Intermediate' as const,
-      price: 14999,
+      price: 20000,
       category: 'web'
     }
   ], []);
@@ -83,21 +83,21 @@ const CoursesPage = () => {
 
   useEffect(() => {
     let filtered = [...allCourses];
-    
+
     // Apply category filter
     if (filter !== 'all') {
       filtered = filtered.filter(course => course.category === filter);
     }
-    
+
     // Apply search
     if (searchTerm.trim() !== '') {
       const searchLower = searchTerm.toLowerCase();
-      filtered = filtered.filter(course => 
-        course.title.toLowerCase().includes(searchLower) || 
+      filtered = filtered.filter(course =>
+        course.title.toLowerCase().includes(searchLower) ||
         course.description.toLowerCase().includes(searchLower)
       );
     }
-    
+
     // Apply sorting
     switch (sortBy) {
       case 'price-low':
@@ -114,14 +114,14 @@ const CoursesPage = () => {
         filtered.sort((a, b) => b.students - a.students);
         break;
     }
-    
+
     setDisplayedCourses(filtered);
   }, [searchTerm, filter, sortBy, allCourses]);
 
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       <main className="flex-grow">
         {/* Header */}
         <header className="bg-gradient-to-br from-[#f4f5f7] to-white text-gray-900 py-16">
@@ -132,7 +132,7 @@ const CoursesPage = () => {
             <p className="mt-4 text-xl max-w-2xl mx-auto text-gray-600">
               Find the perfect course to accelerate your coding journey
             </p>
-            
+
             {/* Search Bar */}
             <div className="mt-8 max-w-xl mx-auto">
               <div className="flex rounded-md shadow-sm">
@@ -151,7 +151,7 @@ const CoursesPage = () => {
             </div>
           </div>
         </header>
-        
+
         {/* Course List */}
         <section className="py-12 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -172,7 +172,7 @@ const CoursesPage = () => {
                   </select>
                 </div>
               </div>
-              
+
               <div className="flex items-center">
                 <span className="text-gray-700">Sort by:</span>
                 <div className="ml-4">
@@ -189,13 +189,13 @@ const CoursesPage = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {displayedCourses.map((course) => (
                 <CourseCard key={course.id} {...course} />
               ))}
             </div>
-            
+
             {displayedCourses.length === 0 && (
               <div className="text-center py-16">
                 <h3 className="text-lg font-medium text-gray-900">No courses found</h3>
@@ -205,7 +205,7 @@ const CoursesPage = () => {
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </div>
   );

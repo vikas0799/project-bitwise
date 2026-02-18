@@ -10,10 +10,10 @@ const Footer = () => {
           {/* Logo and About */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center mb-4">
-              <span className="code-text text-xl font-bold text-white">Bitwise School of Technology</span>
+              <span className="code-text text-xl font-bold text-white">Bitwise School</span>
             </Link>
             <p className="text-gray-300 mb-4 max-w-md">
-              Transform your coding journey with Delhi's premier technology training institute. 
+              Transform your coding journey with Delhi's premier technology training institute.
               Hands-on learning, expert mentorship, and job-ready skills to excel in the tech industry.
             </p>
             <div className="flex space-x-4">
@@ -39,7 +39,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          
+
           {/* Courses */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Courses</h3>
@@ -61,7 +61,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
@@ -83,7 +83,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
           {/* Contact Info */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
@@ -101,11 +101,11 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              &copy; {new Date().getFullYear()} Bitwise School of Technology. All rights reserved.
+              &copy; {new Date().getFullYear()} Bitwise School. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <Link to="/legal/privacy" className="text-gray-400 text-sm hover:text-white">

@@ -7,20 +7,20 @@ const AboutUs = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-[#f4f5f7] to-white text-gray-900 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-3xl font-extrabold sm:text-4xl text-[#0052CC]">
-              About Bitwise School of Technology
+              About Bitwise School
             </h1>
             <p className="mt-4 text-xl max-w-2xl mx-auto text-gray-600">
               We're on a mission to transform coding education in India
             </p>
           </div>
         </section>
-        
+
         {/* Our Story */}
         <section id="our-story" className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,24 +30,24 @@ const AboutUs = () => {
                   Our Story
                 </h2>
                 <p className="text-lg text-gray-500 mb-4">
-                  Bitwise School of Technology was founded in 2019 by a group of passionate tech professionals who saw 
+                  Bitwise School was founded in 2019 by a group of passionate tech professionals who saw
                   a gap between traditional education and industry requirements in the Indian software development landscape.
                 </p>
                 <p className="text-lg text-gray-500 mb-4">
-                  Starting with just 20 students in a small office in Chandigarh, we've now grown to become one of North India's 
+                  Starting with just 20 students in a small office in Chandigarh, we've now grown to become one of North India's
                   premier coding academies, having trained over 4,500 students who are now working with top companies nationwide.
                 </p>
                 <p className="text-lg text-gray-500">
-                  Our approach combines rigorous technical training with practical, hands-on experience, ensuring that 
+                  Our approach combines rigorous technical training with practical, hands-on experience, ensuring that
                   our students are not just job-ready but are prepared to excel in their careers from day one.
                 </p>
               </div>
-              
+
               <div className="mt-10 lg:mt-0">
                 <div className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden shadow-lg">
                   <img
                     src="/students-coding.jpg"
-                    alt="Students learning at Bitwise School of Technology"
+                    alt="Students learning at Bitwise School"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -55,7 +55,7 @@ const AboutUs = () => {
             </div>
           </div>
         </section>
-        
+
         {/* Our Vision & Mission */}
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,7 +64,7 @@ const AboutUs = () => {
                 Vision & Mission
               </h2>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white p-8 rounded-lg shadow-md">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Our Vision</h3>
@@ -73,7 +73,7 @@ const AboutUs = () => {
                   by creating skilled, innovative, and industry-ready programmers who can compete on the world stage.
                 </p>
               </div>
-              
+
               <div className="bg-white p-8 rounded-lg shadow-md">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Our Mission</h3>
                 <p className="text-gray-600">
@@ -85,7 +85,7 @@ const AboutUs = () => {
             </div>
           </div>
         </section>
-        
+
         {/* Our Values */}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -94,10 +94,10 @@ const AboutUs = () => {
                 Our Values
               </h2>
               <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-                The principles that guide everything we do at Bitwise School of Technology
+                The principles that guide everything we do at Bitwise School
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
                 <div className="h-16 w-16 mx-auto flex items-center justify-center rounded-full bg-[#0052CC] text-white mb-4">
@@ -110,7 +110,7 @@ const AboutUs = () => {
                   We embrace new technologies and teaching methods to provide cutting-edge education.
                 </p>
               </div>
-              
+
               <div className="text-center">
                 <div className="h-16 w-16 mx-auto flex items-center justify-center rounded-full bg-[#0052CC] text-white mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -122,7 +122,7 @@ const AboutUs = () => {
                   We foster a supportive learning environment where students can grow together.
                 </p>
               </div>
-              
+
               <div className="text-center">
                 <div className="h-16 w-16 mx-auto flex items-center justify-center rounded-full bg-[#0052CC] text-white mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -134,7 +134,7 @@ const AboutUs = () => {
                   We strive for the highest standards in everything we do, from teaching to student support.
                 </p>
               </div>
-              
+
               <div className="text-center">
                 <div className="h-16 w-16 mx-auto flex items-center justify-center rounded-full bg-[#0052CC] text-white mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -149,7 +149,7 @@ const AboutUs = () => {
             </div>
           </div>
         </section>
-        
+
         {/* Team & Mentors */}
         <section id="team" className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -161,69 +161,69 @@ const AboutUs = () => {
                 Our expert instructors bring years of industry experience to the classroom
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="bloom-hover bg-white rounded-lg shadow-md overflow-hidden text-center">
                 <div className="p-6">
-                  <img 
-                    src="/lovable-uploads/700e27d7-0513-4bfa-8ac4-f7fd6087594c.png" 
-                    alt="Amit Sharma" 
+                  <img
+                    src="/lovable-uploads/700e27d7-0513-4bfa-8ac4-f7fd6087594c.png"
+                    alt="Vikas Patel"
                     className="w-32 h-32 rounded-full mx-auto object-cover"
                   />
-                  <h3 className="mt-4 text-lg font-medium text-gray-900">Amit Sharma</h3>
-                  <p className="text-[#0052CC]">Founder & Lead Instructor</p>
+                  <h3 className="mt-4 text-lg font-medium text-gray-900">Vikas Patel</h3>
+                  <p className="text-[#0052CC]">Full Stack Instructor</p>
                   <p className="mt-2 text-gray-500">
-                    Ex-Google developer with 10+ years of experience in building scalable applications.
+                    5 years of experience, Ex-Infosys, expert in building scalable applications.
                   </p>
                 </div>
               </div>
-              
+
               <div className="bloom-hover bg-white rounded-lg shadow-md overflow-hidden text-center">
                 <div className="p-6">
-                  <img 
-                    src="/lovable-uploads/6739bd63-bf19-4abd-bb23-0b613bbf7ac8.png" 
-                    alt="Priya Verma" 
+                  <img
+                    src="/lovable-uploads/6739bd63-bf19-4abd-bb23-0b613bbf7ac8.png"
+                    alt="Vishal Kumar"
                     className="w-32 h-32 rounded-full mx-auto object-cover"
                   />
-                  <h3 className="mt-4 text-lg font-medium text-gray-900">Priya Verma</h3>
-                  <p className="text-[#0052CC]">Technical Director</p>
-                  <p className="mt-2 text-gray-500">
-                    Full-stack expert with experience at Amazon and Microsoft. Specializes in web development.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="bloom-hover bg-white rounded-lg shadow-md overflow-hidden text-center">
-                <div className="p-6">
-                  <img 
-                    src="/lovable-uploads/7d120ee6-3614-4b75-9c35-716d54490d67.png" 
-                    alt="Rahul Singh" 
-                    className="w-32 h-32 rounded-full mx-auto object-cover"
-                  />
-                  <h3 className="mt-4 text-lg font-medium text-gray-900">Rahul Singh</h3>
+                  <h3 className="mt-4 text-lg font-medium text-gray-900">Vishal Kumar</h3>
                   <p className="text-[#0052CC]">DSA Instructor</p>
                   <p className="mt-2 text-gray-500">
-                    Competitive programming coach with multiple wins in international coding competitions.
+                    Ex-Pine Labs, 5 years total experience.
                   </p>
                 </div>
               </div>
-              
+
               <div className="bloom-hover bg-white rounded-lg shadow-md overflow-hidden text-center">
                 <div className="p-6">
-                  <img 
-                    src="/lovable-uploads/93ab0638-8190-4ccf-897f-21fda7f4f5ad.png" 
-                    alt="Neha Gupta" 
+                  <img
+                    src="/lovable-uploads/7d120ee6-3614-4b75-9c35-716d54490d67.png"
+                    alt="Rishabh Srivastav"
                     className="w-32 h-32 rounded-full mx-auto object-cover"
                   />
-                  <h3 className="mt-4 text-lg font-medium text-gray-900">Neha Gupta</h3>
-                  <p className="text-[#0052CC]">Placement Director</p>
+                  <h3 className="mt-4 text-lg font-medium text-gray-900">Rishabh Srivastav</h3>
+                  <p className="text-[#0052CC]">AI Instructor</p>
                   <p className="mt-2 text-gray-500">
-                    Former tech recruiter with extensive connections in the Indian tech industry.
+                    5 years of total experience, Ex-National Instruments (NI).
+                  </p>
+                </div>
+              </div>
+
+              <div className="bloom-hover bg-white rounded-lg shadow-md overflow-hidden text-center">
+                <div className="p-6">
+                  <img
+                    src="/lovable-uploads/93ab0638-8190-4ccf-897f-21fda7f4f5ad.png"
+                    alt="Archana Gautam"
+                    className="w-32 h-32 rounded-full mx-auto object-cover"
+                  />
+                  <h3 className="mt-4 text-lg font-medium text-gray-900">Archana Gautam</h3>
+                  <p className="text-[#0052CC]">Operation Head</p>
+                  <p className="mt-2 text-gray-500">
+                    Ensuring smooth operations and student success.
                   </p>
                 </div>
               </div>
             </div>
-            
+
             <div className="mt-12 text-center">
               <p className="text-gray-500">
                 Our team also includes 15+ part-time instructors and mentors from top tech companies
@@ -231,9 +231,9 @@ const AboutUs = () => {
             </div>
           </div>
         </section>
-        
 
-        
+
+
         {/* CTA Section */}
         <section className="bg-[#0052CC] text-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -241,17 +241,17 @@ const AboutUs = () => {
               Ready to bloom into a skilled developer?
             </h2>
             <p className="mt-4 text-xl max-w-2xl mx-auto">
-              Join Bitwise School of Technology and transform your coding journey today
+              Join Bitwise School and transform your coding journey today
             </p>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-              <a 
-                href="/courses" 
+              <a
+                href="/courses"
                 className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-[#0052CC] bg-white hover:bg-gray-50"
               >
                 Explore Courses
               </a>
-              <a 
-                href="/contact" 
+              <a
+                href="/contact"
                 className="inline-flex items-center justify-center px-5 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-[#0747A6]"
               >
                 Contact Us
@@ -260,7 +260,7 @@ const AboutUs = () => {
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </div>
   );

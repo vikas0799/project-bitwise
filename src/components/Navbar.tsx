@@ -44,16 +44,16 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
               <span className="text-xl font-bold text-[#0052CC] animate-slide-in">
-                Bitwise School of Technology
+                Bitwise School
               </span>
             </Link>
           </div>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:ml-6 md:flex md:items-center md:space-x-4">
             {/* Courses Dropdown */}
             <div className="relative dropdown-container">
-              <button 
+              <button
                 onClick={() => toggleDropdown('courses')}
                 className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-[#0052CC] hover:bg-gray-50 flex items-center transition-colors duration-200"
               >
@@ -82,7 +82,7 @@ const Navbar = () => {
 
             {/* Blog Dropdown */}
             <div className="relative dropdown-container">
-              <button 
+              <button
                 onClick={() => toggleDropdown('blog')}
                 className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-[#0052CC] hover:bg-gray-50 flex items-center transition-colors duration-200"
               >
@@ -147,13 +147,13 @@ const Navbar = () => {
             >
               About Us
             </Link>
-                            <Link
-                  to="/blog"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#0052CC] hover:bg-gray-50 transition-colors duration-150"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Blog
-                </Link>
+            <Link
+              to="/blog"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#0052CC] hover:bg-gray-50 transition-colors duration-150"
+              onClick={() => setIsOpen(false)}
+            >
+              Blog
+            </Link>
             <Link
               to="/faqs"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#0052CC] hover:bg-gray-50 transition-colors duration-150"

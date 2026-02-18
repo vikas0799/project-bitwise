@@ -23,13 +23,13 @@ const HomeHero = () => {
               <p className="text-lg font-medium text-[#0052CC]">
                 Let's build bit by bit
               </p>
-              
+
               <p className="text-base text-gray-600 sm:text-lg max-w-xl mx-auto">
-                Unlock your coding potential with our immersive live classes, 
-                hands-on projects, and industry-focused curriculum. Join Delhi's 
+                Unlock your coding potential with our immersive live classes,
+                hands-on projects, and industry-focused curriculum. Join Delhi's
                 premier coding institute today.
               </p>
-              
+
               <form onSubmit={handleSubmit} className="max-w-lg w-full">
                 <div className="sm:flex">
                   <div className="min-w-0 flex-1">
@@ -82,17 +82,17 @@ const HomeHero = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Right Sidebar */}
         <div className="hidden lg:block lg:w-1/2 flex items-center justify-center">
           <div className="bg-gradient-to-r from-white to-[#e6effc] flex items-center justify-center p-8 w-full h-full">
             <div className="bg-white rounded-lg shadow-lg p-6 max-w-md mx-auto">
               <div className="flex items-center justify-center mb-6">
                 <h2 className="text-2xl font-bold text-[#0052CC]">
-                  Bitwise School of Technology
+                  Bitwise School
                 </h2>
               </div>
-              
+
               <div className="space-y-4">
                 <div className="flex items-center space-x-3 p-3 bg-[#f4f5f7] rounded-md">
                   <div className="bg-[#0052CC] rounded-full p-2">
@@ -103,7 +103,7 @@ const HomeHero = () => {
                     <p className="text-sm text-gray-600">Interactive sessions with industry experts</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-3 p-3 bg-[#f4f5f7] rounded-md">
                   <div className="bg-[#0052CC] rounded-full p-2">
                     <Globe className="h-5 w-5 text-white" />
@@ -113,7 +113,7 @@ const HomeHero = () => {
                     <p className="text-sm text-gray-600">From C++ to Full Stack Development</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-3 p-3 bg-[#f4f5f7] rounded-md">
                   <div className="bg-[#0052CC] rounded-full p-2">
                     <Users className="h-5 w-5 text-white" />
