@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import { Clock, Users, Award } from 'lucide-react';
+import { Clock, Award } from 'lucide-react';
 
 interface CourseCardProps {
   id: string;
@@ -42,11 +42,6 @@ const CourseCard: React.FC<CourseCardProps> = ({
           <div className="flex items-center">
             <Clock className="h-4 w-4 mr-1" />
             <span>{duration}</span>
-          </div>
-
-          <div className="flex items-center">
-            <Users className="h-4 w-4 mr-1" />
-            <span>{students.toLocaleString()} students</span>
           </div>
 
           <div className="flex items-center">

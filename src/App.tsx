@@ -11,6 +11,7 @@ import BlogDetail from './pages/BlogDetail';
 import FAQsPage from './pages/FAQsPage';
 import Contact from './pages/Contact';
 import Legal from './pages/Legal';
+import Opportunities from './pages/Opportunities';
 import NotFound from './pages/NotFound';
 import { Toaster } from './components/ui/toaster';
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
 
+        <Route path="/opportunities" element={<Opportunities />} />
         <Route path="/faqs" element={<FAQsPage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/legal/:pageType" element={<Legal />} />

@@ -124,7 +124,7 @@ const Legal = () => {
                     If you have questions or concerns about this Privacy Policy, please contact us at:
                   </p>
                   <p>
-                    Email: privacy@bitwiseschool.com<br />
+                    Email: bitwiseschool@gmail.com<br />
                     Address: 66 A Block, New Ashok Nagar, Delhi, India<br />
                     Phone: +91-987-654-3210
                   </p>
@@ -151,7 +151,7 @@ const Legal = () => {
 
                   <h3>2.3 Refund Policy</h3>
                   <p>
-                    We offer a 7-day money-back guarantee for most courses. To be eligible for a refund, you must request it within 7 days of enrollment and have completed less than 25% of the course content. Refund requests should be sent to support@bitwiseschool.com.
+                    We offer a 7-day money-back guarantee for most courses. To be eligible for a refund, you must request it within 7 days of enrollment and have completed less than 25% of the course content. Refund requests should be sent to bitwiseschool@gmail.com.
                   </p>
 
                   <h2>3. Account Creation and Security</h2>
@@ -231,7 +231,7 @@ const Legal = () => {
                     If you have questions about these Terms, please contact us at:
                   </p>
                   <p>
-                    Email: legal@bitwiseschool.com<br />
+                    Email: bitwiseschool@gmail.com<br />
                     Address: 66 A Block, New Ashok Nagar, Delhi, India<br />
                     Phone: +91-987-654-3210
                   </p>

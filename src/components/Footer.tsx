@@ -13,7 +13,7 @@ const Footer = () => {
               <span className="code-text text-xl font-bold text-white">Bitwise School</span>
             </Link>
             <p className="text-gray-300 mb-4 max-w-md">
-              Transform your coding journey with Delhi's premier technology training institute.
+              Transform your coding journey with a Delhi-based technology training institute.
               Hands-on learning, expert mentorship, and job-ready skills to excel in the tech industry.
             </p>
             <div className="flex space-x-4">
@@ -70,7 +70,7 @@ const Footer = () => {
                 <Link to="/about" className="text-gray-300 hover:text-white">About Us</Link>
               </li>
               <li>
-                <Link to="/success-stories" className="text-gray-300 hover:text-white">Success Stories</Link>
+                <Link to="/opportunities" className="text-gray-300 hover:text-white">Opportunities</Link>
               </li>
               <li>
                 <Link to="/blog" className="text-gray-300 hover:text-white">Blog</Link>
@@ -97,7 +97,7 @@ const Footer = () => {
               <a href="mailto:bitwiseschool@gmail.com" className="hover:text-white">bitwiseschool@gmail.com</a>
             </p>
             <p className="text-gray-300">
-              <a href="tel:+919876543210" className="hover:text-white">+91 987 654 3210</a>
+              <a href="tel:+919988728749" className="hover:text-white">+91 99887 28749</a>
             </p>
           </div>
         </div>
@@ -114,9 +114,9 @@ const Footer = () => {
               <Link to="/legal/terms" className="text-gray-400 text-sm hover:text-white">
                 Terms & Conditions
               </Link>
-              <Link to="/sitemap" className="text-gray-400 text-sm hover:text-white">
+              <a href="/sitemap.xml" className="text-gray-400 text-sm hover:text-white">
                 Sitemap
-              </Link>
+              </a>
             </div>
           </div>
         </div>

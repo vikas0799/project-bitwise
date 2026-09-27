@@ -2,15 +2,18 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Code, Globe, Users } from 'lucide-react';
+import { mailtoLink } from '../config/site';
 
 const HomeHero = () => {
   const [email, setEmail] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Email submitted:', email);
-    setEmail('');
-    alert('Thank you for your interest! We will be in touch soon.');
+    window.location.href = mailtoLink('Course info request', [
+      'Hi Bitwise School, please send me details of your courses and upcoming batches.',
+      '',
+      `My email: ${email}`,
+    ]);
   };
 
   return (
@@ -26,8 +29,8 @@ const HomeHero = () => {
 
               <p className="text-base text-gray-600 sm:text-lg max-w-xl mx-auto">
                 Unlock your coding potential with our immersive live classes,
-                hands-on projects, and industry-focused curriculum. Join Delhi's
-                premier coding institute today.
+                hands-on projects, and industry-focused curriculum, taught by
+                faculty who has taught at Chitkara, LPU and CU.
               </p>
 
               <form onSubmit={handleSubmit} className="max-w-lg w-full">

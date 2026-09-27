@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { CONTACT_EMAIL, WHATSAPP_NUMBER, WHATSAPP_DISPLAY, mailtoLink } from '../config/site';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -29,24 +30,17 @@ const Contact = () => {
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // In a real app, you'd send this data to a server
+    const course = formData.course === 'Select a course' ? 'Not selected' : formData.course;
+    window.location.href = mailtoLink(formData.subject || 'Enquiry from bitwiseschool.com', [
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Phone: ${formData.phone}`,
+      `Course: ${course}`,
+      `Callback requested: ${formData.callback ? 'Yes' : 'No'}`,
+      '',
+      formData.message,
+    ]);
     setFormSubmitted(true);
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
-      course: 'Select a course',
-      callback: false
-    });
-    
-    // Show success for 5 seconds
-    setTimeout(() => {
-      setFormSubmitted(false);
-    }, 5000);
   };
 
   return (
@@ -76,12 +70,17 @@ const Contact = () => {
                   Send Us a Message
                 </h2>
                 
-                {formSubmitted ? (
+                {formSubmitted && (
                   <div className="bg-green-50 border border-green-200 text-green-800 rounded-lg p-6 mb-6">
-                    <h3 className="text-lg font-semibold mb-2">Thank you for contacting us!</h3>
-                    <p>We have received your message and will get back to you shortly.</p>
+                    <h3 className="text-lg font-semibold mb-2">Your email app should now be open</h3>
+                    <p>
+                      Press Send there to reach us. If nothing opened, email{' '}
+                      <a href={`mailto:${CONTACT_EMAIL}`} className="underline">{CONTACT_EMAIL}</a> or message us on{' '}
+                      <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="underline">WhatsApp ({WHATSAPP_DISPLAY})</a>.
+                    </p>
                   </div>
-                ) : (
+                )}
+                {(
                   <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg p-6">
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                       <div>
@@ -236,8 +235,7 @@ const Contact = () => {
                       <div className="ml-4">
                         <h3 className="text-lg font-medium text-gray-900">Phone</h3>
                         <p className="text-gray-600">
-                          +91 987 654 3210<br />
-                          +91 123 456 7890
+                          +91 99887 28749
                         </p>
                       </div>
                     </div>
@@ -333,7 +331,7 @@ const Contact = () => {
                   Do you provide placement assistance?
                 </h3>
                 <p className="text-gray-600">
-                  Yes, we have a dedicated placement team that works with 120+ hiring partners to help you secure your dream job.
+                  Yes: resume reviews, mock interviews, and referrals where possible. We do not guarantee placement.
                 </p>
               </div>
             </div>

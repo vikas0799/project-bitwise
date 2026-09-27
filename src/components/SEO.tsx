@@ -13,31 +13,34 @@ interface SEOProps {
 
 const SEO: React.FC<SEOProps> = ({
   title = 'Bitwise School',
-  description = 'Bitwise School: Premier coding institute in Delhi offering comprehensive programming courses, data structures, algorithms, and job placement assistance.',
+  description = 'Bitwise School: coding institute in Delhi offering live programming courses, data structures, algorithms, placement support and a free opportunities portal.',
   type = 'website',
   name = 'Bitwise School',
   imageUrl = '/lovable-uploads/812fe1e7-4326-47ef-868e-21cfd3b5fc46.png'
 }) => {
   const location = useLocation();
-  const currentUrl = `https://bitwiseschool.com${location.pathname}`;
-  const absoluteImageUrl = imageUrl.startsWith('http') ? imageUrl : `https://bitwiseschool.com${imageUrl}`;
+  const currentUrl = `https://www.bitwiseschool.com${location.pathname}`;
+  const absoluteImageUrl = imageUrl.startsWith('http') ? imageUrl : `https://www.bitwiseschool.com${imageUrl}`;
 
   // Create JSON-LD structured data
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Bitwise School',
-    url: 'https://bitwiseschool.com',
-    logo: 'https://bitwiseschool.com/lovable-uploads/add7e0a1-0cf3-4da0-abed-55deb8d78c9f.png',
-    description: 'Premier coding institute offering comprehensive programming courses',
+    url: 'https://www.bitwiseschool.com',
+    logo: 'https://www.bitwiseschool.com/lovable-uploads/add7e0a1-0cf3-4da0-abed-55deb8d78c9f.png',
+    description: 'Coding institute offering live programming courses and a free opportunities portal',
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
-      email: 'info@bitwiseschool.com'
+      email: 'bitwiseschool@gmail.com'
     },
     sameAs: [
-      'https://www.linkedin.com/company/bitwise-school-of-technology',
-      'https://twitter.com/bitwiseschool'
+      'https://www.facebook.com/profile.php?id=61578938786384',
+      'https://x.com/bitwiseschool',
+      'https://www.instagram.com/bitwiseschooloftechnology/',
+      'https://www.linkedin.com/in/bitwise-school-of-technology-5a5296377/',
+      'https://www.youtube.com/@bitwiseschool'
     ]
   };
 

@@ -30,12 +30,12 @@ const AboutUs = () => {
                   Our Story
                 </h2>
                 <p className="text-lg text-gray-500 mb-4">
-                  Bitwise School was founded in 2019 by a group of passionate tech professionals who saw
-                  a gap between traditional education and industry requirements in the Indian software development landscape.
+                  Bitwise School is run by Vikas Patel, a software engineer and university faculty member who has taught
+                  full stack web development, Linux, DBMS, operating systems and computer networks at Chitkara University, LPU and Chandigarh University.
                 </p>
                 <p className="text-lg text-gray-500 mb-4">
-                  Starting with just 20 students in a small office in Chandigarh, we've now grown to become one of North India's
-                  premier coding academies, having trained over 4,500 students who are now working with top companies nationwide.
+                  In those classrooms he saw a gap between what colleges teach and what the software industry expects,
+                  and how little exposure most students get to open source, research and global opportunities. Bitwise exists to close that gap.
                 </p>
                 <p className="text-lg text-gray-500">
                   Our approach combines rigorous technical training with practical, hands-on experience, ensuring that
@@ -158,7 +158,7 @@ const AboutUs = () => {
                 Meet Our Team & Mentors
               </h2>
               <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-                Our expert instructors bring years of industry experience to the classroom
+                Our instructors bring years of industry experience to the classroom
               </p>
             </div>
 
@@ -173,7 +173,7 @@ const AboutUs = () => {
                   <h3 className="mt-4 text-lg font-medium text-gray-900">Vikas Patel</h3>
                   <p className="text-[#0052CC]">Full Stack Instructor</p>
                   <p className="mt-2 text-gray-500">
-                    5 years of experience, Ex-Infosys, expert in building scalable applications.
+                    5+ years of industry experience, Ex-Infosys. Has taught full stack, Linux, DBMS, OS and CN at Chitkara, LPU and CU.
                   </p>
                 </div>
               </div>
@@ -222,11 +222,12 @@ const AboutUs = () => {
                   </p>
                 </div>
               </div>
+
             </div>
 
             <div className="mt-12 text-center">
               <p className="text-gray-500">
-                Our team also includes 15+ part-time instructors and mentors from top tech companies
+                Want to mentor with us? Write to bitwiseschool@gmail.com
               </p>
             </div>
           </div>

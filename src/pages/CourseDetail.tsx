@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Clock, Users, Award, CheckCircle, Play, Calendar, FileText, MessageCircle, Book, Newspaper } from 'lucide-react';
+import { Clock, Award, CheckCircle, Play, Calendar, FileText, MessageCircle, Book, Newspaper } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -29,14 +29,14 @@ const CourseDetail = () => {
       name: 'Vikas Patel',
       role: 'Full Stack Instructor',
       image: '/lovable-uploads/700e27d7-0513-4bfa-8ac4-f7fd6087594c.png',
-      bio: 'Vikas has 5+ years of industry experience working with top tech companies like Infosys. He specializes in building scalable applications.',
+      bio: 'Vikas has 5+ years of industry experience, including Infosys, and has taught at Chitkara University, LPU and Chandigarh University. He specializes in building scalable applications.',
       students: 5000
     },
     highlights: [
       'Live interactive sessions with expert instructors',
       'Hands-on projects and real-world case studies',
       'Personalized feedback and code reviews',
-      '24/7 doubt resolution support',
+      'Doubt-clearing sessions every week',
       'Industry-ready project portfolio',
       'Placement assistance and career guidance'
     ],
@@ -113,11 +113,6 @@ const CourseDetail = () => {
                   </div>
 
                   <div className="flex items-center">
-                    <Users className="h-5 w-5 mr-2" />
-                    <span>{courseData.students.toLocaleString()} students</span>
-                  </div>
-
-                  <div className="flex items-center">
                     <Award className="h-5 w-5 mr-2" />
                     <span>{courseData.level}</span>
                   </div>
@@ -167,7 +162,7 @@ const CourseDetail = () => {
                     </button>
 
                     <p className="text-gray-500 text-sm text-center mb-4">
-                      30-day money-back guarantee
+                      7-day money-back guarantee
                     </p>
 
                     <div className="border-t pt-4 space-y-2">
@@ -347,12 +342,8 @@ const CourseDetail = () => {
 
                     <div className="flex gap-4 mb-4">
                       <div className="flex items-center">
-                        <Users className="h-5 w-5 text-gray-400 mr-2" />
-                        <span>{courseData.instructor.students.toLocaleString()} students</span>
-                      </div>
-                      <div className="flex items-center">
                         <Calendar className="h-5 w-5 text-gray-400 mr-2" />
-                        <span>8+ years experience</span>
+                        <span>5+ years industry experience</span>
                       </div>
                     </div>
 

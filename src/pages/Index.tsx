@@ -100,20 +100,20 @@ const Index = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
               <div className="text-center">
-                <p className="text-4xl font-extrabold">4500+</p>
-                <p className="text-lg mt-2">Students Trained</p>
+                <p className="text-4xl font-extrabold">3</p>
+                <p className="text-lg mt-2">Universities Taught At</p>
               </div>
               <div className="text-center">
-                <p className="text-4xl font-extrabold">96%</p>
-                <p className="text-lg mt-2">Placement Rate</p>
+                <p className="text-4xl font-extrabold">Live</p>
+                <p className="text-lg mt-2">+ Recorded Classes</p>
               </div>
               <div className="text-center">
-                <p className="text-4xl font-extrabold">120+</p>
-                <p className="text-lg mt-2">Hiring Partners</p>
+                <p className="text-4xl font-extrabold">Free</p>
+                <p className="text-lg mt-2">Opportunities Portal</p>
               </div>
               <div className="text-center">
-                <p className="text-4xl font-extrabold">₹12 LPA</p>
-                <p className="text-lg mt-2">Avg. Starting Salary</p>
+                <p className="text-4xl font-extrabold">7-day</p>
+                <p className="text-lg mt-2">Money-back Guarantee</p>
               </div>
             </div>
           </div>
@@ -134,11 +134,11 @@ const Index = () => {
 
                 <div className="mt-8">
                   {[
-                    'Industry-experienced faculty with 8+ years average experience',
+                    'Taught by a software engineer who has taught at Chitkara University, LPU and Chandigarh University',
                     'Live project-based learning with real-world applications',
                     'Small batch sizes ensuring personal attention to each student',
-                    'Dedicated placement team with connections to top companies',
-                    'State-of-the-art infrastructure and coding platforms',
+                    'Placement support: resume reviews, mock interviews and referrals where possible',
+                    'A free, daily-updated portal of open-source programs, jobs and hackathons',
                     'Flexible schedule options including weekends and evenings'
                   ].map((item, index) => (
                     <div key={index} className="flex items-start mt-6 first:mt-0">
@@ -200,7 +200,7 @@ const Index = () => {
               Ready to start your coding journey?
             </h2>
             <p className="mt-4 text-xl max-w-2xl mx-auto">
-              Join Delhi's premier coding institute and transform your career
+              Learn with live classes, real projects and honest career guidance
             </p>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
               <Link

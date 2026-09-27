@@ -25,7 +25,7 @@ const FAQsPage = () => {
         {
           id: 1,
           question: 'What is Bitwise School?',
-          answer: 'Bitwise School is a premier software training institute based in Delhi, India. We offer comprehensive coding courses, focusing on programming languages, data structures & algorithms, web development, and more. Our mission is to transform students into job-ready developers through hands-on learning and industry-aligned curriculum.'
+          answer: 'Bitwise School is a software training institute based in Delhi, India. We offer comprehensive coding courses, focusing on programming languages, data structures & algorithms, web development, and more. Our mission is to transform students into job-ready developers through hands-on learning and industry-aligned curriculum.'
         },
         {
           id: 2,
@@ -88,17 +88,17 @@ const FAQsPage = () => {
         {
           id: 10,
           question: 'Do you provide placement assistance?',
-          answer: 'Yes, we have a dedicated placement team that works with 120+ hiring partners across India. Our placement assistance includes resume building, interview preparation, mock interviews, and connecting you with suitable job opportunities. We have a 96% placement record for students who complete our courses successfully.'
+          answer: 'Yes. Placement support includes resume reviews, interview preparation, mock interviews, and sharing suitable openings and referrals where we can. We do not guarantee placement or a specific salary.'
         },
         {
           id: 11,
           question: 'What companies hire from Bitwise School?',
-          answer: 'Our students have been placed in companies like Microsoft, Google, Amazon, Infosys, TCS, Wipro, IBM, Accenture, and many startups and mid-sized tech companies. The range of roles includes software developers, web developers, data analysts, and more.'
+          answer: 'We will publish verified student outcomes here, with written consent from each student, as our batches complete. Until then, ask us for references from past students.'
         },
         {
           id: 12,
-          question: 'What is the average salary package for graduates?',
-          answer: 'The average salary package for our graduates is around 12 LPA (Lakhs Per Annum), with packages ranging from 6 LPA to 35 LPA depending on the student\'s performance, prior experience, and the hiring company. Our placement team works to help you secure the best possible opportunity based on your skills and career goals.'
+          question: 'What salary can I expect after the course?',
+          answer: 'Salary depends on your skills, projects, prior experience and the hiring company, so we do not promise a number. We help you build the skills and portfolio that lead to better offers.'
         }
       ]
     },
@@ -215,7 +215,7 @@ const FAQsPage = () => {
                   Contact Us
                 </a>
                 <a
-                  href="mailto:info@bitwiseschool.com"
+                  href="mailto:bitwiseschool@gmail.com"
                   className="inline-flex items-center justify-center px-5 py-3 border border-purple-600 text-base font-medium rounded-md text-purple-600 bg-white hover:bg-purple-50"
                 >
                   Email Support

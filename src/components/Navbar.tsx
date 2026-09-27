@@ -73,6 +73,11 @@ const Navbar = () => {
             </div>
 
 
+            {/* Opportunities */}
+            <Link to="/opportunities" className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-[#0052CC] hover:bg-gray-50 transition-colors duration-200">
+              Opportunities
+            </Link>
+
             {/* About Us */}
             <Link to="/about" className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-[#0052CC] hover:bg-gray-50 transition-colors duration-200">
               About Us
@@ -139,6 +144,13 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
             >
               Courses
+            </Link>
+            <Link
+              to="/opportunities"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#0052CC] hover:bg-gray-50 transition-colors duration-150"
+              onClick={() => setIsOpen(false)}
+            >
+              Opportunities
             </Link>
             <Link
               to="/about"
