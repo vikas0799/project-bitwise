@@ -3,7 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { AnimatePresence, m } from 'framer-motion';
 import { ArrowRight, ChevronDown, HelpCircle, Info, Mail, Menu, Sparkles, X } from 'lucide-react';
 import Logo from './Logo';
-import { aiCourses, openCourses, type Course } from '../data/courses';
+import { openCourses, upcomingCourses, type Course } from '../data/courses';
 import { resources } from '../data/resources';
 
 type MenuId = 'courses' | 'resources' | 'about';
@@ -146,15 +146,15 @@ const Navbar = () => {
                 <Panel className="left-1/2 w-[40rem] -translate-x-1/2">
                   <div className="rounded-xl bg-gradient-to-br from-violet-50 to-fuchsia-50 p-2">
                     <p className="flex items-center gap-1.5 px-2.5 pb-1 pt-1.5 text-xs font-bold uppercase tracking-wider text-violet-700">
-                      <Sparkles className="h-3.5 w-3.5" /> New AI tracks
+                      <Sparkles className="h-3.5 w-3.5" /> New courses, launching soon
                     </p>
                     <div className="grid grid-cols-2 gap-1">
-                      {aiCourses.map((course) => (
+                      {upcomingCourses.map((course) => (
                         <CourseLink key={course.id} course={course} />
                       ))}
                     </div>
                   </div>
-                  <p className="px-2.5 pb-1 pt-3 text-xs font-bold uppercase tracking-wider text-slate-400">Programming and web</p>
+                  <p className="px-2.5 pb-1 pt-3 text-xs font-bold uppercase tracking-wider text-slate-400">Enrolling now</p>
                   <div className="grid grid-cols-2 gap-1">
                     {openCourses.map((course) => (
                       <CourseLink key={course.id} course={course} />
@@ -252,7 +252,7 @@ const Navbar = () => {
                   <NavLink to="/courses" end className={({ isActive }) => `${linkClass(isActive)} w-full text-base`}>
                     All courses
                   </NavLink>
-                  {aiCourses.map((course) => (
+                  {upcomingCourses.map((course) => (
                     <NavLink key={course.id} to={`/courses/${course.id}`} className={({ isActive }) => `${linkClass(isActive)} w-full text-base`}>
                       {course.title}
                       <span className="ml-2 rounded-full bg-amber-100 px-1.5 py-px text-[10px] font-bold uppercase text-amber-800">New</span>

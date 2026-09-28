@@ -12,6 +12,7 @@ const FILTERS: { value: CourseCategory | 'all'; label: string }[] = [
   { value: 'all', label: 'All courses' },
   { value: 'ai', label: 'AI & ML (new)' },
   { value: 'web', label: 'Web development' },
+  { value: 'backend', label: 'Backend, system design & DevOps' },
   { value: 'dsa', label: 'DSA' },
   { value: 'programming', label: 'Programming languages' },
 ];

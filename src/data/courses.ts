@@ -2,7 +2,7 @@
 // Syllabi are standard outlines; edit them to match what you teach.
 
 export type CourseLevel = 'Beginner' | 'Intermediate' | 'Advanced' | 'All Levels';
-export type CourseCategory = 'ai' | 'programming' | 'web' | 'dsa';
+export type CourseCategory = 'ai' | 'programming' | 'web' | 'dsa' | 'backend';
 
 export interface Course {
   id: string;
@@ -19,32 +19,233 @@ export interface Course {
   cover: { from: string; to: string; symbol: string };
   outcomes: string[];
   syllabus: { title: string; topics: string[] }[];
+  // Optional extras shown on the course page
+  tools?: string[];
+  projects?: { title: string; text: string }[];
 }
 
 export const courses: Course[] = [
   {
     id: 'generative-ai',
-    title: 'Generative AI Engineering',
-    tagline: 'LLMs, RAG and AI agents, from prompt to production',
-    description: 'Build real products on top of large language models: prompting, retrieval-augmented generation, tool calling, agents and evaluations, then ship them.',
+    title: 'Generative AI Engineering: Complete Course',
+    tagline: 'The full GenAI course: LLMs, RAG, agents, MCP and production AI',
+    description:
+      'Go from calling an LLM API to shipping production AI systems. Build chatbots, RAG over your own data, tool-using agents, voice agents and MCP servers, then learn to evaluate, secure, deploy and fine-tune them. Project-first, in Python.',
     duration: 'Batch dates soon',
     level: 'Intermediate',
     price: null,
     status: 'waitlist',
     category: 'ai',
-    prerequisites: 'Comfort with Python or JavaScript basics and APIs.',
+    prerequisites: 'Python basics (variables, functions, loops) and a little comfort with APIs. Python for AI is revised in module 1.',
     cover: { from: '#4C1D95', to: '#DB2777', symbol: 'GenAI' },
     outcomes: [
-      'Build chat and search apps that answer from your own documents',
-      'Use tool calling to let models take real actions',
-      'Design, test and evaluate AI agents safely',
-      'Deploy AI apps with sensible cost and latency',
+      'Build LLM apps with streaming, structured outputs and tool calling',
+      'Ship RAG that answers from your own documents with citations',
+      'Design multi-step and multi-agent workflows with LangGraph and MCP',
+      'Add memory, voice and vision to AI assistants',
+      'Evaluate, trace, secure and cost-optimise AI in production',
+      'Know when to prompt, when to use RAG and when to fine-tune',
     ],
     syllabus: [
-      { title: 'LLM foundations', topics: ['How LLMs work: tokens, embeddings and context', 'Prompt engineering patterns', 'Working with LLM APIs', 'Structured outputs'] },
-      { title: 'Retrieval-augmented generation', topics: ['Embeddings and vector databases', 'Chunking and retrieval strategies', 'RAG over your own documents', 'Citations and grounding'] },
-      { title: 'Agents and tools', topics: ['Tool and function calling', 'Agent loops and orchestration', 'Model Context Protocol (MCP) basics', 'Guardrails and human-in-the-loop'] },
-      { title: 'Ship it', topics: ['Deploying AI apps', 'Evaluations and monitoring', 'Cost, latency and caching', 'Capstone: an AI product for a real use case'] },
+      {
+        title: 'Python and LLM foundations',
+        topics: [
+          'Python for AI: typing, virtual environments and async basics',
+          'Data models and validation with Pydantic',
+          'How LLMs work: tokens, context windows and sampling',
+          'OpenAI, Gemini and Claude APIs side by side',
+          'Multi-turn chat and conversation history',
+          'Prompt engineering: zero-shot, few-shot and chain of thought',
+          'Structured outputs with JSON schema',
+          'Context engineering: what to put in the prompt and why',
+        ],
+      },
+      {
+        title: 'Building LLM applications',
+        topics: [
+          'FastAPI backends for AI features',
+          'Function calling and tool use',
+          'Streaming responses to the browser (SSE)',
+          'Retries, timeouts and model fallbacks',
+          'Embeddings and semantic search',
+          'Vector databases: pgvector, ChromaDB and Pinecone',
+          'Summarisation, classification and routing utilities',
+        ],
+      },
+      {
+        title: 'Retrieval-augmented generation (RAG) in depth',
+        topics: [
+          'Document loading, parsing and chunking strategies',
+          'Hybrid search (keyword + vector) and reranking',
+          'Query rewriting and multi-query retrieval',
+          'LangChain and LlamaIndex pipelines',
+          'Grounded answers with citations',
+          'When you do not need a vector DB: long context and structured search',
+          'Scaling ingestion with background queues',
+          'Evaluating RAG with RAGAS and failure analysis',
+        ],
+      },
+      {
+        title: 'AI agents and the Model Context Protocol',
+        topics: [
+          'The agent loop: plan, act, observe',
+          'Designing good tools and sandboxed code execution',
+          'Stateful workflows with LangGraph',
+          'Multi-agent patterns: planner, worker and reviewer',
+          'OpenAI Agents SDK and Claude Agent SDK',
+          'Model Context Protocol (MCP): using and building servers',
+          'Human-in-the-loop approvals and safe actions',
+        ],
+      },
+      {
+        title: 'Memory, vision and voice',
+        topics: [
+          'Short-term and long-term memory for assistants',
+          'Knowledge graphs for memory with Neo4j',
+          'Vision models and document understanding',
+          'Voice agents: speech-to-text → LLM → text-to-speech',
+          'Image generation basics',
+        ],
+      },
+      {
+        title: 'Production AI engineering',
+        topics: [
+          'Evals: golden datasets and LLM-as-judge',
+          'Tracing and observability with Langfuse and LangSmith',
+          'Guardrails, prompt injection and the OWASP Top 10 for LLMs',
+          'Cost and latency: caching, batching and model routing',
+          'Running open models locally with Ollama',
+          'Deploying AI services with Docker to the cloud',
+        ],
+      },
+      {
+        title: 'Model internals and fine-tuning',
+        topics: [
+          'Neural networks and PyTorch training loops, briefly',
+          'Transformers and attention, explained visually',
+          'Tokenizers, embeddings and the KV cache',
+          'Prompting vs RAG vs fine-tuning: choosing well',
+          'LoRA and QLoRA fine-tuning of open models',
+          'Hugging Face Hub and open-weight models',
+        ],
+      },
+    ],
+    tools: ['Python', 'FastAPI', 'Pydantic', 'OpenAI API', 'Claude API', 'Gemini API', 'LangChain', 'LlamaIndex', 'LangGraph', 'MCP', 'pgvector', 'ChromaDB', 'Pinecone', 'Hugging Face', 'Ollama', 'Langfuse', 'Docker'],
+    projects: [
+      { title: 'Chat with your documents', text: 'Upload PDFs and notes, ask questions and get answers with page-level citations.' },
+      { title: 'AI customer support agent', text: 'Classifies tickets, answers from the help docs and hands over to a human when unsure.' },
+      { title: 'Research assistant with web search', text: 'Searches the web, reads sources and writes a cited answer, streamed live.' },
+      { title: 'Coding agent', text: 'Reads a repository, edits files and runs the tests in a sandbox until they pass.' },
+      { title: 'Pull request reviewer', text: 'Reviews GitHub pull requests against your team’s style guide and posts inline comments.' },
+      { title: 'Voice interview practice bot', text: 'Asks interview questions by voice and scores answers against a rubric.' },
+    ],
+  },
+  {
+    id: 'full-stack-ai',
+    title: 'Full Stack Web Development with AI',
+    tagline: 'TypeScript, React, Next.js and Node, with AI features built in',
+    description:
+      'A complete, modern full-stack course: web fundamentals, JavaScript and TypeScript, React and Next.js, Node.js backends with SQL and NoSQL databases, then AI features inside your apps, and DevOps to ship them. You finish with deployed, AI-powered projects.',
+    duration: 'Batch dates soon',
+    level: 'Beginner',
+    price: null,
+    status: 'waitlist',
+    category: 'web',
+    prerequisites: 'None. We start from how the web works; a laptop and a few hours a day are enough.',
+    cover: { from: '#0F766E', to: '#7C3AED', symbol: 'Web+AI' },
+    outcomes: [
+      'Build responsive, accessible front ends with React, Next.js and Tailwind',
+      'Design REST APIs with Node.js, PostgreSQL and MongoDB',
+      'Add login, payments, file uploads and real-time features',
+      'Put AI inside your apps: chat, RAG over app data and AI actions',
+      'Test, containerise and deploy with CI/CD',
+      'Graduate with a portfolio of deployed full-stack projects',
+    ],
+    syllabus: [
+      {
+        title: 'Web foundations and tools',
+        topics: [
+          'How the web works: HTTP, DNS and the browser',
+          'HTML5 semantics and accessibility',
+          'CSS: box model, Flexbox, Grid and responsive design',
+          'The terminal, Git and GitHub',
+          'Deploying your first site',
+        ],
+      },
+      {
+        title: 'JavaScript in depth',
+        topics: [
+          'Values, types, scope, closures and this',
+          'Arrays and objects in practice',
+          'The DOM, events and browser APIs',
+          'Promises, async/await and fetch',
+          'Modules and tooling: npm and Vite',
+          'The event loop, explained',
+        ],
+      },
+      {
+        title: 'TypeScript and React',
+        topics: [
+          'TypeScript essentials for real projects',
+          'Components, props, state and hooks',
+          'Routing, forms and validation',
+          'Data fetching and caching with TanStack Query',
+          'State management with Context and Zustand',
+          'Tailwind CSS and component libraries',
+        ],
+      },
+      {
+        title: 'Backend engineering with Node.js',
+        topics: [
+          'Node.js and Express, the right way',
+          'REST API design and validation with Zod',
+          'PostgreSQL, SQL and Prisma',
+          'MongoDB and Mongoose',
+          'Authentication: sessions, JWT and OAuth login',
+          'File uploads, emails and background jobs',
+          'Caching with Redis',
+        ],
+      },
+      {
+        title: 'Full stack with Next.js',
+        topics: [
+          'App Router, server components and server actions',
+          'Rendering: SSR, SSG and ISR',
+          'Payments with Razorpay and webhooks',
+          'Real-time features with WebSockets',
+          'Testing with Vitest and Playwright',
+        ],
+      },
+      {
+        title: 'AI integration',
+        topics: [
+          'Calling LLM APIs safely from your backend',
+          'Streaming AI responses into the UI',
+          'Chat with your app’s data using RAG',
+          'Tool calling: letting AI take actions in your app',
+          'Vercel AI SDK, rate limits and cost control',
+          'Using AI coding assistants well (and knowing their limits)',
+        ],
+      },
+      {
+        title: 'DevOps and shipping',
+        topics: [
+          'Docker for web apps',
+          'CI/CD with GitHub Actions',
+          'Deploying to Vercel, Render and AWS',
+          'Environment variables, logging and monitoring',
+          'Web security basics: the OWASP Top 10',
+          'Portfolio, resume and interview preparation',
+        ],
+      },
+    ],
+    tools: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Node.js', 'Express', 'PostgreSQL', 'Prisma', 'MongoDB', 'Redis', 'OpenAI API', 'Vercel AI SDK', 'Docker', 'GitHub Actions'],
+    projects: [
+      { title: 'Project management SaaS', text: 'Teams, roles, login and Razorpay subscriptions, built with Next.js and PostgreSQL.' },
+      { title: 'Real-time chat app', text: 'Rooms, typing indicators and online status over WebSockets.' },
+      { title: 'E-commerce store', text: 'Catalogue, cart, payments, orders and an admin dashboard.' },
+      { title: 'AI resume reviewer', text: 'Upload a resume and get structured, job-specific feedback from an LLM.' },
+      { title: 'AI assistant inside a dashboard', text: 'Ask questions about your app’s own data and let the assistant take safe actions.' },
     ],
   },
   {
@@ -95,6 +296,257 @@ export const courses: Course[] = [
       { title: 'AI integration', topics: ['LLM APIs and prompting', 'RAG over company data', 'Agents and automations', 'Evaluations'] },
       { title: 'Working with customers', topics: ['Scoping problems', 'Writing technical proposals', 'Demos and communication', 'Handling feedback and changing requirements'] },
       { title: 'Deploy and support', topics: ['Cloud deployment', 'Webhooks and third-party APIs', 'Debugging in production', 'Capstone: solve a real client problem end to end'] },
+    ],
+  },
+  {
+    id: 'system-design',
+    title: 'System Design: HLD and LLD',
+    tagline: 'Design systems that scale, and explain them in interviews',
+    description:
+      'Learn how real systems are built: the building blocks of scalable backends, distributed systems trade-offs, object-oriented low-level design, classic high-level design case studies and how to design AI systems, with mock interviews throughout.',
+    duration: 'Batch dates soon',
+    level: 'Advanced',
+    price: null,
+    status: 'waitlist',
+    category: 'backend',
+    prerequisites: 'Comfort in one programming language and basic backend knowledge (APIs and a database).',
+    cover: { from: '#1E293B', to: '#0891B2', symbol: 'HLD' },
+    outcomes: [
+      'Estimate scale and pick the right building blocks',
+      'Reason about consistency, availability and partitioning',
+      'Write clean object-oriented designs with SOLID and patterns',
+      'Design well-known systems end to end and defend the trade-offs',
+      'Design AI-heavy systems: LLM serving, RAG and vector search at scale',
+      'Handle system design interview rounds with a clear framework',
+    ],
+    syllabus: [
+      {
+        title: 'Foundations',
+        topics: [
+          'Scalability, latency, throughput and availability',
+          'Back-of-the-envelope estimation',
+          'Networking for designers: DNS, TCP/UDP, HTTP and CDNs',
+          'API styles: REST, gRPC, GraphQL and WebSockets',
+        ],
+      },
+      {
+        title: 'Building blocks',
+        topics: [
+          'Load balancers and reverse proxies',
+          'Caching strategies, eviction and Redis',
+          'SQL vs NoSQL, indexes and query patterns',
+          'Replication, partitioning and sharding',
+          'CAP theorem and consistency models',
+          'Message queues, pub/sub and Kafka',
+          'Rate limiting and consistent hashing',
+          'Blob storage and search indexes',
+        ],
+      },
+      {
+        title: 'Distributed systems in practice',
+        topics: [
+          'Monoliths, microservices and when to split',
+          'API gateways and service discovery',
+          'Distributed transactions and the saga pattern',
+          'Idempotency, retries and circuit breakers',
+          'Observability: logs, metrics and traces',
+        ],
+      },
+      {
+        title: 'Low-level design',
+        topics: [
+          'OOP and the SOLID principles',
+          'Design patterns: factory, builder, strategy, observer and more',
+          'Class diagrams and modelling requirements',
+          'Concurrency basics: threads, locks and race conditions',
+          'LLD problems: parking lot, elevator, Splitwise and movie booking',
+        ],
+      },
+      {
+        title: 'High-level design case studies',
+        topics: [
+          'URL shortener',
+          'Chat and messaging (WhatsApp)',
+          'News feed (Instagram)',
+          'Video streaming (YouTube)',
+          'Ride hailing (Uber)',
+          'Payments and notification systems',
+        ],
+      },
+      {
+        title: 'Designing AI systems',
+        topics: [
+          'Serving LLMs: batching, caching and streaming',
+          'RAG architecture at scale',
+          'Choosing and scaling a vector database',
+          'Cost, latency and reliability for AI features',
+        ],
+      },
+      {
+        title: 'Interview practice',
+        topics: [
+          'A step-by-step framework for design interviews',
+          'Writing a design document',
+          'Mock HLD and LLD interviews with feedback',
+        ],
+      },
+    ],
+    tools: ['Redis', 'Kafka', 'PostgreSQL', 'Cassandra', 'Nginx', 'Docker', 'Excalidraw'],
+    projects: [
+      { title: 'URL shortener', text: 'A design document plus a working prototype with caching and analytics.' },
+      { title: 'Distributed rate limiter', text: 'Token bucket and sliding window limiters backed by Redis.' },
+      { title: 'LLD implementations', text: 'Parking lot and movie booking systems coded with clean OOP and patterns.' },
+    ],
+  },
+  {
+    id: 'spring-boot-ai',
+    title: 'Java Backend with Spring Boot & Spring AI',
+    tagline: 'Production Java backends, microservices and AI features',
+    description:
+      'Build production-grade backends in Java: modern Java, Spring Boot, JPA, security, caching, messaging and microservices, deployed on AWS, then add AI features such as chat, RAG and tool calling with Spring AI.',
+    duration: 'Batch dates soon',
+    level: 'Intermediate',
+    price: null,
+    status: 'waitlist',
+    category: 'backend',
+    prerequisites: 'Core Java (classes, collections, exceptions). Our Java Full Course covers this.',
+    cover: { from: '#14532D', to: '#65A30D', symbol: 'Spring' },
+    outcomes: [
+      'Build clean, tested REST APIs with Spring Boot',
+      'Model data with PostgreSQL and Spring Data JPA',
+      'Secure APIs with Spring Security, JWT and OAuth2',
+      'Scale with Redis, Kafka and microservices',
+      'Deploy Java services with Docker on AWS',
+      'Add LLM chat, RAG and tool calling with Spring AI',
+    ],
+    syllabus: [
+      {
+        title: 'Modern Java for backend',
+        topics: [
+          'Java 21: records, streams, lambdas and Optional',
+          'Collections and generics in practice',
+          'Exceptions and logging',
+          'Maven and Gradle',
+          'Unit testing with JUnit and Mockito',
+        ],
+      },
+      {
+        title: 'Spring Boot core',
+        topics: [
+          'Inversion of control and dependency injection',
+          'Auto-configuration and starters',
+          'REST controllers, DTOs and validation',
+          'Global exception handling',
+          'Profiles and configuration',
+        ],
+      },
+      {
+        title: 'Data with JPA',
+        topics: [
+          'PostgreSQL and SQL essentials',
+          'Spring Data JPA and Hibernate',
+          'Relationships and the N+1 problem',
+          'Transactions and isolation',
+          'Database migrations with Flyway',
+        ],
+      },
+      {
+        title: 'Security',
+        topics: ['Spring Security fundamentals', 'JWT authentication', 'OAuth2 login (Google, GitHub)', 'Role-based access control'],
+      },
+      {
+        title: 'Production and microservices',
+        topics: [
+          'Caching with Redis',
+          'Event-driven services with Kafka',
+          'Microservices: API gateway and service discovery',
+          'Resilience with Resilience4j',
+          'Integration tests with Testcontainers',
+          'Docker and deploying to AWS (EC2, RDS, S3)',
+        ],
+      },
+      {
+        title: 'AI with Spring AI',
+        topics: [
+          'Spring AI with OpenAI and local models (Ollama)',
+          'Prompt templates and structured output',
+          'RAG with pgvector',
+          'Tool calling from Java',
+          'Building an MCP server with Spring AI',
+        ],
+      },
+    ],
+    tools: ['Java 21', 'Spring Boot', 'Spring Data JPA', 'Spring Security', 'PostgreSQL', 'Redis', 'Kafka', 'Docker', 'AWS', 'Spring AI', 'Ollama'],
+    projects: [
+      { title: 'E-commerce microservices', text: 'Products, orders and payments as separate services behind an API gateway.' },
+      { title: 'URL shortener with analytics', text: 'High-read API with Redis caching and Kafka click events.' },
+      { title: 'AI document Q&A service', text: 'Upload documents and ask questions, using Spring AI and pgvector.' },
+    ],
+  },
+  {
+    id: 'devops-cloud',
+    title: 'DevOps & Cloud: Docker, Kubernetes and AWS',
+    tagline: 'Linux, CI/CD, containers, Kubernetes, AWS and Terraform',
+    description:
+      'Learn to ship and run software the way teams do in production: Linux and networking, Git and CI/CD, Docker and Kubernetes, AWS, infrastructure as code with Terraform, and monitoring, ending with deploying an AI app.',
+    duration: 'Batch dates soon',
+    level: 'Intermediate',
+    price: null,
+    status: 'waitlist',
+    category: 'backend',
+    prerequisites: 'Basic programming and comfort using a computer; no Linux experience needed.',
+    cover: { from: '#0C4A6E', to: '#F59E0B', symbol: 'DevOps' },
+    outcomes: [
+      'Work confidently in Linux and write bash scripts',
+      'Automate builds, tests and deployments with CI/CD',
+      'Containerise apps with Docker and run them on Kubernetes',
+      'Design and run cloud setups on AWS',
+      'Provision infrastructure with Terraform',
+      'Monitor services and respond to incidents',
+    ],
+    syllabus: [
+      {
+        title: 'Linux and networking',
+        topics: [
+          'The shell, files and permissions',
+          'Processes, services and systemd',
+          'Bash scripting',
+          'Networking: IP, DNS, ports and SSH',
+          'Nginx as a web server and reverse proxy',
+        ],
+      },
+      {
+        title: 'Git and CI/CD',
+        topics: ['Git workflows for teams', 'GitHub Actions pipelines', 'Automated tests and linting in CI', 'Releases and rollbacks'],
+      },
+      {
+        title: 'Containers',
+        topics: ['Docker images and containers', 'Writing Dockerfiles and multi-stage builds', 'Docker Compose for multi-service apps', 'Container registries'],
+      },
+      {
+        title: 'Kubernetes',
+        topics: ['Pods, deployments and services', 'ConfigMaps and secrets', 'Ingress and TLS', 'Helm charts', 'Autoscaling and rolling updates'],
+      },
+      {
+        title: 'Cloud with AWS',
+        topics: ['IAM and account security', 'EC2, S3 and RDS', 'VPCs and networking', 'Load balancers and auto scaling', 'Serverless with Lambda', 'Keeping cloud costs low'],
+      },
+      {
+        title: 'Infrastructure as code and observability',
+        topics: [
+          'Terraform basics and modules',
+          'Metrics with Prometheus and Grafana',
+          'Centralised logging',
+          'Alerts and incident response',
+          'Deploying an AI app: GPUs, model serving and MLOps basics',
+        ],
+      },
+    ],
+    tools: ['Linux', 'Bash', 'Git', 'GitHub Actions', 'Docker', 'Kubernetes', 'Helm', 'AWS', 'Terraform', 'Nginx', 'Prometheus', 'Grafana'],
+    projects: [
+      { title: 'CI/CD to AWS', text: 'Every push tests, builds and deploys a full-stack app to AWS automatically.' },
+      { title: 'Kubernetes deployment', text: 'A multi-service app on Kubernetes with Helm, ingress, TLS and autoscaling.' },
+      { title: 'Infrastructure with Terraform', text: 'Network, servers and database provisioned from code, with monitoring dashboards.' },
     ],
   },
   {
@@ -249,3 +701,5 @@ export const formatPrice = (price: number | null) => (price === null ? 'Launchin
 
 export const openCourses = courses.filter((c) => c.status === 'open');
 export const aiCourses = courses.filter((c) => c.category === 'ai');
+// New courses taking waitlist sign-ups (AI tracks first)
+export const upcomingCourses = courses.filter((c) => c.status === 'waitlist');

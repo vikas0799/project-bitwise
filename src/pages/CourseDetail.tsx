@@ -10,7 +10,9 @@ import {
   Clock,
   ClipboardList,
   Code2,
+  FolderGit2,
   MessageCircle,
+  Wrench,
   ShieldCheck,
   Video,
 } from 'lucide-react';
@@ -245,6 +247,43 @@ const CourseDetail = () => {
                   ))}
                 </Accordion>
               </Reveal>
+
+              {course.projects && (
+                <Reveal>
+                  <h2 className="text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">Projects you'll build</h2>
+                  <p className="mt-2 text-slate-600">Portfolio projects that show recruiters what you can ship.</p>
+                  <Stagger className="mt-8 grid gap-4 sm:grid-cols-2">
+                    {course.projects.map((project) => (
+                      <StaggerItem key={project.title}>
+                        <div className="flex h-full items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
+                            <FolderGit2 className="h-5 w-5" />
+                          </span>
+                          <span>
+                            <span className="block font-semibold text-ink">{project.title}</span>
+                            <span className="mt-1 block text-sm leading-relaxed text-slate-600">{project.text}</span>
+                          </span>
+                        </div>
+                      </StaggerItem>
+                    ))}
+                  </Stagger>
+                </Reveal>
+              )}
+
+              {course.tools && (
+                <Reveal>
+                  <h2 className="flex items-center gap-2 text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">
+                    <Wrench className="h-6 w-6 text-brand-600" /> Tools you'll use
+                  </h2>
+                  <ul className="mt-6 flex flex-wrap gap-2">
+                    {course.tools.map((tool) => (
+                      <li key={tool} className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 font-mono text-sm font-medium text-slate-700">
+                        {tool}
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
+              )}
 
               <Reveal>
                 <h2 className="text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">Who this course is for</h2>
