@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-27T14:20:41.787Z",
+ "generatedAt": "2026-09-28T05:44:37.014Z",
  "sources": [
   {
    "name": "Remotive",
@@ -13,14 +13,14 @@
    "url": "https://remoteok.com",
    "kind": "jobs",
    "ok": true,
-   "count": 67
+   "count": 66
   },
   {
    "name": "Himalayas",
    "url": "https://himalayas.app",
    "kind": "jobs",
    "ok": true,
-   "count": 22
+   "count": 30
   },
   {
    "name": "Jobicy",
@@ -34,7 +34,7 @@
    "url": "https://devpost.com",
    "kind": "hackathons",
    "ok": true,
-   "count": 64
+   "count": 67
   },
   {
    "name": "Codeforces",
@@ -46,246 +46,268 @@
  ],
  "jobs": [
   {
-   "id": "himalayas-https://himalayas.app/companies/sciolex/jobs/data-ai-engineer",
-   "title": "Data & AI Engineer",
-   "company": "Sciolex",
-   "url": "https://himalayas.app/companies/sciolex/jobs/data-ai-engineer",
-   "location": "United States",
+   "id": "himalayas-https://himalayas.app/companies/bjak/jobs/product-manager-ai-neobank-app-5141852897",
+   "title": "Product Manager - AI Neobank App",
+   "company": "Bjak",
+   "url": "https://himalayas.app/companies/bjak/jobs/product-manager-ai-neobank-app-5141852897",
+   "location": "Thailand",
    "openToIndia": "no",
    "fresher": false,
-   "postedAt": "2026-09-27T12:53:18.000Z",
+   "postedAt": "2026-09-28T04:26:27.000Z",
    "source": "Himalayas"
   },
   {
-   "id": "himalayas-https://himalayas.app/companies/swimlane-llc/jobs/platform-devops-cicd-engineer",
-   "title": "Platform/ Devops/ CICD  Engineer",
-   "company": "Swimlane LLC",
-   "url": "https://himalayas.app/companies/swimlane-llc/jobs/platform-devops-cicd-engineer",
+   "id": "himalayas-https://himalayas.app/companies/bjak/jobs/mobile-application-developer-ai-neobank-app-5137941704",
+   "title": "Mobile Application Developer - AI Neobank App",
+   "company": "Bjak",
+   "url": "https://himalayas.app/companies/bjak/jobs/mobile-application-developer-ai-neobank-app-5137941704",
+   "location": "Indonesia",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-09-28T04:25:54.000Z",
+   "source": "Himalayas"
+  },
+  {
+   "id": "himalayas-https://himalayas.app/companies/bjak/jobs/android-software-engineer-ai-neobank-app-763061279",
+   "title": "Android Software Engineer - AI Neobank App",
+   "company": "Bjak",
+   "url": "https://himalayas.app/companies/bjak/jobs/android-software-engineer-ai-neobank-app-763061279",
+   "location": "Austria",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-09-28T04:25:42.000Z",
+   "source": "Himalayas"
+  },
+  {
+   "id": "himalayas-https://himalayas.app/companies/bjak/jobs/full-stack-software-engineer-ai-finance-agent-7477266576",
+   "title": "Full Stack Software Engineer - AI Finance Agent",
+   "company": "Bjak",
+   "url": "https://himalayas.app/companies/bjak/jobs/full-stack-software-engineer-ai-finance-agent-7477266576",
+   "location": "United States",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-09-28T04:15:13.000Z",
+   "source": "Himalayas"
+  },
+  {
+   "id": "himalayas-https://himalayas.app/companies/bjak/jobs/product-lead-ai-neobank-app-3170018386",
+   "title": "Product Lead - AI Neobank App",
+   "company": "Bjak",
+   "url": "https://himalayas.app/companies/bjak/jobs/product-lead-ai-neobank-app-3170018386",
+   "location": "Japan",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-09-28T04:09:55.000Z",
+   "source": "Himalayas"
+  },
+  {
+   "id": "himalayas-https://himalayas.app/companies/toloka-ai/jobs/freelance-translator-side-job-english-chinese-voice-recordings-ai-trainer-6952459097",
+   "title": "Freelance Translator Side Job - English & Chinese Voice Recordings - AI trainer",
+   "company": "Toloka AI",
+   "url": "https://himalayas.app/companies/toloka-ai/jobs/freelance-translator-side-job-english-chinese-voice-recordings-ai-trainer-6952459097",
+   "location": "Cambodia",
+   "openToIndia": "no",
+   "fresher": true,
+   "postedAt": "2026-09-28T03:55:53.000Z",
+   "source": "Himalayas"
+  },
+  {
+   "id": "himalayas-https://himalayas.app/companies/percona/jobs/sr-software-engineer-go-mongodb-7934765505",
+   "title": "Sr. Software Engineer - Go/MongoDB",
+   "company": "Percona",
+   "url": "https://himalayas.app/companies/percona/jobs/sr-software-engineer-go-mongodb-7934765505",
+   "location": "Croatia, Italy, Poland, Spain",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-09-28T03:53:44.000Z",
+   "source": "Himalayas"
+  },
+  {
+   "id": "himalayas-https://himalayas.app/companies/mirantis/jobs/senior-full-stack-typescript-engineer-9550424066",
+   "title": "Senior Full-Stack TypeScript Engineer",
+   "company": "Mirantis",
+   "url": "https://himalayas.app/companies/mirantis/jobs/senior-full-stack-typescript-engineer-9550424066",
+   "location": "United States",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-09-28T03:47:55.000Z",
+   "source": "Himalayas"
+  },
+  {
+   "id": "himalayas-https://himalayas.app/companies/placer-ai/jobs/senior-ai-software-engineer",
+   "title": "Senior AI Software Engineer",
+   "company": "Placer.ai",
+   "url": "https://himalayas.app/companies/placer-ai/jobs/senior-ai-software-engineer",
+   "location": "United States",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-09-28T03:46:27.000Z",
+   "source": "Himalayas"
+  },
+  {
+   "id": "himalayas-https://himalayas.app/companies/paddy/jobs/ai-product-engineer",
+   "title": "AI Product Engineer",
+   "company": "Paddy",
+   "url": "https://himalayas.app/companies/paddy/jobs/ai-product-engineer",
+   "location": "Germany",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-09-28T03:45:54.000Z",
+   "source": "Himalayas"
+  },
+  {
+   "id": "himalayas-https://himalayas.app/companies/jumpcloud/jobs/senior-software-engineer-privileged-access-management-pam-iam-india",
+   "title": "Senior Software Engineer - Privileged Access Management (PAM / IAM)- India",
+   "company": "JumpCloud",
+   "url": "https://himalayas.app/companies/jumpcloud/jobs/senior-software-engineer-privileged-access-management-pam-iam-india",
    "location": "India",
    "openToIndia": "yes",
    "fresher": false,
-   "postedAt": "2026-09-27T12:53:18.000Z",
+   "postedAt": "2026-09-28T03:35:30.000Z",
    "source": "Himalayas"
   },
   {
-   "id": "himalayas-https://himalayas.app/companies/luza-group/jobs/desenvolvedor-de-sistemas-full-stack-sr-1-c-3816375566",
-   "title": "Desenvolvedor de Sistemas – Full Stack - SR - 1 - C#",
-   "company": "LUZA Group",
-   "url": "https://himalayas.app/companies/luza-group/jobs/desenvolvedor-de-sistemas-full-stack-sr-1-c-3816375566",
+   "id": "himalayas-https://himalayas.app/companies/general-motors/jobs/principal-software-engineer-virtualization",
+   "title": "Principal Software Engineer - Virtualization",
+   "company": "General Motors",
+   "url": "https://himalayas.app/companies/general-motors/jobs/principal-software-engineer-virtualization",
    "location": "United States",
    "openToIndia": "no",
    "fresher": false,
-   "postedAt": "2026-09-27T12:52:59.000Z",
+   "postedAt": "2026-09-28T03:34:01.000Z",
    "source": "Himalayas"
   },
   {
-   "id": "himalayas-https://himalayas.app/companies/toloka-ai/jobs/stay-at-home-job-chinese-english-voice-recording-ai-trainer-2559149417",
+   "id": "himalayas-https://himalayas.app/companies/toloka-ai/jobs/stay-at-home-job-chinese-english-voice-recording-ai-trainer-1370415208",
    "title": "Stay at Home Job - Chinese-English Voice Recording - AI trainer",
    "company": "Toloka AI",
-   "url": "https://himalayas.app/companies/toloka-ai/jobs/stay-at-home-job-chinese-english-voice-recording-ai-trainer-2559149417",
-   "location": "Canada",
+   "url": "https://himalayas.app/companies/toloka-ai/jobs/stay-at-home-job-chinese-english-voice-recording-ai-trainer-1370415208",
+   "location": "Cambodia",
    "openToIndia": "no",
    "fresher": true,
-   "postedAt": "2026-09-27T12:52:42.000Z",
+   "postedAt": "2026-09-28T03:33:38.000Z",
    "source": "Himalayas"
   },
   {
-   "id": "himalayas-https://himalayas.app/companies/toloka-ai/jobs/online-tutor-extra-income-voice-recordings-english-chinese-ai-trainer-2152437615",
-   "title": "Online Tutor Extra Income - Voice Recordings, English & Chinese - AI trainer",
+   "id": "himalayas-https://himalayas.app/companies/engiflex/jobs/net-developer-azure-freelance-kan",
+   "title": ".NET Developer Azure (Freelance kan)",
+   "company": "EngiFlex",
+   "url": "https://himalayas.app/companies/engiflex/jobs/net-developer-azure-freelance-kan",
+   "location": "Belgium",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-09-28T03:31:26.000Z",
+   "source": "Himalayas"
+  },
+  {
+   "id": "himalayas-https://himalayas.app/companies/varicent/jobs/qa-analyst-mexico-remote",
+   "title": "QA Analyst (Mexico, Remote)",
+   "company": "Varicent",
+   "url": "https://himalayas.app/companies/varicent/jobs/qa-analyst-mexico-remote",
+   "location": "Mexico",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-09-28T03:31:19.000Z",
+   "source": "Himalayas"
+  },
+  {
+   "id": "himalayas-https://himalayas.app/companies/bjak/jobs/applied-ai-engineer-ai-finance-agent-838512862",
+   "title": "Applied AI Engineer - AI Finance Agent",
+   "company": "Bjak",
+   "url": "https://himalayas.app/companies/bjak/jobs/applied-ai-engineer-ai-finance-agent-838512862",
+   "location": "Germany",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-09-28T03:27:03.000Z",
+   "source": "Himalayas"
+  },
+  {
+   "id": "himalayas-https://himalayas.app/companies/dacodes/jobs/full-stack-engineer-typescript-aws-english-required-mexico-latam-only",
+   "title": "Full Stack Engineer - TypeScript & AWS - English Required- México&LATAM Only",
+   "company": "DaCodes",
+   "url": "https://himalayas.app/companies/dacodes/jobs/full-stack-engineer-typescript-aws-english-required-mexico-latam-only",
+   "location": "Colombia",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-09-28T03:24:04.000Z",
+   "source": "Himalayas"
+  },
+  {
+   "id": "himalayas-https://himalayas.app/companies/motorola-solutions/jobs/international-sales-engineer-ukraine",
+   "title": "International Sales Engineer Ukraine",
+   "company": "Motorola Solutions",
+   "url": "https://himalayas.app/companies/motorola-solutions/jobs/international-sales-engineer-ukraine",
+   "location": "Ukraine",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-09-28T03:18:36.000Z",
+   "source": "Himalayas"
+  },
+  {
+   "id": "himalayas-https://himalayas.app/companies/virtuhire/jobs/unity-ui-ux-developer-automation-platform",
+   "title": "Unity UI/UX Developer - Automation Platform",
+   "company": "VirtuHire",
+   "url": "https://himalayas.app/companies/virtuhire/jobs/unity-ui-ux-developer-automation-platform",
+   "location": "South Africa",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-09-28T03:16:55.000Z",
+   "source": "Himalayas"
+  },
+  {
+   "id": "himalayas-https://himalayas.app/companies/toloka-ai/jobs/english-chinese-bilingual-voice-recording-ai-trainer-4210116496",
+   "title": "English-Chinese Bilingual Voice Recording - AI Trainer",
    "company": "Toloka AI",
-   "url": "https://himalayas.app/companies/toloka-ai/jobs/online-tutor-extra-income-voice-recordings-english-chinese-ai-trainer-2152437615",
-   "location": "Malaysia",
-   "openToIndia": "no",
-   "fresher": true,
-   "postedAt": "2026-09-27T12:51:02.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/veremark/jobs/data-analyst",
-   "title": "Data Analyst",
-   "company": "Veremark",
-   "url": "https://himalayas.app/companies/veremark/jobs/data-analyst",
-   "location": "United Kingdom",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-09-27T12:50:32.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/toloka-ai/jobs/part-time-job-for-retirees-voice-recordings-english-chinese-ai-trainer-5881957677",
-   "title": "Part-time Job for Retirees - Voice Recordings, English & Chinese - AI trainer",
-   "company": "Toloka AI",
-   "url": "https://himalayas.app/companies/toloka-ai/jobs/part-time-job-for-retirees-voice-recordings-english-chinese-ai-trainer-5881957677",
-   "location": "Indonesia",
-   "openToIndia": "no",
-   "fresher": true,
-   "postedAt": "2026-09-27T12:49:55.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/greenbox-capital/jobs/salesforce-qa-analyst-latam",
-   "title": "Salesforce QA Analyst - LATAM",
-   "company": "Greenbox Capital",
-   "url": "https://himalayas.app/companies/greenbox-capital/jobs/salesforce-qa-analyst-latam",
-   "location": "Brazil",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-09-27T12:49:55.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/gopro-consultancy-group-ltd/jobs/senior-full-stack-java-x2f-angular-developer-full-remote-9619699158",
-   "title": "Senior Full Stack Java&#x2f;Angular Developer - Full Remote",
-   "company": "goPro Consultancy Group ltd.",
-   "url": "https://himalayas.app/companies/gopro-consultancy-group-ltd/jobs/senior-full-stack-java-x2f-angular-developer-full-remote-9619699158",
-   "location": "United States",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-09-27T12:49:45.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/my-amazon-guy/jobs/automation-security-specialist",
-   "title": "Automation Security Specialist",
-   "company": "My Amazon Guy",
-   "url": "https://himalayas.app/companies/my-amazon-guy/jobs/automation-security-specialist",
-   "location": "United States",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-09-27T12:49:07.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/bright-vision-technologies/jobs/cloud-security-engineer-oracle-1232335885",
-   "title": "Cloud Security Engineer – Oracle",
-   "company": "Bright Vision Technologies",
-   "url": "https://himalayas.app/companies/bright-vision-technologies/jobs/cloud-security-engineer-oracle-1232335885",
-   "location": "United States",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-09-27T12:48:32.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/gbi/jobs/ui-react-developer",
-   "title": "UI/React Developer",
-   "company": "GBI",
-   "url": "https://himalayas.app/companies/gbi/jobs/ui-react-developer",
-   "location": "United States",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-09-27T12:48:13.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/bright-vision-technologies/jobs/ai-data-engineer-7476993652",
-   "title": "AI Data Engineer",
-   "company": "Bright Vision Technologies",
-   "url": "https://himalayas.app/companies/bright-vision-technologies/jobs/ai-data-engineer-7476993652",
-   "location": "United States",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-09-27T12:46:31.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/ewor-gmbh/jobs/renewable-energy-founding-ai-engineer-100-remote-m-f-d",
-   "title": "Renewable Energy Founding AI Engineer (100 % remote) (m/f/d)",
-   "company": "EWOR GmbH",
-   "url": "https://himalayas.app/companies/ewor-gmbh/jobs/renewable-energy-founding-ai-engineer-100-remote-m-f-d",
-   "location": "Worldwide",
-   "openToIndia": "yes",
-   "fresher": false,
-   "postedAt": "2026-09-27T12:43:32.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/toloka-ai/jobs/freelance-gig-bilingual-chinese-english-speaker-ai-trainer-3734023404",
-   "title": "Freelance Gig - Bilingual Chinese-English Speaker - AI trainer",
-   "company": "Toloka AI",
-   "url": "https://himalayas.app/companies/toloka-ai/jobs/freelance-gig-bilingual-chinese-english-speaker-ai-trainer-3734023404",
-   "location": "Indonesia",
-   "openToIndia": "no",
-   "fresher": true,
-   "postedAt": "2026-09-27T12:42:30.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/toloka-ai/jobs/freelance-translator-side-job-english-chinese-voice-recordings-ai-trainer-2540713330",
-   "title": "Freelance Translator Side Job - English & Chinese Voice Recordings - AI trainer",
-   "company": "Toloka AI",
-   "url": "https://himalayas.app/companies/toloka-ai/jobs/freelance-translator-side-job-english-chinese-voice-recordings-ai-trainer-2540713330",
+   "url": "https://himalayas.app/companies/toloka-ai/jobs/english-chinese-bilingual-voice-recording-ai-trainer-4210116496",
    "location": "Thailand",
    "openToIndia": "no",
    "fresher": true,
-   "postedAt": "2026-09-27T12:42:30.000Z",
+   "postedAt": "2026-09-28T03:13:21.000Z",
    "source": "Himalayas"
   },
   {
-   "id": "himalayas-https://himalayas.app/companies/hr-ways/jobs/software-ai-architect-remote-from-pak-india-pkr-tax-free-salary",
-   "title": "Software & AI Architect | Remote from Pak & India | PKR Tax Free Salary",
-   "company": "HR Ways",
-   "url": "https://himalayas.app/companies/hr-ways/jobs/software-ai-architect-remote-from-pak-india-pkr-tax-free-salary",
-   "location": "United States",
+   "id": "jobicy-154114",
+   "title": "Staff Software Engineer, AI & Recommendations Platform",
+   "company": "hims &#038; hers",
+   "url": "https://jobicy.com/jobs/154114-staff-software-engineer-ai-recommendations-platform",
+   "location": "USA",
    "openToIndia": "no",
    "fresher": false,
-   "postedAt": "2026-09-27T12:42:01.000Z",
-   "source": "Himalayas"
+   "postedAt": "2026-09-27T20:36:27.000Z",
+   "source": "Jobicy"
   },
   {
-   "id": "himalayas-https://himalayas.app/companies/addmore-services-llc/jobs/ai-video-content-creator-workflow-automation-specialist-wfh-night-shift",
-   "title": "AI Video Content Creator & Workflow Automation Specialist - WFH, night shift",
-   "company": "ADDMORE Services LLC",
-   "url": "https://himalayas.app/companies/addmore-services-llc/jobs/ai-video-content-creator-workflow-automation-specialist-wfh-night-shift",
-   "location": "Philippines",
+   "id": "jobicy-154110",
+   "title": "Salesforce Developer - Service Cloud, Experience Cloud & AI (100% Remote within Poland)",
+   "company": "Docplanner",
+   "url": "https://jobicy.com/jobs/154110-salesforce-developer-service-cloud-experience-cloud-ai-100-remote-within-poland",
+   "location": "Poland",
    "openToIndia": "no",
    "fresher": false,
-   "postedAt": "2026-09-27T12:41:50.000Z",
-   "source": "Himalayas"
+   "postedAt": "2026-09-27T20:34:26.000Z",
+   "source": "Jobicy"
   },
   {
-   "id": "himalayas-https://himalayas.app/companies/hubspot/jobs/lead-data-analyst",
-   "title": "Lead Data Analyst",
-   "company": "HubSpot",
-   "url": "https://himalayas.app/companies/hubspot/jobs/lead-data-analyst",
-   "location": "Ireland",
+   "id": "jobicy-154113",
+   "title": "Python Developer - MyDr (100% Remote within Poland)",
+   "company": "Docplanner",
+   "url": "https://jobicy.com/jobs/154113-python-developer-mydr-100-remote-within-poland",
+   "location": "Poland",
    "openToIndia": "no",
    "fresher": false,
-   "postedAt": "2026-09-27T12:41:36.000Z",
-   "source": "Himalayas"
+   "postedAt": "2026-09-27T20:34:24.000Z",
+   "source": "Jobicy"
   },
   {
-   "id": "himalayas-https://himalayas.app/companies/upland-software/jobs/software-engineer-ii",
-   "title": "Software Engineer II",
-   "company": "Upland Software",
-   "url": "https://himalayas.app/companies/upland-software/jobs/software-engineer-ii",
-   "location": "India",
-   "openToIndia": "yes",
-   "fresher": false,
-   "postedAt": "2026-09-27T12:40:01.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/nexcess-com/jobs/account-executive-digital-cloud",
-   "title": "Account Executive, Digital Cloud",
-   "company": "Nexcess",
-   "url": "https://himalayas.app/companies/nexcess-com/jobs/account-executive-digital-cloud",
-   "location": "United States",
-   "openToIndia": "no",
-   "fresher": true,
-   "postedAt": "2026-09-27T12:39:38.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/cribl/jobs/sales-engineer-uk",
-   "title": "Sales Engineer, UK",
-   "company": "Cribl",
-   "url": "https://himalayas.app/companies/cribl/jobs/sales-engineer-uk",
-   "location": "United Kingdom",
+   "id": "jobicy-154108",
+   "title": "Engineering Manager - Feegow (100% Remote within Brazil)",
+   "company": "Docplanner",
+   "url": "https://jobicy.com/jobs/154108-engineering-manager-feegow-100-remote-within-brazil",
+   "location": "Brazil",
    "openToIndia": "no",
    "fresher": false,
-   "postedAt": "2026-09-27T12:37:25.000Z",
-   "source": "Himalayas"
+   "postedAt": "2026-09-27T20:34:23.000Z",
+   "source": "Jobicy"
   },
   {
    "id": "jobicy-151756",
@@ -860,22 +882,22 @@
    "source": "Jobicy"
   },
   {
-   "id": "jobicy-154032",
-   "title": "Contract Software Engineer - WebCompat Tooling (Dashboards and Reporting), Firefox",
-   "company": "Mozilla",
-   "url": "https://jobicy.com/jobs/154032-contract-software-engineer-webcompat-tooling-dashboards-and-reporting-firefox",
-   "location": "Canada,  France,  Germany,  UK",
+   "id": "jobicy-154031",
+   "title": "Software Engineer",
+   "company": "Capital on Tap",
+   "url": "https://jobicy.com/jobs/154031-software-engineer-11",
+   "location": "Portugal",
    "openToIndia": "no",
    "fresher": false,
    "postedAt": "2026-09-24T15:33:08.000Z",
    "source": "Jobicy"
   },
   {
-   "id": "jobicy-154031",
-   "title": "Software Engineer",
-   "company": "Capital on Tap",
-   "url": "https://jobicy.com/jobs/154031-software-engineer-11",
-   "location": "Portugal",
+   "id": "jobicy-154032",
+   "title": "Contract Software Engineer - WebCompat Tooling (Dashboards and Reporting), Firefox",
+   "company": "Mozilla",
+   "url": "https://jobicy.com/jobs/154032-contract-software-engineer-webcompat-tooling-dashboards-and-reporting-firefox",
+   "location": "Canada,  France,  Germany,  UK",
    "openToIndia": "no",
    "fresher": false,
    "postedAt": "2026-09-24T15:33:08.000Z",
@@ -1047,22 +1069,22 @@
    "source": "Remote OK"
   },
   {
-   "id": "jobicy-153979",
-   "title": "Ads Quality Rater - Farsi (Turkey)",
-   "company": "Welo Global",
-   "url": "https://jobicy.com/jobs/153979-ads-quality-rater-farsi-turkey",
-   "location": "Türkiye",
+   "id": "jobicy-153974",
+   "title": "Backend Engineer, Observability",
+   "company": "LaunchDarkly",
+   "url": "https://jobicy.com/jobs/153974-backend-engineer-observability",
+   "location": "USA",
    "openToIndia": "no",
    "fresher": false,
    "postedAt": "2026-09-23T15:19:30.000Z",
    "source": "Jobicy"
   },
   {
-   "id": "jobicy-153974",
-   "title": "Backend Engineer, Observability",
-   "company": "LaunchDarkly",
-   "url": "https://jobicy.com/jobs/153974-backend-engineer-observability",
-   "location": "USA",
+   "id": "jobicy-153979",
+   "title": "Ads Quality Rater - Farsi (Turkey)",
+   "company": "Welo Global",
+   "url": "https://jobicy.com/jobs/153979-ads-quality-rater-farsi-turkey",
+   "location": "Türkiye",
    "openToIndia": "no",
    "fresher": false,
    "postedAt": "2026-09-23T15:19:30.000Z",
@@ -1366,17 +1388,6 @@
    "source": "Jobicy"
   },
   {
-   "id": "jobicy-149552",
-   "title": "Software Engineer - App Stores",
-   "company": "Canonical",
-   "url": "https://jobicy.com/jobs/149552-software-engineer-app-stores",
-   "location": "Anywhere",
-   "openToIndia": "yes",
-   "fresher": false,
-   "postedAt": "2026-09-23T03:45:07.000Z",
-   "source": "Jobicy"
-  },
-  {
    "id": "remoteok-1137421",
    "title": "Technical Product Manager AI Stockbroking App",
    "company": "Bjak ",
@@ -1397,39 +1408,6 @@
    "fresher": false,
    "postedAt": "2026-09-23T00:00:04.000Z",
    "source": "Remote OK"
-  },
-  {
-   "id": "jobicy-153924",
-   "title": "Senior Software Engineer, Build Loop",
-   "company": "Webflow",
-   "url": "https://jobicy.com/jobs/153924-senior-software-engineer-build-loop",
-   "location": "Argentina",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-09-22T16:46:01.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-153922",
-   "title": "Engineering Manager",
-   "company": "NetBox Labs",
-   "url": "https://jobicy.com/jobs/153922-engineering-manager-8",
-   "location": "USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-09-22T16:45:57.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-153905",
-   "title": "Backend Engineer, Control Plane",
-   "company": "Tailscale",
-   "url": "https://jobicy.com/jobs/153905-backend-engineer-control-plane",
-   "location": "UK",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-09-22T14:51:58.000Z",
-   "source": "Jobicy"
   },
   {
    "id": "remoteok-1137417",
@@ -1461,7 +1439,7 @@
    "location": "USA",
    "openToIndia": "no",
    "fresher": false,
-   "postedAt": "2026-09-21T07:25:11.000Z",
+   "postedAt": "2026-09-21T12:55:11.000Z",
    "source": "Remotive"
   },
   {
@@ -1520,6 +1498,28 @@
    "source": "Remote OK"
   },
   {
+   "id": "remotive-2091141",
+   "title": "Frontend Web Application Developer",
+   "company": "KoboToolbox",
+   "url": "https://remotive.com/remote-jobs/design/frontend-web-application-developer-2091141",
+   "location": "USA, Canada, Argentina, Mexico, Peru",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-09-18T16:43:22.000Z",
+   "source": "Remotive"
+  },
+  {
+   "id": "remotive-2091140",
+   "title": "Senior Shopify Developer",
+   "company": "Sanctuary Computer Inc",
+   "url": "https://remotive.com/remote-jobs/software-development/senior-shopify-developer-2091140",
+   "location": "Worldwide",
+   "openToIndia": "yes",
+   "fresher": false,
+   "postedAt": "2026-09-18T15:10:28.000Z",
+   "source": "Remotive"
+  },
+  {
    "id": "remoteok-1137405",
    "title": "Senior Shopify Developer",
    "company": "Sanctuary Computer",
@@ -1531,28 +1531,6 @@
    "source": "Remote OK"
   },
   {
-   "id": "remotive-2091141",
-   "title": "Frontend Web Application Developer",
-   "company": "KoboToolbox",
-   "url": "https://remotive.com/remote-jobs/design/frontend-web-application-developer-2091141",
-   "location": "USA, Canada, Argentina, Mexico, Peru",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-09-18T11:13:22.000Z",
-   "source": "Remotive"
-  },
-  {
-   "id": "remotive-2091140",
-   "title": "Senior Shopify Developer",
-   "company": "Sanctuary Computer Inc",
-   "url": "https://remotive.com/remote-jobs/software-development/senior-shopify-developer-2091140",
-   "location": "Worldwide",
-   "openToIndia": "yes",
-   "fresher": false,
-   "postedAt": "2026-09-18T09:40:28.000Z",
-   "source": "Remotive"
-  },
-  {
    "id": "remotive-2091139",
    "title": "🇩🇪 Kundenservice Mobilfunk Inbound - innerhalb der EU (ausgenommen: Deutschland)",
    "company": "hey contact heroes GmbH",
@@ -1560,7 +1538,7 @@
    "location": "Europe",
    "openToIndia": "no",
    "fresher": false,
-   "postedAt": "2026-09-18T07:30:47.000Z",
+   "postedAt": "2026-09-18T13:00:47.000Z",
    "source": "Remotive"
   },
   {
@@ -1571,7 +1549,7 @@
    "location": "Northern America, LATAM, Europe, APAC",
    "openToIndia": "yes",
    "fresher": false,
-   "postedAt": "2026-09-18T06:53:56.000Z",
+   "postedAt": "2026-09-18T12:23:56.000Z",
    "source": "Remotive"
   },
   {
@@ -1582,7 +1560,7 @@
    "location": "Northern America, LATAM, Europe, APAC",
    "openToIndia": "yes",
    "fresher": false,
-   "postedAt": "2026-09-17T07:52:05.000Z",
+   "postedAt": "2026-09-17T13:22:05.000Z",
    "source": "Remotive"
   },
   {
@@ -1615,7 +1593,29 @@
    "location": "Northern America, LATAM, Europe, APAC",
    "openToIndia": "yes",
    "fresher": false,
-   "postedAt": "2026-09-16T07:05:28.000Z",
+   "postedAt": "2026-09-16T12:35:28.000Z",
+   "source": "Remotive"
+  },
+  {
+   "id": "remotive-1919265",
+   "title": "Senior Independent Software Developer",
+   "company": "A.Team",
+   "url": "https://remotive.com/remote-jobs/software-development/senior-independent-software-developer-1919265",
+   "location": "Americas, Europe, Israel",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-09-16T10:10:59.000Z",
+   "source": "Remotive"
+  },
+  {
+   "id": "remotive-1919266",
+   "title": "Senior Independent AI Engineer / Architect",
+   "company": "A.Team",
+   "url": "https://remotive.com/remote-jobs/software-development/senior-independent-ai-engineer-architect-1919266",
+   "location": "Americas, Europe, Israel",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-09-16T10:10:53.000Z",
    "source": "Remotive"
   },
   {
@@ -1628,28 +1628,6 @@
    "fresher": false,
    "postedAt": "2026-09-16T06:55:47.000Z",
    "source": "Remote OK"
-  },
-  {
-   "id": "remotive-1919265",
-   "title": "Senior Independent Software Developer",
-   "company": "A.Team",
-   "url": "https://remotive.com/remote-jobs/software-development/senior-independent-software-developer-1919265",
-   "location": "Americas, Europe, Israel",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-09-16T04:40:59.000Z",
-   "source": "Remotive"
-  },
-  {
-   "id": "remotive-1919266",
-   "title": "Senior Independent AI Engineer / Architect",
-   "company": "A.Team",
-   "url": "https://remotive.com/remote-jobs/software-development/senior-independent-ai-engineer-architect-1919266",
-   "location": "Americas, Europe, Israel",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-09-16T04:40:53.000Z",
-   "source": "Remotive"
   },
   {
    "id": "remoteok-1137396",
@@ -1681,7 +1659,7 @@
    "location": "USA, Canada, USA timezones",
    "openToIndia": "no",
    "fresher": false,
-   "postedAt": "2026-09-14T15:03:27.000Z",
+   "postedAt": "2026-09-14T20:33:27.000Z",
    "source": "Remotive"
   },
   {
@@ -1714,7 +1692,7 @@
    "location": "Worldwide",
    "openToIndia": "yes",
    "fresher": false,
-   "postedAt": "2026-09-11T14:46:48.000Z",
+   "postedAt": "2026-09-11T20:16:48.000Z",
    "source": "Remotive"
   },
   {
@@ -1736,7 +1714,7 @@
    "location": "France, Japan, Turkey, Vietnam, Mexico, Norway",
    "openToIndia": "no",
    "fresher": false,
-   "postedAt": "2026-09-11T01:19:00.000Z",
+   "postedAt": "2026-09-11T06:49:00.000Z",
    "source": "Remotive"
   },
   {
@@ -1769,7 +1747,7 @@
    "location": "Worldwide",
    "openToIndia": "yes",
    "fresher": false,
-   "postedAt": "2026-09-08T16:17:54.000Z",
+   "postedAt": "2026-09-08T21:47:54.000Z",
    "source": "Remotive"
   },
   {
@@ -1802,7 +1780,7 @@
    "location": "Worldwide",
    "openToIndia": "yes",
    "fresher": false,
-   "postedAt": "2026-09-06T19:40:43.000Z",
+   "postedAt": "2026-09-07T01:10:43.000Z",
    "source": "Remotive"
   },
   {
@@ -1824,7 +1802,18 @@
    "location": "Worldwide",
    "openToIndia": "yes",
    "fresher": false,
-   "postedAt": "2026-09-04T11:23:29.000Z",
+   "postedAt": "2026-09-04T16:53:29.000Z",
+   "source": "Remotive"
+  },
+  {
+   "id": "remotive-1749306",
+   "title": "Freelance Copywriter",
+   "company": "Coalition Technologies ",
+   "url": "https://remotive.com/remote-jobs/writing/freelance-copywriter-1749306",
+   "location": "Worldwide",
+   "openToIndia": "yes",
+   "fresher": false,
+   "postedAt": "2026-09-02T19:59:53.000Z",
    "source": "Remotive"
   },
   {
@@ -1837,17 +1826,6 @@
    "fresher": false,
    "postedAt": "2026-09-02T16:00:07.000Z",
    "source": "Remote OK"
-  },
-  {
-   "id": "remotive-1749306",
-   "title": "Freelance Copywriter",
-   "company": "Coalition Technologies ",
-   "url": "https://remotive.com/remote-jobs/writing/freelance-copywriter-1749306",
-   "location": "Worldwide",
-   "openToIndia": "yes",
-   "fresher": false,
-   "postedAt": "2026-09-02T14:29:53.000Z",
-   "source": "Remotive"
   },
   {
    "id": "remoteok-1137224",
@@ -1868,7 +1846,7 @@
    "location": "LATAM, Europe, USA, Canada, APAC",
    "openToIndia": "yes",
    "fresher": false,
-   "postedAt": "2026-08-27T09:06:09.000Z",
+   "postedAt": "2026-08-27T14:36:09.000Z",
    "source": "Remotive"
   },
   {
@@ -2288,17 +2266,6 @@
    "fresher": false,
    "postedAt": "2026-07-31T19:24:20.000Z",
    "source": "Remote OK"
-  },
-  {
-   "id": "remoteok-1135997",
-   "title": "BMS Service Technician",
-   "company": "Johnson Controls",
-   "url": "https://remoteOK.com/remote-jobs/remote-bms-service-technician-johnson-controls-1135997",
-   "location": "Warana, ",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-07-31T09:02:35.000Z",
-   "source": "Remote OK"
   }
  ],
  "hackathons": [
@@ -2415,6 +2382,22 @@
    "source": "Devpost"
   },
   {
+   "id": "devpost-31024",
+   "title": "Meta VR Start Developer Competition 2026",
+   "organizer": "Meta",
+   "url": "https://start-developer-competition-26.devpost.com/",
+   "location": "Online",
+   "dates": "Sep 24 - Nov 18, 2026",
+   "state": "open",
+   "prize": "$1,000,000",
+   "themes": [
+    "AR/VR",
+    "Machine Learning/AI",
+    "Web"
+   ],
+   "source": "Devpost"
+  },
+  {
    "id": "devpost-30892",
    "title": "Beginner's Paradise - FirstCommit",
    "organizer": "FirstCommit",
@@ -2447,22 +2430,6 @@
    "source": "Devpost"
   },
   {
-   "id": "devpost-31024",
-   "title": "Meta VR Start Developer Competition 2026",
-   "organizer": "Meta",
-   "url": "https://start-developer-competition-26.devpost.com/",
-   "location": "Online",
-   "dates": "Sep 24 - Nov 18, 2026",
-   "state": "open",
-   "prize": "$1,000,000",
-   "themes": [
-    "AR/VR",
-    "Machine Learning/AI",
-    "Web"
-   ],
-   "source": "Devpost"
-  },
-  {
    "id": "devpost-31113",
    "title": "MLAI Hackathon 2026",
    "organizer": "Mạng Lưới AI",
@@ -2474,22 +2441,6 @@
    "themes": [
     "Databases",
     "Machine Learning/AI"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-31018",
-   "title": "LexHack 2026",
-   "organizer": "Lexhack",
-   "url": "https://lexhack-2026.devpost.com/",
-   "location": "Online",
-   "dates": "Sep 11 - 27, 2026",
-   "state": "open",
-   "prize": "$74,248",
-   "themes": [
-    "Beginner Friendly",
-    "Low/No Code",
-    "Social Good"
    ],
    "source": "Devpost"
   },
@@ -2522,21 +2473,6 @@
     "Enterprise",
     "Machine Learning/AI",
     "Productivity"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-31510",
-   "title": "ShellHacks 2026",
-   "organizer": "init",
-   "url": "https://shellhacks-2026.devpost.com/",
-   "location": "Florida International University",
-   "dates": "Sep 25 - 27, 2026",
-   "state": "open",
-   "prize": "$41,750",
-   "themes": [
-    "Beginner Friendly",
-    "Web"
    ],
    "source": "Devpost"
   },
@@ -2637,22 +2573,6 @@
    "source": "Devpost"
   },
   {
-   "id": "devpost-30744",
-   "title": "Evorozen Apex: NextGen AI Buildathon",
-   "organizer": "Evorozen ",
-   "url": "https://evorozen-apex.devpost.com/",
-   "location": "Online",
-   "dates": "Jul 17 - Sep 30, 2026",
-   "state": "open",
-   "prize": "$0",
-   "themes": [
-    "Databases",
-    "Machine Learning/AI",
-    "Web"
-   ],
-   "source": "Devpost"
-  },
-  {
    "id": "devpost-31196",
    "title": "ML Empowerment Build Challenge 3.0 - ($80,000 in prizes!)",
    "organizer": "ML Empowerment Foundation",
@@ -2669,12 +2589,28 @@
    "source": "Devpost"
   },
   {
+   "id": "devpost-30744",
+   "title": "Evorozen Apex: NextGen AI Buildathon",
+   "organizer": "Evorozen ",
+   "url": "https://evorozen-apex.devpost.com/",
+   "location": "Online",
+   "dates": "Jul 17 - Sep 30, 2026",
+   "state": "open",
+   "prize": "$0",
+   "themes": [
+    "Databases",
+    "Machine Learning/AI",
+    "Web"
+   ],
+   "source": "Devpost"
+  },
+  {
    "id": "devpost-31098",
    "title": "Graphiques Innovation Challenge ",
    "organizer": "Hack Club",
    "url": "https://graphiques-challenge.devpost.com/",
    "location": "Online",
-   "dates": "Aug 21 - Sep 27, 2026",
+   "dates": "Aug 21 - Sep 28, 2026",
    "state": "open",
    "prize": "$0",
    "themes": [
@@ -2697,22 +2633,6 @@
     "DevOps",
     "Machine Learning/AI",
     "Robotic Process Automation"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-31191",
-   "title": "hackUMBC 2026",
-   "organizer": "hackUMBC",
-   "url": "https://hackumbc-2026.devpost.com/",
-   "location": "RAC (Retriever Activities Center)",
-   "dates": "Sep 26 - 27, 2026",
-   "state": "open",
-   "prize": "$0",
-   "themes": [
-    "Beginner Friendly",
-    "Education",
-    "Open Ended"
    ],
    "source": "Devpost"
   },
@@ -2765,6 +2685,22 @@
    "source": "Devpost"
   },
   {
+   "id": "devpost-31324",
+   "title": "LovHack Season 3",
+   "organizer": "Lovhack",
+   "url": "https://lovhack-season-3.devpost.com/",
+   "location": "Online",
+   "dates": "Sep 26 - Oct 04, 2026",
+   "state": "open",
+   "prize": "$250",
+   "themes": [
+    "Beginner Friendly",
+    "Machine Learning/AI",
+    "Open Ended"
+   ],
+   "source": "Devpost"
+  },
+  {
    "id": "devpost-30588",
    "title": "EurekaDev 2026",
    "organizer": "Eureka Institute and UnivaDev",
@@ -2777,38 +2713,6 @@
     "Beginner Friendly",
     "Open Ended",
     "Social Good"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-31137",
-   "title": "HackWashU Fall AI Build Challenge",
-   "organizer": "HackWashU",
-   "url": "https://hackwashu-fall-ai-2026.devpost.com/",
-   "location": "Washington University in St. Louis",
-   "dates": "Sep 25 - 27, 2026",
-   "state": "open",
-   "prize": "$0",
-   "themes": [
-    "Beginner Friendly",
-    "Education",
-    "Machine Learning/AI"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-31035",
-   "title": "HACK47: OFFGRID",
-   "organizer": "Hack47",
-   "url": "https://hack47-offgrid.devpost.com/",
-   "location": "Online",
-   "dates": "Sep 15 - Oct 15, 2026",
-   "state": "open",
-   "prize": "$0",
-   "themes": [
-    "Enterprise",
-    "Open Ended",
-    "Robotic Process Automation"
    ],
    "source": "Devpost"
   },
@@ -2829,50 +2733,18 @@
    "source": "Devpost"
   },
   {
-   "id": "devpost-31080",
-   "title": "Badger Build Fest 2026",
-   "organizer": "Tech Exploration Lab",
-   "url": "https://badger-build-fest-2026.devpost.com/",
-   "location": "Morgridge Hall - Hello World",
-   "dates": "Sep 26 - 27, 2026",
-   "state": "open",
-   "prize": "$11,750",
-   "themes": [
-    "Beginner Friendly",
-    "Machine Learning/AI",
-    "Health"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-31324",
-   "title": "LovHack Season 3",
-   "organizer": "Lovhack",
-   "url": "https://lovhack-season-3.devpost.com/",
+   "id": "devpost-31035",
+   "title": "HACK47: OFFGRID",
+   "organizer": "Hack47",
+   "url": "https://hack47-offgrid.devpost.com/",
    "location": "Online",
-   "dates": "Sep 26 - Oct 04, 2026",
+   "dates": "Sep 15 - Oct 15, 2026",
    "state": "open",
-   "prize": "$250",
+   "prize": "$0",
    "themes": [
-    "Beginner Friendly",
-    "Machine Learning/AI",
-    "Open Ended"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-31155",
-   "title": "TigerHacks 2026",
-   "organizer": "Mizzou Computing Association",
-   "url": "https://tigerhacks-2026.devpost.com/",
-   "location": "Online",
-   "dates": "Sep 25 - 27, 2026",
-   "state": "open",
-   "prize": "$5,200",
-   "themes": [
-    "Health",
+    "Enterprise",
     "Open Ended",
-    "Social Good"
+    "Robotic Process Automation"
    ],
    "source": "Devpost"
   },
@@ -2893,54 +2765,6 @@
    "source": "Devpost"
   },
   {
-   "id": "devpost-30717",
-   "title": "&HACKS XII",
-   "organizer": "W&M ACM",
-   "url": "https://hacks-xii.devpost.com/",
-   "location": "William and Mary - ISC4",
-   "dates": "Sep 26 - 27, 2026",
-   "state": "open",
-   "prize": "$3,985",
-   "themes": [
-    "Beginner Friendly",
-    "Open Ended",
-    "Machine Learning/AI"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-30298",
-   "title": "Lake Oswego Hacks",
-   "organizer": "Lake Monsters Robotics (frc2635)",
-   "url": "https://lake-oswego-hacks.devpost.com/",
-   "location": "Online",
-   "dates": "Sep 26 - 27, 2026",
-   "state": "open",
-   "prize": "$260",
-   "themes": [
-    "Beginner Friendly",
-    "Low/No Code",
-    "Social Good"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-31486",
-   "title": "Carolina Data Challenge 2026",
-   "organizer": "Carolina Analytics and Data Science",
-   "url": "https://carolina-data-challenge-2026.devpost.com/",
-   "location": "UNC Chapel Hill - Sitterson Hall",
-   "dates": "Sep 26 - 27, 2026",
-   "state": "open",
-   "prize": "$0",
-   "themes": [
-    "Beginner Friendly",
-    "Machine Learning/AI",
-    "Social Good"
-   ],
-   "source": "Devpost"
-  },
-  {
    "id": "devpost-31484",
    "title": "2026-2027 Fall ESE Senior Design",
    "organizer": "university of pennsylvania",
@@ -2953,68 +2777,6 @@
     "AR/VR",
     "Fintech",
     "Quantum"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-30761",
-   "title": "Hack Away Hunger: Food Insecurity Challenge",
-   "organizer": "dsmhack",
-   "url": "https://hack-away-hunger.devpost.com/",
-   "location": "Corteva's Pioneer Shull Building",
-   "dates": "Jul 18 - Oct 08, 2026",
-   "state": "open",
-   "prize": "$5,000",
-   "themes": [
-    "Open Ended",
-    "Social Good"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-30993",
-   "title": "Houston Hackathon 2026",
-   "organizer": "Impact Hub Houston",
-   "url": "https://houstonhackathon2026.devpost.com/",
-   "location": "Impact Hub Houston @ Ion District",
-   "dates": "Sep 25 - 28, 2026",
-   "state": "open",
-   "prize": "$0",
-   "themes": [
-    "Beginner Friendly",
-    "Low/No Code",
-    "Social Good"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-30539",
-   "title": "HTCJ × PROOF Aviation Futures Challenge",
-   "organizer": "hacktheconcretejungle ",
-   "url": "https://htcj-aviation-futures.devpost.com/",
-   "location": "Boston Venture Week",
-   "dates": "Jun 25 - Oct 27, 2026",
-   "state": "open",
-   "prize": "$0",
-   "themes": [
-    "Enterprise",
-    "Machine Learning/AI",
-    "Social Good"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-30998",
-   "title": "HelloHacks",
-   "organizer": "UBC BizTech",
-   "url": "https://hellohacks-2026.devpost.com/",
-   "location": "University of British Columbia (UBC)",
-   "dates": "Sep 26 - 27, 2026",
-   "state": "open",
-   "prize": "$CAD 450",
-   "themes": [
-    "Beginner Friendly",
-    "Open Ended"
    ],
    "source": "Devpost"
   },
@@ -3051,34 +2813,33 @@
    "source": "Devpost"
   },
   {
-   "id": "devpost-31428",
-   "title": "JacHacks a2Tech",
-   "organizer": "Jaseci Labs",
-   "url": "https://jachacks-a2tech.devpost.com/",
-   "location": "UMich - Leinweber CS Building",
-   "dates": "Sep 26 - 27, 2026",
+   "id": "devpost-30761",
+   "title": "Hack Away Hunger: Food Insecurity Challenge",
+   "organizer": "dsmhack",
+   "url": "https://hack-away-hunger.devpost.com/",
+   "location": "Corteva's Pioneer Shull Building",
+   "dates": "Jul 18 - Oct 08, 2026",
    "state": "open",
-   "prize": "$3,800",
+   "prize": "$5,000",
    "themes": [
-    "DevOps",
-    "Machine Learning/AI",
-    "Open Ended"
+    "Open Ended",
+    "Social Good"
    ],
    "source": "Devpost"
   },
   {
-   "id": "devpost-30421",
-   "title": "SC Quantathon v3",
-   "organizer": "Clemson Quantum",
-   "url": "https://sc-quantathon-v3.devpost.com/",
-   "location": "Watt Family Innovation Center",
-   "dates": "Sep 25 - 27, 2026",
+   "id": "devpost-30539",
+   "title": "HTCJ × PROOF Aviation Futures Challenge",
+   "organizer": "hacktheconcretejungle ",
+   "url": "https://htcj-aviation-futures.devpost.com/",
+   "location": "Boston Venture Week",
+   "dates": "Jun 25 - Oct 27, 2026",
    "state": "open",
-   "prize": "$250",
+   "prize": "$0",
    "themes": [
+    "Enterprise",
     "Machine Learning/AI",
-    "Quantum",
-    "Beginner Friendly"
+    "Social Good"
    ],
    "source": "Devpost"
   },
@@ -3104,45 +2865,13 @@
    "organizer": "Lovely Professional University",
    "url": "https://bic.devpost.com/",
    "location": "Lovely Professional University",
-   "dates": "Sep 18 - 28, 2026",
+   "dates": "Sep 18 - 29, 2026",
    "state": "open",
    "prize": "$10,600",
    "themes": [
     "Beginner Friendly",
     "Communication",
     "Education"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-31443",
-   "title": "FormulaTech Hacks",
-   "organizer": "formulatech",
-   "url": "https://formulatech-hacks.devpost.com/",
-   "location": "University of Waterloo PSE Building",
-   "dates": "Sep 26 - 27, 2026",
-   "state": "open",
-   "prize": "$CAD 1,200",
-   "themes": [
-    "Beginner Friendly",
-    "Design",
-    "Open Ended"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-30236",
-   "title": "Hack Atlantic",
-   "organizer": "Hack Atlantic",
-   "url": "https://hack-atlantic-2026.devpost.com/",
-   "location": "Fredericton, New Brunswick",
-   "dates": "Sep 27, 2026",
-   "state": "open",
-   "prize": "$CAD 5,000",
-   "themes": [
-    "Beginner Friendly",
-    "DevOps",
-    "Fintech"
    ],
    "source": "Devpost"
   },
@@ -3163,22 +2892,6 @@
    "source": "Devpost"
   },
   {
-   "id": "devpost-31493",
-   "title": "DecentraHack 2.0",
-   "organizer": "pimpri chinchwad college of engineering",
-   "url": "https://decentrahack-2-0.devpost.com/",
-   "location": "Online",
-   "dates": "Sep 24 - 30, 2026",
-   "state": "open",
-   "prize": "₹ 15,000",
-   "themes": [
-    "Blockchain",
-    "Machine Learning/AI",
-    "Open Ended"
-   ],
-   "source": "Devpost"
-  },
-  {
    "id": "devpost-31477",
    "title": "INDUX 5.0-2026",
    "organizer": "vikrant university, gwalior",
@@ -3195,18 +2908,18 @@
    "source": "Devpost"
   },
   {
-   "id": "devpost-31455",
-   "title": "Hack Atlantic",
-   "organizer": "Hack Atlantic",
-   "url": "https://hack-atlantic1.devpost.com/",
+   "id": "devpost-31493",
+   "title": "DecentraHack 2.0",
+   "organizer": "pimpri chinchwad college of engineering",
+   "url": "https://decentrahack-2-0.devpost.com/",
    "location": "Online",
-   "dates": "Sep 26 - 27, 2026",
+   "dates": "Sep 24 - 30, 2026",
    "state": "open",
-   "prize": "$CAD 1",
+   "prize": "₹ 15,000",
    "themes": [
-    "Design",
-    "Education",
-    "Machine Learning/AI"
+    "Blockchain",
+    "Machine Learning/AI",
+    "Open Ended"
    ],
    "source": "Devpost"
   },
@@ -3243,22 +2956,6 @@
    "source": "Devpost"
   },
   {
-   "id": "devpost-31072",
-   "title": "Test Flight: Glasswing Ventures AI Hackathon",
-   "organizer": "Glasswing Ventures",
-   "url": "https://test-flight-glasswing.devpost.com/",
-   "location": "Glasswing Ventures",
-   "dates": "Sep 26 - 27, 2026",
-   "state": "open",
-   "prize": "$0",
-   "themes": [
-    "Enterprise",
-    "Machine Learning/AI",
-    "DevOps"
-   ],
-   "source": "Devpost"
-  },
-  {
    "id": "devpost-31124",
    "title": "SVYCA Youth for Earth (Y4E) Hackathon",
    "organizer": "Silicon Valley Youth Climate Action",
@@ -3280,7 +2977,7 @@
    "location": "Online",
    "dates": "Oct 03 - 10, 2026",
    "state": "upcoming",
-   "prize": "$453,295",
+   "prize": "$469,531",
    "themes": [
     "Beginner Friendly",
     "Lifehacks",
@@ -3316,6 +3013,319 @@
    "themes": [
     "Blockchain",
     "Machine Learning/AI",
+    "Social Good"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-31481",
+   "title": "Multimodal AI Hackathon 2026",
+   "organizer": "Kamand Prompt, IIT Mandi",
+   "url": "https://multimodal-ai-hackathon-2026-7.devpost.com/",
+   "location": "Online",
+   "dates": "Sep 29 - Oct 14, 2026",
+   "state": "upcoming",
+   "prize": "₹ 100,000",
+   "themes": [
+    "Machine Learning/AI"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-31400",
+   "title": "YouCam API Skin AI & eCommerce VTO Hackathon",
+   "organizer": "Perfect Corp",
+   "url": "https://youcam-api-skin-ai-ecommerce.devpost.com/",
+   "location": "Online",
+   "dates": "Sep 29 - Nov 02, 2026",
+   "state": "upcoming",
+   "prize": "$6,000",
+   "themes": [
+    "AR/VR",
+    "E-commerce/Retail",
+    "Machine Learning/AI"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-31110",
+   "title": "hackPHS 2026",
+   "organizer": "Princeton High School",
+   "url": "https://hackphs2026.devpost.com/",
+   "location": "Princeton High School",
+   "dates": "Oct 10 - 11, 2026",
+   "state": "upcoming",
+   "prize": "$1,000",
+   "themes": [
+    "Beginner Friendly",
+    "Open Ended",
+    "Web"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-30463",
+   "title": "DeveloperWeek 2027 Hackathon",
+   "organizer": "DevNetwork",
+   "url": "https://developerweek-2027-hackathon.devpost.com/",
+   "location": "Santa Clara Convention Center + Online",
+   "dates": "Jan 25 - Feb 11, 2027",
+   "state": "upcoming",
+   "prize": "$5,000",
+   "themes": [
+    "Enterprise",
+    "IoT",
+    "Machine Learning/AI"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-30819",
+   "title": "United Hacks V8",
+   "organizer": "Hack United",
+   "url": "https://unitedhacksv8.devpost.com/",
+   "location": "Online",
+   "dates": "Jan 08 - 10, 2027",
+   "state": "upcoming",
+   "prize": "$700",
+   "themes": [
+    "Beginner Friendly",
+    "Design",
+    "Education"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-30789",
+   "title": "Arbiter Hacks V1",
+   "organizer": "Arbiter ",
+   "url": "https://arbiter-hacks-v1.devpost.com/",
+   "location": "Online",
+   "dates": "Oct 20 - Dec 21, 2026",
+   "state": "upcoming",
+   "prize": "$3,800",
+   "themes": [
+    "Beginner Friendly",
+    "Machine Learning/AI",
+    "Open Ended"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-31514",
+   "title": "StormHacks 2026",
+   "organizer": "SFU Surge",
+   "url": "https://stormhacks2026.devpost.com/",
+   "location": "Simon Fraser University",
+   "dates": "Oct 03 - 04, 2026",
+   "state": "upcoming",
+   "prize": "$CAD 0",
+   "themes": [
+    "Beginner Friendly"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-30491",
+   "title": "Banana Hacks",
+   "organizer": "n/a",
+   "url": "https://banana-hacks-1111.devpost.com/",
+   "location": "Online",
+   "dates": "Oct 09 - 12, 2026",
+   "state": "upcoming",
+   "prize": "$500",
+   "themes": [
+    "Beginner Friendly",
+    "Machine Learning/AI",
+    "Web"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-30340",
+   "title": "HackTitan",
+   "organizer": "IWU",
+   "url": "https://hacktitan.devpost.com/",
+   "location": "Online",
+   "dates": "Feb 02 - 04, 2027",
+   "state": "upcoming",
+   "prize": "$10,000",
+   "themes": [
+    "Beginner Friendly",
+    "Databases",
+    "DevOps"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-28259",
+   "title": "United Hackathons V1",
+   "organizer": "United Hackathons",
+   "url": "https://devonomicsv1.devpost.com/",
+   "location": "Online",
+   "dates": "Oct 06 - 12, 2026",
+   "state": "upcoming",
+   "prize": "$0",
+   "themes": [
+    "Machine Learning/AI",
+    "Open Ended",
+    "Social Good"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-30731",
+   "title": "LarpHacks",
+   "organizer": "larphacks",
+   "url": "https://larphacks.devpost.com/",
+   "location": "Toronto",
+   "dates": "Oct 24 - 25, 2026",
+   "state": "upcoming",
+   "prize": "$21,394",
+   "themes": [
+    "Beginner Friendly",
+    "Machine Learning/AI",
+    "Web"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-27097",
+   "title": "evensonarisnord",
+   "organizer": "HoustonHacks2026",
+   "url": "https://evensonarisnord.devpost.com/",
+   "location": "Online",
+   "dates": "Dec 31, 2026",
+   "state": "upcoming",
+   "prize": "$150",
+   "themes": [
+    "Communication",
+    "Databases"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-31239",
+   "title": "ImpactHack 2026",
+   "organizer": "GIS Engineering Club",
+   "url": "https://impacthack26.devpost.com/",
+   "location": "Online",
+   "dates": "Oct 01 - 08, 2026",
+   "state": "upcoming",
+   "prize": "$0",
+   "themes": [
+    "Beginner Friendly",
+    "Education",
+    "Social Good"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-30872",
+   "title": "Zoftware Hireathon",
+   "organizer": "Enterprise Software Solutions",
+   "url": "https://zoftware-hireathon.devpost.com/",
+   "location": "Delhi",
+   "dates": "Oct 03, 2026",
+   "state": "upcoming",
+   "prize": "$500",
+   "themes": [
+    "Enterprise",
+    "Machine Learning/AI"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-31139",
+   "title": "Neighborhood Hacks",
+   "organizer": "Student Organization",
+   "url": "https://neighborhood-hacks-2026.devpost.com/",
+   "location": "Online",
+   "dates": "Oct 16 - 24, 2026",
+   "state": "upcoming",
+   "prize": "$33,874",
+   "themes": [
+    "Beginner Friendly",
+    "Social Good"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-28629",
+   "title": "Tech to Treasure Hackathon",
+   "organizer": "bin to better",
+   "url": "https://techtotreasure.devpost.com/",
+   "location": "Tully Community Branch Library",
+   "dates": "Mar 03 - 10, 2027",
+   "state": "upcoming",
+   "prize": "$450",
+   "themes": [
+    "Beginner Friendly",
+    "Education",
+    "Social Good"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-29135",
+   "title": "Brewing Codes 4.0",
+   "organizer": "HARD MODE",
+   "url": "https://brewing-codes-4-0.devpost.com/",
+   "location": "Online",
+   "dates": "Mar 12 - 27, 2028",
+   "state": "upcoming",
+   "prize": "₹ 100,000",
+   "themes": [
+    "Low/No Code",
+    "Machine Learning/AI",
+    "Web"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-30516",
+   "title": "Since AI 2026",
+   "organizer": "Since AI ry",
+   "url": "https://sinceai2026.devpost.com/",
+   "location": "Kupittaa Campus, Turku",
+   "dates": "Nov 06 - 08, 2026",
+   "state": "upcoming",
+   "prize": "€50,000",
+   "themes": [
+    "Machine Learning/AI",
+    "Open Ended",
+    "Enterprise"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-30455",
+   "title": "Cosmo Hacks",
+   "organizer": "Cosmo Hacks",
+   "url": "https://cosmohacks.devpost.com/",
+   "location": "Online",
+   "dates": "Dec 18 - 21, 2026",
+   "state": "upcoming",
+   "prize": "$132,596",
+   "themes": [
+    "Beginner Friendly",
+    "Open Ended",
+    "Education"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-30425",
+   "title": "Stupid Ideas Hackathon (Ottawa F26)",
+   "organizer": "stupid ideas hackathon",
+   "url": "https://stupideas-ottawa-f26.devpost.com/",
+   "location": "Ottawa, Canada",
+   "dates": "Nov 07, 2026",
+   "state": "upcoming",
+   "prize": "$CAD 917",
+   "themes": [
+    "Beginner Friendly",
+    "Open Ended",
     "Social Good"
    ],
    "source": "Devpost"
