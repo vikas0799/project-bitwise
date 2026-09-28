@@ -2,6 +2,8 @@
 import { useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import PageHeader from '../components/PageHeader';
+import SEO from '../components/SEO';
 
 const Legal = () => {
   const { pageType } = useParams<{ pageType: string }>();
@@ -9,23 +11,20 @@ const Legal = () => {
   const isPrivacyPolicy = pageType === 'privacy';
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-white">
+      <SEO title={`${isPrivacyPolicy ? 'Privacy Policy' : 'Terms & Conditions'} | Bitwise School`} />
       <Navbar />
 
       <main className="flex-grow">
-        {/* Header */}
-        <section className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-3xl font-extrabold sm:text-4xl">
-              {isPrivacyPolicy ? 'Privacy Policy' : 'Terms & Conditions'}
-            </h1>
-            <p className="mt-4 text-xl max-w-2xl mx-auto">
-              {isPrivacyPolicy
-                ? 'How we collect, use, and protect your personal information'
-                : 'Guidelines and rules for using Bitwise School services'}
-            </p>
-          </div>
-        </section>
+        <PageHeader
+          eyebrow="Legal"
+          title={isPrivacyPolicy ? 'Privacy Policy' : 'Terms & Conditions'}
+          subtitle={
+            isPrivacyPolicy
+              ? 'How we collect, use and protect your personal information'
+              : 'Guidelines and rules for using Bitwise School services'
+          }
+        />
 
         {/* Content */}
         <section className="py-12 bg-white">

@@ -1,5 +1,5 @@
-
 import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {
 	darkMode: ["class"],
@@ -63,21 +63,23 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				wrlds: {
-					teal: '#9F9EA1',
-					dark: '#222222',
-					light: '#F6F6F7',
-					accent: '#C8C8C9',
-					muted: '#F1F1F1'
+				// Bitwise brand blue; 600 is the logo colour (#0052CC).
+				brand: {
+					50: '#EEF4FF',
+					100: '#DCE8FF',
+					200: '#B9D1FF',
+					300: '#8AB2FF',
+					400: '#4D86F5',
+					500: '#1F66E5',
+					600: '#0052CC',
+					700: '#0043A8',
+					800: '#003584',
+					900: '#0A2A66'
 				},
-				// Atlassian color scheme
-				atlassian: {
-					blue: '#0052CC',
-					'blue-hover': '#0747A6',
-					black: '#172B4D',
-					'light-gray': '#F4F5F7',
-					'medium-gray': '#6B778C',
-					white: '#FFFFFF',
+				// Headings and dark sections.
+				ink: {
+					DEFAULT: '#0A1633',
+					soft: '#1E2A47'
 				}
 			},
 			borderRadius: {
@@ -86,7 +88,8 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
-				'space': ['Space Grotesk', 'sans-serif'],
+				sans: ['"Plus Jakarta Sans"', ...defaultTheme.fontFamily.sans],
+				mono: ['"JetBrains Mono"', ...defaultTheme.fontFamily.mono],
 			},
 			keyframes: {
 				'accordion-down': {
@@ -97,45 +100,26 @@ export default {
 					from: { height: 'var(--radix-accordion-content-height)' },
 					to: { height: '0' }
 				},
-				'slide-in': {
-					'0%': { transform: 'translateX(-20px)', opacity: '0' },
-					'100%': { transform: 'translateX(0)', opacity: '1' }
+				'marquee': {
+					from: { transform: 'translateX(0)' },
+					to: { transform: 'translateX(-50%)' }
 				},
-				'float': {
-					'0%, 100%': { transform: 'translateY(0)' },
-					'50%': { transform: 'translateY(-10px)' }
+				'blob': {
+					'0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+					'33%': { transform: 'translate(40px, -30px) scale(1.08)' },
+					'66%': { transform: 'translate(-30px, 25px) scale(0.95)' }
 				},
-				'pulse-slow': {
+				'caret': {
 					'0%, 100%': { opacity: '1' },
-					'50%': { opacity: '0.8' }
-				},
-				'scale-in-out': {
-					'0%, 100%': { transform: 'scale(1)' },
-					'50%': { transform: 'scale(1.05)' }
-				},
-				'rotate-slow': {
-					'0%': { transform: 'rotate(0deg)' },
-					'100%': { transform: 'rotate(360deg)' }
-				},
-				'bounce-subtle': {
-					'0%, 100%': { transform: 'translateY(0)' },
-					'50%': { transform: 'translateY(-4px)' }
-				},
-				'shimmer': {
-					'0%': { backgroundPosition: '-200% 0' },
-					'100%': { backgroundPosition: '200% 0' }
+					'50%': { opacity: '0' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'slide-in': 'slide-in 0.4s ease-out',
-				'float': 'float 6s ease-in-out infinite',
-				'pulse-slow': 'pulse-slow 4s ease-in-out infinite',
-				'scale-in-out': 'scale-in-out 3s ease-in-out infinite',
-				'rotate-slow': 'rotate-slow 20s linear infinite',
-				'bounce-subtle': 'bounce-subtle 2s ease-in-out infinite',
-				'shimmer': 'shimmer 3s linear infinite'
+				'marquee': 'marquee 45s linear infinite',
+				'blob': 'blob 20s ease-in-out infinite',
+				'caret': 'caret 1s step-end infinite'
 			}
 		}
 	},

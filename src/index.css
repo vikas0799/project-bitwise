@@ -382,116 +382,190 @@
   }
 }
 
-/* Code-inspired text effect */
-.code-text {
-  font-family: 'Courier New', monospace;
-  position: relative;
-  display: inline-block;
-}
-
-.code-text::before {
-  content: "<";
-  color: #0052CC;
-  margin-right: 0.25rem;
-}
-
-.code-text::after {
-  content: "/>";
-  color: #0052CC;
-  margin-left: 0.25rem;
-}
-
-/* Gradient animation for hero sections */
-.gradient-bg {
-  background: linear-gradient(120deg, #ffffff, #f4f5f7, #e6effc);
-  background-size: 200% 200%;
-  animation: gradientShift 15s ease infinite;
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
-  50% {
-    background-position: 100% 50%;
+  body {
+    @apply font-sans antialiased;
+    text-rendering: optimizeLegibility;
   }
-  100% {
-    background-position: 0% 50%;
+  ::selection {
+    background: #dce8ff;
+    color: #0a1633;
+  }
+  :focus-visible {
+    outline: 2px solid #0052cc;
+    outline-offset: 2px;
   }
 }
 
-/* Bloom effect for hover states */
+@layer utilities {
+  /* Faint square grid used behind hero and page headers */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(10, 22, 51, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(10, 22, 51, 0.06) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  .bg-grid-dark {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  .mask-radial {
+    -webkit-mask-image: radial-gradient(ellipse at 50% 30%, #000 30%, transparent 75%);
+    mask-image: radial-gradient(ellipse at 50% 30%, #000 30%, transparent 75%);
+  }
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  }
+  .text-gradient {
+    background-image: linear-gradient(90deg, #0052cc 0%, #4f46e5 55%, #0891b2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-light {
+    background-image: linear-gradient(90deg, #8ab2ff 0%, #a5b4fc 50%, #67e8f9 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  /* Clips decorative blobs without making the box a scroll container, so focus
+     or scrollIntoView can never shift its content. Older browsers get hidden. */
+  .overflow-clip-safe {
+    overflow: hidden;
+    overflow: clip;
+  }
+  /* Card that lights up under the cursor; set --x/--y from JS */
+  .spotlight {
+    background-image: radial-gradient(
+      420px circle at var(--x, 50%) var(--y, -20%),
+      rgba(0, 82, 204, 0.08),
+      transparent 60%
+    );
+  }
+}
+
+/* Rendered Markdown (notes and blog posts) */
+@layer components {
+  .doc {
+    @apply text-[1.0625rem] leading-8 text-slate-700;
+  }
+  .doc > :first-child {
+    @apply mt-0;
+  }
+  .doc h2 {
+    @apply relative mb-4 mt-14 scroll-mt-24 text-2xl font-extrabold tracking-tight text-ink sm:text-[1.75rem];
+  }
+  .doc h3 {
+    @apply relative mb-3 mt-10 scroll-mt-24 text-xl font-bold tracking-tight text-ink;
+  }
+  .doc h4 {
+    @apply relative mb-2 mt-8 scroll-mt-24 text-lg font-semibold text-ink;
+  }
+  .doc .heading-anchor {
+    @apply absolute -left-6 top-0 hidden pr-2 font-normal text-slate-300 no-underline hover:text-brand-500 lg:inline;
+    opacity: 0;
+  }
+  .doc h2:hover .heading-anchor,
+  .doc h3:hover .heading-anchor,
+  .doc h4:hover .heading-anchor {
+    opacity: 1;
+  }
+  .doc p {
+    @apply my-4;
+  }
+  .doc a:not(.heading-anchor) {
+    @apply font-medium text-brand-600 underline decoration-brand-200 underline-offset-4 transition-colors hover:decoration-brand-500;
+  }
+  .doc strong {
+    @apply font-semibold text-ink;
+  }
+  .doc ul {
+    @apply my-4 list-disc space-y-1.5 pl-6 marker:text-brand-400;
+  }
+  .doc ol {
+    @apply my-4 list-decimal space-y-1.5 pl-6 marker:font-semibold marker:text-slate-400;
+  }
+  .doc li > ul,
+  .doc li > ol {
+    @apply my-2;
+  }
+  .doc blockquote {
+    @apply my-6 rounded-r-2xl border-l-4 border-brand-400 bg-brand-50/70 px-5 py-1 text-slate-700;
+  }
+  .doc hr {
+    @apply my-12 border-slate-200;
+  }
+  .doc :not(pre) > code {
+    @apply rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-[0.85em] font-medium text-rose-600;
+  }
+  .doc .code-block {
+    @apply my-6 overflow-hidden rounded-2xl border border-slate-800 bg-[#0d1117] shadow-sm;
+  }
+  .doc .code-bar {
+    @apply flex items-center justify-between border-b border-white/10 px-4 py-2 font-mono text-xs text-slate-400;
+  }
+  .doc .copy-btn {
+    @apply rounded-md px-2 py-1 font-sans text-xs font-medium text-slate-300 transition-colors hover:bg-white/10 hover:text-white;
+  }
+  .doc pre {
+    @apply overflow-x-auto p-4 text-[0.85rem] leading-6;
+  }
+  .doc pre code.hljs {
+    @apply bg-transparent p-0 font-mono;
+  }
+  .doc .table-wrap {
+    @apply my-6 overflow-x-auto rounded-2xl border border-slate-200;
+  }
+  .doc table {
+    @apply w-full border-collapse text-left text-[0.95rem] leading-6;
+  }
+  .doc th {
+    @apply whitespace-nowrap bg-slate-50 px-4 py-3 font-semibold text-ink;
+  }
+  .doc td {
+    @apply border-t border-slate-100 px-4 py-3 align-top;
+  }
+}
+
+/* Kept for older pages that still use it */
 .bloom-hover {
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .bloom-hover:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -12px rgba(10, 22, 51, 0.18);
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
-
 ::-webkit-scrollbar-track {
-  background: hsl(var(--secondary));
+  background: #f1f4f9;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--bloom-medium));
-  border-radius: 4px;
+  background: #c3cddd;
+  border-radius: 8px;
+  border: 2px solid #f1f4f9;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--bloom-dark));
+  background: #97a6bd;
 }
 
-/* Logo animations */
-@keyframes logoFloat {
-  0%, 100% {
-    transform: translateY(0);
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
-  50% {
-    transform: translateY(-5px);
+  .animate-marquee,
+  .animate-blob,
+  .animate-caret,
+  .animate-ping {
+    animation: none !important;
   }
-}
-
-@keyframes logoGlow {
-  0%, 100% {
-    filter: drop-shadow(0 0 3px rgba(0, 82, 204, 0.3));
-  }
-  50% {
-    filter: drop-shadow(0 0 8px rgba(0, 82, 204, 0.6));
-  }
-}
-
-.logo-animate {
-  animation: logoFloat 3s ease-in-out infinite, logoGlow 4s ease-in-out infinite;
-}
-
-.logo-container {
-  position: relative;
-  display: inline-block;
-}
-
-.logo-text {
-  position: relative;
-  display: inline-block;
-}
-
-.logo-text:after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #0052CC;
-  transition: width 0.3s ease;
-}
-
-.logo-container:hover .logo-text:after {
-  width: 100%;
 }

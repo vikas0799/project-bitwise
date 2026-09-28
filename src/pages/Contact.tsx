@@ -1,41 +1,43 @@
-
-import { useState } from 'react';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { useState, type ChangeEvent, type FormEvent } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, CheckCircle2, Clock, Mail, MapPin, MessageCircle, Send } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { CONTACT_EMAIL, WHATSAPP_NUMBER, WHATSAPP_DISPLAY, mailtoLink } from '../config/site';
+import SEO from '../components/SEO';
+import PageHeader from '../components/PageHeader';
+import { Reveal } from '../components/motion';
+import { courses } from '../data/courses';
+import { CONTACT_EMAIL, WHATSAPP_DISPLAY, WHATSAPP_NUMBER, mailtoLink, whatsappLink } from '../config/site';
+
+const EMPTY_FORM = {
+  name: '',
+  email: '',
+  phone: '',
+  course: '',
+  subject: '',
+  message: '',
+  callback: false,
+};
+
+const inputClass =
+  'block w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-ink shadow-sm placeholder:text-slate-400 focus:border-brand-300 focus:outline-none focus:ring-4 focus:ring-brand-100';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
-    course: 'Select a course',
-    callback: false
-  });
-  
+  const [formData, setFormData] = useState(EMPTY_FORM);
   const [formSubmitted, setFormSubmitted] = useState(false);
-  
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = event.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
-  
-  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, checked } = e.target;
-    setFormData(prev => ({ ...prev, [name]: checked }));
-  };
-  
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const course = formData.course === 'Select a course' ? 'Not selected' : formData.course;
+
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
     window.location.href = mailtoLink(formData.subject || 'Enquiry from bitwiseschool.com', [
       `Name: ${formData.name}`,
       `Email: ${formData.email}`,
       `Phone: ${formData.phone}`,
-      `Course: ${course}`,
+      `Course: ${formData.course || 'Not selected'}`,
       `Callback requested: ${formData.callback ? 'Yes' : 'No'}`,
       '',
       formData.message,
@@ -43,311 +45,162 @@ const Contact = () => {
     setFormSubmitted(true);
   };
 
+  const CHANNELS = [
+    {
+      icon: MessageCircle,
+      title: 'WhatsApp',
+      value: WHATSAPP_DISPLAY,
+      href: `https://wa.me/${WHATSAPP_NUMBER}`,
+      note: 'Fastest way to reach us',
+    },
+    { icon: Mail, title: 'Email', value: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}`, note: 'We reply within a day' },
+    { icon: MapPin, title: 'Address', value: '66 A Block, New Ashok Nagar, Delhi, India' },
+    { icon: Clock, title: 'Hours', value: 'Mon–Fri 5 PM–11 PM · Sat–Sun 9 AM–11 PM' },
+  ];
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex min-h-screen flex-col bg-white">
+      <SEO title="Contact | Bitwise School" description="Talk to Bitwise School about courses, batches, fees or a free demo class." />
       <Navbar />
-      
+
       <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-[#f4f5f7] to-white text-gray-900 py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-3xl font-extrabold sm:text-4xl text-[#0052CC]">
-              Contact Us
-            </h1>
-            <p className="mt-4 text-xl max-w-2xl mx-auto text-gray-600">
-              Get in touch with our team for inquiries, support, or to schedule a free demo
-            </p>
-          </div>
-        </section>
-        
-        {/* Contact Info & Form */}
-        <section className="py-12 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Contact Form */}
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                  Send Us a Message
-                </h2>
-                
-                {formSubmitted && (
-                  <div className="bg-green-50 border border-green-200 text-green-800 rounded-lg p-6 mb-6">
-                    <h3 className="text-lg font-semibold mb-2">Your email app should now be open</h3>
-                    <p>
-                      Press Send there to reach us. If nothing opened, email{' '}
-                      <a href={`mailto:${CONTACT_EMAIL}`} className="underline">{CONTACT_EMAIL}</a> or message us on{' '}
-                      <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="underline">WhatsApp ({WHATSAPP_DISPLAY})</a>.
-                    </p>
-                  </div>
-                )}
-                {(
-                  <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg p-6">
-                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                      <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                          Full Name *
-                        </label>
-                        <input
-                          type="text"
-                          name="name"
-                          id="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          required
-                          className="block w-full rounded-md border-gray-300 shadow-sm focus:border-[#0052CC] focus:ring-[#0052CC]"
-                        />
-                      </div>
-                      
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                          Email Address *
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          id="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          required
-                          className="block w-full rounded-md border-gray-300 shadow-sm focus:border-[#0052CC] focus:ring-[#0052CC]"
-                        />
-                      </div>
-                      
-                      <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                          Phone Number *
-                        </label>
-                        <input
-                          type="tel"
-                          name="phone"
-                          id="phone"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          required
-                          className="block w-full rounded-md border-gray-300 shadow-sm focus:border-[#0052CC] focus:ring-[#0052CC]"
-                        />
-                      </div>
-                      
-                      <div>
-                        <label htmlFor="course" className="block text-sm font-medium text-gray-700 mb-1">
-                          Interested Course
-                        </label>
-                        <select
-                          name="course"
-                          id="course"
-                          value={formData.course}
-                          onChange={handleChange}
-                          className="block w-full rounded-md border-gray-300 shadow-sm focus:border-[#0052CC] focus:ring-[#0052CC]"
-                        >
-                          <option value="Select a course">Select a course</option>
-                          <option value="C++ Programming">C++ Programming</option>
-                          <option value="Java Full Course">Java Full Course</option>
-                          <option value="Data Structures & Algorithms">Data Structures & Algorithms</option>
-                          <option value="Full-Stack Web Development">Full-Stack Web Development</option>
-                          <option value="Python for Beginners">Python for Beginners</option>
-                          <option value="Other">Other</option>
-                        </select>
-                      </div>
-                    </div>
-                    
-                    <div className="mt-6">
-                      <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                        Subject *
-                      </label>
-                      <input
-                        type="text"
-                        name="subject"
-                        id="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        required
-                        className="block w-full rounded-md border-gray-300 shadow-sm focus:border-[#0052CC] focus:ring-[#0052CC]"
-                      />
-                    </div>
-                    
-                    <div className="mt-6">
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                        Message *
-                      </label>
-                      <textarea
-                        name="message"
-                        id="message"
-                        rows={4}
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                        className="block w-full rounded-md border-gray-300 shadow-sm focus:border-[#0052CC] focus:ring-[#0052CC]"
-                      />
-                    </div>
-                    
-                    <div className="mt-6">
-                      <div className="flex items-start">
-                        <input
-                          id="callback"
-                          name="callback"
-                          type="checkbox"
-                          checked={formData.callback}
-                          onChange={handleCheckboxChange}
-                          className="h-4 w-4 rounded border-gray-300 text-[#0052CC] focus:ring-[#0052CC] mt-1"
-                        />
-                        <label htmlFor="callback" className="ml-2 block text-sm text-gray-700">
-                          Request a callback from our team
-                        </label>
-                      </div>
-                    </div>
-                    
-                    <div className="mt-6">
-                      <button
-                        type="submit"
-                        className="w-full py-3 px-4 bg-[#0052CC] hover:bg-[#0747A6] text-white rounded-md font-medium"
-                      >
-                        Submit
-                      </button>
-                      <p className="mt-2 text-xs text-gray-500 text-center">
-                        * Required fields
-                      </p>
-                    </div>
-                  </form>
-                )}
-              </div>
-              
-              {/* Contact Info */}
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                  Contact Information
-                </h2>
-                
-                <div className="bg-white shadow-md rounded-lg overflow-hidden">
-                  <div className="p-6 space-y-6">
-                    <div className="flex items-start">
-                      <MapPin className="h-6 w-6 text-[#0052CC] mt-1" />
-                      <div className="ml-4">
-                        <h3 className="text-lg font-medium text-gray-900">Address</h3>
-                        <p className="text-gray-600">
-                          66A New Ashok Nagar<br />
-                          Delhi, India
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start">
-                      <Phone className="h-6 w-6 text-[#0052CC] mt-1" />
-                      <div className="ml-4">
-                        <h3 className="text-lg font-medium text-gray-900">Phone</h3>
-                        <p className="text-gray-600">
-                          +91 99887 28749
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start">
-                      <Mail className="h-6 w-6 text-[#0052CC] mt-1" />
-                      <div className="ml-4">
-                        <h3 className="text-lg font-medium text-gray-900">Email</h3>
-                        <p className="text-gray-600">
-                          bitwiseschool@gmail.com
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start">
-                      <Clock className="h-6 w-6 text-[#0052CC] mt-1" />
-                      <div className="ml-4">
-                        <h3 className="text-lg font-medium text-gray-900">Hours</h3>
-                        <p className="text-gray-600">
-                          Saturday - Sunday: 9:00 AM - 11:00 PM<br />
-                          Monday - Friday: 5:00 PM - 11:00 PM
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  
+        <PageHeader
+          eyebrow="Contact"
+          title="Let's talk about your next step"
+          subtitle="Questions about courses, batches, fees or a free demo class? Message us and we'll get back to you."
+        />
 
+        <section className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-12 lg:px-8">
+          <Reveal className="lg:col-span-7">
+            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-ink/5 sm:p-8">
+              <h2 className="text-2xl font-extrabold tracking-tight text-ink">Send us a message</h2>
+              <p className="mt-1 text-slate-600">Your email app will open with the message filled in.</p>
+
+              {formSubmitted && (
+                <div className="mt-6 flex gap-3 rounded-2xl border border-emerald-200 bg-emerald-50 p-5 text-emerald-900">
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-600" />
+                  <p className="text-sm leading-relaxed">
+                    <span className="font-semibold">Your email app should now be open.</span> Press Send there to reach us.
+                    If nothing opened, email{' '}
+                    <a href={`mailto:${CONTACT_EMAIL}`} className="underline">
+                      {CONTACT_EMAIL}
+                    </a>{' '}
+                    or message us on{' '}
+                    <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="underline">
+                      WhatsApp
+                    </a>
+                    .
+                  </p>
                 </div>
-                
+              )}
 
-              </div>
+              <form onSubmit={handleSubmit} className="mt-8 grid gap-5 sm:grid-cols-2">
+                <label className="text-sm font-medium text-slate-700">
+                  Full name *
+                  <input name="name" required value={formData.name} onChange={handleChange} autoComplete="name" className={`${inputClass} mt-1.5`} />
+                </label>
+                <label className="text-sm font-medium text-slate-700">
+                  Email *
+                  <input type="email" name="email" required value={formData.email} onChange={handleChange} autoComplete="email" className={`${inputClass} mt-1.5`} />
+                </label>
+                <label className="text-sm font-medium text-slate-700">
+                  Phone
+                  <input type="tel" name="phone" value={formData.phone} onChange={handleChange} autoComplete="tel" className={`${inputClass} mt-1.5`} />
+                </label>
+                <label className="text-sm font-medium text-slate-700">
+                  Course
+                  <select name="course" value={formData.course} onChange={handleChange} className={`${inputClass} mt-1.5`}>
+                    <option value="">Select a course</option>
+                    {courses.map((course) => (
+                      <option key={course.id} value={course.title}>
+                        {course.title}
+                      </option>
+                    ))}
+                    <option value="Not sure yet">Not sure yet</option>
+                  </select>
+                </label>
+                <label className="text-sm font-medium text-slate-700 sm:col-span-2">
+                  Subject
+                  <input name="subject" value={formData.subject} onChange={handleChange} className={`${inputClass} mt-1.5`} />
+                </label>
+                <label className="text-sm font-medium text-slate-700 sm:col-span-2">
+                  Message *
+                  <textarea name="message" required rows={5} value={formData.message} onChange={handleChange} className={`${inputClass} mt-1.5`} />
+                </label>
+                <label className="flex items-center gap-2 text-sm text-slate-700 sm:col-span-2">
+                  <input
+                    type="checkbox"
+                    name="callback"
+                    checked={formData.callback}
+                    onChange={(event) => setFormData((prev) => ({ ...prev, callback: event.target.checked }))}
+                    className="h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-500"
+                  />
+                  Please call me back
+                </label>
+                <button
+                  type="submit"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-600 px-6 py-3.5 font-semibold text-white shadow-lg shadow-brand-600/25 transition hover:bg-brand-700 sm:col-span-2"
+                >
+                  <Send className="h-4 w-4" /> Send message
+                </button>
+              </form>
             </div>
-          </div>
-        </section>
-        
-        {/* Book a Demo Section */}
-        <section className="py-12 bg-[#0052CC] text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-extrabold sm:text-4xl mb-6">
-              Book a Free Demo Class
-            </h2>
-            <p className="text-xl max-w-2xl mx-auto mb-8">
-              Experience our teaching methodology firsthand and explore how we can help you achieve your coding goals
-            </p>
-            <button className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-[#0052CC] bg-white hover:bg-gray-50">
-              Schedule Your Free Demo
-            </button>
-          </div>
-        </section>
-        
-        {/* FAQ Section */}
-        <section className="py-12 bg-white">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-extrabold text-gray-900">
-                Frequently Asked Questions
-              </h2>
-              <p className="mt-4 text-lg text-gray-600">
-                Find quick answers to common questions
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-medium text-gray-900 mb-2">
-                  How can I enroll in a course?
-                </h3>
-                <p className="text-gray-600">
-                  You can enroll through our website, by visiting our campus, or by contacting our admissions team directly via phone or email.
-                </p>
+          </Reveal>
+
+          <div className="space-y-4 lg:col-span-5">
+            {CHANNELS.map(({ icon: Icon, title, value, href, note }, index) => (
+              <Reveal key={title} delay={index * 0.06}>
+                <div className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <div>
+                    <p className="text-sm font-semibold text-ink">{title}</p>
+                    {href ? (
+                      <a
+                        href={href}
+                        target={href.startsWith('http') ? '_blank' : undefined}
+                        rel="noopener noreferrer"
+                        className="text-slate-700 hover:text-brand-700"
+                      >
+                        {value}
+                      </a>
+                    ) : (
+                      <p className="text-slate-700">{value}</p>
+                    )}
+                    {note && <p className="text-sm text-slate-500">{note}</p>}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+
+            <Reveal delay={0.25}>
+              <div className="relative overflow-clip-safe rounded-2xl bg-ink p-6 text-white">
+                <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid-dark opacity-60" />
+                <div className="relative">
+                  <p className="text-lg font-bold">Book a free demo class</p>
+                  <p className="mt-1 text-sm text-slate-300">See how we teach before you enroll.</p>
+                  <a
+                    href={whatsappLink("Hi Bitwise School, I'd like to book a free demo class.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-400"
+                  >
+                    <MessageCircle className="h-4 w-4" /> Book on WhatsApp
+                  </a>
+                </div>
               </div>
-              
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-medium text-gray-900 mb-2">
-                  Do you offer online classes?
-                </h3>
-                <p className="text-gray-600">
-                  Yes, all our courses are available both online and offline to provide flexibility for our students.
-                </p>
-              </div>
-              
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-medium text-gray-900 mb-2">
-                  What are the payment options?
-                </h3>
-                <p className="text-gray-600">
-                  We accept credit/debit cards, net banking, UPI, and also offer EMI options through various partners.
-                </p>
-              </div>
-              
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-lg font-medium text-gray-900 mb-2">
-                  Do you provide placement assistance?
-                </h3>
-                <p className="text-gray-600">
-                  Yes: resume reviews, mock interviews, and referrals where possible. We do not guarantee placement.
-                </p>
-              </div>
-            </div>
-            
-            <div className="mt-8 text-center">
-              <a 
-                href="/faqs" 
-                className="text-purple-600 font-medium hover:text-purple-700"
-              >
-                View all FAQs
-              </a>
-            </div>
+            </Reveal>
+
+            <Reveal delay={0.3}>
+              <Link to="/faqs" className="inline-flex items-center gap-1 px-1 font-semibold text-brand-600 hover:text-brand-700">
+                Read the FAQs <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Reveal>
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </div>
   );

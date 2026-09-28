@@ -1,128 +1,134 @@
-
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Mail, MapPin, MessageCircle, Twitter, Youtube } from 'lucide-react';
+import Logo from './Logo';
+import { courses } from '../data/courses';
+import { CONTACT_EMAIL, PARENT_COMPANY_URL, SOCIAL_LINKS, WHATSAPP_DISPLAY, WHATSAPP_NUMBER } from '../config/site';
 
-const Footer = () => {
-  return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          {/* Logo and About */}
-          <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center mb-4">
-              <span className="code-text text-xl font-bold text-white">Bitwise School</span>
-            </Link>
-            <p className="text-gray-300 mb-4 max-w-md">
-              Transform your coding journey with a Delhi-based technology training institute.
-              Hands-on learning, expert mentorship, and job-ready skills to excel in the tech industry.
-            </p>
-            <div className="flex space-x-4">
-              <a href="https://www.facebook.com/profile.php?id=61578938786384" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                <Facebook size={20} />
-                <span className="sr-only">Facebook</span>
-              </a>
-              <a href="https://x.com/bitwiseschool" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter size={20} />
-                <span className="sr-only">X (Twitter)</span>
-              </a>
-              <a href="https://www.instagram.com/bitwiseschooloftechnology/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                <Instagram size={20} />
-                <span className="sr-only">Instagram</span>
-              </a>
-              <a href="https://www.linkedin.com/in/bitwise-school-of-technology-5a5296377/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin size={20} />
-                <span className="sr-only">LinkedIn</span>
-              </a>
-              <a href="https://www.youtube.com/@bitwiseschool" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                <Youtube size={20} />
-                <span className="sr-only">YouTube</span>
-              </a>
-            </div>
-          </div>
+const SOCIALS = [
+  { href: SOCIAL_LINKS.linkedin, label: 'LinkedIn', Icon: Linkedin },
+  { href: SOCIAL_LINKS.instagram, label: 'Instagram', Icon: Instagram },
+  { href: SOCIAL_LINKS.youtube, label: 'YouTube', Icon: Youtube },
+  { href: SOCIAL_LINKS.x, label: 'X (Twitter)', Icon: Twitter },
+  { href: SOCIAL_LINKS.facebook, label: 'Facebook', Icon: Facebook },
+];
 
-          {/* Courses */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Courses</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/courses/cpp" className="text-gray-300 hover:text-white">C++ Programming</Link>
-              </li>
-              <li>
-                <Link to="/courses/java" className="text-gray-300 hover:text-white">Java Full Course</Link>
-              </li>
-              <li>
-                <Link to="/courses/dsa" className="text-gray-300 hover:text-white">Data Structures & Algorithms</Link>
-              </li>
-              <li>
-                <Link to="/courses/full-stack" className="text-gray-300 hover:text-white">Full-Stack Development</Link>
-              </li>
-              <li>
-                <Link to="/courses" className="text-gray-300 hover:text-white">View All Courses</Link>
-              </li>
-            </ul>
-          </div>
+const EXPLORE = [
+  { to: '/opportunities', label: 'Opportunities' },
+  { to: '/notes', label: 'Interview notes' },
+  { to: '/dsa-sheet', label: 'DSA sheet' },
+  { to: '/projects', label: 'Project ideas' },
+  { to: '/links', label: 'Useful links' },
+  { to: '/blog', label: 'Blog' },
+  { to: '/about', label: 'About us' },
+  { to: '/faqs', label: 'FAQs' },
+  { to: '/contact', label: 'Contact' },
+];
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/about" className="text-gray-300 hover:text-white">About Us</Link>
-              </li>
-              <li>
-                <Link to="/opportunities" className="text-gray-300 hover:text-white">Opportunities</Link>
-              </li>
-              <li>
-                <Link to="/blog" className="text-gray-300 hover:text-white">Blog</Link>
-              </li>
-              <li>
-                <Link to="/faqs" className="text-gray-300 hover:text-white">FAQs</Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-gray-300 hover:text-white">Contact Us</Link>
-              </li>
-            </ul>
-          </div>
+const Footer = () => (
+  <footer className="relative overflow-clip-safe bg-ink text-slate-400">
+    <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid-dark opacity-50 mask-radial" />
+    <div aria-hidden className="pointer-events-none absolute -bottom-40 left-1/2 h-80 w-[48rem] -translate-x-1/2 rounded-full bg-brand-600/20 blur-3xl" />
 
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <address className="not-italic text-gray-300">
-              <p className="mb-2">66 A Block</p>
-              <p className="mb-2">New Ashok Nagar</p>
-              <p className="mb-2">Delhi, India</p>
-            </address>
-            <p className="flex items-center text-gray-300 mb-2">
-              <Mail className="h-4 w-4 mr-2" />
-              <a href="mailto:bitwiseschool@gmail.com" className="hover:text-white">bitwiseschool@gmail.com</a>
-            </p>
-            <p className="text-gray-300">
-              <a href="tel:+919988728749" className="hover:text-white">+91 99887 28749</a>
-            </p>
+    <div className="relative mx-auto max-w-7xl px-4 pb-10 pt-16 sm:px-6 lg:px-8">
+      <div className="grid gap-12 lg:grid-cols-12">
+        <div className="lg:col-span-4">
+          <Link to="/" aria-label="Bitwise School home">
+            <Logo light />
+          </Link>
+          <p className="mt-5 max-w-sm text-sm leading-6">
+            Live coding courses and a free opportunities portal for Indian students. Let's build, bit by bit.
+          </p>
+          <div className="mt-6 flex gap-2">
+            {SOCIALS.map(({ href, label, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 text-slate-300 ring-1 ring-white/10 transition hover:bg-white/10 hover:text-white"
+              >
+                <Icon className="h-[18px] w-[18px]" />
+              </a>
+            ))}
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              &copy; {new Date().getFullYear()} Bitwise School. All rights reserved.
-            </p>
-            <div className="flex space-x-6">
-              <Link to="/legal/privacy" className="text-gray-400 text-sm hover:text-white">
-                Privacy Policy
-              </Link>
-              <Link to="/legal/terms" className="text-gray-400 text-sm hover:text-white">
-                Terms & Conditions
-              </Link>
-              <a href="/sitemap.xml" className="text-gray-400 text-sm hover:text-white">
-                Sitemap
-              </a>
-            </div>
+        <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:col-span-8">
+          <div>
+            <h3 className="text-sm font-semibold text-white">Courses</h3>
+            <ul className="mt-4 space-y-3 text-sm">
+              {courses.map((course) => (
+                <li key={course.id}>
+                  <Link to={`/courses/${course.id}`} className="transition-colors hover:text-white">
+                    {course.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold text-white">Explore</h3>
+            <ul className="mt-4 space-y-3 text-sm">
+              {EXPLORE.map((item) => (
+                <li key={item.to}>
+                  <Link to={item.to} className="transition-colors hover:text-white">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="col-span-2 sm:col-span-1">
+            <h3 className="text-sm font-semibold text-white">Get in touch</h3>
+            <ul className="mt-4 space-y-3 text-sm">
+              <li>
+                <a href={`mailto:${CONTACT_EMAIL}`} className="inline-flex items-center gap-2 transition-colors hover:text-white">
+                  <Mail className="h-4 w-4 shrink-0" /> {CONTACT_EMAIL}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-white"
+                >
+                  <MessageCircle className="h-4 w-4 shrink-0" /> WhatsApp {WHATSAPP_DISPLAY}
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0" /> 66 A Block, New Ashok Nagar, Delhi, India
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </footer>
-  );
-};
+
+      <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 text-sm sm:flex-row sm:items-center sm:justify-between">
+        <p>
+          &copy; {new Date().getFullYear()} Bitwise School. A{' '}
+          <a href={PARENT_COMPANY_URL} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white">
+            Bitwise Ventures Group
+          </a>{' '}
+          company.
+        </p>
+        <div className="flex gap-6">
+          <Link to="/legal/privacy" className="hover:text-white">
+            Privacy
+          </Link>
+          <Link to="/legal/terms" className="hover:text-white">
+            Terms
+          </Link>
+          <a href="/sitemap.xml" className="hover:text-white">
+            Sitemap
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+);
 
 export default Footer;

@@ -16,7 +16,7 @@ const SEO: React.FC<SEOProps> = ({
   description = 'Bitwise School: coding institute in Delhi offering live programming courses, data structures, algorithms, placement support and a free opportunities portal.',
   type = 'website',
   name = 'Bitwise School',
-  imageUrl = '/lovable-uploads/812fe1e7-4326-47ef-868e-21cfd3b5fc46.png'
+  imageUrl = '/og-image.png'
 }) => {
   const location = useLocation();
   const currentUrl = `https://www.bitwiseschool.com${location.pathname}`;
@@ -28,7 +28,7 @@ const SEO: React.FC<SEOProps> = ({
     '@type': 'Organization',
     name: 'Bitwise School',
     url: 'https://www.bitwiseschool.com',
-    logo: 'https://www.bitwiseschool.com/lovable-uploads/add7e0a1-0cf3-4da0-abed-55deb8d78c9f.png',
+    logo: 'https://www.bitwiseschool.com/logo-512.png',
     description: 'Coding institute offering live programming courses and a free opportunities portal',
     contactPoint: {
       '@type': 'ContactPoint',

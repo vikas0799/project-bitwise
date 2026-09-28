@@ -1,65 +1,51 @@
-
 import { Link } from 'react-router-dom';
-import { Clock, Award } from 'lucide-react';
+import { ArrowRight, Clock, BarChart3, Sparkles } from 'lucide-react';
+import CourseCover from './CourseCover';
+import { formatPrice, type Course } from '../data/courses';
 
-interface CourseCardProps {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  duration: string;
-  students: number;
-  level: 'Beginner' | 'Intermediate' | 'Advanced' | 'All Levels';
-  price: number;
-}
+const CourseCard = ({ course }: { course: Course }) => (
+  <Link
+    to={`/courses/${course.id}`}
+    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl hover:shadow-brand-900/10"
+  >
+    <div className="relative">
+      <CourseCover course={course} />
+      <span className="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-xs font-semibold text-ink backdrop-blur">
+        Live + recorded
+      </span>
+      {course.status === 'waitlist' && (
+        <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-amber-300 px-2.5 py-1 text-xs font-bold text-amber-950 shadow">
+          <Sparkles className="h-3 w-3" /> New
+        </span>
+      )}
+    </div>
 
-const CourseCard: React.FC<CourseCardProps> = ({
-  id,
-  title,
-  description,
-  image,
-  duration,
-  students,
-  level,
-  price
-}) => {
-  return (
-    <Link to={`/courses/${id}`} className="bloom-hover block rounded-lg overflow-hidden shadow-lg bg-white">
-      <div className="aspect-w-16 aspect-h-9 relative">
-        <img src={image} alt={title} className="w-full h-48 object-cover" />
+    <div className="flex flex-1 flex-col p-5">
+      <h3 className="text-lg font-bold leading-snug text-ink">{course.title}</h3>
+      <p className="mt-1 text-sm text-slate-500">{course.tagline}</p>
 
-        <div className="absolute top-3 right-3 bg-black text-white text-xs font-semibold px-2 py-1 rounded">
-          {level}
-        </div>
+      <div className="mb-5 mt-4 flex items-center gap-4 text-sm text-slate-600">
+        <span className="inline-flex items-center gap-1.5">
+          <Clock className="h-4 w-4 text-slate-400" />
+          {course.duration}
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <BarChart3 className="h-4 w-4 text-slate-400" />
+          {course.level}
+        </span>
       </div>
 
-      <div className="p-5">
-        <h3 className="font-bold text-xl mb-2 text-gray-900">{title}</h3>
-
-        <p className="text-gray-600 mb-4 line-clamp-2">{description}</p>
-
-        <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-          <div className="flex items-center">
-            <Clock className="h-4 w-4 mr-1" />
-            <span>{duration}</span>
-          </div>
-
-          <div className="flex items-center">
-            <Award className="h-4 w-4 mr-1" />
-            <span>{level}</span>
-          </div>
-        </div>
-
-        <div className="flex items-center justify-between">
-          <span className="font-bold text-xl text-black">₹{price.toLocaleString()}</span>
-
-          <button className="px-4 py-2 bg-[#0052CC] hover:bg-[#0747A6] text-white rounded font-medium">
-            View Details
-          </button>
-        </div>
+      <div className="mt-auto flex items-center justify-between border-t border-slate-100 pt-4">
+        <span className={course.price === null ? 'text-sm font-semibold text-violet-700' : 'text-lg font-bold text-ink'}>
+          {formatPrice(course.price)}
+        </span>
+        <span className="inline-flex items-center gap-1 text-sm font-semibold text-brand-600">
+          {course.status === 'waitlist' ? 'Join waitlist' : 'View course'}
+          <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+        </span>
       </div>
-    </Link>
-  );
-};
+    </div>
+  </Link>
+);
 
 export default CourseCard;

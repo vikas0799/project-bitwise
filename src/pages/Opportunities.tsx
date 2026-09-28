@@ -4,6 +4,7 @@ import { ExternalLink, Calendar, MapPin, Trophy, Clock, Search } from 'lucide-re
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
+import PageHeader from '../components/PageHeader';
 import { openSourcePrograms, upcomingEvents, researchPrograms } from '../data/programs';
 import { TELEGRAM_CHANNEL_URL, CONTACT_EMAIL } from '../config/site';
 
@@ -92,8 +93,8 @@ const PrepareBox = ({ text, to, cta }: { text: string; to: string; cta: string }
 );
 
 const SectionHeader = ({ id, title, subtitle }: { id: string; title: string; subtitle: string }) => (
-  <div id={id} className="scroll-mt-24 mb-6">
-    <h2 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">{title}</h2>
+  <div id={id} className="mb-6 scroll-mt-24">
+    <h2 className="text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">{title}</h2>
     <p className="mt-2 text-gray-600">{subtitle}</p>
   </div>
 );
@@ -136,7 +137,7 @@ const Opportunities = () => {
   const jobSources = live?.sources.filter((s) => s.kind === 'jobs') ?? [];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-white">
       <SEO
         title="Opportunities for Indian students | Bitwise School"
         description="Open-source programs (GSoC, LFX, Outreachy, C4GT), remote developer jobs open to India, hackathons, coding contests and research internships. Updated daily."
@@ -144,29 +145,42 @@ const Opportunities = () => {
       <Navbar />
 
       <main className="flex-grow">
-        <header className="bg-gradient-to-br from-[#f4f5f7] to-white py-14">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-3xl font-extrabold sm:text-4xl text-[#0052CC]">Opportunities for Indian students</h1>
-            <p className="mt-4 text-lg max-w-3xl mx-auto text-gray-600">
-              Open-source programs, remote developer jobs, hackathons, contests and research internships in one place. Free, no sign-up.
+        <PageHeader
+          eyebrow="Free for every student"
+          title="Opportunities for Indian students"
+          subtitle="Open-source programs, remote developer jobs, hackathons, contests and research internships in one place. Free, no sign-up."
+        >
+          {live && (
+            <p className="inline-flex items-center gap-2 text-sm text-slate-500">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              </span>
+              Live listings updated {formatDate(live.generatedAt, true)} IST
             </p>
-            {live && (
-              <p className="mt-3 text-sm text-gray-500">Live listings updated {formatDate(live.generatedAt, true)} IST</p>
-            )}
-            <nav className="mt-8 flex flex-wrap justify-center gap-2">
-              {SECTIONS.map((s) => (
-                <a key={s.id} href={`#${s.id}`} className="px-4 py-2 rounded-full bg-white border border-gray-200 text-sm font-medium text-gray-700 hover:border-[#0052CC] hover:text-[#0052CC]">
-                  {s.label}
-                </a>
-              ))}
-            </nav>
-            {TELEGRAM_CHANNEL_URL && (
-              <a href={TELEGRAM_CHANNEL_URL} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center px-5 py-3 rounded-md bg-[#0052CC] text-white font-medium hover:bg-[#0747A6]">
-                Get weekly deadline alerts on Telegram
+          )}
+          <nav aria-label="Sections" className="mt-6 flex flex-wrap justify-center gap-2">
+            {SECTIONS.map((s) => (
+              <a
+                key={s.id}
+                href={`#${s.id}`}
+                className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:border-brand-300 hover:text-brand-700"
+              >
+                {s.label}
               </a>
-            )}
-          </div>
-        </header>
+            ))}
+          </nav>
+          {TELEGRAM_CHANNEL_URL && (
+            <a
+              href={TELEGRAM_CHANNEL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center rounded-xl bg-brand-600 px-5 py-3 font-semibold text-white hover:bg-brand-700"
+            >
+              Get weekly deadline alerts on Telegram
+            </a>
+          )}
+        </PageHeader>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
           {/* Deadlines */}
