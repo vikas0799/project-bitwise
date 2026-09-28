@@ -171,7 +171,7 @@ const CodeWindow = () => {
           </span>
         }
         title={data ? `${data.jobsOpenToIndia} remote jobs open to India` : 'Remote jobs open to India'}
-        subtitle="updated every morning"
+        subtitle="updated every 3 days"
       />
     </div>
   );

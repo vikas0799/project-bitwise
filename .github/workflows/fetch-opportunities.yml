@@ -2,7 +2,9 @@ name: Refresh opportunities
 
 on:
   schedule:
-    - cron: '30 0 * * *' # daily at 06:00 IST
+    # Every 3 days at 06:00 IST (days 1, 4, 7 … of each month). Each data
+    # commit triggers a Vercel deploy, so fewer runs means fewer deploys.
+    - cron: '30 0 */3 * *'
   workflow_dispatch: {}
 
 permissions:
@@ -12,10 +14,12 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 24
+          # The script has no dependencies, so there is nothing to cache.
+          package-manager-cache: false
       - name: Fetch live listings
         run: node scripts/fetch-opportunities.mjs
       - name: Commit updated data

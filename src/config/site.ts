@@ -15,10 +15,16 @@ export const SOCIAL_LINKS = {
   youtube: 'https://www.youtube.com/@bitwiseschool',
 } as const;
 
-// Forms have no backend yet: they open the visitor's email app with the
-// message filled in, addressed to CONTACT_EMAIL.
+// Forms have no backend yet: they open WhatsApp, the visitor's email app or
+// Gmail in the browser with the message filled in, addressed to us.
+const emailBody = (lines: string[]) => encodeURIComponent(lines.join('\r\n'));
+
 export const mailtoLink = (subject: string, lines: string[]) =>
-  `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+  `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${emailBody(lines)}`;
+
+// For visitors with no email app set up (common on laptops).
+export const gmailComposeLink = (subject: string, lines: string[]) =>
+  `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(CONTACT_EMAIL)}&su=${encodeURIComponent(subject)}&body=${emailBody(lines)}`;
 
 export const whatsappLink = (text: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;

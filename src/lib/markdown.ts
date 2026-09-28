@@ -11,6 +11,8 @@ import python from 'highlight.js/lib/languages/python';
 import cpp from 'highlight.js/lib/languages/cpp';
 import java from 'highlight.js/lib/languages/java';
 
+import { diagramSizes } from '../data/diagramSizes';
+
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('typescript', typescript);
 hljs.registerLanguage('bash', bash);
@@ -115,6 +117,22 @@ export const renderMarkdown = (source: string): { html: string; headings: Headin
     return external
       ? `<a href="${href}"${titleAttr} target="_blank" rel="noopener noreferrer">${text}</a>`
       : `<a href="${href}"${titleAttr} data-internal>${text}</a>`;
+  };
+
+  // Images become figures with a caption (the Markdown title), reserved space
+  // for known diagrams and a link to the full-size file for zooming on phones.
+  renderer.image = ({ href, title, text }: Tokens.Image) => {
+    const size = diagramSizes[href];
+    const dims = size ? ` width="${size[0]}" height="${size[1]}"` : '';
+    const wide = size && size[0] > 600 ? ' class="wide"' : '';
+    const caption = title ? `<figcaption>${escapeHtml(title)}</figcaption>` : '';
+    return `<figure class="doc-figure"><a class="figure-link" href="${href}" target="_blank" rel="noopener noreferrer"><img src="${href}" alt="${escapeHtml(text)}"${dims}${wide} loading="lazy" decoding="async"></a>${caption}</figure>`;
+  };
+
+  // A paragraph holding only an image renders as the bare figure (a <figure> can't sit inside a <p>).
+  renderer.paragraph = function ({ tokens }: Tokens.Paragraph) {
+    const inner = this.parser.parseInline(tokens);
+    return tokens.length === 1 && tokens[0].type === 'image' ? `${inner}\n` : `<p>${inner}</p>\n`;
   };
 
   const marked = new Marked({ renderer, gfm: true });

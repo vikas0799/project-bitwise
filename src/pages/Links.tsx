@@ -60,7 +60,7 @@ const Links = () => {
             >
               <span className="text-slate-700">
                 <span className="font-semibold text-ink">Looking for live openings?</span> Our free portal lists open-source
-                programs, remote jobs, hackathons and research internships, updated every day.
+                programs, remote jobs, hackathons and research internships, updated every 3 days.
               </span>
               <span className="inline-flex shrink-0 items-center gap-1 font-semibold text-emerald-700">
                 Open the portal <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

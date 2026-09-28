@@ -11,8 +11,8 @@ import { totalProblems } from '../data/dsaSheet';
 const NotesIndex = () => (
   <div className="flex min-h-screen flex-col bg-white">
     <SEO
-      title="Interview notes: JavaScript, Node.js, OS, CN, DBMS, System Design | Bitwise School"
-      description="Free revision notes for placement interviews: JavaScript, Node.js and Express, MongoDB, operating systems, computer networks, DBMS and system design."
+      title="Interview notes: DSA, JavaScript, Node.js, OS, CN, DBMS, System Design | Bitwise School"
+      description="Free revision notes for placement interviews: data structures and algorithms with diagrams and C++ code, JavaScript, Node.js and Express, MongoDB, operating systems, computer networks, DBMS and system design."
     />
     <Navbar />
 
@@ -20,7 +20,7 @@ const NotesIndex = () => (
       <PageHeader
         eyebrow="Free interview notes"
         title="Revise everything before your interview"
-        subtitle={`${allNotes.length} free notes on JavaScript, backend development and CS fundamentals, written for placement interviews.`}
+        subtitle={`${allNotes.length} free notes on DSA (with diagrams and C++ code), JavaScript, backend development and CS fundamentals, written for placement interviews.`}
       >
         <div className="flex flex-wrap justify-center gap-3">
           <Link

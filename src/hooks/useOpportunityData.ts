@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-// Summary of public/data/opportunities.json (refreshed daily by the
+// Summary of public/data/opportunities.json (refreshed every 3 days by the
 // "Refresh opportunities" GitHub Action). Fetched once per page load.
 
 export interface OpportunitySummary {

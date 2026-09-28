@@ -2,18 +2,25 @@ import { useState, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Mail, MessageCircle } from 'lucide-react';
 import { Reveal } from '../motion';
-import { mailtoLink, whatsappLink } from '../../config/site';
+import { gmailComposeLink, mailtoLink, whatsappLink } from '../../config/site';
+
+const SUBJECT = 'Course info request';
+const WHATSAPP_TEXT = "Hi Bitwise School, I'd like details about your courses and the next batch.";
 
 const FinalCta = () => {
   const [email, setEmail] = useState('');
+  const [sent, setSent] = useState(false);
+
+  const lines = [
+    'Hi Bitwise School, please send me details of your courses and upcoming batches.',
+    '',
+    `My email: ${email.trim()}`,
+  ];
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    window.location.href = mailtoLink('Course info request', [
-      'Hi Bitwise School, please send me details of your courses and upcoming batches.',
-      '',
-      `My email: ${email}`,
-    ]);
+    window.location.href = mailtoLink(SUBJECT, lines);
+    setSent(true);
   };
 
   return (
@@ -34,7 +41,7 @@ const FinalCta = () => {
 
             <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
               <a
-                href={whatsappLink("Hi Bitwise School, I'd like details about your courses and the next batch.")}
+                href={whatsappLink(WHATSAPP_TEXT)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-400"
@@ -70,7 +77,31 @@ const FinalCta = () => {
                 <Mail className="h-4 w-4" /> Email me details
               </button>
             </form>
-            <p className="mt-3 text-xs text-slate-400">Opens your email app with the request filled in.</p>
+            {sent ? (
+              <p role="status" className="mt-3 text-sm text-slate-300">
+                Email app didn't open?{' '}
+                <a
+                  href={gmailComposeLink(SUBJECT, lines)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-white underline underline-offset-2"
+                >
+                  Send with Gmail
+                </a>{' '}
+                or{' '}
+                <a
+                  href={whatsappLink(WHATSAPP_TEXT)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-white underline underline-offset-2"
+                >
+                  message us on WhatsApp
+                </a>
+                .
+              </p>
+            ) : (
+              <p className="mt-3 text-xs text-slate-400">Opens your email app with the request filled in.</p>
+            )}
           </div>
         </div>
       </Reveal>

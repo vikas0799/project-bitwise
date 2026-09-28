@@ -37,7 +37,7 @@ const OpportunitiesTeaser = () => {
           </h2>
           <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-600">
             Open-source programs, remote jobs open to India, hackathons, coding contests and research internships abroad.
-            Filtered for Indian students and refreshed every morning.
+            Filtered for Indian students and refreshed every 3 days.
           </p>
 
           <dl className="mt-10 grid grid-cols-2 gap-6">
@@ -72,7 +72,7 @@ const OpportunitiesTeaser = () => {
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
                   </span>
-                  {data ? `Updated ${dayMonth(data.generatedAt)}` : 'Updated daily'}
+                  {data ? `Updated ${dayMonth(data.generatedAt)}` : 'Updated every 3 days'}
                 </span>
               </div>
 

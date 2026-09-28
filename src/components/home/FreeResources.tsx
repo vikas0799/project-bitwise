@@ -15,7 +15,7 @@ const FreeResources = () => (
           align="left"
           eyebrow="Free interview prep"
           title="Notes, a DSA sheet and project ideas. All free."
-          subtitle="Revise JavaScript, backend, OS, CN, DBMS and system design, practise DSA and plan your next project, without signing up."
+          subtitle="Learn DSA with diagrams and C++ code, revise JavaScript, backend, OS, CN, DBMS and system design, practise on the sheet and plan your next project, without signing up."
         />
         <Reveal>
           <Link

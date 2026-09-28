@@ -912,4 +912,23 @@ export const dsaTopics: DsaTopic[] = [
 
 export const problemUrl = (slug: string) => `https://leetcode.com/problems/${slug}/`;
 
+// The DSA note that teaches each topic (see src/content/notes/dsa-*.md).
+export const topicNotes: Record<string, string> = {
+  'arrays-hashing': 'dsa-hashing',
+  'two-pointers': 'dsa-arrays-patterns',
+  'sliding-window': 'dsa-arrays-patterns',
+  'prefix-sum-kadane': 'dsa-arrays-patterns',
+  'binary-search': 'dsa-binary-search',
+  'matrix-intervals': 'dsa-greedy',
+  'linked-list': 'dsa-linked-list',
+  'stack-queue': 'dsa-stack-queue',
+  'recursion-backtracking': 'dsa-backtracking',
+  'binary-trees': 'dsa-binary-trees',
+  'binary-search-trees': 'dsa-bst',
+  heaps: 'dsa-heaps',
+  graphs: 'dsa-graphs',
+  greedy: 'dsa-greedy',
+  'dynamic-programming': 'dsa-dynamic-programming',
+};
+
 export const totalProblems = dsaTopics.reduce((sum, topic) => sum + topic.problems.length, 0);

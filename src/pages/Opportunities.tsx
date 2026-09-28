@@ -140,7 +140,7 @@ const Opportunities = () => {
     <div className="min-h-screen flex flex-col bg-white">
       <SEO
         title="Opportunities for Indian students | Bitwise School"
-        description="Open-source programs (GSoC, LFX, Outreachy, C4GT), remote developer jobs open to India, hackathons, coding contests and research internships. Updated daily."
+        description="Open-source programs (GSoC, LFX, Outreachy, C4GT), remote developer jobs open to India, hackathons, coding contests and research internships. Updated every 3 days."
       />
       <Navbar />
 

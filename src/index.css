@@ -480,8 +480,24 @@
   .doc p {
     @apply my-4;
   }
-  .doc a:not(.heading-anchor) {
+  .doc a:not(.heading-anchor):not(.figure-link) {
     @apply font-medium text-brand-600 underline decoration-brand-200 underline-offset-4 transition-colors hover:decoration-brand-500;
+  }
+  .doc .doc-figure {
+    @apply my-8;
+  }
+  .doc .figure-link {
+    @apply block overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md;
+  }
+  .doc .doc-figure img {
+    @apply block h-auto w-full;
+  }
+  /* Wide diagrams keep a readable size on phones and scroll sideways instead. */
+  .doc .doc-figure img.wide {
+    min-width: 520px;
+  }
+  .doc .doc-figure figcaption {
+    @apply mt-2.5 px-2 text-center text-sm leading-6 text-slate-500;
   }
   .doc strong {
     @apply font-semibold text-ink;
@@ -519,6 +535,10 @@
   }
   .doc pre code.hljs {
     @apply bg-transparent p-0 font-mono;
+  }
+  /* Show <= and != as typed, not as ≤ and ≠ ligatures, so code reads like what students write. */
+  .doc code {
+    font-variant-ligatures: none;
   }
   .doc .table-wrap {
     @apply my-6 overflow-x-auto rounded-2xl border border-slate-200;

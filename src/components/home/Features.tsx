@@ -35,7 +35,7 @@ const FEATURES: Feature[] = [
   {
     icon: Compass,
     title: 'Free opportunities portal',
-    text: 'GSoC, LFX, remote jobs, hackathons and research internships, updated every morning.',
+    text: 'GSoC, LFX, remote jobs, hackathons and research internships, updated every 3 days.',
     href: '/opportunities',
   },
   {

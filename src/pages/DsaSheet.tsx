@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronDown, ExternalLink, RotateCcw, Search, Star } from 'lucide-react';
+import { BookOpen, ChevronDown, ExternalLink, RotateCcw, Search, Star } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import { Reveal } from '../components/motion';
-import { dsaTopics, problemUrl, totalProblems, type Difficulty } from '../data/dsaSheet';
+import { dsaTopics, problemUrl, topicNotes, totalProblems, type Difficulty } from '../data/dsaSheet';
 
 const STORAGE_KEY = 'bitwise-dsa-progress-v1';
 
@@ -229,6 +229,14 @@ const DsaSheet = () => {
                       <p className="bg-slate-50/70 px-5 py-3 text-sm text-slate-600 sm:px-6">
                         <span className="font-semibold text-ink">Tip: </span>
                         {topic.tip}
+                        {topicNotes[topic.id] && (
+                          <Link
+                            to={`/notes/${topicNotes[topic.id]}`}
+                            className="ml-2 inline-flex items-center gap-1 font-semibold text-brand-600 hover:text-brand-700"
+                          >
+                            <BookOpen className="h-4 w-4" /> Read the notes
+                          </Link>
+                        )}
                       </p>
                       <ul className="divide-y divide-slate-100">
                         {topic.visible.map((problem) => {

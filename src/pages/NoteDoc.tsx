@@ -115,7 +115,7 @@ const NoteDoc = () => {
       <Navbar />
 
       <div className="mx-auto w-full max-w-7xl flex-grow px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-10 py-10 lg:grid-cols-[15rem_minmax(0,1fr)] xl:grid-cols-[15rem_minmax(0,1fr)_13rem]">
+        <div className="grid grid-cols-1 gap-10 py-10 lg:grid-cols-[15rem_minmax(0,1fr)] xl:grid-cols-[15rem_minmax(0,1fr)_13rem]">
           <aside className="hidden lg:block">
             <div className="sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto pb-10 pr-2">
               <Sidebar />
