@@ -14,7 +14,7 @@ const CourseCard = ({ course }: { course: Course }) => (
         Live + recorded
       </span>
       {course.status === 'waitlist' && (
-        <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-amber-300 px-2.5 py-1 text-xs font-bold text-amber-950 shadow">
+        <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-white px-2.5 py-1 text-xs font-bold text-brand-700 shadow">
           <Sparkles className="h-3 w-3" /> New
         </span>
       )}
@@ -36,7 +36,7 @@ const CourseCard = ({ course }: { course: Course }) => (
       </div>
 
       <div className="mt-auto flex items-center justify-between border-t border-slate-100 pt-4">
-        <span className={course.price === null ? 'text-sm font-semibold text-violet-700' : 'text-lg font-bold text-ink'}>
+        <span className={course.price === null ? 'text-sm font-semibold text-brand-700' : 'text-lg font-bold text-ink'}>
           {formatPrice(course.price)}
         </span>
         <span className="inline-flex items-center gap-1 text-sm font-semibold text-brand-600">

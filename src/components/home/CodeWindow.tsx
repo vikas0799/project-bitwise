@@ -99,7 +99,7 @@ const CodeWindow = () => {
 
   return (
     <div className="relative mx-auto w-full max-w-lg">
-      <div aria-hidden className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-brand-500/30 via-indigo-500/20 to-cyan-400/30 blur-2xl" />
+      <div aria-hidden className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-brand-500/30 via-brand-400/20 to-brand-300/30 blur-2xl" />
 
       <div aria-hidden className="relative overflow-clip-safe rounded-2xl border border-white/10 bg-[#0B1224] shadow-2xl shadow-ink/30 ring-1 ring-ink/5">
         <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.03] px-4 py-3">
@@ -145,7 +145,7 @@ const CodeWindow = () => {
             animate={{ opacity: done ? 1 : 0.35 }}
             className="ml-auto inline-flex items-center gap-1.5"
           >
-            <CheckCircle2 className={`h-3.5 w-3.5 ${done ? 'text-emerald-400' : 'text-slate-500'}`} />
+            <CheckCircle2 className={`h-3.5 w-3.5 ${done ? 'text-brand-300' : 'text-slate-500'}`} />
             {done ? 'compiled successfully' : 'compiling...'}
           </m.span>
         </div>
@@ -155,7 +155,7 @@ const CodeWindow = () => {
         className="-right-4 -top-9 lg:-right-8"
         delay={1.4}
         icon={
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-amber-50 text-amber-600">
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
             <Trophy className="h-5 w-5" />
           </span>
         }
@@ -166,7 +166,7 @@ const CodeWindow = () => {
         className="-bottom-10 -left-4 lg:-left-10"
         delay={1.7}
         icon={
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-ink text-white">
             <Briefcase className="h-5 w-5" />
           </span>
         }

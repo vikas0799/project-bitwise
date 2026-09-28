@@ -39,7 +39,7 @@ const LearningPath = () => (
         {/* Connector line that draws itself on desktop */}
         <div aria-hidden className="absolute left-[12.5%] right-[12.5%] top-7 hidden h-0.5 bg-slate-200 lg:block">
           <m.div
-            className="h-full origin-left bg-gradient-to-r from-brand-500 via-indigo-500 to-cyan-500"
+            className="h-full origin-left bg-gradient-to-r from-brand-700 via-brand-500 to-brand-400"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, margin: '-120px' }}

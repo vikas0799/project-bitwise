@@ -16,13 +16,13 @@ const Instructor = () => (
     <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
       <Reveal className="lg:col-span-5">
         <div className="relative">
-          <div aria-hidden className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-brand-200/60 via-indigo-100/60 to-transparent blur-2xl" />
+          <div aria-hidden className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-brand-200/60 via-brand-100/60 to-transparent blur-2xl" />
           <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl shadow-ink/10">
-            <div className="relative h-28 bg-gradient-to-r from-brand-700 via-indigo-600 to-cyan-600">
+            <div className="relative h-28 bg-gradient-to-r from-ink via-brand-800 to-brand-600">
               <div aria-hidden className="absolute inset-0 bg-grid-dark opacity-60" />
             </div>
             <div className="px-7 pb-8">
-              <Avatar name="Vikas Patel" size="lg" className="-mt-12 ring-4 ring-white" />
+              <Avatar name="Vikas Patel" size="xl" className="-mt-16 ring-4 ring-white shadow-lg" />
               <h3 className="mt-4 text-xl font-bold text-ink">Vikas Patel</h3>
               <p className="text-sm font-medium text-brand-600">Founder and lead instructor</p>
               <ul className="mt-6 space-y-3">

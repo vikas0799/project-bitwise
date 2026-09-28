@@ -179,7 +179,7 @@ const Contact = () => {
                     onClick={() => {
                       channel.current = 'whatsapp';
                     }}
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-3.5 font-semibold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-600"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-600 px-6 py-3.5 font-semibold text-white shadow-lg shadow-brand-600/25 transition hover:bg-brand-700"
                   >
                     <MessageCircle className="h-5 w-5" /> Send on WhatsApp
                   </button>
@@ -188,15 +188,15 @@ const Contact = () => {
                     onClick={() => {
                       channel.current = 'email';
                     }}
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-600 px-6 py-3.5 font-semibold text-white shadow-lg shadow-brand-600/25 transition hover:bg-brand-700"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-ink px-6 py-3.5 font-semibold text-white shadow-lg shadow-ink/20 transition hover:bg-ink-soft"
                   >
                     <Mail className="h-5 w-5" /> Send by email
                   </button>
                 </div>
 
                 {sentVia === 'whatsapp' && (
-                  <div role="status" className="flex gap-3 rounded-2xl border border-emerald-200 bg-emerald-50 p-5 text-emerald-900 sm:col-span-2">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-600" />
+                  <div role="status" className="flex gap-3 rounded-2xl border border-brand-200 bg-brand-50 p-5 text-ink sm:col-span-2">
+                    <CheckCircle2 className="h-5 w-5 shrink-0 text-brand-600" />
                     <p className="text-sm leading-relaxed">
                       <span className="font-semibold">WhatsApp is open with your message.</span> Press Send there and we'll
                       reply soon. Nothing opened?{' '}
@@ -232,14 +232,14 @@ const Contact = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 rounded-lg bg-white px-3.5 py-2 text-sm font-semibold text-ink shadow-sm ring-1 ring-slate-200 transition hover:ring-slate-300"
                       >
-                        <MessageCircle className="h-4 w-4 text-emerald-600" /> Send on WhatsApp
+                        <MessageCircle className="h-4 w-4 text-brand-600" /> Send on WhatsApp
                       </a>
                       <button
                         type="button"
                         onClick={copyMessage}
                         className="inline-flex items-center gap-2 rounded-lg bg-white px-3.5 py-2 text-sm font-semibold text-ink shadow-sm ring-1 ring-slate-200 transition hover:ring-slate-300"
                       >
-                        {copied ? <Check className="h-4 w-4 text-emerald-600" /> : <Copy className="h-4 w-4 text-slate-500" />}
+                        {copied ? <Check className="h-4 w-4 text-brand-600" /> : <Copy className="h-4 w-4 text-slate-500" />}
                         {copied ? 'Copied' : 'Copy message'}
                       </button>
                     </div>
@@ -286,7 +286,7 @@ const Contact = () => {
                     href={whatsappLink("Hi Bitwise School, I'd like to book a free demo class.")}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-400"
+                    className="mt-4 inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-ink transition hover:bg-slate-100"
                   >
                     <MessageCircle className="h-4 w-4" /> Book on WhatsApp
                   </a>

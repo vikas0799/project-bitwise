@@ -22,8 +22,8 @@ const Hero = () => (
     <div aria-hidden className="pointer-events-none absolute inset-0">
       <div className="absolute inset-0 bg-grid mask-radial" />
       <div className="absolute -left-40 -top-40 h-[34rem] w-[34rem] rounded-full bg-brand-200/50 blur-3xl animate-blob" />
-      <div className="absolute -right-32 top-10 h-[30rem] w-[30rem] rounded-full bg-indigo-200/40 blur-3xl animate-blob [animation-delay:-7s]" />
-      <div className="absolute -bottom-40 left-1/3 h-[26rem] w-[26rem] rounded-full bg-cyan-100/60 blur-3xl animate-blob [animation-delay:-14s]" />
+      <div className="absolute -right-32 top-10 h-[30rem] w-[30rem] rounded-full bg-brand-100/60 blur-3xl animate-blob [animation-delay:-7s]" />
+      <div className="absolute -bottom-40 left-1/3 h-[26rem] w-[26rem] rounded-full bg-slate-200/60 blur-3xl animate-blob [animation-delay:-14s]" />
     </div>
 
     <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-4 pb-24 pt-12 sm:px-6 sm:pt-16 lg:grid-cols-12 lg:gap-8 lg:px-8 lg:pb-32 lg:pt-20">
@@ -31,11 +31,11 @@ const Hero = () => (
         <m.div variants={item}>
           <a
             href="#ai-careers"
-            className="group inline-flex items-center gap-2 rounded-full border border-violet-200 bg-white/80 py-1 pl-1 pr-3 text-sm font-medium text-slate-700 shadow-sm backdrop-blur transition-colors hover:border-violet-300"
+            className="group inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white/80 py-1 pl-1 pr-3 text-sm font-medium text-slate-700 shadow-sm backdrop-blur transition-colors hover:border-brand-300"
           >
-            <span className="rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-2 py-0.5 text-xs font-semibold text-white">New</span>
+            <span className="rounded-full bg-brand-600 px-2 py-0.5 text-xs font-semibold text-white">New</span>
             Generative AI, Applied AI and FDE tracks
-            <ArrowRight className="h-3.5 w-3.5 text-violet-600 transition-transform group-hover:translate-x-0.5" />
+            <ArrowRight className="h-3.5 w-3.5 text-brand-600 transition-transform group-hover:translate-x-0.5" />
           </a>
         </m.div>
 
@@ -70,7 +70,7 @@ const Hero = () => (
         <m.ul variants={item} className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-600">
           {PERKS.map((perk) => (
             <li key={perk} className="inline-flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+              <CheckCircle2 className="h-4 w-4 text-brand-600" />
               {perk}
             </li>
           ))}

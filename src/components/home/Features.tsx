@@ -68,7 +68,7 @@ const Features = () => (
               onMouseMove={trackPointer}
               className="spotlight group relative h-full rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl hover:shadow-brand-900/5"
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-indigo-600 text-white shadow-lg shadow-brand-600/25 transition-transform duration-300 group-hover:scale-110">
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-lg shadow-brand-600/25 transition-transform duration-300 group-hover:scale-110">
                 <feature.icon className="h-6 w-6" />
               </span>
               <h3 className="mt-6 text-lg font-bold text-ink">{feature.title}</h3>

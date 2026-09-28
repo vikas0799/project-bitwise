@@ -40,7 +40,7 @@ const FILTERS: ('All' | Difficulty)[] = ['All', 'Easy', 'Medium', 'Hard'];
 const ProgressBar = ({ value, total, className = '' }: { value: number; total: number; className?: string }) => (
   <div className={`h-2 overflow-hidden rounded-full bg-slate-100 ${className}`}>
     <div
-      className="h-full rounded-full bg-gradient-to-r from-brand-500 to-indigo-500 transition-all duration-500"
+      className="h-full rounded-full bg-gradient-to-r from-brand-500 to-brand-700 transition-all duration-500"
       style={{ width: `${total ? (value / total) * 100 : 0}%` }}
     />
   </div>
@@ -249,7 +249,7 @@ const DsaSheet = () => {
                                 checked={isSolved}
                                 onChange={() => toggle('solved', problem.slug)}
                                 aria-label={`Mark ${problem.title} as solved`}
-                                className="h-5 w-5 shrink-0 rounded-md border-slate-300 text-emerald-600 focus:ring-emerald-500"
+                                className="h-5 w-5 shrink-0 rounded-md border-slate-300 text-brand-600 focus:ring-brand-500"
                               />
                               <a
                                 href={problemUrl(problem.slug)}
@@ -272,7 +272,7 @@ const DsaSheet = () => {
                                 aria-label={isStarred ? `Remove ${problem.title} from revision` : `Star ${problem.title} for revision`}
                                 className="shrink-0 rounded-lg p-1.5 hover:bg-slate-100"
                               >
-                                <Star className={`h-4 w-4 ${isStarred ? 'fill-amber-400 text-amber-400' : 'text-slate-300'}`} />
+                                <Star className={`h-4 w-4 ${isStarred ? 'fill-brand-500 text-brand-500' : 'text-slate-300'}`} />
                               </button>
                             </li>
                           );

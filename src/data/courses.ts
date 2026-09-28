@@ -37,7 +37,7 @@ export const courses: Course[] = [
     status: 'waitlist',
     category: 'ai',
     prerequisites: 'Python basics (variables, functions, loops) and a little comfort with APIs. Python for AI is revised in module 1.',
-    cover: { from: '#4C1D95', to: '#DB2777', symbol: 'GenAI' },
+    cover: { from: '#0A1633', to: '#0052CC', symbol: 'GenAI' },
     outcomes: [
       'Build LLM apps with streaming, structured outputs and tool calling',
       'Ship RAG that answers from your own documents with citations',
@@ -152,7 +152,7 @@ export const courses: Course[] = [
     status: 'waitlist',
     category: 'web',
     prerequisites: 'None. We start from how the web works; a laptop and a few hours a day are enough.',
-    cover: { from: '#0F766E', to: '#7C3AED', symbol: 'Web+AI' },
+    cover: { from: '#003584', to: '#4D86F5', symbol: 'Web+AI' },
     outcomes: [
       'Build responsive, accessible front ends with React, Next.js and Tailwind',
       'Design REST APIs with Node.js, PostgreSQL and MongoDB',
@@ -259,7 +259,7 @@ export const courses: Course[] = [
     status: 'waitlist',
     category: 'ai',
     prerequisites: 'Python basics and school-level maths (the rest is taught in the course).',
-    cover: { from: '#134E4A', to: '#0D9488', symbol: 'ML' },
+    cover: { from: '#0F172A', to: '#1F66E5', symbol: 'ML' },
     outcomes: [
       'Clean and explore real datasets with Pandas',
       'Train and evaluate machine learning models',
@@ -284,7 +284,7 @@ export const courses: Course[] = [
     status: 'waitlist',
     category: 'ai',
     prerequisites: 'Solid programming in one language; full-stack basics help.',
-    cover: { from: '#0F172A', to: '#2563EB', symbol: 'FDE' },
+    cover: { from: '#0A2A66', to: '#1F66E5', symbol: 'FDE' },
     outcomes: [
       'Turn a vague client problem into a clear technical plan',
       'Build full-stack apps and integrations that use AI',
@@ -310,7 +310,7 @@ export const courses: Course[] = [
     status: 'waitlist',
     category: 'backend',
     prerequisites: 'Comfort in one programming language and basic backend knowledge (APIs and a database).',
-    cover: { from: '#1E293B', to: '#0891B2', symbol: 'HLD' },
+    cover: { from: '#1E2A47', to: '#0043A8', symbol: 'HLD' },
     outcomes: [
       'Estimate scale and pick the right building blocks',
       'Reason about consistency, availability and partitioning',
@@ -410,7 +410,7 @@ export const courses: Course[] = [
     status: 'waitlist',
     category: 'backend',
     prerequisites: 'Core Java (classes, collections, exceptions). Our Java Full Course covers this.',
-    cover: { from: '#14532D', to: '#65A30D', symbol: 'Spring' },
+    cover: { from: '#0043A8', to: '#8AB2FF', symbol: 'Spring' },
     outcomes: [
       'Build clean, tested REST APIs with Spring Boot',
       'Model data with PostgreSQL and Spring Data JPA',
@@ -495,7 +495,7 @@ export const courses: Course[] = [
     status: 'waitlist',
     category: 'backend',
     prerequisites: 'Basic programming and comfort using a computer; no Linux experience needed.',
-    cover: { from: '#0C4A6E', to: '#F59E0B', symbol: 'DevOps' },
+    cover: { from: '#0A1633', to: '#0052CC', symbol: 'DevOps' },
     outcomes: [
       'Work confidently in Linux and write bash scripts',
       'Automate builds, tests and deployments with CI/CD',
@@ -559,7 +559,7 @@ export const courses: Course[] = [
     price: 20000,
     status: 'open',
     category: 'web',
-    cover: { from: '#064E3B', to: '#059669', symbol: 'MERN' },
+    cover: { from: '#003584', to: '#4D86F5', symbol: 'MERN' },
     outcomes: [
       'Build responsive websites with HTML, CSS and JavaScript',
       'Create React front ends that talk to your own APIs',
@@ -583,7 +583,7 @@ export const courses: Course[] = [
     price: 20000,
     status: 'open',
     category: 'dsa',
-    cover: { from: '#4C1D95', to: '#7C3AED', symbol: 'O(n)' },
+    cover: { from: '#0F172A', to: '#1F66E5', symbol: 'O(n)' },
     outcomes: [
       'Analyse time and space complexity',
       'Recognise common problem-solving patterns',
@@ -607,7 +607,7 @@ export const courses: Course[] = [
     price: 20000,
     status: 'open',
     category: 'programming',
-    cover: { from: '#0A2A66', to: '#0052CC', symbol: 'C++' },
+    cover: { from: '#0A2A66', to: '#1F66E5', symbol: 'C++' },
     outcomes: [
       'Write clean C++ programs from scratch',
       'Use pointers, references and dynamic memory safely',
@@ -631,7 +631,7 @@ export const courses: Course[] = [
     price: 20000,
     status: 'open',
     category: 'programming',
-    cover: { from: '#9A3412', to: '#EA580C', symbol: 'Java' },
+    cover: { from: '#1E2A47', to: '#0043A8', symbol: 'Java' },
     outcomes: [
       'Write and debug Java programs confidently',
       'Model real problems with classes and interfaces',
@@ -655,7 +655,7 @@ export const courses: Course[] = [
     price: 20000,
     status: 'open',
     category: 'programming',
-    cover: { from: '#713F12', to: '#CA8A04', symbol: 'py' },
+    cover: { from: '#0043A8', to: '#8AB2FF', symbol: 'py' },
     outcomes: [
       'Think like a programmer and break problems down',
       'Use Python data structures fluently',
@@ -679,7 +679,7 @@ export const courses: Course[] = [
     price: 20000,
     status: 'open',
     category: 'web',
-    cover: { from: '#083344', to: '#0891B2', symbol: '</>' },
+    cover: { from: '#0A1633', to: '#0052CC', symbol: '</>' },
     outcomes: [
       'Build fast, component-based user interfaces',
       'Manage state with hooks, context and Redux Toolkit',

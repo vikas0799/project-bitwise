@@ -56,13 +56,13 @@ const Links = () => {
           <Reveal>
             <Link
               to="/opportunities"
-              className="group flex flex-col gap-2 rounded-2xl border border-emerald-200 bg-emerald-50/60 p-5 sm:flex-row sm:items-center sm:justify-between"
+              className="group flex flex-col gap-2 rounded-2xl border border-brand-200 bg-brand-50/60 p-5 sm:flex-row sm:items-center sm:justify-between"
             >
               <span className="text-slate-700">
                 <span className="font-semibold text-ink">Looking for live openings?</span> Our free portal lists open-source
                 programs, remote jobs, hackathons and research internships, updated every 3 days.
               </span>
-              <span className="inline-flex shrink-0 items-center gap-1 font-semibold text-emerald-700">
+              <span className="inline-flex shrink-0 items-center gap-1 font-semibold text-brand-700">
                 Open the portal <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
             </Link>

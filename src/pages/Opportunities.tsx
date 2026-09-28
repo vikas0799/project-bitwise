@@ -153,8 +153,8 @@ const Opportunities = () => {
           {live && (
             <p className="inline-flex items-center gap-2 text-sm text-slate-500">
               <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-600" />
               </span>
               Live listings updated {formatDate(live.generatedAt, true)} IST
             </p>
@@ -212,7 +212,7 @@ const Opportunities = () => {
                 <article key={p.name} className="rounded-lg border border-gray-200 bg-white p-5 flex flex-col">
                   <div className="flex items-start justify-between gap-3">
                     <h3 className="font-bold text-lg text-gray-900">{p.name}</h3>
-                    <span className={`shrink-0 text-xs font-semibold px-2 py-1 rounded ${p.paid ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-700'}`}>
+                    <span className={`shrink-0 text-xs font-semibold px-2 py-1 rounded ${p.paid ? 'bg-brand-100 text-brand-800' : 'bg-slate-100 text-slate-700'}`}>
                       {p.paid ? 'Paid' : 'Unpaid'}
                     </span>
                   </div>
@@ -222,7 +222,7 @@ const Opportunities = () => {
                     <div><dt className="inline font-medium">When: </dt><dd className="inline">{p.timeline}</dd></div>
                     <div><dt className="inline font-medium">Who: </dt><dd className="inline">{p.eligibility}</dd></div>
                   </dl>
-                  {p.caveat && <p className="mt-3 text-sm text-amber-800 bg-amber-50 rounded p-2">{p.caveat}</p>}
+                  {p.caveat && <p className="mt-3 text-sm text-slate-700 bg-slate-100 rounded p-2">{p.caveat}</p>}
                   <a href={p.url} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-1 text-[#0052CC] font-medium hover:underline">
                     Official site <ExternalLink className="h-4 w-4" />
                   </a>
@@ -267,7 +267,7 @@ const Opportunities = () => {
                       <div className="flex-grow min-w-0">
                         <p className="font-semibold text-gray-900">
                           {j.title}
-                          {j.fresher && <span className="ml-2 text-xs font-semibold px-2 py-0.5 rounded bg-green-100 text-green-800">Fresher-friendly</span>}
+                          {j.fresher && <span className="ml-2 text-xs font-semibold px-2 py-0.5 rounded bg-brand-100 text-brand-800">Fresher-friendly</span>}
                         </p>
                         <p className="text-sm text-gray-600">
                           {j.company}

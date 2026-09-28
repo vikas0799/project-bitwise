@@ -17,7 +17,7 @@ const StatsBand = () => {
     <section className="relative overflow-clip-safe bg-ink py-20">
       <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid-dark opacity-60 mask-radial" />
       <div aria-hidden className="pointer-events-none absolute -left-24 top-0 h-72 w-72 rounded-full bg-brand-600/30 blur-3xl" />
-      <div aria-hidden className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-cyan-500/20 blur-3xl" />
+      <div aria-hidden className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-brand-400/20 blur-3xl" />
 
       <Stagger className="relative mx-auto grid max-w-7xl grid-cols-2 gap-y-12 px-4 sm:px-6 lg:grid-cols-4 lg:px-8">
         {stats.map((stat) => (

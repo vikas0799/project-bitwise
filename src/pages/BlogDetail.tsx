@@ -51,7 +51,7 @@ const ShareRow = ({ title, url }: { title: string; url: string }) => {
         onClick={copy}
         className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
       >
-        {copied ? <Check className="h-4 w-4 text-emerald-600" /> : <Link2 className="h-4 w-4" />}
+        {copied ? <Check className="h-4 w-4 text-brand-600" /> : <Link2 className="h-4 w-4" />}
         {copied ? 'Copied' : 'Copy link'}
       </button>
     </div>

@@ -29,7 +29,7 @@ const OpportunitiesTeaser = () => {
     <section className="py-24 sm:py-28">
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
         <Reveal>
-          <p className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700 ring-1 ring-emerald-200">
+          <p className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-sm font-semibold text-brand-700 ring-1 ring-brand-200">
             Free for every student
           </p>
           <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-ink sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
@@ -63,14 +63,14 @@ const OpportunitiesTeaser = () => {
 
         <Reveal delay={0.15}>
           <div className="relative">
-            <div aria-hidden className="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-emerald-200/50 via-brand-100/60 to-cyan-100/60 blur-2xl" />
+            <div aria-hidden className="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-brand-200/50 via-brand-100/60 to-slate-100/60 blur-2xl" />
             <div className="relative rounded-3xl border border-slate-200 bg-white p-6 shadow-2xl shadow-ink/10 sm:p-8">
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-bold text-ink">Coming up next</h3>
                 <span className="inline-flex items-center gap-2 text-xs font-medium text-slate-500">
                   <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-400 opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-600" />
                   </span>
                   {data ? `Updated ${dayMonth(data.generatedAt)}` : 'Updated every 3 days'}
                 </span>

@@ -168,7 +168,7 @@ const FAQsPage = () => {
                   href={whatsappLink('Hi Bitwise School, I have a question.')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 font-semibold text-white transition hover:bg-emerald-600"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-600 px-5 py-3 font-semibold text-white transition hover:bg-brand-700"
                 >
                   <MessageCircle className="h-5 w-5" /> WhatsApp us
                 </a>

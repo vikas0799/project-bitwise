@@ -30,7 +30,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '6 min read',
     updated: '2026-09-28',
     author: 'Bitwise School',
-    cover: { from: '#4C1D95', to: '#7C3AED', symbol: 'O(n)' },
+    cover: { from: '#0A1633', to: '#0052CC', symbol: 'O(n)' },
   },
   {
     id: 'ai-job-profiles',
@@ -40,7 +40,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '5 min read',
     updated: '2026-09-28',
     author: 'Bitwise School',
-    cover: { from: '#4C1D95', to: '#DB2777', symbol: 'AI' },
+    cover: { from: '#003584', to: '#4D86F5', symbol: 'AI' },
   },
   {
     id: 'first-web-app',
@@ -50,7 +50,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '7 min read',
     updated: '2026-09-28',
     author: 'Bitwise School',
-    cover: { from: '#064E3B', to: '#059669', symbol: '</>' },
+    cover: { from: '#0F172A', to: '#1F66E5', symbol: '</>' },
   },
   {
     id: 'react-fundamentals',
@@ -60,7 +60,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '6 min read',
     updated: '2026-09-28',
     author: 'Bitwise School',
-    cover: { from: '#0C4A6E', to: '#0891B2', symbol: '⚛' },
+    cover: { from: '#0A2A66', to: '#1F66E5', symbol: '⚛' },
   },
   {
     id: 'getting-started-with-cpp',
@@ -70,7 +70,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '8 min read',
     updated: '2026-09-28',
     author: 'Bitwise School',
-    cover: { from: '#0A2A66', to: '#0052CC', symbol: 'C++' },
+    cover: { from: '#1E2A47', to: '#0043A8', symbol: 'C++' },
   },
   {
     id: 'java-best-practices',
@@ -80,7 +80,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '7 min read',
     updated: '2026-09-28',
     author: 'Bitwise School',
-    cover: { from: '#7C2D12', to: '#EA580C', symbol: 'Java' },
+    cover: { from: '#0043A8', to: '#8AB2FF', symbol: 'Java' },
   },
   {
     id: 'python-data-science',
@@ -90,7 +90,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '6 min read',
     updated: '2026-09-28',
     author: 'Bitwise School',
-    cover: { from: '#713F12', to: '#CA8A04', symbol: 'df' },
+    cover: { from: '#0A1633', to: '#0052CC', symbol: 'df' },
   },
   {
     id: 'student-perks',
@@ -100,19 +100,19 @@ export const blogPosts: BlogPost[] = [
     readTime: '4 min read',
     updated: '2026-09-28',
     author: 'Bitwise School',
-    cover: { from: '#0F766E', to: '#0891B2', symbol: '.edu' },
+    cover: { from: '#003584', to: '#4D86F5', symbol: '.edu' },
   },
 ];
 
 export const isPublished = (post: BlogPost) => hasPost(post.id);
 
 export const CATEGORY_COVERS: Record<BlogCategory, { from: string; to: string; symbol: string }> = {
-  Careers: { from: '#0F766E', to: '#0891B2', symbol: '→' },
-  AI: { from: '#4C1D95', to: '#DB2777', symbol: 'AI' },
-  Programming: { from: '#0A2A66', to: '#0052CC', symbol: '{ }' },
-  DSA: { from: '#4C1D95', to: '#7C3AED', symbol: 'O(n)' },
-  'Web Development': { from: '#064E3B', to: '#059669', symbol: '</>' },
-  'Data Science': { from: '#713F12', to: '#CA8A04', symbol: 'df' },
+  Careers: { from: '#0F172A', to: '#1F66E5', symbol: '→' },
+  AI: { from: '#0A2A66', to: '#1F66E5', symbol: 'AI' },
+  Programming: { from: '#1E2A47', to: '#0043A8', symbol: '{ }' },
+  DSA: { from: '#0043A8', to: '#8AB2FF', symbol: 'O(n)' },
+  'Web Development': { from: '#0A1633', to: '#0052CC', symbol: '</>' },
+  'Data Science': { from: '#003584', to: '#4D86F5', symbol: 'df' },
 };
 
 export const coverFor = (post: BlogPost) => post.cover ?? CATEGORY_COVERS[post.category];

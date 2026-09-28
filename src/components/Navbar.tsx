@@ -39,7 +39,7 @@ const CourseLink = ({ course }: { course: Course }) => (
       <span className="flex items-center gap-1.5 text-sm font-semibold text-ink">
         {course.title}
         {course.status === 'waitlist' && (
-          <span className="rounded-full bg-amber-100 px-1.5 py-px text-[10px] font-bold uppercase text-amber-800">New</span>
+          <span className="rounded-full bg-brand-100 px-1.5 py-px text-[10px] font-bold uppercase text-brand-800">New</span>
         )}
       </span>
       <span className="block text-xs text-slate-500">{course.tagline}</span>
@@ -144,8 +144,8 @@ const Navbar = () => {
             <AnimatePresence>
               {openMenu === 'courses' && (
                 <Panel className="left-1/2 w-[40rem] -translate-x-1/2">
-                  <div className="rounded-xl bg-gradient-to-br from-violet-50 to-fuchsia-50 p-2">
-                    <p className="flex items-center gap-1.5 px-2.5 pb-1 pt-1.5 text-xs font-bold uppercase tracking-wider text-violet-700">
+                  <div className="rounded-xl bg-brand-50/70 p-2">
+                    <p className="flex items-center gap-1.5 px-2.5 pb-1 pt-1.5 text-xs font-bold uppercase tracking-wider text-brand-700">
                       <Sparkles className="h-3.5 w-3.5" /> New courses, launching soon
                     </p>
                     <div className="grid grid-cols-2 gap-1">
@@ -173,7 +173,7 @@ const Navbar = () => {
 
           <NavLink to="/opportunities" className={({ isActive }) => linkClass(isActive)}>
             Opportunities
-            <span className="ml-1.5 rounded-full bg-emerald-100 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-emerald-700">
+            <span className="ml-1.5 rounded-full bg-ink px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
               Free
             </span>
           </NavLink>
@@ -255,12 +255,12 @@ const Navbar = () => {
                   {upcomingCourses.map((course) => (
                     <NavLink key={course.id} to={`/courses/${course.id}`} className={({ isActive }) => `${linkClass(isActive)} w-full text-base`}>
                       {course.title}
-                      <span className="ml-2 rounded-full bg-amber-100 px-1.5 py-px text-[10px] font-bold uppercase text-amber-800">New</span>
+                      <span className="ml-2 rounded-full bg-brand-100 px-1.5 py-px text-[10px] font-bold uppercase text-brand-800">New</span>
                     </NavLink>
                   ))}
                   <NavLink to="/opportunities" className={({ isActive }) => `${linkClass(isActive)} w-full text-base`}>
                     Opportunities
-                    <span className="ml-2 rounded-full bg-emerald-100 px-1.5 py-0.5 text-[10px] font-bold uppercase text-emerald-700">Free</span>
+                    <span className="ml-2 rounded-full bg-ink px-1.5 py-0.5 text-[10px] font-bold uppercase text-white">Free</span>
                   </NavLink>
                 </div>
               </div>

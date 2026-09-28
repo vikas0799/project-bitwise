@@ -29,7 +29,7 @@ const FinalCta = () => {
         <div className="relative overflow-clip-safe rounded-[2rem] bg-ink px-6 py-16 text-center shadow-2xl shadow-ink/30 sm:px-12 lg:py-20">
           <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid-dark opacity-60 mask-radial" />
           <div aria-hidden className="pointer-events-none absolute -left-20 -top-24 h-80 w-80 rounded-full bg-brand-500/40 blur-3xl animate-blob" />
-          <div aria-hidden className="pointer-events-none absolute -bottom-24 -right-16 h-80 w-80 rounded-full bg-cyan-400/25 blur-3xl animate-blob [animation-delay:-9s]" />
+          <div aria-hidden className="pointer-events-none absolute -bottom-24 -right-16 h-80 w-80 rounded-full bg-brand-400/25 blur-3xl animate-blob [animation-delay:-9s]" />
 
           <div className="relative">
             <h2 className="mx-auto max-w-2xl text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
@@ -44,7 +44,7 @@ const FinalCta = () => {
                 href={whatsappLink(WHATSAPP_TEXT)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-400"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-600 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-brand-900/40 transition hover:bg-brand-500"
               >
                 <MessageCircle className="h-5 w-5" /> Chat on WhatsApp
               </a>

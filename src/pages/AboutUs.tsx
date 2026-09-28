@@ -66,7 +66,7 @@ const AboutUs = () => (
         </Reveal>
         <Reveal delay={0.1}>
           <div className="relative">
-            <div aria-hidden className="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-brand-200/60 via-indigo-100/60 to-cyan-100/60 blur-2xl" />
+            <div aria-hidden className="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-brand-200/60 via-brand-100/60 to-slate-100/60 blur-2xl" />
             <img
               src="/students-coding.jpg"
               alt="Students coding in a classroom"
@@ -95,7 +95,7 @@ const AboutUs = () => (
             ].map(({ icon: Icon, title, text }) => (
               <StaggerItem key={title}>
                 <div className="h-full rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-indigo-600 text-white shadow-lg shadow-brand-600/25">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-lg shadow-brand-600/25">
                     <Icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-6 text-xl font-bold text-ink">{title}</h3>

@@ -12,9 +12,9 @@ const LEVELS: ('All' | ProjectLevel)[] = ['All', 'Beginner', 'Intermediate', 'Ad
 const TRACKS: ('All' | ProjectTrack)[] = ['All', 'Web', 'Full stack', 'Systems', 'AI'];
 
 const LEVEL_STYLES: Record<ProjectLevel, string> = {
-  Beginner: 'bg-emerald-50 text-emerald-700 ring-emerald-200',
-  Intermediate: 'bg-amber-50 text-amber-700 ring-amber-200',
-  Advanced: 'bg-rose-50 text-rose-700 ring-rose-200',
+  Beginner: 'bg-brand-50 text-brand-700 ring-brand-200',
+  Intermediate: 'bg-brand-100 text-brand-800 ring-brand-300',
+  Advanced: 'bg-ink text-white ring-ink',
 };
 
 const Pill = ({ active, onClick, children }: { active: boolean; onClick: () => void; children: string }) => (
@@ -80,7 +80,7 @@ const Projects = () => {
                     <span className={`rounded-full px-2.5 py-1 ring-1 ${LEVEL_STYLES[project.level]}`}>{project.level}</span>
                     <span className="rounded-full bg-slate-100 px-2.5 py-1 text-slate-700">{project.track}</span>
                     {project.track === 'AI' && (
-                      <span className="inline-flex items-center gap-1 rounded-full bg-violet-50 px-2.5 py-1 text-violet-700 ring-1 ring-violet-200">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-1 text-slate-700 ring-1 ring-slate-200">
                         <Sparkles className="h-3 w-3" /> Hot
                       </span>
                     )}

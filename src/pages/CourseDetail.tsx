@@ -149,7 +149,7 @@ const CourseDetail = () => {
                 <CourseCover course={course} className="h-40" />
                 <div className="p-6 sm:p-7">
                   <p className="text-sm text-slate-500">{waitlist ? 'First batch' : 'Course fee'}</p>
-                  <p className={waitlist ? 'text-2xl font-extrabold text-violet-700' : 'text-3xl font-extrabold text-ink'}>
+                  <p className={waitlist ? 'text-2xl font-extrabold text-brand-700' : 'text-3xl font-extrabold text-ink'}>
                     {formatPrice(course.price)}
                   </p>
                   {waitlist && (
@@ -171,7 +171,7 @@ const CourseDetail = () => {
                     Ask a question
                   </Link>
                   <p className="mt-4 flex items-center justify-center gap-1.5 text-sm text-slate-500">
-                    <ShieldCheck className="h-4 w-4 text-emerald-500" />
+                    <ShieldCheck className="h-4 w-4 text-brand-600" />
                     {waitlist ? 'Free to join, no payment needed' : '7-day money-back guarantee'}
                   </p>
 
@@ -201,7 +201,7 @@ const CourseDetail = () => {
                   {course.outcomes.map((outcome) => (
                     <StaggerItem key={outcome}>
                       <div className="flex h-full items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
-                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
+                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
                         <span className="text-slate-700">{outcome}</span>
                       </div>
                     </StaggerItem>
