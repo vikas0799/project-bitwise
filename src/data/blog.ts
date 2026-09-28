@@ -10,68 +10,97 @@ export interface BlogPost {
   excerpt: string;
   category: BlogCategory;
   readTime: string;
+  // Last time the facts in the post were checked (YYYY-MM-DD)
+  updated: string;
+  author?: string;
   cover?: { from: string; to: string; symbol: string };
 }
 
+// Old URLs that now live under a readable slug.
+export const blogAliases: Record<string, string> = {
+  '1': 'getting-started-with-cpp',
+};
+
 export const blogPosts: BlogPost[] = [
+  {
+    id: 'dsa-roadmap',
+    title: 'How to learn DSA for placements: a 16-week roadmap',
+    excerpt: 'What to study in which order, how many problems are enough, how to practise so patterns stick, and the mistakes that waste months.',
+    category: 'DSA',
+    readTime: '6 min read',
+    updated: '2026-09-28',
+    author: 'Bitwise School',
+    cover: { from: '#4C1D95', to: '#7C3AED', symbol: 'O(n)' },
+  },
   {
     id: 'ai-job-profiles',
     title: 'AI job profiles explained: Forward Deployed, GenAI and Applied AI engineers',
     excerpt: 'What each of the hottest AI roles actually does, the skills it needs, and a first project to start with.',
     category: 'AI',
-    readTime: '7 min read',
+    readTime: '5 min read',
+    updated: '2026-09-28',
+    author: 'Bitwise School',
     cover: { from: '#4C1D95', to: '#DB2777', symbol: 'AI' },
+  },
+  {
+    id: 'first-web-app',
+    title: 'Build and deploy your first web app with HTML, CSS and JavaScript',
+    excerpt: 'A hands-on walkthrough: a working expense tracker with local storage, built step by step and put online for free.',
+    category: 'Web Development',
+    readTime: '7 min read',
+    updated: '2026-09-28',
+    author: 'Bitwise School',
+    cover: { from: '#064E3B', to: '#059669', symbol: '</>' },
+  },
+  {
+    id: 'react-fundamentals',
+    title: 'React fundamentals for beginners: think in components',
+    excerpt: 'Components, JSX, props, state, events, lists and effects, with one small app built along the way and how to start a React project in 2026.',
+    category: 'Web Development',
+    readTime: '6 min read',
+    updated: '2026-09-28',
+    author: 'Bitwise School',
+    cover: { from: '#0C4A6E', to: '#0891B2', symbol: '⚛' },
+  },
+  {
+    id: 'getting-started-with-cpp',
+    title: 'Getting started with C++: setup, first programs and a 30-day plan',
+    excerpt: 'Install a compiler, understand every line of your first program, learn the core syntax with examples, and follow a 30-day plan to DSA-ready C++.',
+    category: 'Programming',
+    readTime: '8 min read',
+    updated: '2026-09-28',
+    author: 'Bitwise School',
+    cover: { from: '#0A2A66', to: '#0052CC', symbol: 'C++' },
+  },
+  {
+    id: 'java-best-practices',
+    title: 'Java best practices: write code your seniors will approve',
+    excerpt: 'Naming, immutability, null handling, collections, exceptions, streams and modern Java features, each with a before-and-after example.',
+    category: 'Programming',
+    readTime: '7 min read',
+    updated: '2026-09-28',
+    author: 'Bitwise School',
+    cover: { from: '#7C2D12', to: '#EA580C', symbol: 'Java' },
+  },
+  {
+    id: 'python-data-science',
+    title: 'Python for data science: NumPy, pandas and Matplotlib from zero',
+    excerpt: 'Set up your tools, then analyse a real-style dataset end to end: load, clean, group, visualise and draw conclusions, with pandas 3 in mind.',
+    category: 'Data Science',
+    readTime: '6 min read',
+    updated: '2026-09-28',
+    author: 'Bitwise School',
+    cover: { from: '#713F12', to: '#CA8A04', symbol: 'df' },
   },
   {
     id: 'student-perks',
     title: 'What your college email ID gets you: free tools every student should claim',
     excerpt: 'GitHub Student Pack, Notion, Azure credits, Figma, JetBrains and more, plus how to use them before you graduate.',
     category: 'Careers',
-    readTime: '6 min read',
+    readTime: '4 min read',
+    updated: '2026-09-28',
+    author: 'Bitwise School',
     cover: { from: '#0F766E', to: '#0891B2', symbol: '.edu' },
-  },
-  {
-    id: '1',
-    title: 'Getting Started with C++ Programming',
-    excerpt:
-      'Learn the fundamentals of the C++ programming language and start your journey as a software developer, from basic syntax to what to learn next.',
-    category: 'Programming',
-    readTime: '5 min read',
-  },
-  {
-    id: '2',
-    title: 'Mastering Data Structures and Algorithms',
-    excerpt: 'The data structures and algorithms concepts that matter most for technical interviews and real-world code.',
-    category: 'DSA',
-    readTime: '8 min read',
-  },
-  {
-    id: '3',
-    title: 'Building Your First Web Application',
-    excerpt: 'A step-by-step guide to your first web app with HTML, CSS and JavaScript, and how to deploy it.',
-    category: 'Web Development',
-    readTime: '6 min read',
-  },
-  {
-    id: '4',
-    title: 'Java Programming Best Practices',
-    excerpt: 'How to write clean, maintainable Java: design patterns, code organisation and performance basics.',
-    category: 'Programming',
-    readTime: '7 min read',
-  },
-  {
-    id: '5',
-    title: 'React.js Fundamentals for Beginners',
-    excerpt: 'Components, state and building interactive user interfaces: a beginner-friendly introduction to React.',
-    category: 'Web Development',
-    readTime: '6 min read',
-  },
-  {
-    id: '6',
-    title: 'Python for Data Science',
-    excerpt: 'How Python is used in data science, with a first look at NumPy, Pandas and Matplotlib.',
-    category: 'Data Science',
-    readTime: '9 min read',
   },
 ];
 

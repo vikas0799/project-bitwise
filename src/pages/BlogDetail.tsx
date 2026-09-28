@@ -1,16 +1,62 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import { m } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Clock } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, Clock, Link2, Linkedin, ListOrdered, MessageCircle, Twitter } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
 import Avatar from '../components/Avatar';
 import Markdown from '../components/Markdown';
 import BlogCard from '../components/BlogCard';
-import { blogPosts, coverFor, isPublished } from '../data/blog';
+import { blogAliases, blogPosts, coverFor, isPublished } from '../data/blog';
 import { loadPost } from '../lib/content';
 import { renderMarkdown } from '../lib/markdown';
+
+const formatDate = (iso: string) =>
+  new Date(`${iso}T00:00:00`).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+
+const ShareRow = ({ title, url }: { title: string; url: string }) => {
+  const [copied, setCopied] = useState(false);
+  const text = encodeURIComponent(title);
+  const link = encodeURIComponent(url);
+  const buttons = [
+    { label: 'WhatsApp', icon: MessageCircle, href: `https://wa.me/?text=${text}%20${link}` },
+    { label: 'LinkedIn', icon: Linkedin, href: `https://www.linkedin.com/sharing/share-offsite/?url=${link}` },
+    { label: 'X', icon: Twitter, href: `https://twitter.com/intent/tweet?text=${text}&url=${link}` },
+  ];
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+    } catch {
+      setCopied(false);
+    }
+  };
+  return (
+    <div className="mt-14 flex flex-wrap items-center gap-2 border-t border-slate-200 pt-8">
+      <span className="mr-2 text-sm font-semibold text-ink">Share this with a friend:</span>
+      {buttons.map(({ label, icon: Icon, href }) => (
+        <a
+          key={label}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
+        >
+          <Icon className="h-4 w-4" /> {label}
+        </a>
+      ))}
+      <button
+        type="button"
+        onClick={copy}
+        className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
+      >
+        {copied ? <Check className="h-4 w-4 text-emerald-600" /> : <Link2 className="h-4 w-4" />}
+        {copied ? 'Copied' : 'Copy link'}
+      </button>
+    </div>
+  );
+};
 
 const BlogDetail = () => {
   const { id } = useParams();
@@ -28,7 +74,11 @@ const BlogDetail = () => {
     };
   }, [id]);
 
-  const html = useMemo(() => (source ? renderMarkdown(source).html : null), [source]);
+  const rendered = useMemo(() => (source ? renderMarkdown(source) : null), [source]);
+  const html = rendered?.html ?? null;
+  const sections = rendered?.headings.filter((h) => h.depth === 2) ?? [];
+
+  if (id && blogAliases[id]) return <Navigate to={`/blog/${blogAliases[id]}`} replace />;
 
   if (!post || !isPublished(post)) {
     return (
@@ -75,11 +125,14 @@ const BlogDetail = () => {
             <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-ink sm:text-5xl">{post.title}</h1>
             <p className="mt-5 text-xl leading-relaxed text-slate-600">{post.excerpt}</p>
             <div className="mt-8 flex items-center gap-4">
-              <Avatar name="Bitwise School" size="sm" />
+              <Avatar name={post.author ?? 'Bitwise School'} size="sm" />
               <div className="text-sm">
-                <p className="font-semibold text-ink">Bitwise School</p>
-                <p className="inline-flex items-center gap-1 text-slate-500">
-                  <Clock className="h-3.5 w-3.5" /> {post.readTime}
+                <p className="font-semibold text-ink">{post.author ?? 'Bitwise School'}</p>
+                <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-slate-500">
+                  <span>Updated {formatDate(post.updated)}</span>
+                  <span className="inline-flex items-center gap-1">
+                    <Clock className="h-3.5 w-3.5" /> {post.readTime}
+                  </span>
                 </p>
               </div>
             </div>
@@ -96,6 +149,24 @@ const BlogDetail = () => {
             <span className="relative font-mono text-6xl font-bold text-white/90">{cover.symbol}</span>
           </div>
 
+          {sections.length >= 4 && (
+            <nav aria-label="In this article" className="mb-12 rounded-2xl border border-slate-200 bg-slate-50/70 p-6">
+              <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-slate-500">
+                <ListOrdered className="h-4 w-4" /> In this article
+              </p>
+              <ol className="mt-4 grid gap-x-8 gap-y-2 text-[0.95rem] sm:grid-cols-2">
+                {sections.map((h, i) => (
+                  <li key={h.id} className="flex gap-2">
+                    <span className="font-mono text-sm text-slate-400">{String(i + 1).padStart(2, '0')}</span>
+                    <a href={`#${h.id}`} className="font-medium text-slate-700 hover:text-brand-700">
+                      {h.text}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          )}
+
           {html ? (
             <Markdown html={html} />
           ) : (
@@ -106,7 +177,9 @@ const BlogDetail = () => {
             </div>
           )}
 
-          <div className="mt-16 rounded-3xl bg-ink p-8 text-center text-white">
+          {html && <ShareRow title={post.title} url={`https://www.bitwiseschool.com/blog/${post.id}`} />}
+
+          <div className="mt-12 rounded-3xl bg-ink p-8 text-center text-white">
             <p className="text-xl font-bold">Want to learn with a teacher?</p>
             <p className="mt-2 text-slate-300">Live classes, recordings of every session and real projects.</p>
             <Link

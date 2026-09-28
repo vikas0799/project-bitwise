@@ -1,3 +1,5 @@
+> **In short:** claim the GitHub Student Developer Pack first (it bundles dozens of offers), then Notion Education, Azure for Students, Figma for Education and JetBrains. Use them to host projects, build a portfolio on a free domain and learn from paid courses, and move everything to a personal account before you graduate.
+
 Your college email ID (the one ending in `.ac.in`, `.edu.in` or `.edu`) is one of the most valuable things you get in college, and most students never use it. It proves you are a student, and that unlocks free developer tools, cloud credits and courses worth a lot of money. Claim them in your first week, because they disappear when you graduate.
 
 > Offers change often. Everything below was checked on the official pages in September 2026. Always confirm the current terms on the linked page before you sign up.
@@ -55,6 +57,20 @@ JetBrains' IntelliJ IDEA, PyCharm, WebStorm, CLion and the rest are **free for s
 1. **Make a personal email your primary login** everywhere, and add your college email only for verification. College accounts are often deleted after you graduate.
 2. **Export your data**: download your Notion workspace, Drive files and any certificates.
 3. **Move domains and cloud projects** to a personal account before the credits run out.
+
+## FAQ
+
+**My college email doesn't end in .edu. Can I still apply?**
+Yes. Indian college domains such as `.ac.in` and `.edu.in` are usually accepted, and GitHub also accepts proof of enrollment such as a dated ID card or fee receipt if your email isn't recognised.
+
+**My GitHub Student Pack application was rejected. What now?**
+Make sure your GitHub profile has your real name, you apply from your college's location, and the document you upload clearly shows your name, college and a current date. Then apply again.
+
+**Do I have to pay anything or give a credit card?**
+The offers listed here don't need payment from students, though a few partner offers may ask for a card to prevent abuse. Read each offer's terms and set spending limits on any cloud account.
+
+**What happens when I graduate?**
+Most student benefits end, and some college accounts are deleted. Move domains, cloud projects and files to personal accounts before then (see the checklist above).
 
 ## Keep going
 

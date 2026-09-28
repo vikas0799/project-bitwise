@@ -196,11 +196,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.bitwiseschool.com/blog/1</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://www.bitwiseschool.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -334,5 +329,35 @@
     <loc>https://www.bitwiseschool.com/courses/devops-cloud</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/blog/dsa-roadmap</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/blog/first-web-app</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/blog/getting-started-with-cpp</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/blog/java-best-practices</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/blog/python-data-science</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/blog/react-fundamentals</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

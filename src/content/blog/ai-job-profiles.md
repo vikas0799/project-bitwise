@@ -1,3 +1,5 @@
+> **In short:** the AI roles hiring most today are AI/GenAI Engineer, Forward Deployed Engineer, Applied AI/ML Engineer, Agent/Automation Engineer and LLMOps/Platform Engineer. All of them still need strong programming and DSA. The fastest way in is to build and deploy two or three real AI projects, not to collect certificates.
+
 "Learn AI" is vague advice. Companies don't hire someone to "know AI". They hire people into specific roles. Here are the AI job profiles that are in demand right now, what each one actually does, and how an Indian student can start preparing today.
 
 ## The big shift: from using AI to building with AI
@@ -76,6 +78,23 @@ Almost every developer now uses AI coding assistants. What companies are short o
 4. **Build two or three real projects** and deploy them. A live link beats a certificate.
 5. **Show your work**: write short posts about what you built, contribute to open-source AI projects (see [open-source programs](/opportunities#open-source)) and keep your GitHub active.
 
+## FAQ
+
+**Do I need a master's degree or advanced maths for these roles?**
+Not for AI Engineer, Forward Deployed Engineer or Agent Engineer roles. They are software engineering roles that use AI models, so strong coding, APIs, databases and good judgement matter more. Applied ML roles do need more statistics and linear algebra, and research roles usually need a postgraduate degree.
+
+**Python or JavaScript?**
+Python has the richest AI and ML ecosystem. JavaScript/TypeScript is excellent for AI features inside web apps. Learn one well; you can pick up the other quickly.
+
+**Is a Forward Deployed Engineer a sales job?**
+No. It's an engineering job that writes production code, but in close contact with customers. You'll spend more time understanding problems and explaining trade-offs than a typical backend developer does.
+
+**Will AI replace software engineers?**
+AI tools already write a lot of routine code, which raises the bar: companies want engineers who can design systems, judge AI output, handle messy real-world data and take responsibility for what ships. Those are exactly the skills these roles are built on.
+
+**What should I build first?**
+One RAG app over real documents with citations, and one small agent that uses tools with a human approval step. Deploy both and write a short post about what broke and how you fixed it.
+
 ## Learn with us
 
-Bitwise School is launching **Generative AI Engineering**, **Applied AI & Machine Learning** and a **Forward Deployed Engineer** track. See the [courses page](/courses) and join the waitlist for the first batch.
+Bitwise School is launching **Generative AI Engineering**, **Applied AI & Machine Learning** and a **Forward Deployed Engineer** track. See the complete [Generative AI Engineering course](/courses/generative-ai), the [courses page](/courses), and join the waitlist for the first batch.
