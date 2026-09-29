@@ -260,7 +260,7 @@ Compare it with the plain JavaScript version:
 ## FAQ
 
 **Should I learn JavaScript fully before React?**
-You need the basics solid: functions, arrays and `map`/`filter`, objects, destructuring, modules and `async`/`await`. Our [JavaScript revision notes](/notes/javascript-revision) cover them. You don't need to master everything first.
+You need the basics solid: functions, arrays and `map`/`filter`, objects, destructuring, modules and `async`/`await`. Our [JavaScript notes](/notes/javascript-basics) cover them, topic by topic. You don't need to master everything first.
 
 **React or Next.js?**
 Learn React's core ideas first (this post), then Next.js, which is React plus routing, server rendering and a backend layer. Most new production apps use a framework like Next.js.

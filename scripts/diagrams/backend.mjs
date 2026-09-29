@@ -35,11 +35,14 @@ function sequence({ W, H, title, actors, messages, top = 64, step = 44 }) {
   });
   messages.forEach(([from, to, label, tone = 'ink', dashed = false], k) => {
     const y = top + 78 + k * step;
-    b += `<circle cx="${Math.min(xs[from], xs[to]) - 30}" cy="${y}" r="10" fill="${C.ink}"/>`;
-    b += text(Math.min(xs[from], xs[to]) - 30, y, k + 1, { size: 11, weight: 700, fill: '#FFFFFF' });
+    const dotX = Math.min(...Object.values(xs)) - 30;
+    b += `<circle cx="${dotX}" cy="${y}" r="10" fill="${C.ink}"/>`;
+    b += text(dotX, y, k + 1, { size: 11, weight: 700, fill: '#FFFFFF' });
     if (from === to) {
-      b += path(`M ${xs[from]} ${y - 8} C ${xs[from] + 40} ${y - 8}, ${xs[from] + 40} ${y + 12}, ${xs[from] + 4} ${y + 12}`, { tone, arrow: true, sw: 2 });
-      b += text(xs[from] + 48, y + 2, label, { size: 12.5, anchor: 'start', fill: C.text });
+      const side = xs[from] > W / 2 + 100 ? -1 : 1;
+      const x = xs[from];
+      b += path(`M ${x} ${y - 8} C ${x + side * 40} ${y - 8}, ${x + side * 40} ${y + 12}, ${x + side * 4} ${y + 12}`, { tone, arrow: true, sw: 2 });
+      b += text(x + side * 48, y + 2, label, { size: 12.5, anchor: side > 0 ? 'start' : 'end', fill: C.text });
     } else {
       const dir = xs[to] > xs[from] ? 1 : -1;
       b += line(xs[from] + dir * 4, y, xs[to] - dir * 6, y, { tone, arrow: true, sw: 2, dash: dashed ? '6 5' : undefined });
@@ -92,16 +95,16 @@ function sequence({ W, H, title, actors, messages, top = 64, step = 44 }) {
     ['route handler', 'good'],
   ];
   steps.forEach(([label, tone], k) => {
-    const x = 32 + k * 168;
-    b += box(x, 80, 140, 50, label, tone, { mono: true, size: 13 });
+    const x = 32 + k * 172;
+    b += box(x, 80, 128, 50, label, tone, { mono: true, size: 12.5 });
     if (k < steps.length - 1) {
-      b += arrow(x + 142, 105, x + 164, 105);
-      if (k > 0) b += text(x + 153, 92, 'next()', { size: 11, mono: true, fill: C.brand });
+      b += arrow(x + 130, 105, x + 168, 105);
+      if (k > 0) b += text(x + 149, 92, 'next()', { size: 11, mono: true, fill: C.brand });
     }
   });
-  b += arrow(774, 134, 774, 170, 'good');
-  b += box(700, 172, 148, 44, 'res.json(data)', 'good', { mono: true, size: 13 });
-  b += path('M 572 134 C 572 190, 520 206, 470 206', { tone: 'bad', arrow: true, sw: 2 });
+  b += arrow(752, 134, 752, 170, 'good');
+  b += box(680, 172, 148, 44, 'res.json(data)', 'good', { mono: true, size: 13 });
+  b += path('M 580 134 C 580 190, 520 206, 470 206', { tone: 'bad', arrow: true, sw: 2 });
   b += box(300, 186, 168, 44, 'res.status(401)', 'bad', { mono: true, size: 13 });
   b += text(560, 250, 'no valid token: stop here', { size: 12, fill: C.red });
   b += line(32, 276, 848, 276, { color: C.grid, sw: 1 });
@@ -121,7 +124,7 @@ function sequence({ W, H, title, actors, messages, top = 64, step = 44 }) {
   b += box(390, 150, 150, 56, ['Controller', 'controllers/'], 'brand');
   b += box(600, 70, 150, 56, ['Model', 'models/'], 'good');
   b += box(600, 230, 150, 56, ['View', 'views/ or JSON'], 'active');
-  b += box(790 - 20, 70, 70, 56, 'DB', 'muted');
+  b += box(770, 70, 70, 56, 'DB', 'plain');
   b += arrow(156, 170, 196, 170);
   b += text(176, 158, 'HTTP', { size: 11, fill: C.muted });
   b += arrow(344, 178, 386, 178);
@@ -150,17 +153,17 @@ function sequence({ W, H, title, actors, messages, top = 64, step = 44 }) {
   const row = (y, label, tone, steps, visibleAt) => {
     let out = text(32, y + 24, label, { size: 14, weight: 700, anchor: 'start', fill: TONES[tone].text });
     steps.forEach(([s, t], k) => {
-      const x = 200 + k * 170;
-      out += box(x, y, 150, 50, s, t, { size: 12.5 });
-      if (k < steps.length - 1) out += arrow(x + 152, y + 25, x + 166, y + 25);
+      const x = 200 + k * 166;
+      out += box(x, y, 152, 50, s, t, { size: 12 });
+      if (k < steps.length - 1) out += arrow(x + 154, y + 25, x + 162, y + 25);
     });
-    out += tag(200 + visibleAt * 170 + 75, y + 68, 'content visible here', { size: 11.5, fill: C.green, border: '#6EE7B7' });
+    out += tag(200 + visibleAt * 166 + 76, y + 68, 'content visible here', { size: 11.5, fill: C.green, border: '#6EE7B7' });
     return out;
   };
   b += row(72, 'SSR (EJS, Next.js)', 'brand', [
     ['request page', 'plain'],
     ['server gets data', 'brand'],
-    ['server sends full HTML', 'brand'],
+    ['full HTML arrives', 'brand'],
     ['JS adds interactivity', 'plain'],
   ], 2);
   b += row(192, 'CSR (React SPA)', 'active', [
@@ -213,7 +216,7 @@ function sequence({ W, H, title, actors, messages, top = 64, step = 44 }) {
 // ---------- PostgreSQL join ----------
 {
   const W = 880;
-  const H = 440;
+  const H = 480;
   let b = heading(32, 32, 'Relational data: a foreign key links tables, a JOIN combines them');
   b += text(32, 72, 'students', { size: 14, weight: 700, anchor: 'start', mono: true, fill: C.brand });
   b += table(32, 84, [['id', 'name'], [1, 'Asha'], [2, 'Ravi'], [3, 'Meena']], {
@@ -229,19 +232,19 @@ function sequence({ W, H, title, actors, messages, top = 64, step = 44 }) {
     size: 13,
     tones: { '0,0': 'good', '0,1': 'good', '0,2': 'good' },
   });
-  b += path('M 530 134 C 470 134, 280 110, 124 118', { tone: 'active', arrow: true, sw: 2 });
-  b += tag(330, 106, 'student_id references students(id)', { size: 11.5, fill: C.amber, border: '#FCD34D' });
-  b += rect(32, 244, 816, 40, { fill: '#0d1117', stroke: '#0d1117', rx: 10 });
-  b += text(48, 264, 'SELECT s.name, e.course FROM students s JOIN enrolments e ON e.student_id = s.id;', { size: 13, anchor: 'start', mono: true, fill: '#E6EDF3' });
-  b += text(32, 310, 'result', { size: 14, weight: 700, anchor: 'start' });
-  b += table(32, 322, [['name', 'course'], ['Asha', 'dsa'], ['Asha', 'react'], ['Meena', 'dsa']], {
+  b += path('M 585 222 C 585 262, 77 262, 77 226', { tone: 'active', arrow: true, sw: 2 });
+  b += tag(330, 252, 'student_id references students(id)', { size: 11.5, fill: C.amber, border: '#FCD34D' });
+  b += rect(32, 284, 816, 40, { fill: '#0d1117', stroke: '#0d1117', rx: 10 });
+  b += text(48, 304, 'SELECT s.name, e.course FROM students s JOIN enrolments e ON e.student_id = s.id;', { size: 13, anchor: 'start', mono: true, fill: '#E6EDF3' });
+  b += text(32, 350, 'result', { size: 14, weight: 700, anchor: 'start' });
+  b += table(32, 362, [['name', 'course'], ['Asha', 'dsa'], ['Asha', 'react'], ['Meena', 'dsa']], {
     w: 110,
     h: 26,
     size: 12.5,
     tones: { '0,0': 'muted', '0,1': 'muted' },
   });
-  b += text(290, 360, 'Ravi has no enrolments, so an inner JOIN leaves him out.', { size: 13, anchor: 'start', fill: C.text });
-  b += text(290, 384, 'Use LEFT JOIN to keep every student.', { size: 13, anchor: 'start', fill: C.brand, weight: 600 });
+  b += text(290, 400, 'Ravi has no enrolments, so an inner JOIN leaves him out.', { size: 13, anchor: 'start', fill: C.text });
+  b += text(290, 424, 'Use LEFT JOIN to keep every student.', { size: 13, anchor: 'start', fill: C.brand, weight: 600 });
   add('postgres-join', W, H, 'Students and enrolments tables linked by a foreign key and the result of joining them', b);
 }
 

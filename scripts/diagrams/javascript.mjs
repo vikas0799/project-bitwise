@@ -41,7 +41,7 @@ function box(x, y, w, h, label, tone = 'plain', o = {}) {
     '  return "hi";',
     '}',
     'greet();',
-  ].forEach((l, k) => (b += code(40, 96 + k * 26, l, { size: 13 })));
+  ].forEach((l, k) => (b += code(40, 104 + k * 26, l, { size: 13 })));
   b += line(290, 183, 312, 183, { tone: 'plain', arrow: true });
   b += panel(316, 58, 262, 250, '1. Memory phase (hoisting)', 'brand');
   [
@@ -83,10 +83,11 @@ function box(x, y, w, h, label, tone = 'plain', o = {}) {
   b += code(116, 240, 'const topic = "scope";', { size: 13 });
   b += code(116, 270, 'console.log(topic, course, app);', { size: 13 });
   b += code(116, 300, '// "scope" "JS" "Bitwise"', { size: 13, fill: C.muted });
-  b += path('M560 270 C640 270, 650 180, 600 172', { tone: 'brand', arrow: true, sw: 2 });
-  b += tag(660, 228, 'course: 1 level up', { size: 12, fill: C.brand, border: '#8AB2FF' });
-  b += path('M560 262 C720 250, 730 110, 300 104', { tone: 'active', arrow: true, sw: 2 });
-  b += tag(620, 124, 'app: 2 levels up', { size: 12, fill: C.amber, border: '#FCD34D' });
+  b += line(560, 250, 560, 160, { tone: 'brand', arrow: true, sw: 2.5 });
+  b += tag(560, 208, 'course: 1 level up', { size: 12, fill: C.brand, border: '#8AB2FF' });
+  b += line(690, 250, 690, 92, { tone: 'active', arrow: true, sw: 2.5 });
+  b += tag(690, 146, 'app: 2 levels up', { size: 12, fill: C.amber, border: '#FCD34D' });
+  b += text(410, 324, 'topic is found right here', { size: 12, fill: C.green, weight: 600 });
   add('scope-chain', W, H, 'Nested global, outer and inner scopes with variable lookup going outward', b);
 }
 
@@ -108,14 +109,14 @@ function box(x, y, w, h, label, tone = 'plain', o = {}) {
     'const next = makeCounter();',
     'next();  // 1',
     'next();  // 2',
-  ].forEach((l, k) => (b += code(40, 92 + k * 24, l, { size: 13 })));
+  ].forEach((l, k) => (b += code(40, 100 + k * 24, l, { size: 13 })));
   b += rect(420, 70, 390, 88, { fill: '#FFFFFF', stroke: C.faint, rx: 12, dash: '6 5' });
   b += text(440, 94, 'makeCounter() context', { size: 13, weight: 700, anchor: 'start', fill: C.muted });
   b += text(440, 120, 'finished and popped off the call stack…', { size: 13, anchor: 'start', fill: C.muted });
   b += text(440, 142, '…but its variables are still reachable', { size: 13, anchor: 'start', fill: C.muted });
   b += box(420, 200, 170, 48, 'next (function)', 'brand');
   b += line(596, 224, 648, 224, { tone: 'good', arrow: true, sw: 2.5 });
-  b += text(622, 206, '[[Environment]]', { size: 11.5, mono: true, fill: C.green });
+  b += text(622, 270, 'keeps a link', { size: 11.5, fill: C.green, weight: 600 });
   b += rect(654, 190, 156, 70, { fill: C.greenSoft, stroke: C.green, rx: 12, sw: 2 });
   b += text(732, 212, 'saved scope', { size: 12, weight: 700, fill: C.green });
   b += text(732, 238, 'count: 2', { size: 15, weight: 700, mono: true, fill: '#065F46' });
@@ -154,7 +155,7 @@ function box(x, y, w, h, label, tone = 'plain', o = {}) {
   b += arrow(440, 376, 440, 416);
   b += text(186, 156, '[[Prototype]]', { size: 11.5, mono: true, anchor: 'start', fill: C.muted });
   b += text(676, 178, '[[Prototype]]', { size: 11.5, mono: true, anchor: 'start', fill: C.muted });
-  b += tag(160, 440, 's1.study(): not on s1, found on Student.prototype', { size: 12, fill: C.brand, border: '#8AB2FF' });
+  b += tag(200, 440, 's1.study(): not on s1, found on Student.prototype', { size: 12, fill: C.brand, border: '#8AB2FF' });
   b += tag(700, 440, 'str.toString(): found on Object.prototype', { size: 12, fill: C.amber, border: '#FCD34D' });
   add('prototype-chain', W, H, 'Prototype chains of a Student instance and a String object meeting at Object.prototype and ending at null', b);
 }
@@ -193,7 +194,7 @@ function box(x, y, w, h, label, tone = 'plain', o = {}) {
   const H = 540;
   let b = heading(32, 32, 'What is `this`? Ask these questions in order');
   const qs = [
-    ['Is it an arrow function?', '`this` of the surrounding code (arrows have no own this)'],
+    ['Is it an arrow function?', 'the `this` of the surrounding code'],
     ['Called with new?', 'the brand-new object being created'],
     ['Called with call(), apply() or bind()?', 'the object you passed in'],
     ['Called as obj.method()?', 'obj, the object before the dot'],
@@ -232,7 +233,7 @@ function box(x, y, w, h, label, tone = 'plain', o = {}) {
   b += line(604, 246, 660, 246, { tone: 'bad', arrow: true });
   b += text(668, 246, '.catch(error => …)', { size: 13, mono: true, anchor: 'start', fill: C.red, weight: 600 });
   b += path('M 610 128 C 700 150, 700 190, 610 210', { tone: 'muted', dash: '5 4' });
-  b += text(708, 169, '.finally() runs either way', { size: 12.5, anchor: 'start', fill: C.muted });
+  b += text(648, 169, '.finally() runs for both', { size: 12.5, anchor: 'start', fill: C.muted });
   b += note(32, 312, 'Once fulfilled or rejected ("settled"), a promise never changes state again.');
   add('promise-states', W, H, 'The three promise states pending, fulfilled and rejected and the handlers for each', b);
 }
@@ -240,28 +241,28 @@ function box(x, y, w, h, label, tone = 'plain', o = {}) {
 // ---------- Event loop ----------
 {
   const W = 880;
-  const H = 480;
+  const H = 520;
   let b = heading(32, 32, 'The event loop: sync code first, then all microtasks, then one task');
-  b += panel(24, 58, 190, 300, 'Call stack');
+  b += panel(24, 58, 190, 344, 'Call stack');
   ['console.log(5)', 'main script'].forEach((f, k) => (b += box(40, 94 + k * 48, 158, 38, f, k === 0 ? 'brand' : 'plain', { size: 12.5 })));
-  b += text(119, 330, 'one thing at a time', { size: 12, fill: C.muted });
+  b += text(119, 380, 'one thing at a time', { size: 12, fill: C.muted });
   b += panel(250, 58, 300, 112, 'Web APIs (browser) / libuv (Node)');
   ['setTimeout', 'fetch', 'DOM events'].forEach((f, k) => (b += box(266 + k * 92, 96, 84, 34, f, 'plain', { size: 12, mono: false })));
   b += text(400, 152, 'wait in the background, then queue a callback', { size: 12, fill: C.muted });
-  b += panel(250, 196, 604, 76, 'Microtask queue: runs completely after each task', 'good');
+  b += panel(250, 190, 604, 96, 'Microtask queue: emptied completely after each task', 'good');
   ['.then(() => log(3))', 'queueMicrotask(log 4)', 'code after await'].forEach(
-    (f, k) => (b += box(430 + k * 142, 212, 134, 34, f, 'good', { size: 11.5 })),
+    (f, k) => (b += box(266 + k * 196, 230, 184, 38, f, 'good', { size: 12 })),
   );
-  b += panel(250, 290, 604, 76, 'Task (macrotask) queue: one per loop turn', 'active');
-  ['setTimeout(log 2)', 'click handler', 'message event'].forEach((f, k) => (b += box(430 + k * 142, 306, 134, 34, f, 'active', { size: 11.5 })));
-  b += path('M 214 120 C 232 120, 232 229, 248 229', { tone: 'good', arrow: true, sw: 2 });
-  b += path('M 214 150 C 232 150, 232 323, 248 323', { tone: 'active', arrow: true, sw: 2 });
-  b += text(40, 392, 'Loop:', { size: 14, weight: 700, anchor: 'start' });
+  b += panel(250, 306, 604, 96, 'Task (macrotask) queue: one task per loop turn', 'active');
+  ['setTimeout(log 2)', 'click handler', 'message event'].forEach((f, k) => (b += box(266 + k * 196, 346, 184, 38, f, 'active', { size: 12 })));
+  b += path('M 214 120 C 232 120, 232 249, 262 249', { tone: 'good', arrow: true, sw: 2 });
+  b += path('M 214 150 C 236 150, 236 365, 262 365', { tone: 'active', arrow: true, sw: 2 });
+  b += text(40, 436, 'Loop:', { size: 14, weight: 700, anchor: 'start' });
   [
     '1. Run the synchronous code until the call stack is empty.',
     '2. Run every microtask (and any microtasks they add).',
     '3. Take ONE task from the task queue, run it, then go back to step 2.',
-  ].forEach((l, k) => (b += text(92, 392 + k * 24, l, { size: 13, anchor: 'start', fill: C.text })));
+  ].forEach((l, k) => (b += text(92, 436 + k * 24, l, { size: 13, anchor: 'start', fill: C.text })));
   add('event-loop', W, H, 'The call stack, Web APIs, microtask queue and task queue of the JavaScript event loop', b);
 }
 
@@ -281,8 +282,8 @@ function box(x, y, w, h, label, tone = 'plain', o = {}) {
   b += line(620, 364, 620, 70, { tone: 'good', arrow: true, sw: 3 });
   b += text(636, 216, '③ bubble phase', { size: 14, weight: 700, fill: C.green, rotate: 90 });
   b += text(410, 400, '② target phase', { size: 14, weight: 700, fill: C.amber });
-  b += text(690, 120, "addEventListener('click', fn)", { size: 12, mono: true, anchor: 'start', fill: C.green });
-  b += text(690, 140, 'listens while bubbling (default)', { size: 12, anchor: 'start', fill: C.muted });
+  b += text(660, 110, 'default listener', { size: 12, mono: false, anchor: 'start', fill: C.green, weight: 700 });
+  b += text(660, 130, 'runs while bubbling', { size: 12, anchor: 'start', fill: C.muted });
   b += text(40, 110, "{ capture: true }", { size: 12, mono: true, anchor: 'start', fill: C.brand });
   b += text(40, 130, 'listens on the way down', { size: 12, anchor: 'start', fill: C.muted });
   add('event-propagation', W, H, 'A click event travelling down through capture, reaching the target and bubbling back up', b);

@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Link, NavLink, useNavigate, useParams } from 'react-router-dom';
+import { Link, NavLink, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, ChevronRight, Clock } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
 import Markdown from '../components/Markdown';
-import { allNotes, getNote, noteCategories } from '../data/notes';
+import { allNotes, getNote, noteAliases, noteCategories } from '../data/notes';
 import { loadNote } from '../lib/content';
 import { renderMarkdown, type Heading } from '../lib/markdown';
 
@@ -88,6 +88,8 @@ const NoteDoc = () => {
   const index = allNotes.findIndex((n) => n.slug === slug);
   const prev = index > 0 ? allNotes[index - 1] : null;
   const next = index >= 0 && index < allNotes.length - 1 ? allNotes[index + 1] : null;
+
+  if (slug && noteAliases[slug]) return <Navigate to={`/notes/${noteAliases[slug]}`} replace />;
 
   if (!note || failed) {
     return (

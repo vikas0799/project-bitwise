@@ -520,6 +520,7 @@
   }
   .doc :not(pre) > code {
     @apply rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-[0.85em] font-medium text-brand-700;
+    overflow-wrap: anywhere; /* long URLs and identifiers wrap instead of widening the page on phones */
   }
   .doc .code-block {
     @apply my-6 overflow-hidden rounded-2xl border border-slate-800 bg-[#0d1117] shadow-sm;

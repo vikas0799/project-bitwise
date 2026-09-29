@@ -71,47 +71,77 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.bitwiseschool.com/notes/javascript-revision</loc>
+    <loc>https://www.bitwiseschool.com/notes/javascript-interview-questions</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.bitwiseschool.com/notes/oop-in-javascript</loc>
+    <loc>https://www.bitwiseschool.com/notes/javascript-basics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/notes/javascript-execution-context</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/notes/javascript-functions-closures</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/notes/javascript-objects-prototypes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/notes/javascript-this</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/notes/javascript-async</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/notes/javascript-dom-events</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/notes/javascript-machine-coding</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/notes/nodejs-fundamentals</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/notes/express-routing-middleware</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/notes/server-side-rendering-ejs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/notes/postgresql-nodejs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/notes/authentication</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.bitwiseschool.com/notes/shallow-vs-deep-copy</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bitwiseschool.com/notes/promises-prototypes-this</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bitwiseschool.com/notes/javascript-interview-notes</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bitwiseschool.com/notes/node-express-basics</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bitwiseschool.com/notes/express-middleware</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bitwiseschool.com/notes/ejs-templating</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bitwiseschool.com/notes/ssr-vs-csr</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -122,26 +152,6 @@
   </url>
   <url>
     <loc>https://www.bitwiseschool.com/notes/mongoose</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bitwiseschool.com/notes/mvc-architecture</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bitwiseschool.com/notes/cookies-and-sessions</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bitwiseschool.com/notes/authentication-jwt</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.bitwiseschool.com/notes/passport-authentication</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, Clock, ListChecks } from 'lucide-react';
+import { ArrowRight, BookOpen, Clock, ListChecks, Star } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
@@ -12,7 +12,7 @@ const NotesIndex = () => (
   <div className="flex min-h-screen flex-col bg-white">
     <SEO
       title="Interview notes: DSA, JavaScript, Node.js, OS, CN, DBMS, System Design | Bitwise School"
-      description="Free revision notes for placement interviews: data structures and algorithms with diagrams and C++ code, JavaScript, Node.js and Express, MongoDB, operating systems, computer networks, DBMS and system design."
+      description="Free revision notes for placement interviews: data structures and algorithms with diagrams and C++ code, JavaScript and the top 100 JavaScript interview questions, Node.js and Express, MongoDB, PostgreSQL, operating systems, computer networks, DBMS and system design."
     />
     <Navbar />
 
@@ -28,6 +28,12 @@ const NotesIndex = () => (
             className="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-5 py-3 font-semibold text-white shadow-lg shadow-brand-600/25 transition hover:bg-brand-700"
           >
             <BookOpen className="h-5 w-5" /> Start reading
+          </Link>
+          <Link
+            to="/notes/javascript-interview-questions"
+            className="inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-3 font-semibold text-white transition hover:bg-ink-soft"
+          >
+            <Star className="h-5 w-5" /> Top 100 JS questions
           </Link>
           <Link
             to="/dsa-sheet"
@@ -52,8 +58,15 @@ const NotesIndex = () => (
                 <StaggerItem key={note.slug} className="h-full">
                   <Link
                     to={`/notes/${note.slug}`}
-                    className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl hover:shadow-brand-900/5"
+                    className={`group flex h-full flex-col rounded-2xl border bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl hover:shadow-brand-900/5 ${
+                      note.recommended ? 'border-brand-300 ring-1 ring-brand-200' : 'border-slate-200'
+                    }`}
                   >
+                    {note.recommended && (
+                      <span className="mb-3 inline-flex w-fit items-center gap-1 rounded-full bg-brand-600 px-2.5 py-1 text-xs font-semibold text-white">
+                        <Star className="h-3.5 w-3.5" /> Recommended
+                      </span>
+                    )}
                     <h3 className="text-lg font-bold leading-snug text-ink">{note.title}</h3>
                     <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-slate-600">{note.description}</p>
                     <div className="mt-auto flex items-center justify-between pt-5 text-sm">

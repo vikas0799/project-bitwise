@@ -244,7 +244,7 @@ export const diagramSizes: Record<string, [number, number]> = {
   ],
   "/images/js/event-loop.svg": [
     880,
-    480
+    520
   ],
   "/images/js/event-propagation.svg": [
     820,
@@ -280,7 +280,7 @@ export const diagramSizes: Record<string, [number, number]> = {
   ],
   "/images/backend/postgres-join.svg": [
     880,
-    440
+    480
   ],
   "/images/backend/auth-session-flow.svg": [
     880,

@@ -50,7 +50,7 @@ export const projectIdeas: ProjectIdea[] = [
     features: ['City search with debouncing', 'Use my location', 'Loading and error states', 'Five-day forecast'],
     shows: 'Async JavaScript, API handling and good UX around failure cases.',
     stretch: 'Cache results and support offline mode with a service worker.',
-    guide: { label: 'Revise async JS and debouncing', to: '/notes/javascript-interview-notes' },
+    guide: { label: 'Revise async JS and the event loop', to: '/notes/javascript-async' },
   },
   {
     id: 'placement-tracker',
@@ -62,7 +62,7 @@ export const projectIdeas: ProjectIdea[] = [
     features: ['Sign up and login with JWT', 'Kanban board of applications', 'Deadline reminders by email', 'Notes for each interview round', 'Stats dashboard'],
     shows: 'A complete full-stack app with authentication, CRUD and a real use case.',
     stretch: 'Share a read-only board with a mentor.',
-    guide: { label: 'Backend notes: Node, Express, JWT', to: '/notes/authentication-jwt' },
+    guide: { label: 'Auth notes: sessions, JWT, bcrypt', to: '/notes/authentication' },
   },
   {
     id: 'url-shortener',
@@ -97,7 +97,7 @@ export const projectIdeas: ProjectIdea[] = [
     features: ['Signup and login with Passport', 'Create and edit posts in Markdown', 'Comments', 'MVC folder structure', 'Validation with Joi'],
     shows: 'Classic MVC backend skills that many product companies still use.',
     stretch: 'Add image uploads and an admin moderation panel.',
-    guide: { label: 'EJS, MVC and Passport notes', to: '/notes/mvc-architecture' },
+    guide: { label: 'EJS and server-side rendering notes', to: '/notes/server-side-rendering-ejs' },
   },
   {
     id: 'ecommerce',

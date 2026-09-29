@@ -73,7 +73,7 @@ Almost every developer now uses AI coding assistants. What companies are short o
 ## A preparation roadmap
 
 1. **Get the fundamentals right**: one language well (Python or JavaScript), plus data structures and algorithms. AI roles still have coding rounds. Use our [DSA sheet](/dsa-sheet).
-2. **Learn full-stack basics**: APIs, databases and deployment. Our [backend notes](/notes/node-express-basics) are a good start.
+2. **Learn full-stack basics**: APIs, databases and deployment. Our [backend notes](/notes/nodejs-fundamentals) are a good start.
 3. **Learn the LLM toolkit**: prompting, structured outputs, RAG, tool calling and evaluations.
 4. **Build two or three real projects** and deploy them. A live link beats a certificate.
 5. **Show your work**: write short posts about what you built, contribute to open-source AI projects (see [open-source programs](/opportunities#open-source)) and keep your GitHub active.

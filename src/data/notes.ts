@@ -8,6 +8,7 @@ export interface NoteMeta {
   description: string;
   author: string;
   minutes: number;
+  recommended?: boolean;
 }
 
 export interface NoteCategory {
@@ -175,119 +176,134 @@ export const noteCategories: NoteCategory[] = [
   {
     "id": "javascript",
     "title": "JavaScript",
-    "description": "Core JS, OOP, async and the interview topics that come up in every frontend round.",
+    "description": "Core JavaScript topic by topic, from variables to the event loop, with diagrams, polyfills, machine coding problems and the top 100 interview questions.",
     "notes": [
       {
-        "slug": "javascript-revision",
-        "title": "JavaScript Revision: Foundations to Advanced",
-        "description": "Variables, data types, scope, hoisting, closures, arrays, objects, higher-order functions, async JavaScript, the DOM and browser APIs, with interview questions.",
+        "slug": "javascript-interview-questions",
+        "title": "Top 100 JavaScript Interview Questions (with Answers)",
+        "description": "The 15 must-prepare topics for product companies, then 100 hard JavaScript interview questions with short answers, verified outputs and links to detailed notes. Event loop, closures, this, prototypes, promises, polyfills, memory, modules, the DOM, coding problems and V8 internals.",
         "author": "Vikas Patel",
-        "minutes": 12
+        "minutes": 18,
+        "recommended": true
       },
       {
-        "slug": "oop-in-javascript",
-        "title": "OOP in JavaScript",
-        "description": "Encapsulation, abstraction, inheritance, polymorphism, classes, this, static methods, getters and setters.",
+        "slug": "javascript-basics",
+        "title": "JavaScript Basics: Variables, Types and Coercion",
+        "description": "var, let and const, the eight data types, typeof, operators including ?? and ?., truthy and falsy values, == vs === and the tricky coercion outputs asked in interviews, loops and control flow.",
+        "author": "Vikas Patel",
+        "minutes": 5
+      },
+      {
+        "slug": "javascript-execution-context",
+        "title": "How JavaScript Runs: Execution Context, Hoisting and Scope",
+        "description": "Execution contexts and their memory and execution phases, the call stack, hoisting of var, let, const and functions, the temporal dead zone, lexical environments, the scope chain and shadowing, with output questions.",
+        "author": "Vikas Patel",
+        "minutes": 5
+      },
+      {
+        "slug": "javascript-functions-closures",
+        "title": "Functions and Closures in JavaScript",
+        "description": "Function declarations, expressions and arrow functions compared, parameters, callbacks and higher-order functions, IIFEs, closures with diagrams, private state, the loop pitfall, memory leaks, currying, infinite currying and memoisation.",
         "author": "Vikas Patel",
         "minutes": 4
+      },
+      {
+        "slug": "javascript-objects-prototypes",
+        "title": "Objects, Prototypes and Classes in JavaScript",
+        "description": "Objects and destructuring, primitives vs objects, wrapper classes and autoboxing, the prototype chain with diagrams, Object.create, constructor functions, prototype vs __proto__, instanceof, classes, inheritance, private fields, static members and OOP in JavaScript.",
+        "author": "Vikas Patel",
+        "minutes": 6
+      },
+      {
+        "slug": "javascript-this",
+        "title": "The this Keyword: Bindings, call, apply and bind",
+        "description": "How JavaScript decides what this refers to, with a decision diagram. Default, implicit, explicit and new binding, arrow functions, lost this in callbacks, call vs apply vs bind, polyfills for all three, and the classic output questions.",
+        "author": "Vikas Patel",
+        "minutes": 5
+      },
+      {
+        "slug": "javascript-async",
+        "title": "Async JavaScript: Promises, async/await and the Event Loop",
+        "description": "Callbacks and callback hell, promise states with diagrams, creating and consuming promises, chaining, Promise.all, allSettled, race and any compared and implemented, async/await with error handling, the event loop with microtasks and macrotasks, and output questions.",
+        "author": "Vikas Patel",
+        "minutes": 8
+      },
+      {
+        "slug": "javascript-dom-events",
+        "title": "DOM, Events and Browser APIs",
+        "description": "Selecting and changing the DOM, DOM vs BOM vs virtual DOM, event propagation with capture, target and bubble phases, stopPropagation vs preventDefault, target vs currentTarget, event delegation, debouncing and throttling with diagrams, storage, fetch, rendering 100,000 items and Web Workers.",
+        "author": "Vikas Patel",
+        "minutes": 8
       },
       {
         "slug": "shallow-vs-deep-copy",
-        "title": "Shallow Copy vs Deep Copy",
-        "description": "References, spread, Object.assign, structuredClone and the pitfalls of the JSON method.",
+        "title": "Shallow Copy vs Deep Copy in JavaScript",
+        "description": "Copy by value vs copy by reference, shallow copies with spread, Object.assign and slice, deep copies with structuredClone, where JSON.parse(JSON.stringify()) fails, writing your own deep clone, and freeze vs seal vs preventExtensions.",
         "author": "Vikas Patel",
-        "minutes": 4
+        "minutes": 5
       },
       {
-        "slug": "promises-prototypes-this",
-        "title": "Promises, Prototypes and this",
-        "description": "Promise states and methods, wrapper classes and autoboxing, the prototype chain, call/apply/bind and classes.",
+        "slug": "javascript-machine-coding",
+        "title": "JavaScript Machine Coding Round: Polyfills and Utilities",
+        "description": "The problems asked in JavaScript machine coding rounds, solved and explained. Polyfills for map, filter, reduce and flat, debounce with leading, cancel and flush, once, memoize, curry, pipe and compose, deepEqual, flatten, groupBy, retry, timeouts, concurrency limits, a custom Promise, EventEmitter, LRU cache, rate limiter and UI problems.",
         "author": "Vikas Patel",
-        "minutes": 11
-      },
-      {
-        "slug": "javascript-interview-notes",
-        "title": "JavaScript Interview Notes",
-        "description": "Debouncing, throttling, event propagation and delegation, polyfills and machine-coding round problems.",
-        "author": "Vikas Patel",
-        "minutes": 21
+        "minutes": 13
       }
     ]
   },
   {
     "id": "backend",
-    "title": "Backend: Node, Express and MongoDB",
-    "description": "Everything you need to build and explain a Node.js backend.",
+    "title": "Backend: Node, Express, MongoDB and PostgreSQL",
+    "description": "Build and explain a Node.js backend: Express APIs, server-side rendering, MongoDB and PostgreSQL, and secure authentication.",
     "notes": [
       {
-        "slug": "node-express-basics",
-        "title": "Node.js and Express Basics",
-        "description": "Node.js, npm, modules, the fs and http modules, Express routes, request data, static files and CRUD.",
+        "slug": "nodejs-fundamentals",
+        "title": "Node.js Fundamentals: Runtime, Modules, npm, Files and Streams",
+        "description": "What Node.js is and how it runs JavaScript with V8 and libuv, blocking vs non-blocking code, LTS versions, npm and package.json, CommonJS vs ES modules, fs and path, a raw HTTP server, events, streams, environment variables and the Node event loop.",
         "author": "Vikas Patel",
-        "minutes": 4
+        "minutes": 8
       },
       {
-        "slug": "express-middleware",
-        "title": "Express Middleware",
-        "description": "How middleware works, next(), built-in and third-party middleware, body parsing and error handling.",
+        "slug": "express-routing-middleware",
+        "title": "Express.js: Routing, Middleware, REST APIs and MVC",
+        "description": "Build REST APIs with Express 5. Routes and route parameters, req.params, req.query and req.body, status codes, REST design, routers, middleware with diagrams, body parsing, error handling in Express 5, validation, security middleware, MVC folder structure and monolith vs microservices.",
+        "author": "Vikas Patel",
+        "minutes": 10
+      },
+      {
+        "slug": "server-side-rendering-ejs",
+        "title": "Server-Side Rendering with EJS, and SSR vs CSR",
+        "description": "Server-side vs client-side rendering with a timeline diagram, when to use each, hydration and hybrid rendering in Next.js. Then EJS with Express, every EJS tag, loops and conditions, partials and layouts, forms, render vs redirect, the Post/Redirect/Get pattern and XSS-safe output.",
         "author": "Vikas Patel",
         "minutes": 5
       },
       {
-        "slug": "ejs-templating",
-        "title": "EJS Templating",
-        "description": "Rendering dynamic HTML with EJS: tags, loops, forms, render vs redirect.",
-        "author": "Vikas Patel",
-        "minutes": 6
-      },
-      {
-        "slug": "ssr-vs-csr",
-        "title": "SSR vs CSR",
-        "description": "Server-side vs client-side rendering: trade-offs, when to use which, and hybrid rendering.",
-        "author": "Vikas Patel",
-        "minutes": 3
-      },
-      {
         "slug": "mongodb",
-        "title": "MongoDB Basics",
-        "description": "Documents and collections, mongosh commands, CRUD, operators, drivers and ODMs.",
+        "title": "MongoDB: Documents, CRUD, Queries, Indexes and Data Modelling",
+        "description": "How MongoDB stores data as documents with a diagram, SQL vs NoSQL, setting up Atlas or a local server, mongosh commands, CRUD, query and update operators, sorting and pagination, indexes and explain, the aggregation pipeline, embedding vs referencing, and using MongoDB from Node.js.",
         "author": "Vikas Patel",
-        "minutes": 3
+        "minutes": 7
       },
       {
         "slug": "mongoose",
-        "title": "Mongoose",
-        "description": "Schemas, models, CRUD, validation, hooks, virtuals, population, indexes and best practices.",
+        "title": "Mongoose: Schemas, Models, Validation and Relationships",
+        "description": "Using MongoDB from Express with Mongoose. Connecting, schemas and types, validation, models and CRUD, update pitfalls, populate for relationships, hooks, methods, statics and virtuals, timestamps, indexes, lean queries, pagination, transactions and a complete API example.",
         "author": "Vikas Patel",
-        "minutes": 4
+        "minutes": 7
       },
       {
-        "slug": "mvc-architecture",
-        "title": "MVC Architecture and Backend Concepts",
-        "description": "Monolith vs microservices, MVC, routers, method-override, relationships, middleware and validation with Joi.",
+        "slug": "postgresql-nodejs",
+        "title": "PostgreSQL with Node.js: Tables, Joins, Queries and Transactions",
+        "description": "Why PostgreSQL, setting it up, psql, data types and constraints, primary and foreign keys with a join diagram, INNER and LEFT JOIN, GROUP BY, indexes, JSONB, using pg from Node with a pool, parameterised queries and SQL injection, transactions, migrations, and Prisma or Drizzle.",
         "author": "Vikas Patel",
-        "minutes": 3
+        "minutes": 8
       },
       {
-        "slug": "cookies-and-sessions",
-        "title": "Cookies and Sessions",
-        "description": "Cookies, signed cookies, stateless vs stateful HTTP, express-session and an MVC auth flow.",
+        "slug": "authentication",
+        "title": "Authentication in Node.js: Hashing, Cookies, Sessions, JWT and Passport",
+        "description": "Authentication vs authorisation, password hashing with salt and bcrypt, cookies and their security flags, session-based login and token-based login with JWT (with sequence diagrams), access and refresh tokens, sessions vs JWT, Passport.js local and Google login, role-based access and a security checklist.",
         "author": "Vikas Patel",
-        "minutes": 4
-      },
-      {
-        "slug": "authentication-jwt",
-        "title": "Authentication, Hashing and JWT",
-        "description": "Authentication vs authorization, hashing, salts, bcrypt and JWT-based auth with middleware.",
-        "author": "Vikas Patel",
-        "minutes": 4
-      },
-      {
-        "slug": "passport-authentication",
-        "title": "Passport.js Authentication",
-        "description": "Session-based login with Passport, passport-local and passport-local-mongoose, step by step.",
-        "author": "Vikas Patel",
-        "minutes": 3
+        "minutes": 10
       }
     ]
   },
@@ -327,6 +343,22 @@ export const noteCategories: NoteCategory[] = [
     ]
   }
 ];
+
+// Old lecture-wise notes, merged into topic-wise ones. Keeps shared links working.
+export const noteAliases: Record<string, string> = {
+  'javascript-revision': 'javascript-basics',
+  'oop-in-javascript': 'javascript-objects-prototypes',
+  'promises-prototypes-this': 'javascript-objects-prototypes',
+  'javascript-interview-notes': 'javascript-machine-coding',
+  'node-express-basics': 'nodejs-fundamentals',
+  'express-middleware': 'express-routing-middleware',
+  'mvc-architecture': 'express-routing-middleware',
+  'ejs-templating': 'server-side-rendering-ejs',
+  'ssr-vs-csr': 'server-side-rendering-ejs',
+  'cookies-and-sessions': 'authentication',
+  'authentication-jwt': 'authentication',
+  'passport-authentication': 'authentication',
+};
 
 export const allNotes = noteCategories.flatMap((category) => category.notes.map((note) => ({ ...note, category })));
 

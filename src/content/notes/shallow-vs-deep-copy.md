@@ -1,506 +1,225 @@
 ---
-title: Shallow Copy vs Deep Copy
-description: References, spread, Object.assign, structuredClone and the pitfalls of the JSON method.
+title: "Shallow Copy vs Deep Copy in JavaScript"
+description: Copy by value vs copy by reference, shallow copies with spread, Object.assign and slice, deep copies with structuredClone, where JSON.parse(JSON.stringify()) fails, writing your own deep clone, and freeze vs seal vs preventExtensions.
 author: Vikas Patel
 ---
 
-### Introduction
+Copying objects is one of the most common sources of bugs in JavaScript, especially in React and Redux, where you must never change state directly. The whole topic comes down to one fact: **variables hold references to objects, not the objects themselves.**
 
-When working with objects and arrays in JavaScript, copying data is a common task. However, **not all copies are the same**.
-
-JavaScript provides two ways to copy objects:
-
-- **Shallow Copy**
-- **Deep Copy**
-
-Understanding the difference is essential because it affects how changes to one object impact another.
-
----
-
-## Memory Representation
-
-Consider the following object:
+## Copy by value vs copy by reference
 
 ```js
-const user = {
-  name: "John",
-  age: 25
-};
+let a = 10;
+let b = a;          // primitives: the value is copied
+b = 20;
+console.log(a);     // 10
+
+const user1 = { name: "John" };
+const user2 = user1; // objects: only the reference is copied
+user2.name = "Alex";
+console.log(user1.name); // "Alex": one object, two names for it
+console.log(user1 === user2); // true
 ```
 
-Memory
+`const user2 = user1` is **not a copy at all**. Both variables point to the same object in memory.
 
-```
-user
- │
- ▼
-{
-  name: "John",
-  age: 25
-}
-```
+## Shallow copy vs deep copy
 
-The variable `user` stores a **reference (memory address)** to the object, not the object itself.
+![An object, its shallow copy sharing the nested address object, and its deep copy with its own address](/images/js/shallow-vs-deep-copy.svg "A shallow copy duplicates the top level only. A deep copy duplicates every level.")
 
----
-
-## What is a Shallow Copy?
-
-A **shallow copy** creates a **new outer object**, but **nested objects and arrays are still shared by reference**.
-
-```
-Original Object
-      │
-      ▼
-{
-   name: "John",
-   address ──────────────┐
-}                        │
-                         ▼
-                  { city: "Delhi" }
-
-        │
-
-Shallow Copy
-
-{
-   name: "John",
-   address ──────────────┘
-}
-```
-
-Both objects point to the **same nested object**.
-
----
-
-## Example 1: Reference Assignment (Not a Copy)
+- A **shallow copy** creates a new outer object, but **nested objects and arrays are still shared**.
+- A **deep copy** duplicates **every level**, so the copy is fully independent.
 
 ```js
-const user1 = {
-  name: "John"
-};
+const user = { name: "Asha", address: { city: "Delhi" } };
 
-const user2 = user1;
+const shallow = { ...user };
+shallow.name = "Ravi";              // fine: top-level values were copied
+shallow.address.city = "Mumbai";    // changes user too: address is shared
+console.log(user.name, user.address.city); // "Asha" "Mumbai"
 
-user2.name = "Vikas";
-
-console.log(user1.name);
-console.log(user2.name);
+const deep = structuredClone(user);
+deep.address.city = "Pune";
+console.log(user.address.city);     // still "Mumbai"
+console.log(deep.address === user.address); // false
 ```
 
-Output
-
-```
-Vikas
-Vikas
-```
-
-Explanation
-
-Both variables point to the **same object**.
-
----
-
-## Example 2: Object Spread (Shallow Copy)
+## Ways to make a shallow copy
 
 ```js
-const user1 = {
-  name: "John",
-  age: 25
-};
+const obj = { a: 1, nested: { b: 2 } };
+const arr = [1, [2, 3]];
 
-const user2 = {
-  ...user1
-};
-
-user2.name = "Vikas";
-
-console.log(user1);
-console.log(user2);
+const c1 = { ...obj };               // spread (most common)
+const c2 = Object.assign({}, obj);   // Object.assign
+const c3 = [...arr];                 // array spread
+const c4 = arr.slice();              // slice
+const c5 = Array.from(arr);          // Array.from
 ```
 
-Output
+All of them copy only the top level. For flat data (no nested objects), a shallow copy is all you need, and it's cheap.
 
-```js
-user1
-{
-  name: "John",
-  age: 25
-}
+### Object.assign vs spread
 
-user2
-{
-  name: "Vikas",
-  age: 25
-}
-```
-
-The outer object is copied successfully.
-
----
-
-## Example 3: Nested Object Problem
-
-```js
-const user1 = {
-  name: "John",
-  address: {
-    city: "Delhi"
-  }
-};
-
-const user2 = {
-  ...user1
-};
-
-user2.address.city = "Lucknow";
-
-console.log(user1.address.city);
-console.log(user2.address.city);
-```
-
-Output
-
-```
-Lucknow
-Lucknow
-```
-
-Why?
-
-Because
-
-```
-user1.address
-        │
-        ▼
-   { city: "Lucknow" }
-        ▲
-        │
-user2.address
-```
-
-Only the first level was copied.
-
-The nested object is shared.
-
----
-
-## Other Ways to Create a Shallow Copy
-
-### Object.assign()
-
-```js
-const copy = Object.assign({}, original);
-```
-
----
-
-### Spread Operator
-
-```js
-const copy = {
-  ...original
-};
-```
-
----
-
-### Array Spread
-
-```js
-const arr = [1,2,3];
-
-const copy = [...arr];
-```
-
----
-
-### Array.slice()
-
-```js
-const copy = arr.slice();
-```
-
----
-
-## What is Deep Copy?
-
-A **deep copy** creates a completely independent copy of the object.
-
-Every nested object and array is copied into new memory.
-
-```
-Original
-
-{
-   name
-   address
-      │
-      ▼
- { city }
-}
-
-Deep Copy
-
-{
-   name
-   address
-      │
-      ▼
- { city }
-}
-
-Different memory locations
-```
-
----
-
-## Example 1: structuredClone()
-
-```js
-const user1 = {
-  name: "John",
-  address: {
-    city: "Delhi"
-  }
-};
-
-const user2 = structuredClone(user1);
-
-user2.address.city = "Lucknow";
-
-console.log(user1.address.city);
-console.log(user2.address.city);
-```
-
-Output
-
-```
-Delhi
-Lucknow
-```
-
-Perfect deep copy.
-
----
-
-## Example 2: JSON Method
-
-```js
-const copy = JSON.parse(JSON.stringify(original));
-```
-
-Example
-
-```js
-const user1 = {
-  name: "John",
-  address: {
-    city: "Delhi"
-  }
-};
-
-const user2 = JSON.parse(JSON.stringify(user1));
-
-user2.address.city = "Lucknow";
-
-console.log(user1.address.city);
-console.log(user2.address.city);
-```
-
-Output
-
-```
-Delhi
-Lucknow
-```
-
----
-
-## Limitations of JSON Method
-
-It does **not** copy correctly:
-
-- Date
-- Map
-- Set
-- RegExp
-- Function
-- undefined
-- Symbol
-- BigInt
-- Circular References
-
-Example
-
-```js
-const obj = {
-  date: new Date()
-};
-
-const copy = JSON.parse(JSON.stringify(obj));
-
-console.log(copy.date);
-```
-
-Output
-
-```
-"2026-08-04T12:00:00.000Z"
-```
-
-It becomes a string instead of a `Date` object.
-
----
-
-## Why structuredClone() is Better
-
-It correctly copies
-
-- Nested Objects
-- Arrays
-- Date
-- Map
-- Set
-- Blob
-- File
-- ArrayBuffer
-- Typed Arrays
-
-Example
-
-```js
-const map = new Map([
-  ["a",1]
-]);
-
-const copy = structuredClone(map);
-
-console.log(copy);
-```
-
----
-
-## Shallow Copy vs Deep Copy
-
-| Feature | Shallow Copy | Deep Copy |
+| | `Object.assign(target, ...sources)` | `{ ...source }` |
 | --- | --- | --- |
-| New Outer Object | ✅ | ✅ |
-| Nested Objects Copied | ❌ | ✅ |
-| Nested Arrays Copied | ❌ | ✅ |
-| Shares References | ✅ | ❌ |
-| Safe for Nested Data | ❌ | ✅ |
+| creates a new object | only if the target is `{}` | always |
+| can modify an existing object | yes, it mutates the target | no |
+| setters on the target | **triggers** them | defines plain properties |
+| depth | shallow | shallow |
 
----
+```js
+const defaults = { theme: "light", lang: "en" };
+const settings = { ...defaults, theme: "dark" }; // later keys win: { theme: "dark", lang: "en" }
+```
 
-## Comparison Example
+### Immutable updates (React and Redux style)
+
+Copy **every level you change**, and share the rest:
+
+```js
+const state = { user: { name: "Asha", skills: ["JS"] }, theme: "light" };
+
+const next = {
+  ...state,
+  user: { ...state.user, skills: [...state.user.skills, "React"] },
+};
+console.log(state.user.skills); // ["JS"]: the original is untouched
+console.log(next.theme === state.theme); // unchanged parts are shared, which is fine
+```
+
+## Deep copy with structuredClone
+
+`structuredClone(value)` is built into every modern browser and Node 17+. It's the right default for deep copies.
 
 ```js
 const original = {
-  name: "John",
-  address: {
-    city: "Delhi"
-  }
+  date: new Date("2026-01-01"),
+  tags: new Set(["js", "node"]),
+  scores: new Map([["asha", 90]]),
+  nested: { deep: { value: 1 } },
 };
+original.self = original;                    // circular reference
 
-const shallow = {
-  ...original
-};
-
-const deep = structuredClone(original);
-
-shallow.address.city = "Lucknow";
-
-console.log(original.address.city);
-console.log(shallow.address.city);
-console.log(deep.address.city);
+const copy = structuredClone(original);
+console.log(copy.date instanceof Date);      // true
+console.log(copy.tags.has("node"));          // true
+console.log(copy.self === copy);             // true: circular references are kept
+console.log(copy.nested.deep === original.nested.deep); // false
 ```
 
-Output
+**Limits:** it throws on **functions** and DOM nodes, and it doesn't keep **prototypes**, so class instances come back as plain objects (their methods are lost).
 
-```
-Lucknow
-Lucknow
-Delhi
-```
+## Why JSON.parse(JSON.stringify()) fails
 
----
-
-## Interview Questions
-
-### Is spread operator a deep copy?
-
-No.
-
-It creates only a **shallow copy**.
-
----
-
-### Is Object.assign() a deep copy?
-
-No.
-
-It also creates a **shallow copy**.
-
----
-
-### Which is the best way to create a deep copy?
-
-Use
+The old trick works only for plain JSON-like data:
 
 ```js
-structuredClone()
+const data = {
+  when: new Date("2026-01-01"),
+  greet() {},
+  missing: undefined,
+  big: NaN,
+  ids: new Set([1, 2]),
+};
+console.log(JSON.parse(JSON.stringify(data)));
+// { when: "2026-01-01T00:00:00.000Z", big: null, ids: {} }
 ```
 
----
+| Value | After the JSON round trip |
+| --- | --- |
+| `Date` | becomes a **string** |
+| functions, `undefined`, symbols | **removed** from objects |
+| `NaN`, `Infinity` | become `null` |
+| `Map`, `Set` | become `{}` |
+| circular reference | **throws** `TypeError` |
+| `BigInt` | **throws** `TypeError` |
+| class instances | lose their prototype |
 
-### When should we use deep copy?
+## Writing your own deep clone
 
-Whenever an object contains:
+A common interview task. Handle primitives, arrays, dates, maps, sets and **circular references** (with a `WeakMap` of what's already copied):
 
-- Nested Objects
-- Nested Arrays
-- Maps
-- Sets
-- Complex Data Structures
+```js
+function deepClone(value, seen = new WeakMap()) {
+  if (value === null || typeof value !== "object") return value; // primitives and functions
+  if (seen.has(value)) return seen.get(value);                    // circular reference
 
----
+  if (value instanceof Date) return new Date(value);
+  if (value instanceof RegExp) return new RegExp(value.source, value.flags);
 
-## Quick Revision
+  if (value instanceof Map) {
+    const out = new Map();
+    seen.set(value, out);
+    value.forEach((v, k) => out.set(deepClone(k, seen), deepClone(v, seen)));
+    return out;
+  }
+  if (value instanceof Set) {
+    const out = new Set();
+    seen.set(value, out);
+    value.forEach((v) => out.add(deepClone(v, seen)));
+    return out;
+  }
 
-#### Shallow Copy
+  const out = Array.isArray(value) ? [] : Object.create(Object.getPrototypeOf(value)); // keep the prototype
+  seen.set(value, out);
+  for (const key of Reflect.ownKeys(value)) {          // includes symbol keys
+    out[key] = deepClone(value[key], seen);
+  }
+  return out;
+}
 
+const a = { list: [1, { x: 2 }], when: new Date(0) };
+a.me = a;
+const b = deepClone(a);
+console.log(b.list[1] !== a.list[1], b.me === b, b.when.getTime()); // true true 0
 ```
-New Outer Object
 
-↓
+Functions are returned as they are: they're shared, not copied, which is what you want almost always.
 
-Nested objects are shared
+## freeze vs seal vs preventExtensions
 
-↓
+Sometimes you don't want a copy; you want to stop changes.
 
-Changes affect original
+| | add properties | delete properties | change values |
+| --- | --- | --- | --- |
+| `Object.preventExtensions(o)` | no | yes | yes |
+| `Object.seal(o)` | no | no | yes |
+| `Object.freeze(o)` | no | no | no |
+
+```js
+"use strict";
+const config = Object.freeze({ port: 3000, db: { host: "localhost" } });
+// config.port = 4000;        // TypeError in strict mode (silently ignored in sloppy mode)
+config.db.host = "remote";    // works! freeze is shallow too
+console.log(Object.isFrozen(config), Object.isFrozen(config.db)); // true false
 ```
 
-#### Deep Copy
+For full immutability, freeze recursively ("deep freeze"), or use a library like Immer, which lets you write mutating code and produces immutable copies.
 
-```
-New Outer Object
+## Quick revision
 
-↓
+| Method | Depth | Keeps Date/Map/Set | Circular refs | Functions |
+| --- | --- | --- | --- | --- |
+| `=` assignment | not a copy | — | — | — |
+| spread / `Object.assign` / `slice` | shallow | shared, not copied | shared | shared |
+| `JSON.parse(JSON.stringify())` | deep | no | throws | removed |
+| `structuredClone()` | deep | yes | yes | throws |
+| custom `deepClone` | deep | as you implement | with a `WeakMap` | shared |
 
-New Nested Objects
+## Interview questions
 
-↓
+1. Is the spread operator a deep copy? Is `Object.assign`?
+2. What are the failure cases of `JSON.parse(JSON.stringify(obj))`?
+3. Implement a deep clone that handles circular references.
+4. `Object.assign` vs spread.
+5. `freeze` vs `seal` vs `preventExtensions`. Is `freeze` deep?
+6. Why do React and Redux need immutable updates?
 
-Completely Independent
-```
+## Further reading
 
----
+- [MDN: structuredClone()](https://developer.mozilla.org/en-US/docs/Web/API/Window/structuredClone)
+- [MDN: Shallow copy](https://developer.mozilla.org/en-US/docs/Glossary/Shallow_copy) and [Deep copy](https://developer.mozilla.org/en-US/docs/Glossary/Deep_copy)
+- [MDN: Object.freeze()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)
 
-## Final Summary
-
-A **shallow copy** duplicates only the first level of an object. Any nested objects or arrays continue to share the same references, so modifying nested data in the copy also changes the original.
-
-A **deep copy** recursively duplicates every level of the object, ensuring that the copied object is completely independent. In modern JavaScript, `structuredClone()` is the recommended way to create deep copies because it correctly handles many built-in data types that the older `JSON.parse(JSON.stringify())` technique cannot.
+Next: [Machine coding round problems](/notes/javascript-machine-coding).
