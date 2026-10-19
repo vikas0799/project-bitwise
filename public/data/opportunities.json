@@ -1,26 +1,26 @@
 {
- "generatedAt": "2026-10-16T04:48:20.273Z",
+ "generatedAt": "2026-10-19T05:03:22.613Z",
  "sources": [
   {
    "name": "Remotive",
    "url": "https://remotive.com",
    "kind": "jobs",
    "ok": true,
-   "count": 14
+   "count": 12
   },
   {
    "name": "Remote OK",
    "url": "https://remoteok.com",
    "kind": "jobs",
    "ok": true,
-   "count": 68
+   "count": 65
   },
   {
    "name": "Himalayas",
    "url": "https://himalayas.app",
    "kind": "jobs",
    "ok": true,
-   "count": 21
+   "count": 14
   },
   {
    "name": "Jobicy",
@@ -34,7 +34,7 @@
    "url": "https://devpost.com",
    "kind": "hackathons",
    "ok": true,
-   "count": 60
+   "count": 64
   },
   {
    "name": "Codeforces",
@@ -46,224 +46,1027 @@
  ],
  "jobs": [
   {
-   "id": "himalayas-https://himalayas.app/companies/evolent/jobs/sr-project-manager-strategic-initiatives-ai-transformation",
-   "title": "Sr Project Manager, Strategic Initiatives (AI Transformation)",
-   "company": "Evolent",
-   "url": "https://himalayas.app/companies/evolent/jobs/sr-project-manager-strategic-initiatives-ai-transformation",
+   "id": "himalayas-https://himalayas.app/companies/rythm-health-inc/jobs/web-designer",
+   "title": "Web Designer",
+   "company": "Rythm Health, Inc.",
+   "url": "https://himalayas.app/companies/rythm-health-inc/jobs/web-designer?utm_source=api",
    "location": "United States",
    "openToIndia": "no",
    "fresher": false,
-   "postedAt": "2026-10-16T04:06:15.000Z",
+   "postedAt": "2026-10-19T04:32:11.000Z",
    "source": "Himalayas"
   },
   {
-   "id": "himalayas-https://himalayas.app/companies/ucar/jobs/engineer-ii-casual",
-   "title": "Engineer II (Casual)",
-   "company": "UCAR",
-   "url": "https://himalayas.app/companies/ucar/jobs/engineer-ii-casual",
+   "id": "himalayas-https://himalayas.app/companies/next-generation-inc/jobs/functional-lead-oracle-cloud-recruiting-module",
+   "title": "Functional Lead- Oracle Cloud Recruiting Module",
+   "company": "Next Generation Inc.",
+   "url": "https://himalayas.app/companies/next-generation-inc/jobs/functional-lead-oracle-cloud-recruiting-module?utm_source=api",
    "location": "United States",
    "openToIndia": "no",
    "fresher": false,
-   "postedAt": "2026-10-16T04:05:48.000Z",
+   "postedAt": "2026-10-19T04:31:59.000Z",
    "source": "Himalayas"
   },
   {
-   "id": "himalayas-https://himalayas.app/companies/axonect/jobs/architect-cyber-security",
-   "title": "Architect - Cyber Security",
-   "company": "Axonect",
-   "url": "https://himalayas.app/companies/axonect/jobs/architect-cyber-security",
-   "location": "Malaysia",
+   "id": "himalayas-https://himalayas.app/companies/cloudera/jobs/forward-deployed-ai-engineer",
+   "title": "Forward Deployed AI Engineer",
+   "company": "Cloudera",
+   "url": "https://himalayas.app/companies/cloudera/jobs/forward-deployed-ai-engineer?utm_source=api",
+   "location": "Ireland",
    "openToIndia": "no",
    "fresher": false,
-   "postedAt": "2026-10-16T04:04:38.000Z",
+   "postedAt": "2026-10-19T04:31:19.000Z",
    "source": "Himalayas"
   },
   {
-   "id": "himalayas-https://himalayas.app/companies/bjak/jobs/lead-engineer-ai-payments-app-4119420665",
-   "title": "Lead Engineer - AI Payments App",
-   "company": "Bjak",
-   "url": "https://himalayas.app/companies/bjak/jobs/lead-engineer-ai-payments-app-4119420665",
-   "location": "Indonesia",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-16T04:01:46.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/tilt-com/jobs/head-of-engineering-nira",
-   "title": "Head of Engineering, NIRA",
-   "company": "Tilt",
-   "url": "https://himalayas.app/companies/tilt-com/jobs/head-of-engineering-nira",
-   "location": "India",
-   "openToIndia": "yes",
-   "fresher": false,
-   "postedAt": "2026-10-16T03:59:51.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/sharesource-australia-bpo-corporation/jobs/site-reliability-engineer-cloud",
-   "title": "Site Reliability Engineer (Cloud)",
-   "company": "Sharesource Australia BPO Corporation",
-   "url": "https://himalayas.app/companies/sharesource-australia-bpo-corporation/jobs/site-reliability-engineer-cloud",
-   "location": "Colombia",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-16T03:57:46.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/m9-solutions/jobs/css-support-engineer-l2",
-   "title": "CSS Support Engineer L2",
-   "company": "M9 Solutions",
-   "url": "https://himalayas.app/companies/m9-solutions/jobs/css-support-engineer-l2",
+   "id": "himalayas-https://himalayas.app/companies/general-dynamics-information-technology/jobs/servicenow-developer-principal",
+   "title": "ServiceNow Developer Principal",
+   "company": "General Dynamics Information Technology",
+   "url": "https://himalayas.app/companies/general-dynamics-information-technology/jobs/servicenow-developer-principal?utm_source=api",
    "location": "United States",
    "openToIndia": "no",
    "fresher": false,
-   "postedAt": "2026-10-16T03:57:46.000Z",
+   "postedAt": "2026-10-19T04:08:55.000Z",
    "source": "Himalayas"
   },
   {
-   "id": "himalayas-https://himalayas.app/companies/knowmad-mood/jobs/software-engineer-java-kotlin-kubernetes-azure-100-remoto",
-   "title": "Software Engineer | Java, Kotlin, Kubernetes & Azure | 100% Remoto",
-   "company": "knowmad mood",
-   "url": "https://himalayas.app/companies/knowmad-mood/jobs/software-engineer-java-kotlin-kubernetes-azure-100-remoto",
-   "location": "Spain",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-16T03:56:39.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/digital-maelstrom/jobs/full-stack-developer",
-   "title": "Full Stack Developer",
-   "company": "Digital Maelstrom",
-   "url": "https://himalayas.app/companies/digital-maelstrom/jobs/full-stack-developer",
+   "id": "himalayas-https://himalayas.app/companies/minimed/jobs/sr-principal-tool-engineer",
+   "title": "Sr Principal Tool Engineer",
+   "company": "MiniMed",
+   "url": "https://himalayas.app/companies/minimed/jobs/sr-principal-tool-engineer?utm_source=api",
    "location": "United States",
    "openToIndia": "no",
    "fresher": false,
-   "postedAt": "2026-10-16T03:56:16.000Z",
+   "postedAt": "2026-10-19T04:02:50.000Z",
    "source": "Himalayas"
   },
   {
-   "id": "himalayas-https://himalayas.app/companies/harris/jobs/associate-systems-engineer",
-   "title": "Associate Systems Engineer",
-   "company": "Harris",
-   "url": "https://himalayas.app/companies/harris/jobs/associate-systems-engineer",
-   "location": "India",
-   "openToIndia": "yes",
-   "fresher": true,
-   "postedAt": "2026-10-16T03:55:08.000Z",
+   "id": "himalayas-https://himalayas.app/companies/yuno/jobs/security-compliance-engineer-9879868079",
+   "title": "Security Compliance Engineer",
+   "company": "Yuno",
+   "url": "https://himalayas.app/companies/yuno/jobs/security-compliance-engineer-9879868079?utm_source=api",
+   "location": "Argentina, Chile, Colombia, Dominican Republic, Ecuador, Mexico, Paraguay, Puerto Rico, Spain",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-19T03:50:53.000Z",
    "source": "Himalayas"
   },
   {
-   "id": "himalayas-https://himalayas.app/companies/shi-international-corp/jobs/sr-security-consultant-grc",
-   "title": "Sr. Security Consultant - GRC",
-   "company": "SHI International Corp.",
-   "url": "https://himalayas.app/companies/shi-international-corp/jobs/sr-security-consultant-grc",
+   "id": "himalayas-https://himalayas.app/companies/centric-software-inc/jobs/site-reliability-engineer-8485888118",
+   "title": "Site Reliability Engineer",
+   "company": "CENTRIC SOFTWARE INC",
+   "url": "https://himalayas.app/companies/centric-software-inc/jobs/site-reliability-engineer-8485888118?utm_source=api",
+   "location": "France",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-19T03:50:26.000Z",
+   "source": "Himalayas"
+  },
+  {
+   "id": "himalayas-https://himalayas.app/companies/thehivecareers/jobs/chief-information-security-officer-ciso-insurance-investments-1497918339",
+   "title": "Chief Information Security Officer (CISO) — Insurance & Investments",
+   "company": "TheHiveCareers",
+   "url": "https://himalayas.app/companies/thehivecareers/jobs/chief-information-security-officer-ciso-insurance-investments-1497918339?utm_source=api",
+   "location": "Dominican Republic",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-19T03:46:32.000Z",
+   "source": "Himalayas"
+  },
+  {
+   "id": "himalayas-https://himalayas.app/companies/talentwelove/jobs/backend-software-developer",
+   "title": "Backend Software Developer",
+   "company": "Talentwelove",
+   "url": "https://himalayas.app/companies/talentwelove/jobs/backend-software-developer?utm_source=api",
+   "location": "Germany",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-19T03:46:30.000Z",
+   "source": "Himalayas"
+  },
+  {
+   "id": "himalayas-https://himalayas.app/companies/solu/jobs/salesforce-order-management-system-developer",
+   "title": "Salesforce Order Management System Developer",
+   "company": "Solu",
+   "url": "https://himalayas.app/companies/solu/jobs/salesforce-order-management-system-developer?utm_source=api",
    "location": "United States",
    "openToIndia": "no",
    "fresher": false,
-   "postedAt": "2026-10-16T03:54:59.000Z",
+   "postedAt": "2026-10-19T03:44:04.000Z",
    "source": "Himalayas"
   },
   {
-   "id": "himalayas-https://himalayas.app/companies/axiom-recruit/jobs/developer-community-manager",
-   "title": "Developer Community Manager",
-   "company": "Axiom Recruit",
-   "url": "https://himalayas.app/companies/axiom-recruit/jobs/developer-community-manager",
+   "id": "himalayas-https://himalayas.app/companies/peraton/jobs/aws-cloud-engineer-9787768603",
+   "title": "AWS Cloud Engineer",
+   "company": "Peraton",
+   "url": "https://himalayas.app/companies/peraton/jobs/aws-cloud-engineer-9787768603?utm_source=api",
    "location": "United States",
    "openToIndia": "no",
    "fresher": false,
-   "postedAt": "2026-10-16T03:54:27.000Z",
+   "postedAt": "2026-10-19T03:43:14.000Z",
    "source": "Himalayas"
   },
   {
-   "id": "himalayas-https://himalayas.app/companies/knowmad-mood/jobs/fullstack-architect-java-react-_-full-remote",
-   "title": "Fullstack Architect (Java/React)_ Full Remote",
-   "company": "knowmad mood",
-   "url": "https://himalayas.app/companies/knowmad-mood/jobs/fullstack-architect-java-react-_-full-remote",
-   "location": "Spain",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-16T03:54:02.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/boldr/jobs/software-qa-manual-tester",
-   "title": "Software QA Manual Tester",
-   "company": "Boldr",
-   "url": "https://himalayas.app/companies/boldr/jobs/software-qa-manual-tester",
-   "location": "Philippines",
-   "openToIndia": "no",
-   "fresher": true,
-   "postedAt": "2026-10-16T03:53:49.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/knowmad-mood/jobs/as400-rpg-developer",
-   "title": "AS400 RPG Developer",
-   "company": "knowmad mood",
-   "url": "https://himalayas.app/companies/knowmad-mood/jobs/as400-rpg-developer",
-   "location": "Spain",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-16T03:53:28.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/north-american-electric-reliability-corporation/jobs/senior-data-analyst-reliability-assessment",
-   "title": "Senior Data Analyst, Reliability Assessment",
-   "company": "North American Electric Reliability Corporation",
-   "url": "https://himalayas.app/companies/north-american-electric-reliability-corporation/jobs/senior-data-analyst-reliability-assessment",
-   "location": "United States",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-16T03:53:27.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/calix/jobs/senior-tier-3-engineer-calix-cloud",
-   "title": "Senior Tier 3 Engineer - Calix Cloud",
-   "company": "Calix",
-   "url": "https://himalayas.app/companies/calix/jobs/senior-tier-3-engineer-calix-cloud",
-   "location": "United States",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-16T03:52:53.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/daloopa/jobs/engineering-manager-scout",
-   "title": "Engineering Manager - Scout",
-   "company": "Daloopa",
-   "url": "https://himalayas.app/companies/daloopa/jobs/engineering-manager-scout",
-   "location": "Canada",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-16T03:52:28.000Z",
-   "source": "Himalayas"
-  },
-  {
-   "id": "himalayas-https://himalayas.app/companies/drivesavers-data-recovery/jobs/remote-c-c-software-engineer-data-recovery-tools",
-   "title": "Remote C/C++ Software Engineer - Data Recovery Tools",
-   "company": "DriveSavers Data Recovery",
-   "url": "https://himalayas.app/companies/drivesavers-data-recovery/jobs/remote-c-c-software-engineer-data-recovery-tools",
+   "id": "himalayas-https://himalayas.app/companies/kombo-medical-solutions-ug/jobs/full-stack-developer-m-w-d",
+   "title": "Full Stack Developer (m/w/d)",
+   "company": "KOMBO medical solutions UG",
+   "url": "https://himalayas.app/companies/kombo-medical-solutions-ug/jobs/full-stack-developer-m-w-d?utm_source=api",
    "location": "Worldwide",
    "openToIndia": "yes",
    "fresher": false,
-   "postedAt": "2026-10-16T03:52:27.000Z",
+   "postedAt": "2026-10-19T03:43:02.000Z",
    "source": "Himalayas"
   },
   {
-   "id": "himalayas-https://himalayas.app/companies/bridgeway-benefit-technologies/jobs/ai-engineer",
-   "title": "AI Engineer",
-   "company": "Bridgeway Benefit Technologies",
-   "url": "https://himalayas.app/companies/bridgeway-benefit-technologies/jobs/ai-engineer",
+   "id": "himalayas-https://himalayas.app/companies/next-generation-inc/jobs/oracle-cloud-conversion-lead",
+   "title": "Oracle Cloud Conversion Lead",
+   "company": "Next Generation Inc.",
+   "url": "https://himalayas.app/companies/next-generation-inc/jobs/oracle-cloud-conversion-lead?utm_source=api",
    "location": "United States",
    "openToIndia": "no",
    "fresher": false,
-   "postedAt": "2026-10-16T03:51:26.000Z",
+   "postedAt": "2026-10-19T03:39:49.000Z",
    "source": "Himalayas"
+  },
+  {
+   "id": "himalayas-https://himalayas.app/companies/epicor/jobs/solution-engineer-retail",
+   "title": "Solution Engineer | Retail",
+   "company": "Epicor",
+   "url": "https://himalayas.app/companies/epicor/jobs/solution-engineer-retail?utm_source=api",
+   "location": "United States",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-19T03:38:31.000Z",
+   "source": "Himalayas"
+  },
+  {
+   "id": "jobicy-155766",
+   "title": "Senior QA Engineer",
+   "company": "Airtm",
+   "url": "https://jobicy.com/jobs/155766-senior-qa-engineer-3",
+   "location": "LATAM,  Canada,  USA",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T16:18:48.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155760",
+   "title": "Test Architect – Regression & Quality Strategy",
+   "company": "Oowlish Technology",
+   "url": "https://jobicy.com/jobs/155760-test-architect-regression-quality-strategy",
+   "location": "Argentina,  Brazil,  Mexico",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T16:10:39.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155746",
+   "title": "Machine Learning Engineer (Governance ML Platform)",
+   "company": "EDB",
+   "url": "https://jobicy.com/jobs/155746-machine-learning-engineer-governance-ml-platform",
+   "location": "EMEA",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T13:48:42.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155744",
+   "title": "Full Stack Software Engineer",
+   "company": "BetterHelp",
+   "url": "https://jobicy.com/jobs/155744-full-stack-software-engineer-2",
+   "location": "USA",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T13:48:40.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155730",
+   "title": "Senior Software Engineer, Data Pipeline",
+   "company": "Bloomreach",
+   "url": "https://jobicy.com/jobs/155730-senior-software-engineer-data-pipeline",
+   "location": "Europe",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T12:52:48.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155731",
+   "title": "Staff Software Engineer - Python, Java / Spring or Go",
+   "company": "Bloomreach",
+   "url": "https://jobicy.com/jobs/155731-staff-software-engineer-python-java-spring-or-go",
+   "location": "Europe",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T12:52:47.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155726",
+   "title": "Manager, Engineering (Remote Eligible in Bulgaria)",
+   "company": "Smartsheet",
+   "url": "https://jobicy.com/jobs/155726-manager-engineering-remote-eligible-in-bulgaria",
+   "location": "Bulgaria",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T12:52:47.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155727",
+   "title": "Senior Full-Stack Software Engineer (Remote in Europe)",
+   "company": "Skedda",
+   "url": "https://jobicy.com/jobs/155727-senior-full-stack-software-engineer-remote-in-europe-2",
+   "location": "Europe",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T12:52:44.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155723",
+   "title": "Staff Software Engineer, Audit (Full Stack)",
+   "company": "Fieldguide",
+   "url": "https://jobicy.com/jobs/155723-staff-software-engineer-audit-full-stack",
+   "location": "USA",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T12:50:02.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155720",
+   "title": "Senior Software Engineer, Audit (Full Stack)",
+   "company": "Fieldguide",
+   "url": "https://jobicy.com/jobs/155720-senior-software-engineer-audit-full-stack",
+   "location": "USA",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T12:50:01.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155695",
+   "title": "Ads Quality Rater – Język polski (Polska)",
+   "company": "Welo Global",
+   "url": "https://jobicy.com/jobs/155695-ads-quality-rater-jezyk-polski-polska",
+   "location": "Poland",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T07:17:42.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155692",
+   "title": "Ads Quality Rater – German (Austria)",
+   "company": "Welo Global",
+   "url": "https://jobicy.com/jobs/155692-ads-quality-rater-german-austria",
+   "location": "Austria",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T07:17:40.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155689",
+   "title": "Ads Quality Rater - Slovenian (Slovenia)",
+   "company": "Welo Global",
+   "url": "https://jobicy.com/jobs/155689-ads-quality-rater-slovenian-slovenia",
+   "location": "Slovenia",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T07:17:39.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155678",
+   "title": "Software Engineer II - Poland",
+   "company": "Housecall Pro",
+   "url": "https://jobicy.com/jobs/155678-software-engineer-ii-poland",
+   "location": "Poland",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T07:05:49.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155671",
+   "title": "Software Engineer - Applied AI",
+   "company": "DevRev",
+   "url": "https://jobicy.com/jobs/155671-software-engineer-applied-ai",
+   "location": "Philippines",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T06:59:33.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155660",
+   "title": "Software Engineer",
+   "company": "Flex",
+   "url": "https://jobicy.com/jobs/155660-software-engineer-12",
+   "location": "Brazil",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T06:51:45.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155665",
+   "title": "Full Stack Developer (Frontend-Focused) - Mexico",
+   "company": "Brafton",
+   "url": "https://jobicy.com/jobs/155665-full-stack-developer-frontend-focused-mexico",
+   "location": "Mexico",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T06:51:44.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155662",
+   "title": "Senior Software Engineer, AI Engineer (Brazil)",
+   "company": "TRM Labs",
+   "url": "https://jobicy.com/jobs/155662-senior-software-engineer-ai-engineer-brazil",
+   "location": "Brazil",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T06:51:44.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155661",
+   "title": "Full Stack Developer (Frontend-Focused) - Brazil",
+   "company": "Brafton",
+   "url": "https://jobicy.com/jobs/155661-full-stack-developer-frontend-focused-brazil",
+   "location": "Brazil",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T06:51:43.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155651",
+   "title": "Senior C++/iOS Engineer - User Platform",
+   "company": "Spotify",
+   "url": "https://jobicy.com/jobs/155651-senior-c-ios-engineer-user-platform",
+   "location": "Sweden,  UK",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T04:35:03.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155656",
+   "title": "Ads Quality Rater - Slovak (Slovakia)",
+   "company": "Welo Global",
+   "url": "https://jobicy.com/jobs/155656-ads-quality-rater-slovak-slovakia",
+   "location": "Slovakia",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T04:35:02.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155655",
+   "title": "Senior Fullstack Engineer",
+   "company": "Spotify",
+   "url": "https://jobicy.com/jobs/155655-senior-fullstack-engineer-3",
+   "location": "Sweden,  UK",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T04:35:01.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155649",
+   "title": "Ads Quality Rater - Lithuanian (Lithuania)",
+   "company": "Welo Global",
+   "url": "https://jobicy.com/jobs/155649-ads-quality-rater-lithuanian-lithuania",
+   "location": "Lithuania",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T04:35:01.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155652",
+   "title": "Ads Quality Rater - Norwegian (Norway)",
+   "company": "Welo Global",
+   "url": "https://jobicy.com/jobs/155652-ads-quality-rater-norwegian-norway",
+   "location": "Norway",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T04:34:59.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155632",
+   "title": "Director, AI Platforms",
+   "company": "Life360",
+   "url": "https://jobicy.com/jobs/155632-director-ai-platforms",
+   "location": "USA",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T04:30:43.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155618",
+   "title": "Senior Software Engineer, Growth",
+   "company": "Apollo.io",
+   "url": "https://jobicy.com/jobs/155618-senior-software-engineer-growth-2",
+   "location": "Poland",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T04:29:19.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-150901",
+   "title": "Senior Software Engineer",
+   "company": "PolicyMe",
+   "url": "https://jobicy.com/jobs/150901-senior-software-engineer-2",
+   "location": "Canada",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T03:50:30.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-150902",
+   "title": "Software Engineer",
+   "company": "PolicyMe",
+   "url": "https://jobicy.com/jobs/150902-software-engineer-4",
+   "location": "Canada",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T03:50:28.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-153535",
+   "title": "Senior Software Architect (C#/Angular/AI First) - GovTech SaaS company",
+   "company": "Truelogic",
+   "url": "https://jobicy.com/jobs/153535-senior-software-architect-c-angular-ai-first-govtech-saas-company",
+   "location": "Mexico",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T03:50:22.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-153504",
+   "title": "Forward Deployed Engineer",
+   "company": "Kong Inc.",
+   "url": "https://jobicy.com/jobs/153504-forward-deployed-engineer-5",
+   "location": "USA",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T03:35:27.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-150933",
+   "title": "Senior Software Engineer (Elixir)",
+   "company": "Sona",
+   "url": "https://jobicy.com/jobs/150933-senior-software-engineer-elixir",
+   "location": "Europe,  UK",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T03:35:24.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-153501",
+   "title": "Staff Software Engineer, Identity and Access Management",
+   "company": "Kong Inc.",
+   "url": "https://jobicy.com/jobs/153501-staff-software-engineer-identity-and-access-management",
+   "location": "Canada",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T03:35:13.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-153500",
+   "title": "Senior Software Engineer, Integrated Workflows",
+   "company": "Mural",
+   "url": "https://jobicy.com/jobs/153500-senior-software-engineer-integrated-workflows",
+   "location": "Argentina,  Canada",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T03:35:11.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-150907",
+   "title": "Director, Software Engineering (AI Workflows & Ecosystem)",
+   "company": "Jobber",
+   "url": "https://jobicy.com/jobs/150907-director-software-engineering-ai-workflows-ecosystem",
+   "location": "Canada",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-18T03:35:10.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155611",
+   "title": "Ads Quality Rater - Hebrew (Israel)",
+   "company": "Welo Global",
+   "url": "https://jobicy.com/jobs/155611-ads-quality-rater-hebrew-israel",
+   "location": "Israel",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-17T14:08:45.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155603",
+   "title": "Engineering Manager, SupportX",
+   "company": "SeatGeek",
+   "url": "https://jobicy.com/jobs/155603-engineering-manager-supportx-2",
+   "location": "USA",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-17T14:06:35.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155600",
+   "title": "Senior Backend Engineer (Booking Integrations, Contract)",
+   "company": "Aescape",
+   "url": "https://jobicy.com/jobs/155600-senior-backend-engineer-booking-integrations-contract",
+   "location": "USA",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-17T14:06:34.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155587",
+   "title": "Engineering Director, EU",
+   "company": "Monzo",
+   "url": "https://jobicy.com/jobs/155587-engineering-director-eu",
+   "location": "UK",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-17T08:33:07.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155579",
+   "title": "AI Engineer - 4 Day Week + Remote",
+   "company": "Laminar Projects",
+   "url": "https://jobicy.com/jobs/155579-ai-engineer-4-day-week-remote",
+   "location": "Poland,  Portugal",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-17T08:33:07.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "remoteok-1137542",
+   "title": "Graduate Transport Planner",
+   "company": "Curtins",
+   "url": "https://remoteOK.com/remote-jobs/remote-graduate-transport-planner-curtins-1137542",
+   "location": "",
+   "openToIndia": "unknown",
+   "fresher": true,
+   "postedAt": "2026-10-17T08:00:50.000Z",
+   "source": "Remote OK"
+  },
+  {
+   "id": "remoteok-1137541",
+   "title": "Key Account Manager Danish Market Native Speaker Copenhagen",
+   "company": "Packmatic GmbH",
+   "url": "https://remoteOK.com/remote-jobs/remote-key-account-manager-danish-market-native-speaker-copenhagen-packmatic-gmbh-1137541",
+   "location": "Copenhagen",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-17T08:00:42.000Z",
+   "source": "Remote OK"
+  },
+  {
+   "id": "remoteok-1137540",
+   "title": "Technical Account Manager",
+   "company": "Yuno",
+   "url": "https://remoteOK.com/remote-jobs/remote-technical-account-manager-yuno-1137540",
+   "location": "Brazil",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-17T08:00:32.000Z",
+   "source": "Remote OK"
+  },
+  {
+   "id": "jobicy-155575",
+   "title": "Power Platform Developer",
+   "company": "Oddball",
+   "url": "https://jobicy.com/jobs/155575-power-platform-developer",
+   "location": "USA",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-17T07:48:28.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155572",
+   "title": "Full Stack Engineer",
+   "company": "Oddball",
+   "url": "https://jobicy.com/jobs/155572-full-stack-engineer-6",
+   "location": "USA",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-17T07:48:28.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155565",
+   "title": "Lead Developer / Architect Web3",
+   "company": "GoFasti",
+   "url": "https://jobicy.com/jobs/155565-1140-lead-developer-architect-web3",
+   "location": "Anywhere",
+   "openToIndia": "yes",
+   "fresher": false,
+   "postedAt": "2026-10-17T06:55:52.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-153461",
+   "title": "Senior Manager, AI Engineering",
+   "company": "HackerOne",
+   "url": "https://jobicy.com/jobs/153461-senior-manager-ai-engineering-2",
+   "location": "USA",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-17T04:15:10.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-153452",
+   "title": "Edge Functions Engineer",
+   "company": "Supabase",
+   "url": "https://jobicy.com/jobs/153452-edge-functions-engineer",
+   "location": "Anywhere",
+   "openToIndia": "yes",
+   "fresher": false,
+   "postedAt": "2026-10-17T04:15:08.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-153449",
+   "title": "Software Engineer - Auth",
+   "company": "Supabase",
+   "url": "https://jobicy.com/jobs/153449-software-engineer-auth",
+   "location": "Anywhere",
+   "openToIndia": "yes",
+   "fresher": false,
+   "postedAt": "2026-10-17T04:15:06.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-153404",
+   "title": "Senior Software Engineer (Home Energy)",
+   "company": "Enode",
+   "url": "https://jobicy.com/jobs/153404-senior-software-engineer-home-energy-2",
+   "location": "Europe",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-17T04:10:31.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-153469",
+   "title": "Senior QA Automation Engineer - Product (LATAM)",
+   "company": "Upgrade",
+   "url": "https://jobicy.com/jobs/153469-senior-qa-automation-engineer-product-latam",
+   "location": "Argentina,  Brazil",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-17T04:10:28.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-153378",
+   "title": "Senior Engineering Manager [gn] Data Intelligence Platform",
+   "company": "Actian",
+   "url": "https://jobicy.com/jobs/153378-senior-engineering-manager-gn-data-intelligence-platform",
+   "location": "UK",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-17T04:05:17.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-153370",
+   "title": "Android Engineer (mid-level)",
+   "company": "Tripadvisor",
+   "url": "https://jobicy.com/jobs/153370-android-engineer-mid-level",
+   "location": "Poland",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-17T04:05:04.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-153397",
+   "title": "Engineering Manager, AI Transformation",
+   "company": "Goodleap",
+   "url": "https://jobicy.com/jobs/153397-engineering-manager-ai-transformation",
+   "location": "USA",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-17T03:05:30.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-153380",
+   "title": "Senior Full-stack Engineer",
+   "company": "Limbic",
+   "url": "https://jobicy.com/jobs/153380-senior-full-stack-engineer-2",
+   "location": "Canada",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-17T03:05:07.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-153372",
+   "title": "Android Mobile Engineer",
+   "company": "Tripadvisor",
+   "url": "https://jobicy.com/jobs/153372-android-mobile-engineer",
+   "location": "UK",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-17T02:58:09.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-153366",
+   "title": "Digital Solutions Architect",
+   "company": "Oddball",
+   "url": "https://jobicy.com/jobs/153366-digital-solutions-architect",
+   "location": "USA",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-17T02:58:08.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-150846",
+   "title": "Software engineer",
+   "company": "Sticker Mule",
+   "url": "https://jobicy.com/jobs/150846-software-engineer-3",
+   "location": "Anywhere",
+   "openToIndia": "yes",
+   "fresher": false,
+   "postedAt": "2026-10-17T02:53:52.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-150844",
+   "title": "Mid Level Front End Engineer",
+   "company": "Cedar",
+   "url": "https://jobicy.com/jobs/150844-mid-level-front-end-engineer",
+   "location": "Canada,  USA",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-17T02:53:50.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-149301",
+   "title": "Garment Manufacturing QC Specialist - Freelance AI Trainer Project",
+   "company": "Invisible Technologies",
+   "url": "https://jobicy.com/jobs/149301-garment-manufacturing-qc-specialist-freelance-ai-trainer-project",
+   "location": "LATAM",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-17T02:53:45.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "remoteok-1137538",
+   "title": "Software Engineer AI Coding Tasks",
+   "company": "Askable",
+   "url": "https://remoteOK.com/remote-jobs/remote-software-engineer-ai-coding-tasks-askable-1137538",
+   "location": "",
+   "openToIndia": "unknown",
+   "fresher": false,
+   "postedAt": "2026-10-17T01:09:20.000Z",
+   "source": "Remote OK"
+  },
+  {
+   "id": "remoteok-1137537",
+   "title": "Head of Technology",
+   "company": "Sanctuary Computer",
+   "url": "https://remoteOK.com/remote-jobs/remote-head-of-technology-sanctuary-computer-1137537",
+   "location": "",
+   "openToIndia": "unknown",
+   "fresher": false,
+   "postedAt": "2026-10-16T17:55:35.000Z",
+   "source": "Remote OK"
+  },
+  {
+   "id": "jobicy-155488",
+   "title": "Senior Software Engineer II, Business Systems",
+   "company": "Wrapbook",
+   "url": "https://jobicy.com/jobs/155488-senior-software-engineer-ii-business-systems",
+   "location": "Canada,  USA",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-16T16:46:28.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "remoteok-1137534",
+   "title": "APAC Python",
+   "company": "Kodland",
+   "url": "https://remoteOK.com/remote-jobs/remote-apac-python-kodland-1137534",
+   "location": "",
+   "openToIndia": "unknown",
+   "fresher": false,
+   "postedAt": "2026-10-16T16:00:26.000Z",
+   "source": "Remote OK"
+  },
+  {
+   "id": "jobicy-155439",
+   "title": "Software Engineer II",
+   "company": "Cision",
+   "url": "https://jobicy.com/jobs/155439-software-engineer-ii",
+   "location": "Hungary",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-16T13:31:01.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155435",
+   "title": "Principal Applied Research Engineer",
+   "company": "Synthesia",
+   "url": "https://jobicy.com/jobs/155435-principal-applied-research-engineer",
+   "location": "Europe",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-16T13:31:01.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155423",
+   "title": "Integration Specialist | Live Entertainment Company",
+   "company": "GT",
+   "url": "https://jobicy.com/jobs/155423-integration-specialist-live-entertainment-company",
+   "location": "Europe",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-16T13:29:10.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155430",
+   "title": "Backend Engineer (Python),AI Engineering: Agent Foundations",
+   "company": "GitLab",
+   "url": "https://jobicy.com/jobs/155430-backend-engineer-pythonai-engineering-agent-foundations",
+   "location": "Canada,  Poland,  UK",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-16T13:29:09.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-155428",
+   "title": "Backend Engineer, Create: Repository Management",
+   "company": "GitLab",
+   "url": "https://jobicy.com/jobs/155428-backend-engineer-create-repository-management",
+   "location": "UK",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-16T13:29:09.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-153321",
+   "title": "Postgres Engineer",
+   "company": "Supabase",
+   "url": "https://jobicy.com/jobs/153321-postgres-engineer",
+   "location": "Anywhere",
+   "openToIndia": "yes",
+   "fresher": false,
+   "postedAt": "2026-10-16T03:20:05.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-153308",
+   "title": "Chief Technology Officer",
+   "company": "Toptal",
+   "url": "https://jobicy.com/jobs/153308-chief-technology-officer-3",
+   "location": "LATAM,  Canada,  Europe",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-16T02:50:28.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-153338",
+   "title": "Staff Software Engineer, AI-Native Systems",
+   "company": "Wheel",
+   "url": "https://jobicy.com/jobs/153338-staff-software-engineer-ai-native-systems",
+   "location": "USA",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-16T02:50:18.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-149199",
+   "title": "Customer Solutions Engineer – Payments",
+   "company": "Zuora",
+   "url": "https://jobicy.com/jobs/149199-customer-solutions-engineer-payments",
+   "location": "USA",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-16T02:50:02.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-150687",
+   "title": "Engineering Manager - EU",
+   "company": "Ashby",
+   "url": "https://jobicy.com/jobs/150687-engineering-manager-eu",
+   "location": "Europe",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-16T02:45:19.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "jobicy-150665",
+   "title": "Software Engineer (Technical Leadership)",
+   "company": "Meta",
+   "url": "https://jobicy.com/jobs/150665-software-engineer-technical-leadership",
+   "location": "USA",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-16T02:45:13.000Z",
+   "source": "Jobicy"
+  },
+  {
+   "id": "remoteok-1137531",
+   "title": "Associate Data Scientist",
+   "company": "AlgaeCal",
+   "url": "https://remoteOK.com/remote-jobs/remote-associate-data-scientist-algaecal-1137531",
+   "location": "Vancouver",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-16T00:00:56.000Z",
+   "source": "Remote OK"
+  },
+  {
+   "id": "remoteok-1137530",
+   "title": "Director of IT and Workplace",
+   "company": "Hippocratic AI",
+   "url": "https://remoteOK.com/remote-jobs/remote-director-of-it-and-workplace-hippocratic-ai-1137530",
+   "location": "Menlo Park",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-16T00:00:50.000Z",
+   "source": "Remote OK"
+  },
+  {
+   "id": "remoteok-1137529",
+   "title": "Customer Success Associate",
+   "company": "Voltus",
+   "url": "https://remoteOK.com/remote-jobs/remote-customer-success-associate-voltus-1137529",
+   "location": "Remote",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-16T00:00:43.000Z",
+   "source": "Remote OK"
+  },
+  {
+   "id": "remoteok-1137528",
+   "title": "Account Manager Mid Market",
+   "company": "Allego",
+   "url": "https://remoteOK.com/remote-jobs/remote-account-manager-mid-market-allego-1137528",
+   "location": "Waltham",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-15T16:00:21.000Z",
+   "source": "Remote OK"
+  },
+  {
+   "id": "remoteok-1137527",
+   "title": "Senior Software Engineer II Applied AI",
+   "company": "Wrapbook",
+   "url": "https://remoteOK.com/remote-jobs/remote-senior-software-engineer-ii-applied-ai-wrapbook-1137527",
+   "location": "",
+   "openToIndia": "unknown",
+   "fresher": false,
+   "postedAt": "2026-10-15T16:00:03.000Z",
+   "source": "Remote OK"
   },
   {
    "id": "jobicy-155385",
@@ -497,6 +1300,17 @@
    "source": "Remote OK"
   },
   {
+   "id": "remotive-2069746",
+   "title": "Tech Lead Full-Stack Rails Engineer",
+   "company": "Mitre Media",
+   "url": "https://remotive.com/remote-jobs/software-development/tech-lead-full-stack-rails-engineer-2069746",
+   "location": "USA, Canada, USA timezones",
+   "openToIndia": "no",
+   "fresher": false,
+   "postedAt": "2026-10-14T20:33:44.000Z",
+   "source": "Remotive"
+  },
+  {
    "id": "jobicy-155325",
    "title": "Senior Software Engineer, Observability",
    "company": "NetBox Labs",
@@ -651,193 +1465,6 @@
    "source": "Jobicy"
   },
   {
-   "id": "jobicy-155238",
-   "title": "Backend Engineer",
-   "company": "Catawiki",
-   "url": "https://jobicy.com/jobs/155238-backend-engineer-4",
-   "location": "Portugal",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T20:24:03.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155230",
-   "title": "Senior iOS Engineer (Swift & AWS)",
-   "company": "Oowlish Technology",
-   "url": "https://jobicy.com/jobs/155230-senior-ios-engineer-swift-aws",
-   "location": "Argentina,  Brazil,  Mexico",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T20:08:25.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155233",
-   "title": "Senior Software Engineer (Full Stack | Node.js & React | AI Focus)",
-   "company": "Oowlish Technology",
-   "url": "https://jobicy.com/jobs/155233-senior-software-engineer-full-stack-node-js-react-ai-focus",
-   "location": "Brazil",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T20:08:23.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155231",
-   "title": "Full Stack Web Engineer",
-   "company": "Fueled",
-   "url": "https://jobicy.com/jobs/155231-full-stack-web-engineer",
-   "location": "LATAM",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T20:08:23.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155228",
-   "title": "Junior Software Engineer – Early Career (Strong Problem solving & Coding Focus) - 100% Remote within Spain",
-   "company": "Docplanner",
-   "url": "https://jobicy.com/jobs/155228-junior-software-engineer-early-career-strong-problem-solving-coding-focus-100-remote-within-spain-2",
-   "location": "Spain",
-   "openToIndia": "no",
-   "fresher": true,
-   "postedAt": "2026-10-13T20:08:23.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155221",
-   "title": "Senior C++ Engineer",
-   "company": "Findev",
-   "url": "https://jobicy.com/jobs/155221-senior-c-engineer",
-   "location": "Cyprus,  Poland,  Portugal,  Spain",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T15:49:04.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155209",
-   "title": "Cashmere Lab Testing & Quality Leader",
-   "company": "Quince",
-   "url": "https://jobicy.com/jobs/155209-cashmere-lab-testing-quality-leader",
-   "location": "Italy",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T11:55:03.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155200",
-   "title": "Senior Backend Engineer",
-   "company": "Solace",
-   "url": "https://jobicy.com/jobs/155200-senior-backend-engineer-10",
-   "location": "USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T09:48:23.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155199",
-   "title": "Staff Software Engineer",
-   "company": "Solace",
-   "url": "https://jobicy.com/jobs/155199-staff-software-engineer-8",
-   "location": "USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T09:48:23.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155201",
-   "title": "Technical Lead (Engineering)",
-   "company": "Solace",
-   "url": "https://jobicy.com/jobs/155201-technical-lead-engineering",
-   "location": "USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T09:48:22.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155195",
-   "title": "Senior Full Stack Engineer",
-   "company": "Solace",
-   "url": "https://jobicy.com/jobs/155195-senior-full-stack-engineer-7",
-   "location": "USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T09:48:22.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155192",
-   "title": "Senior Software Engineer, Canvas Core",
-   "company": "Mural",
-   "url": "https://jobicy.com/jobs/155192-senior-software-engineer-canvas-core-3",
-   "location": "Argentina,  Canada,  UK",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T09:45:51.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155185",
-   "title": "Senior Software Engineer, Admin & IAM",
-   "company": "Mural",
-   "url": "https://jobicy.com/jobs/155185-senior-software-engineer-admin-iam",
-   "location": "Argentina",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T09:45:51.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155186",
-   "title": "Senior Software Engineer (Full-Stack, JavaScript)",
-   "company": "Able",
-   "url": "https://jobicy.com/jobs/155186-senior-software-engineer-full-stack-javascript",
-   "location": "LATAM",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T09:45:49.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155182",
-   "title": "Senior Forward Deployed Engineer (AI Agent)",
-   "company": "Cresta",
-   "url": "https://jobicy.com/jobs/155182-senior-forward-deployed-engineer-ai-agent",
-   "location": "Australia",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T09:41:28.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155167",
-   "title": "Sr. Forward Deployed AI Engineer (Remote Eligible in the UK)",
-   "company": "Smartsheet",
-   "url": "https://jobicy.com/jobs/155167-sr-forward-deployed-ai-engineer-remote-eligible-in-the-uk",
-   "location": "UK",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T09:38:19.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155172",
-   "title": "Sr. Software Engineer (Remote Eligible from Bulgaria)",
-   "company": "Smartsheet",
-   "url": "https://jobicy.com/jobs/155172-sr-software-engineer-remote-eligible-from-bulgaria",
-   "location": "Bulgaria",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T09:38:18.000Z",
-   "source": "Jobicy"
-  },
-  {
    "id": "remoteok-1137510",
    "title": "Principal Product Manager Strategic Initiatives",
    "company": "Thyme Care",
@@ -847,83 +1474,6 @@
    "fresher": false,
    "postedAt": "2026-10-13T08:00:11.000Z",
    "source": "Remote OK"
-  },
-  {
-   "id": "jobicy-149048",
-   "title": "QA Automation Lead [gn] Data Intelligence",
-   "company": "Actian",
-   "url": "https://jobicy.com/jobs/149048-qa-automation-lead-gn-data-intelligence",
-   "location": "Europe",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T02:48:27.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-153122",
-   "title": "Chief Technology Officer",
-   "company": "GiveDirectly",
-   "url": "https://jobicy.com/jobs/153122-chief-technology-officer-2",
-   "location": "UK,  USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T02:12:39.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-153108",
-   "title": "Senior Gen AI Software Engineer",
-   "company": "Liftoff",
-   "url": "https://jobicy.com/jobs/153108-senior-gen-ai-software-engineer",
-   "location": "USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T02:10:24.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-149108",
-   "title": "Senior Software Engineer, Unsecured Installments",
-   "company": "Upstart",
-   "url": "https://jobicy.com/jobs/149108-senior-software-engineer-unsecured-installments",
-   "location": "USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T02:10:17.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-149101",
-   "title": "Senior Software Engineer, Backend (AI Agent Integrations)",
-   "company": "Cresta",
-   "url": "https://jobicy.com/jobs/149101-senior-software-engineer-backend-ai-agent-integrations",
-   "location": "Canada",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T02:10:05.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-153093",
-   "title": "Team Lead Software Engineer",
-   "company": "Capital on Tap",
-   "url": "https://jobicy.com/jobs/153093-team-lead-software-engineer",
-   "location": "Portugal",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T02:04:59.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-153088",
-   "title": "Senior Software Engineer",
-   "company": "Capital on Tap",
-   "url": "https://jobicy.com/jobs/153088-senior-software-engineer-8",
-   "location": "Portugal",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-13T02:04:55.000Z",
-   "source": "Jobicy"
   },
   {
    "id": "remoteok-1137508",
@@ -946,215 +1496,6 @@
    "fresher": false,
    "postedAt": "2026-10-13T00:00:06.000Z",
    "source": "Remote OK"
-  },
-  {
-   "id": "jobicy-155140",
-   "title": "Engineering Manager, AI CICD",
-   "company": "Chainguard",
-   "url": "https://jobicy.com/jobs/155140-engineering-manager-ai-cicd",
-   "location": "UK,  USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-12T13:39:32.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155132",
-   "title": "Senior Integration Engineer",
-   "company": "Legion",
-   "url": "https://jobicy.com/jobs/155132-senior-integration-engineer-2",
-   "location": "Mexico",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-12T13:37:21.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155099",
-   "title": "Engineering Manager (Subscriptions)",
-   "company": "Paddle",
-   "url": "https://jobicy.com/jobs/155099-engineering-manager-subscriptions",
-   "location": "Ireland,  Portugal,  UK",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-12T07:02:34.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155100",
-   "title": "Senior Forward Deployed Engineer (AI Agent) - UK",
-   "company": "Cresta",
-   "url": "https://jobicy.com/jobs/155100-senior-forward-deployed-engineer-ai-agent-uk",
-   "location": "UK",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-12T07:02:32.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155084",
-   "title": "Senior Web Developer",
-   "company": "UpGuard",
-   "url": "https://jobicy.com/jobs/155084-senior-web-developer",
-   "location": "Australia",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-12T06:59:53.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155079",
-   "title": "Senior Staff Software Engineer",
-   "company": "Cision",
-   "url": "https://jobicy.com/jobs/155079-senior-staff-software-engineer",
-   "location": "Bulgaria,  Hungary",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-12T06:57:23.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155071",
-   "title": "Engineering Manager - Observability | Ireland | Remote",
-   "company": "Grafana Labs",
-   "url": "https://jobicy.com/jobs/155071-engineering-manager-observability-ireland-remote",
-   "location": "Germany,  Ireland,  Spain,  Sweden,  UK",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-12T03:26:04.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155069",
-   "title": "Software Engineer (Remote Eligible in Bulgaria)",
-   "company": "Smartsheet",
-   "url": "https://jobicy.com/jobs/155069-software-engineer-remote-eligible-in-bulgaria",
-   "location": "Bulgaria",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-12T03:26:03.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155066",
-   "title": "Software Engineer II - Data Platform",
-   "company": "Five9",
-   "url": "https://jobicy.com/jobs/155066-software-engineer-ii-data-platform",
-   "location": "Portugal",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-12T03:26:03.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155063",
-   "title": "Senior Software Engineer - Frontend",
-   "company": "Five9",
-   "url": "https://jobicy.com/jobs/155063-senior-software-engineer-frontend-2",
-   "location": "Portugal",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-12T03:26:03.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155062",
-   "title": "Principal Software Engineer (Remote Eligible in Bulgaria)",
-   "company": "Smartsheet",
-   "url": "https://jobicy.com/jobs/155062-principal-software-engineer-remote-eligible-in-bulgaria",
-   "location": "Bulgaria",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-12T03:26:03.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155067",
-   "title": "Engineering Manager - Observability | Germany | Remote",
-   "company": "Grafana Labs",
-   "url": "https://jobicy.com/jobs/155067-engineering-manager-observability-germany-remote",
-   "location": "Germany,  Ireland,  Spain,  Sweden,  UK",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-12T03:26:02.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-153037",
-   "title": "AI Senior Engineer (Graph)",
-   "company": "Able",
-   "url": "https://jobicy.com/jobs/153037-ai-senior-engineer-graph",
-   "location": "LATAM",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-12T02:40:10.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-153029",
-   "title": "Software Engineer III | AI/ML",
-   "company": "ExtraHop",
-   "url": "https://jobicy.com/jobs/153029-software-engineer-iii-ai-ml",
-   "location": "USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-12T02:40:09.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-153019",
-   "title": "Salesforce Developer III",
-   "company": "ExtraHop",
-   "url": "https://jobicy.com/jobs/153019-salesforce-developer-iii",
-   "location": "USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-12T02:40:06.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-153014",
-   "title": "Binance Accelerator Program - Applied AI Application Engineer",
-   "company": "Binance",
-   "url": "https://jobicy.com/jobs/153014-binance-accelerator-program-applied-ai-application-engineer",
-   "location": "APAC",
-   "openToIndia": "yes",
-   "fresher": true,
-   "postedAt": "2026-10-12T02:35:26.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-153012",
-   "title": "Binance Accelerator Program - AI Intelligence Efficiency Engineer",
-   "company": "Binance",
-   "url": "https://jobicy.com/jobs/153012-binance-accelerator-program-ai-intelligence-efficiency-engineer",
-   "location": "APAC",
-   "openToIndia": "yes",
-   "fresher": false,
-   "postedAt": "2026-10-12T02:35:25.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-153066",
-   "title": "Lead Software Engineer",
-   "company": "CoderPad",
-   "url": "https://jobicy.com/jobs/153066-lead-software-engineer",
-   "location": "France",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-12T02:35:22.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-153013",
-   "title": "Principal Software Engineer | Data Science",
-   "company": "ExtraHop",
-   "url": "https://jobicy.com/jobs/153013-principal-software-engineer-data-science",
-   "location": "USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-12T02:35:12.000Z",
-   "source": "Jobicy"
   },
   {
    "id": "remoteok-1137498",
@@ -1190,160 +1531,6 @@
    "source": "Remote OK"
   },
   {
-   "id": "jobicy-155051",
-   "title": "Software Engineer, AI Enablement",
-   "company": "Tailscale",
-   "url": "https://jobicy.com/jobs/155051-software-engineer-ai-enablement",
-   "location": "UK",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-11T08:39:50.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155050",
-   "title": "Product Engineering",
-   "company": "Polar",
-   "url": "https://jobicy.com/jobs/155050-product-engineering",
-   "location": "Europe,  USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-11T08:39:48.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155044",
-   "title": "Senior Software Engineer, Data Product",
-   "company": "TRM Labs",
-   "url": "https://jobicy.com/jobs/155044-senior-software-engineer-data-product",
-   "location": "LATAM",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-11T06:14:31.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155038",
-   "title": "Senior Software Engineer, Backend | Product Engineering",
-   "company": "TRM Labs",
-   "url": "https://jobicy.com/jobs/155038-senior-software-engineer-backend-product-engineering",
-   "location": "LATAM",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-11T06:14:30.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155033",
-   "title": "Forward Deployed Engineer",
-   "company": "Nash",
-   "url": "https://jobicy.com/jobs/155033-forward-deployed-engineer-6",
-   "location": "Australia",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-11T06:09:50.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-155019",
-   "title": "AI Lead / Engineering Manager",
-   "company": "saas.group",
-   "url": "https://jobicy.com/jobs/155019-ai-lead-engineering-manager",
-   "location": "Europe",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-11T06:06:20.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-154994",
-   "title": "Senior Mobile Engineer",
-   "company": "Mattermost",
-   "url": "https://jobicy.com/jobs/154994-senior-mobile-engineer",
-   "location": "USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-11T05:59:14.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-154987",
-   "title": "Senior Full Stack Engineer",
-   "company": "Mattermost",
-   "url": "https://jobicy.com/jobs/154987-senior-full-stack-engineer-6",
-   "location": "Canada",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-11T05:59:13.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-150381",
-   "title": "Software Architect",
-   "company": "Autodesk",
-   "url": "https://jobicy.com/jobs/150381-software-architect",
-   "location": "EMEA,  UK",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-11T04:00:05.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-145744",
-   "title": "Frontend Engineer React and AWS",
-   "company": "Numentica",
-   "url": "https://jobicy.com/jobs/145744-frontend-engineer-react-and-aws",
-   "location": "USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-11T03:50:29.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-150365",
-   "title": "Go (Golang) Software Engineer, Developer Tooling and Containers",
-   "company": "Canonical",
-   "url": "https://jobicy.com/jobs/150365-go-golang-software-engineer-developer-tooling-and-containers",
-   "location": "APAC",
-   "openToIndia": "yes",
-   "fresher": false,
-   "postedAt": "2026-10-11T03:50:28.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-150364",
-   "title": "Software Engineer - Python - Container Images",
-   "company": "Canonical",
-   "url": "https://jobicy.com/jobs/150364-software-engineer-python-container-images",
-   "location": "APAC,  EMEA,  LATAM,  Canada,  USA",
-   "openToIndia": "yes",
-   "fresher": false,
-   "postedAt": "2026-10-11T03:45:11.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-150361",
-   "title": "Embedded Linux Consultant - Japan",
-   "company": "Canonical",
-   "url": "https://jobicy.com/jobs/150361-embedded-linux-consultant-japan",
-   "location": "Japan",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-11T03:45:09.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-150360",
-   "title": "Open Source Networking Software Engineer - ToR Switch / SmartNIC / DPU",
-   "company": "Canonical",
-   "url": "https://jobicy.com/jobs/150360-open-source-networking-software-engineer-tor-switch-smartnic-dpu",
-   "location": "APAC,  LATAM,  Canada,  China,  USA",
-   "openToIndia": "yes",
-   "fresher": false,
-   "postedAt": "2026-10-11T03:45:07.000Z",
-   "source": "Jobicy"
-  },
-  {
    "id": "remoteok-1137482",
    "title": "Technical Account Manager",
    "company": "DEUNA",
@@ -1353,94 +1540,6 @@
    "fresher": false,
    "postedAt": "2026-10-11T00:00:05.000Z",
    "source": "Remote OK"
-  },
-  {
-   "id": "jobicy-154967",
-   "title": "Senior Fullstack Engineer (BR based only)",
-   "company": "Double",
-   "url": "https://jobicy.com/jobs/154967-senior-fullstack-engineer-br-based-only",
-   "location": "Brazil",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-10T15:46:45.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-152886",
-   "title": "Creative Technologist (contract)",
-   "company": "Instrument",
-   "url": "https://jobicy.com/jobs/152886-creative-technologist-contract",
-   "location": "USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-10T03:30:28.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-152938",
-   "title": "Software Engineer, Backend",
-   "company": "Vercel",
-   "url": "https://jobicy.com/jobs/152938-software-engineer-backend",
-   "location": "USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-10T03:30:23.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-152903",
-   "title": "Senior Developer",
-   "company": "Instrument",
-   "url": "https://jobicy.com/jobs/152903-senior-developer",
-   "location": "USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-10T03:23:50.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-152912",
-   "title": "Senior Software Engineer (.NET) (f/m/d)",
-   "company": "Apaleo",
-   "url": "https://jobicy.com/jobs/152912-senior-software-engineer-net-f-m-d",
-   "location": "Germany",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-10T03:23:35.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-152910",
-   "title": "Staff Software Engineer, Experimentation Platform",
-   "company": "Discord",
-   "url": "https://jobicy.com/jobs/152910-staff-software-engineer-experimentation-platform",
-   "location": "USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-10T03:23:33.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-152919",
-   "title": "Staff Software Engineer - Data",
-   "company": "Dune",
-   "url": "https://jobicy.com/jobs/152919-staff-software-engineer-data",
-   "location": "Europe,  USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-10T03:23:28.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-152855",
-   "title": "Engineering Manager",
-   "company": "Tremendous",
-   "url": "https://jobicy.com/jobs/152855-engineering-manager-7",
-   "location": "USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-10T03:20:05.000Z",
-   "source": "Jobicy"
   },
   {
    "id": "remoteok-1137480",
@@ -1463,39 +1562,6 @@
    "fresher": false,
    "postedAt": "2026-10-10T00:00:05.000Z",
    "source": "Remote OK"
-  },
-  {
-   "id": "jobicy-154957",
-   "title": "Principal Engineer, Product Engineering",
-   "company": "1Password",
-   "url": "https://jobicy.com/jobs/154957-principal-engineer-product-engineering",
-   "location": "Canada,  USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-09T18:42:47.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-154946",
-   "title": "AI Engineer, GTM",
-   "company": "Cresta",
-   "url": "https://jobicy.com/jobs/154946-ai-engineer-gtm",
-   "location": "USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-09T18:01:43.000Z",
-   "source": "Jobicy"
-  },
-  {
-   "id": "jobicy-154935",
-   "title": "Principal Engineer (AI, Office of the CEO)",
-   "company": "Jobber",
-   "url": "https://jobicy.com/jobs/154935-principal-engineer-ai-office-of-the-ceo",
-   "location": "USA",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-10-09T17:58:39.000Z",
-   "source": "Jobicy"
   },
   {
    "id": "remoteok-1137475",
@@ -1770,61 +1836,6 @@
    "openToIndia": "unknown",
    "fresher": false,
    "postedAt": "2026-09-16T19:00:02.000Z",
-   "source": "Remote OK"
-  },
-  {
-   "id": "remotive-2091129",
-   "title": "Senior Data Scientist",
-   "company": "Lemon.io",
-   "url": "https://remotive.com/remote-jobs/data/senior-data-scientist-2091129",
-   "location": "Northern America, LATAM, Europe, APAC",
-   "openToIndia": "yes",
-   "fresher": false,
-   "postedAt": "2026-09-16T12:35:28.000Z",
-   "source": "Remotive"
-  },
-  {
-   "id": "remotive-1919265",
-   "title": "Senior Independent Software Developer",
-   "company": "A.Team",
-   "url": "https://remotive.com/remote-jobs/software-development/senior-independent-software-developer-1919265",
-   "location": "Americas, Europe, Israel",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-09-16T10:10:59.000Z",
-   "source": "Remotive"
-  },
-  {
-   "id": "remotive-1919266",
-   "title": "Senior Independent AI Engineer / Architect",
-   "company": "A.Team",
-   "url": "https://remotive.com/remote-jobs/software-development/senior-independent-ai-engineer-architect-1919266",
-   "location": "Americas, Europe, Israel",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-09-16T10:10:53.000Z",
-   "source": "Remotive"
-  },
-  {
-   "id": "remoteok-1137398",
-   "title": "AI Trainer Image QA Evaluator",
-   "company": "iMerit Technology",
-   "url": "https://remoteOK.com/remote-jobs/remote-ai-trainer-image-qa-evaluator-imerit-technology-1137398",
-   "location": "",
-   "openToIndia": "unknown",
-   "fresher": false,
-   "postedAt": "2026-09-16T06:55:47.000Z",
-   "source": "Remote OK"
-  },
-  {
-   "id": "remoteok-1137396",
-   "title": "Principal Product Manager",
-   "company": "DomainTools",
-   "url": "https://remoteOK.com/remote-jobs/remote-principal-product-manager-domaintools-1137396",
-   "location": "",
-   "openToIndia": "unknown",
-   "fresher": false,
-   "postedAt": "2026-09-16T00:00:13.000Z",
    "source": "Remote OK"
   },
   {
@@ -2134,138 +2145,6 @@
    "fresher": false,
    "postedAt": "2026-08-12T00:00:23.000Z",
    "source": "Remote OK"
-  },
-  {
-   "id": "remoteok-1136379",
-   "title": "Sales Development Representative Attributeâ",
-   "company": "DoiT",
-   "url": "https://remoteOK.com/remote-jobs/",
-   "location": "Remote UK",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-08-11T08:00:43.000Z",
-   "source": "Remote OK"
-  },
-  {
-   "id": "remoteok-1136188",
-   "title": "Java Developer",
-   "company": "Clera",
-   "url": "https://remoteOK.com/remote-jobs/remote-java-developer-clera-1136188",
-   "location": "Los Angeles",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-08-05T16:00:23.000Z",
-   "source": "Remote OK"
-  },
-  {
-   "id": "remoteok-1136770",
-   "title": "Future Shaprs",
-   "company": "Shapr3D",
-   "url": "https://remoteOK.com/remote-jobs/remote-future-shaprs-shapr3d-1136770",
-   "location": "Budapest, ",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-08-05T13:54:56.000Z",
-   "source": "Remote OK"
-  },
-  {
-   "id": "remoteok-1136213",
-   "title": "Freelance Designer",
-   "company": "Control Shift Video",
-   "url": "https://remoteOK.com/remote-jobs/remote-freelance-designer-control-shift-video-1136213",
-   "location": "Texas, ",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-08-05T08:16:20.000Z",
-   "source": "Remote OK"
-  },
-  {
-   "id": "remoteok-1136210",
-   "title": "Head of Security",
-   "company": "Tremendous",
-   "url": "https://remoteOK.com/remote-jobs/remote-head-of-security-tremendous-1136210",
-   "location": "New York, New York, New York, United States",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-08-05T01:57:42.000Z",
-   "source": "Remote OK"
-  },
-  {
-   "id": "remoteok-1136778",
-   "title": "Operations Engineer II",
-   "company": "AWeber",
-   "url": "https://remoteOK.com/remote-jobs/remote-operations-engineer-ii-aweber-1136778",
-   "location": "Uluberia-II, ",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-08-04T23:02:29.000Z",
-   "source": "Remote OK"
-  },
-  {
-   "id": "remoteok-1136094",
-   "title": "Marketing Specialist",
-   "company": "INNERGY",
-   "url": "https://remoteOK.com/remote-jobs/remote-marketing-specialist-innergy-1136094",
-   "location": "Austin, Austin, Texas, United States",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-08-04T15:06:47.000Z",
-   "source": "Remote OK"
-  },
-  {
-   "id": "remoteok-1136222",
-   "title": "Data Analyst",
-   "company": "SEAhub Asia",
-   "url": "https://remoteOK.com/remote-jobs/remote-data-analyst-seahub-asia-1136222",
-   "location": "Kuala Lumpur, Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-08-04T14:20:29.000Z",
-   "source": "Remote OK"
-  },
-  {
-   "id": "remoteok-1136096",
-   "title": "Clinical Coordination Manager",
-   "company": "Enable Dental",
-   "url": "https://remoteOK.com/remote-jobs/remote-clinical-coordination-manager-enable-dental-1136096",
-   "location": "Austin, Austin, Texas, United States",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-08-04T13:59:30.000Z",
-   "source": "Remote OK"
-  },
-  {
-   "id": "remoteok-1136217",
-   "title": "Data Analyst Assistant",
-   "company": "Arabian Private Holdings",
-   "url": "https://remoteOK.com/remote-jobs/remote-data-analyst-assistant-arabian-private-holdings-1136217",
-   "location": "Ø¯Ø¨Ù, Ø¯Ø¨Ù Ø¯Ø¨Ù Ø§ÙØ¥ÙØ§Ø±Ø§Øª Ø§ÙØ¹Ø±Ø¨ÙØ© Ø§ÙÙØªØ­Ø¯Ø©",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-08-04T13:06:29.000Z",
-   "source": "Remote OK"
-  },
-  {
-   "id": "remoteok-1136221",
-   "title": "Business Development",
-   "company": "GROW10X",
-   "url": "https://remoteOK.com/remote-jobs/remote-business-development-grow10x-1136221",
-   "location": "Islamabad, Islamabad, IslÄmÄbÄd, Pakistan",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-08-04T07:17:17.000Z",
-   "source": "Remote OK"
-  },
-  {
-   "id": "remoteok-1137209",
-   "title": "Online Bidder",
-   "company": "Webnotics Pvt Ltd",
-   "url": "https://remoteOK.com/remote-jobs/remote-online-bidder-webnotics-pvt-ltd-1137209",
-   "location": "Agra, ",
-   "openToIndia": "no",
-   "fresher": false,
-   "postedAt": "2026-08-04T04:28:15.000Z",
-   "source": "Remote OK"
   }
  ],
  "hackathons": [
@@ -2444,31 +2323,16 @@
    "source": "Devpost"
   },
   {
-   "id": "devpost-31113",
-   "title": "MLAI Hackathon 2026",
-   "organizer": "Mạng Lưới AI",
-   "url": "https://mlai-hackathon.devpost.com/",
+   "id": "devpost-29114",
+   "title": "IEEE ClimateChain Global Hackathon",
+   "organizer": "IEEE Turkey",
+   "url": "https://ieee-climatechain-hack.devpost.com/",
    "location": "Online",
-   "dates": "Sep 18 - Oct 16, 2026",
+   "dates": "Oct 05 - 25, 2026",
    "state": "open",
-   "prize": "$0",
+   "prize": "$3,000",
    "themes": [
-    "Databases",
-    "Machine Learning/AI"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-30350",
-   "title": "Hack Apertus",
-   "organizer": "aiLights Association",
-   "url": "https://hackapertus.devpost.com/",
-   "location": "Grand Finals 2027 ",
-   "dates": "Oct 01 - 16, 2026",
-   "state": "open",
-   "prize": "€10,680",
-   "themes": [
-    "Education",
+    "Blockchain",
     "Machine Learning/AI",
     "Social Good"
    ],
@@ -2491,18 +2355,18 @@
    "source": "Devpost"
   },
   {
-   "id": "devpost-29114",
-   "title": "IEEE ClimateChain Global Hackathon",
-   "organizer": "IEEE Turkey",
-   "url": "https://ieee-climatechain-hack.devpost.com/",
+   "id": "devpost-31096",
+   "title": "Hyperbloom October- UI/UX and Web Design",
+   "organizer": "hyperbloom hacks",
+   "url": "https://hyperbloom-october.devpost.com/",
    "location": "Online",
-   "dates": "Oct 05 - 25, 2026",
+   "dates": "Oct 01 - 19, 2026",
    "state": "open",
-   "prize": "$3,000",
+   "prize": "$9,117",
    "themes": [
-    "Blockchain",
-    "Machine Learning/AI",
-    "Social Good"
+    "Design",
+    "Productivity",
+    "Web"
    ],
    "source": "Devpost"
   },
@@ -2518,22 +2382,6 @@
    "themes": [
     "Education",
     "Machine Learning/AI",
-    "Web"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-31096",
-   "title": "Hyperbloom October- UI/UX and Web Design",
-   "organizer": "hyperbloom hacks",
-   "url": "https://hyperbloom-october.devpost.com/",
-   "location": "Online",
-   "dates": "Oct 01 - 19, 2026",
-   "state": "open",
-   "prize": "$9,117",
-   "themes": [
-    "Design",
-    "Productivity",
     "Web"
    ],
    "source": "Devpost"
@@ -2571,6 +2419,37 @@
    "source": "Devpost"
   },
   {
+   "id": "devpost-31139",
+   "title": "Neighborhood Hacks",
+   "organizer": "Student Organization",
+   "url": "https://neighborhood-hacks-2026.devpost.com/",
+   "location": "Online",
+   "dates": "Oct 16 - 24, 2026",
+   "state": "open",
+   "prize": "$57,866",
+   "themes": [
+    "Beginner Friendly",
+    "Social Good"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-31659",
+   "title": "Learn AR with SPECS",
+   "organizer": "Devpost",
+   "url": "https://learn-specs.devpost.com/",
+   "location": "Online",
+   "dates": "Oct 15 - Nov 09, 2026",
+   "state": "open",
+   "prize": "$2,500",
+   "themes": [
+    "AR/VR",
+    "Machine Learning/AI",
+    "Design"
+   ],
+   "source": "Devpost"
+  },
+  {
    "id": "devpost-31116",
    "title": "Next Gen Hackathon 2026 -Bengaluru",
    "organizer": "RAAIF",
@@ -2578,7 +2457,7 @@
    "location": "Tripura Vasini Palace Grounds, Bengaluru",
    "dates": "Sep 01 - Oct 23, 2026",
    "state": "open",
-   "prize": "₹ 50,000",
+   "prize": "₹ 40,000",
    "themes": [
     "AR/VR",
     "IoT",
@@ -2599,22 +2478,6 @@
     "DevOps",
     "Machine Learning/AI",
     "Robotic Process Automation"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-31659",
-   "title": "Learn AR with SPECS",
-   "organizer": "Devpost",
-   "url": "https://learn-specs.devpost.com/",
-   "location": "Online",
-   "dates": "Oct 15 - Nov 09, 2026",
-   "state": "open",
-   "prize": "$2,500",
-   "themes": [
-    "AR/VR",
-    "Machine Learning/AI",
-    "Design"
    ],
    "source": "Devpost"
   },
@@ -2731,6 +2594,22 @@
    "source": "Devpost"
   },
   {
+   "id": "devpost-31511",
+   "title": "HEALTHHACK 48",
+   "organizer": "HealthHack",
+   "url": "https://healthhack-48.devpost.com/",
+   "location": "Online",
+   "dates": "Oct 17 - 19, 2026",
+   "state": "open",
+   "prize": "$0",
+   "themes": [
+    "Beginner Friendly",
+    "Health",
+    "Productivity"
+   ],
+   "source": "Devpost"
+  },
+  {
    "id": "devpost-31484",
    "title": "2026-2027 Fall ESE Senior Design",
    "organizer": "university of pennsylvania",
@@ -2778,6 +2657,67 @@
    "source": "Devpost"
   },
   {
+   "id": "devpost-31694",
+   "title": "MineArena 1.0",
+   "organizer": "Code commit",
+   "url": "https://minearena-1-0.devpost.com/",
+   "location": "SSM cultural centre",
+   "dates": "Oct 15 - 31, 2026",
+   "state": "open",
+   "prize": "₹ 75,000",
+   "themes": [
+    "Machine Learning/AI",
+    "Fintech",
+    "Health"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-31138",
+   "title": "Build North: Ship Something Real",
+   "organizer": "Georgian",
+   "url": "https://build-north.devpost.com/",
+   "location": "Toronto",
+   "dates": "Oct 16 - 26, 2026",
+   "state": "open",
+   "prize": "$CAD 0",
+   "themes": [
+    "Enterprise",
+    "Machine Learning/AI",
+    "Open Ended"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-31773",
+   "title": "LaunchPad Hacks",
+   "organizer": "Hack4TodayOrg",
+   "url": "https://launchpad-hacks.devpost.com/",
+   "location": "Online",
+   "dates": "Oct 16 - Nov 20, 2026",
+   "state": "open",
+   "prize": "$300",
+   "themes": [
+    "Beginner Friendly",
+    "Open Ended"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-31736",
+   "title": "CreateAThon",
+   "organizer": "Hacker's Unity",
+   "url": "https://graph-hacks.devpost.com/",
+   "location": "Online, from anywhere",
+   "dates": "Oct 14 - 31, 2026",
+   "state": "open",
+   "prize": "$0",
+   "themes": [
+    "Machine Learning/AI"
+   ],
+   "source": "Devpost"
+  },
+  {
    "id": "devpost-31218",
    "title": "Black Code Collective Hacktoberfest",
    "organizer": "Black Code Collective",
@@ -2794,16 +2734,18 @@
    "source": "Devpost"
   },
   {
-   "id": "devpost-31124",
-   "title": "SVYCA Youth for Earth (Y4E) Hackathon",
-   "organizer": "Silicon Valley Youth Climate Action",
-   "url": "https://svycay4e.devpost.com/",
-   "location": "Stanford University",
-   "dates": "Sep 20 - Oct 23, 2026",
+   "id": "devpost-31666",
+   "title": "Mathematics for systems security",
+   "organizer": "Software Engineering Club (DEV)",
+   "url": "https://mathematics-systems-security.devpost.com/",
+   "location": "Online",
+   "dates": "Oct 16 - Nov 01, 2026",
    "state": "open",
-   "prize": "$550",
+   "prize": "$0",
    "themes": [
-    "Social Good"
+    "Communication",
+    "Cybersecurity",
+    "Machine Learning/AI"
    ],
    "source": "Devpost"
   },
@@ -2824,36 +2766,6 @@
    "source": "Devpost"
   },
   {
-   "id": "devpost-31736",
-   "title": "Graph Hacks",
-   "organizer": "Hacker's Unity",
-   "url": "https://graph-hacks.devpost.com/",
-   "location": "Online, from anywhere",
-   "dates": "Oct 14 - 31, 2026",
-   "state": "open",
-   "prize": "$0",
-   "themes": [
-    "Machine Learning/AI"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-30568",
-   "title": "Build-A-Thon",
-   "organizer": "Major League Hacking",
-   "url": "https://build-a-thon-30568.devpost.com/",
-   "location": "NCC Digital Park, University of Ibadan",
-   "dates": "Oct 16 - 17, 2026",
-   "state": "open",
-   "prize": "$0",
-   "themes": [
-    "E-commerce/Retail",
-    "Health",
-    "Low/No Code"
-   ],
-   "source": "Devpost"
-  },
-  {
    "id": "devpost-31748",
    "title": "Girls Who Code HHS Hackathon 2026",
    "organizer": "Girls Who Code HHS",
@@ -2870,18 +2782,31 @@
    "source": "Devpost"
   },
   {
-   "id": "devpost-31694",
-   "title": "MineArena 1.0",
-   "organizer": "Code commit",
-   "url": "https://minearena-1-0.devpost.com/",
-   "location": "SSM cultural centre",
-   "dates": "Oct 15 - 31, 2026",
+   "id": "devpost-31124",
+   "title": "SVYCA Youth for Earth (Y4E) Hackathon",
+   "organizer": "Silicon Valley Youth Climate Action",
+   "url": "https://svycay4e.devpost.com/",
+   "location": "Stanford University",
+   "dates": "Sep 20 - Oct 23, 2026",
    "state": "open",
-   "prize": "₹ 75,000",
+   "prize": "$550",
    "themes": [
-    "Machine Learning/AI",
-    "Fintech",
-    "Health"
+    "Social Good"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-31798",
+   "title": "Taskforge",
+   "organizer": "HackathonForEveryone",
+   "url": "https://taskforge.devpost.com/",
+   "location": "Online",
+   "dates": "Oct 17 - 24, 2026",
+   "state": "open",
+   "prize": "$200",
+   "themes": [
+    "Beginner Friendly",
+    "Quantum"
    ],
    "source": "Devpost"
   },
@@ -2902,33 +2827,146 @@
    "source": "Devpost"
   },
   {
-   "id": "devpost-31757",
-   "title": "Hackfest Season - 1",
-   "organizer": "Sai Vidya Institute of Technology",
-   "url": "https://hackfest-season-1.devpost.com/",
-   "location": "Bangalore",
-   "dates": "Oct 15 - 18, 2026",
+   "id": "devpost-31796",
+   "title": "SafeSpace Hacks",
+   "organizer": "SafeSpace",
+   "url": "https://safespace-hacks.devpost.com/",
+   "location": "Online",
+   "dates": "Oct 17 - Nov 22, 2026",
    "state": "open",
-   "prize": "$600,000",
+   "prize": "$280",
    "themes": [
+    "Beginner Friendly",
     "Cybersecurity",
+    "Social Good"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-31715",
+   "title": "The Arcticathon",
+   "organizer": "Bidaya",
+   "url": "https://the-arcticathon.devpost.com/",
+   "location": "Online",
+   "dates": "Oct 17, 2026 - Jan 30, 2027",
+   "state": "open",
+   "prize": "$100,500",
+   "themes": [
+    "Beginner Friendly",
+    "Design",
+    "Education"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-31777",
+   "title": "GLITCHATHON",
+   "organizer": "sir padampat singhania university ",
+   "url": "https://glitchathon.devpost.com/",
+   "location": "Online",
+   "dates": "Oct 18 - 25, 2026",
+   "state": "open",
+   "prize": "₹ 200",
+   "themes": [
+    "Design",
+    "Low/No Code",
+    "Productivity"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-31737",
+   "title": "HackWithAditya",
+   "organizer": "Aditya University",
+   "url": "https://hackwithaditya.devpost.com/",
+   "location": "Online",
+   "dates": "Oct 16 - Nov 25, 2026",
+   "state": "open",
+   "prize": "₹ 500,000",
+   "themes": [
+    "Education",
+    "Health",
     "Machine Learning/AI"
    ],
    "source": "Devpost"
   },
   {
-   "id": "devpost-27717",
-   "title": "HackGB",
-   "organizer": "Google Developers Group on Campus- UWGB",
-   "url": "https://hackgb-2026.devpost.com/",
-   "location": "Brown County STEM Innovation Center",
-   "dates": "Oct 13 - 18, 2026",
+   "id": "devpost-31789",
+   "title": "STEM2Connect AI Hackathon",
+   "organizer": "STEM2Connect",
+   "url": "https://stem2connect-online-hackathon.devpost.com/",
+   "location": "Online",
+   "dates": "Oct 17 - 28, 2026",
    "state": "open",
    "prize": "$0",
    "themes": [
     "Beginner Friendly",
     "Education",
-    "Health"
+    "Web"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-31793",
+   "title": "AQX Sports Analytics Data Bowl 4.0",
+   "organizer": "Devpost",
+   "url": "https://aqxanalyticsfour.devpost.com/",
+   "location": "Online",
+   "dates": "Oct 18 - Nov 01, 2026",
+   "state": "open",
+   "prize": "$50",
+   "themes": [
+    "Beginner Friendly",
+    "Databases",
+    "Gaming"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-31795",
+   "title": "AccessED Hacks",
+   "organizer": "AccessEDnpo",
+   "url": "https://accessed-hacks.devpost.com/",
+   "location": "Online",
+   "dates": "Oct 17 - Nov 20, 2026",
+   "state": "open",
+   "prize": "$225",
+   "themes": [
+    "Beginner Friendly",
+    "Education",
+    "Social Good"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-31664",
+   "title": "Herhack",
+   "organizer": "Echelon institute of technology",
+   "url": "https://herhack.devpost.com/",
+   "location": "Online",
+   "dates": "Oct 17 - Nov 10, 2026",
+   "state": "open",
+   "prize": "₹ 200,000",
+   "themes": [
+    "Beginner Friendly",
+    "Blockchain",
+    "Open Ended"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-31553",
+   "title": "SDC Hackathon 2026",
+   "organizer": "Xiamen University Malaysia",
+   "url": "https://sdc-hackathon-2026.devpost.com/",
+   "location": "Xiamen University Malaysia",
+   "dates": "Oct 19 - 24, 2026",
+   "state": "open",
+   "prize": "$5,500",
+   "themes": [
+    "Beginner Friendly",
+    "Machine Learning/AI",
+    "Social Good"
    ],
    "source": "Devpost"
   },
@@ -2948,17 +2986,32 @@
    "source": "Devpost"
   },
   {
-   "id": "devpost-31666",
-   "title": "Mathematics for systems security",
-   "organizer": "Software Engineering Club (DEV)",
-   "url": "https://mathematics-systems-security.devpost.com/",
+   "id": "devpost-31797",
+   "title": "Green Shift Hacks",
+   "organizer": "HackathonForEveryone",
+   "url": "https://green-shift-hacks.devpost.com/",
    "location": "Online",
-   "dates": "Oct 16 - Nov 01, 2026",
+   "dates": "Oct 18 - Nov 17, 2026",
+   "state": "open",
+   "prize": "$125",
+   "themes": [
+    "Beginner Friendly",
+    "Social Good"
+   ],
+   "source": "Devpost"
+  },
+  {
+   "id": "devpost-31802",
+   "title": "HackOctober MLH X Tech4hack",
+   "organizer": "MLH",
+   "url": "https://hackoctober-mlh-x-tech4hack.devpost.com/",
+   "location": "Microsoft",
+   "dates": "Oct 18 - 22, 2026",
    "state": "open",
    "prize": "$0",
    "themes": [
-    "Communication",
-    "Cybersecurity",
+    "DevOps",
+    "Health",
     "Machine Learning/AI"
    ],
    "source": "Devpost"
@@ -2980,21 +3033,6 @@
    "source": "Devpost"
   },
   {
-   "id": "devpost-31139",
-   "title": "Neighborhood Hacks",
-   "organizer": "Student Organization",
-   "url": "https://neighborhood-hacks-2026.devpost.com/",
-   "location": "Online",
-   "dates": "Oct 16 - 24, 2026",
-   "state": "upcoming",
-   "prize": "$57,866",
-   "themes": [
-    "Beginner Friendly",
-    "Social Good"
-   ],
-   "source": "Devpost"
-  },
-  {
    "id": "devpost-30789",
    "title": "Arbiter Hacks V1",
    "organizer": "Arbiter ",
@@ -3012,7 +3050,7 @@
   },
   {
    "id": "devpost-30455",
-   "title": "Cosmo Hacks",
+   "title": "Cosmo Hacks 2026",
    "organizer": "Cosmo Hacks",
    "url": "https://cosmohacks.devpost.com/",
    "location": "Online",
@@ -3091,27 +3129,11 @@
    "source": "Devpost"
   },
   {
-   "id": "devpost-31498",
-   "title": "MLH Hacktoberfest Hack Day Teens Delhi X ElevenLabs",
-   "organizer": "MLH",
-   "url": "https://hacktoberfest-teens.devpost.com/",
-   "location": "The Grandeur By Lavanya-Moti Nagar",
-   "dates": "Oct 17, 2026",
-   "state": "upcoming",
-   "prize": "$0",
-   "themes": [
-    "Beginner Friendly",
-    "Low/No Code",
-    "Social Good"
-   ],
-   "source": "Devpost"
-  },
-  {
    "id": "devpost-31061",
    "title": "Gator Hack V - AI Days 2026",
    "organizer": "University of Florida",
    "url": "https://gatorhack2026.devpost.com/",
-   "location": "Online",
+   "location": "Newell Hall, University of Florida",
    "dates": "Oct 23 - 25, 2026",
    "state": "upcoming",
    "prize": "$3,500",
@@ -3134,96 +3156,9 @@
     "Databases"
    ],
    "source": "Devpost"
-  },
-  {
-   "id": "devpost-31279",
-   "title": "Arm + ExecuTorch: Edge AI Challenge",
-   "organizer": "arm",
-   "url": "https://arm-executorch.devpost.com/",
-   "location": "San Francisco State University",
-   "dates": "Oct 17 - 18, 2026",
-   "state": "upcoming",
-   "prize": "$0",
-   "themes": [
-    "AR/VR",
-    "IoT",
-    "Machine Learning/AI"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-30613",
-   "title": "Girls Hoo Hack 2026",
-   "organizer": "Girls Who Code UVA",
-   "url": "https://girls-hoo-hack-2026.devpost.com/",
-   "location": "University of Virginia - Rice Hall",
-   "dates": "Oct 17 - 18, 2026",
-   "state": "upcoming",
-   "prize": "$0",
-   "themes": [
-    "Beginner Friendly",
-    "Open Ended",
-    "Social Good"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-31207",
-   "title": "HuskyHack 2026: Phase 1",
-   "organizer": "SoundCreditUnion and UW Tacoma",
-   "url": "https://huskyhack2026.devpost.com/",
-   "location": "Milgard Hall ",
-   "dates": "Oct 17, 2026",
-   "state": "upcoming",
-   "prize": "$18,000",
-   "themes": [
-    "Fintech"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-31187",
-   "title": "STEMergent Hacks 2026",
-   "organizer": "STEMergent",
-   "url": "https://stemergent-hacks.devpost.com/",
-   "location": "Online",
-   "dates": "Oct 31 - Nov 15, 2026",
-   "state": "upcoming",
-   "prize": "$0",
-   "themes": [
-    "Low/No Code",
-    "Machine Learning/AI",
-    "Social Good"
-   ],
-   "source": "Devpost"
-  },
-  {
-   "id": "devpost-28629",
-   "title": "Tech to Treasure Hackathon",
-   "organizer": "bin to better",
-   "url": "https://techtotreasure.devpost.com/",
-   "location": "Tully Community Branch Library",
-   "dates": "Mar 03 - 10, 2027",
-   "state": "upcoming",
-   "prize": "$450",
-   "themes": [
-    "Beginner Friendly",
-    "Education",
-    "Social Good"
-   ],
-   "source": "Devpost"
   }
  ],
  "contests": [
-  {
-   "id": "codeforces-2261",
-   "title": "WorldQuant Round 1 (Codeforces Round 1128, Div. 1 + Div. 2)",
-   "url": "https://codeforces.com/contests/2261",
-   "startsAt": "2026-10-17T14:35:00.000Z",
-   "durationHours": 3,
-   "platform": "Codeforces",
-   "source": "Codeforces"
-  },
   {
    "id": "codeforces-2277",
    "title": "Codeforces Round (Div. 2)",
@@ -3238,6 +3173,15 @@
    "title": "Codeforces Round (Div. 2)",
    "url": "https://codeforces.com/contests/2272",
    "startsAt": "2026-10-26T14:35:00.000Z",
+   "durationHours": 2.3,
+   "platform": "Codeforces",
+   "source": "Codeforces"
+  },
+  {
+   "id": "codeforces-2278",
+   "title": "Codeforces Round (Div. 3)",
+   "url": "https://codeforces.com/contests/2278",
+   "startsAt": "2026-10-31T14:35:00.000Z",
    "durationHours": 2.3,
    "platform": "Codeforces",
    "source": "Codeforces"
