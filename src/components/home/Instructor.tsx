@@ -22,7 +22,7 @@ const Instructor = () => (
               <div aria-hidden className="absolute inset-0 bg-grid-dark opacity-60" />
             </div>
             <div className="px-7 pb-8">
-              <Avatar name="Vikas Patel" size="xl" className="-mt-16 ring-4 ring-white shadow-lg" />
+              <Avatar name="Vikas Patel" size="xl" className="relative z-10 -mt-16 ring-4 ring-white shadow-lg" />
               <h3 className="mt-4 text-xl font-bold text-ink">Vikas Patel</h3>
               <p className="text-sm font-medium text-brand-600">Founder and lead instructor</p>
               <ul className="mt-6 space-y-3">
