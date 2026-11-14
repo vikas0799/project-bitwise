@@ -134,6 +134,17 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['Redis', 'CDN', 'Cache-aside', 'Invalidation', 'Eviction', 'Rate limiting'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/09-caching/',
   },
+  {
+    slug: '10-task-queues-and-background-jobs',
+    number: '10',
+    part: 'data',
+    title: 'Task Queues and Background Jobs',
+    description:
+      'Move slow and unreliable work out of the request. Producers, queues, workers and brokers, retries with exponential backoff and jitter, acknowledgements and visibility timeouts, dead-letter queues, idempotent handlers, scheduled and chained jobs, rate-limited workers, monitoring, and when to reach for Temporal, with BullMQ code.',
+    minutes: 16,
+    topics: ['BullMQ', 'Retries + backoff', 'Idempotency', 'Dead-letter queue', 'Schedulers', 'Temporal'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/10-task-queues-and-background-jobs/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.

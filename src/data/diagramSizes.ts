@@ -365,5 +365,13 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/latency-ladder.svg": [
     900,
     420
+  ],
+  "/images/system-design/sync-vs-async.svg": [
+    900,
+    400
+  ],
+  "/images/system-design/task-queue-flow.svg": [
+    900,
+    420
   ]
 };

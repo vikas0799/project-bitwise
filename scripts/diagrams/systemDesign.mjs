@@ -588,3 +588,71 @@ add(
   b += note(32, 404, 'Bar lengths are on a log scale. Each step down is roughly 10 to 1,000 times slower than the one above.', { size: 12.5 });
   add('latency-ladder', W, H, 'Latency of CPU caches, RAM, SSD, hard disk and an India to US network round trip, with the same times scaled so an L1 read takes one second', b);
 }
+
+// ---------- 10: sync vs async signup ----------
+{
+  const W = 900;
+  const H = 400;
+  let b = heading(32, 32, 'Signup: wait for the email provider, or hand the email to a worker');
+  const lane = (y, label) => text(32, y, label, { size: 13, weight: 700, anchor: 'start', fill: C.muted });
+  const seg = (x, y, w, label, tone) => box(x, y, w, 40, label, tone, { size: 12.5 });
+
+  b += lane(72, 'SYNCHRONOUS');
+  b += seg(32, 86, 150, 'validate + save user', 'plain');
+  b += seg(186, 86, 330, 'call the email API … waiting … (1–5 s)', 'active');
+  b += seg(520, 86, 120, 'respond', 'plain');
+  b += text(656, 90, 'Slow signup. If the email API', { size: 12.5, anchor: 'start', fill: C.text });
+  b += text(656, 107, 'is down: a 500, or "check your', { size: 12.5, anchor: 'start', fill: C.red, weight: 600 });
+  b += text(656, 124, 'email" that never arrives.', { size: 12.5, anchor: 'start', fill: C.red, weight: 600 });
+
+  b += line(32, 160, 868, 160, { color: C.grid, sw: 1 });
+
+  b += lane(186, 'WITH A BACKGROUND JOB');
+  b += seg(32, 200, 150, 'validate + save user', 'plain');
+  b += seg(186, 200, 110, 'enqueue job', 'brand');
+  b += seg(300, 200, 120, '201 Created', 'good');
+  b += text(440, 220, '← the user is done in ~50 ms', { size: 12.5, anchor: 'start', fill: C.green, weight: 600 });
+
+  b += lane(282, 'WORKER (separate process)');
+  b += arrow(241, 244, 241, 292, 'brand', { dash: '5 4' });
+  b += seg(186, 296, 150, 'pick up the job', 'brand');
+  b += seg(340, 296, 120, 'call email API', 'active');
+  b += seg(464, 296, 110, 'fails: retry', 'bad');
+  b += seg(578, 296, 120, 'call again', 'active');
+  b += seg(702, 296, 120, 'sent, ACK', 'good');
+  b += note(32, 372, 'The API never waits for the email provider, and a provider outage turns into a delayed email, not a failed signup.', { size: 12.5 });
+  add('sync-vs-async', W, H, 'A synchronous signup that waits on the email API compared with one that enqueues a background job and responds immediately while a worker retries', b);
+}
+
+// ---------- 10: producer, queue, workers ----------
+{
+  const W = 900;
+  const H = 420;
+  let b = heading(32, 32, 'How a task queue works');
+  b += box(32, 110, 160, 70, ['Producer', 'your API: enqueue + return'], 'brand', { size: 14 });
+  b += arrow(196, 145, 262, 145, 'brand');
+  b += tag(229, 128, 'JSON job', { size: 11.5, fill: C.brand, border: C.brand });
+  b += rect(266, 104, 240, 82, { fill: C.amberSoft, stroke: C.amber, rx: 12 });
+  b += text(386, 120, 'Queue / broker (Redis, RabbitMQ, SQS)', { size: 12, weight: 700, fill: '#92400E' });
+  ['job 7', 'job 8', 'job 9', 'job 10'].forEach((j, k) => (b += box(280 + k * 55, 136, 48, 34, j, 'plain', { size: 11, mono: true })));
+  [70, 140, 210].forEach((y, k) => {
+    b += box(600, y, 150, 50, [`Worker ${k + 1}`, 'runs the handler'], 'good', { size: 13.5, subSize: 11 });
+    b += arrow(510, 145, 596, y + 25, 'good');
+  });
+  b += box(780, 140, 96, 50, ['ACK', 'job removed'], 'good', { size: 13, subSize: 11 });
+  b += arrow(754, 165, 776, 165, 'good');
+
+  // retry loop
+  b += path('M 675 264 C 675 320, 420 330, 400 192', { tone: 'active', arrow: true, sw: 2 });
+  b += tag(400, 352, 'fail → retry later: 1 min, 2, 4, 8 … (+ jitter)', { size: 12, fill: C.amber, border: C.amber });
+  // DLQ
+  b += box(600, 340, 276, 50, ['Dead-letter queue', 'out of retries: inspect, fix, replay'], 'bad', { size: 13.5, subSize: 11 });
+  b += arrow(675, 264, 700, 336, 'bad');
+  b += note(32, 230, 'Visibility timeout: a job a', { size: 12.5 });
+  b += note(32, 250, 'worker took but never ACKed', { size: 12.5 });
+  b += note(32, 270, '(it crashed) becomes visible', { size: 12.5 });
+  b += note(32, 290, 'again for another worker.', { size: 12.5 });
+  b += note(32, 330, 'Add workers to go faster:', { size: 12.5, fill: C.ink, weight: 600 });
+  b += note(32, 350, 'they share the queue.', { size: 12.5 });
+  add('task-queue-flow', W, H, 'A producer enqueues JSON jobs into a broker, several workers process them and acknowledge success, failures retry with backoff and land in a dead-letter queue when retries run out', b);
+}
