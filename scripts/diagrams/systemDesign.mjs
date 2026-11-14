@@ -327,3 +327,74 @@ add(
     ],
   }),
 );
+
+// ---------- 05: validation at the front door ----------
+{
+  const W = 900;
+  const H = 400;
+  let b = heading(32, 32, 'Same bad request, with and without validation');
+  const row = (y, label) => text(32, y, label, { size: 13, weight: 700, anchor: 'start', fill: C.muted });
+  const steps = (y, tones, first = 'Controller') =>
+    [first, 'Service', 'Repository', 'Postgres'].map((name, k) => box(250 + k * 160, y, 130, 46, name, tones[k], { size: 13.5 })).join('') +
+    [0, 1, 2].map((k) => arrow(384 + k * 160, y + 23, 406 + k * 160, y + 23, tones[k + 1] === 'muted' ? 'muted' : 'plain')).join('');
+
+  // Without validation
+  b += row(70, 'WITHOUT VALIDATION');
+  b += box(32, 88, 180, 46, ['POST /api/books', '{ "title": null }'], 'plain', { mono: true, size: 12.5, subSize: 11.5 });
+  b += arrow(216, 111, 246, 111);
+  b += steps(88, ['plain', 'plain', 'plain', 'bad']);
+  b += path('M 795 138 C 795 180, 600 186, 140 186 L 140 160', { tone: 'bad', arrow: true, sw: 2 });
+  b += tag(470, 186, '500 Internal Server Error: "null value in column title"', { size: 12, fill: C.red, border: C.red });
+  b += note(32, 214, 'The database finds the problem, after a connection, a query and maybe an email already went out.');
+
+  b += line(32, 240, 868, 240, { color: C.grid, sw: 1 });
+
+  // With validation
+  b += row(266, 'WITH VALIDATION');
+  b += box(32, 284, 180, 46, ['POST /api/books', '{ "title": null }'], 'plain', { mono: true, size: 12.5, subSize: 11.5 });
+  b += arrow(216, 307, 246, 307);
+  b += steps(284, ['active', 'muted', 'muted', 'muted'], ['Controller', 'validates first']);
+  b += path('M 315 334 C 315 362, 200 366, 140 366 L 140 338', { tone: 'good', arrow: true, sw: 2 });
+  b += tag(330, 370, '400 Bad Request: "title is required"', { size: 12, fill: C.green, border: C.green });
+  b += note(560, 368, 'Rejected at the door. Nothing else runs.');
+  add('validation-gate', W, H, 'A bad request reaching the database and failing with 500, compared with the same request rejected by validation with a clear 400', b);
+}
+
+// ---------- 06: inside the server ----------
+{
+  const W = 900;
+  const H = 360;
+  let b = heading(32, 32, 'Inside the server: one job per layer');
+  const stops = [
+    ['Port 3000', 'entry point', 'muted'],
+    ['Middleware', 'every request', 'brand'],
+    ['Router', 'method + path', 'brand'],
+    ['Controller', 'HTTP in and out', 'active'],
+    ['Service', 'business logic', 'good'],
+    ['Repository', 'database queries', 'special'],
+    ['Database', 'Postgres, Redis', 'plain'],
+  ];
+  const w = 106;
+  const gap = 18;
+  const x0 = (W - (stops.length * w + (stops.length - 1) * gap)) / 2;
+  stops.forEach(([label, sub, tone], k) => {
+    const x = x0 + k * (w + gap);
+    b += box(x, 80, w, 56, [label, sub], tone, { size: 13.5, subSize: 11 });
+    if (k < stops.length - 1) b += arrow(x + w + 2, 108, x + w + gap - 2, 108, 'ink');
+  });
+  const notes = [
+    ['Middleware', 'CORS, logging, auth, rate limits. Can stop a request early.'],
+    ['Controller', 'read the request, validate, call a service, choose the status code.'],
+    ['Service', 'the real work. Knows nothing about HTTP: no req, no res, no status codes.'],
+    ['Repository', 'builds and runs queries. One method, one kind of result.'],
+  ];
+  notes.forEach(([k, v], i) => (b += spans(40, 176 + i * 24, [[`${k}: `, C.ink, 700], [v, C.text]], { size: 13.5 })));
+  const ctxX = x0 + (w + gap);
+  const ctxW = 3 * w + 2 * gap;
+  b += rect(ctxX, 284, ctxW, 44, { fill: C.amberSoft, stroke: C.amber, rx: 10 });
+  b += text(ctxX + ctxW / 2, 298, 'request context: req.id, req.user, signal', { size: 12.5, weight: 700, fill: '#92400E' });
+  b += text(ctxX + ctxW / 2, 316, 'shared by middleware, router and controller', { size: 11.5, fill: C.muted });
+  b += text(ctxX + ctxW + 16, 298, 'Services get plain values', { size: 12.5, anchor: 'start', fill: C.text, weight: 600 });
+  b += text(ctxX + ctxW + 16, 316, '(userId, signal), never req itself.', { size: 12.5, anchor: 'start', fill: C.muted });
+  add('request-layers', W, H, 'A request passing through the entry point, middleware, router, controller, service and repository to the database, with the request context alongside', b);
+}

@@ -79,6 +79,28 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['Argon2', 'Sessions', 'JWT', 'CSRF', 'OAuth + PKCE', 'OIDC', 'RBAC'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/04-authentication-and-authorization/',
   },
+  {
+    slug: '05-validations-and-transformations',
+    number: '05',
+    part: 'foundations',
+    title: 'Validations and Transformations',
+    description:
+      'Check every piece of client data at the front door. Where validation lives, the 400 vs 500 story, type, syntax, semantic and cross-field checks, casting and normalising input, stripping unknown fields, and why frontend validation never replaces backend validation, with Zod and Express.',
+    minutes: 10,
+    topics: ['Zod', '400 vs 500', 'Cross-field rules', 'Coercion', 'Mass assignment'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/05-validations-and-transformations/',
+  },
+  {
+    slug: '06-controllers-services-and-middlewares',
+    number: '06',
+    part: 'foundations',
+    title: 'Controllers, Services and Middlewares',
+    description:
+      'What happens inside the server between a request arriving and a response leaving. The entry point, routing, controller, service and repository layers, middleware and next(), why middleware order matters, the common middlewares, and the request context for auth data, tracing and cancellation, with Express.',
+    minutes: 12,
+    topics: ['Layered architecture', 'Middleware', 'next()', 'Error handler', 'Request context'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/06-controllers-services-and-middlewares/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.

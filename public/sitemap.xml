@@ -206,6 +206,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.bitwiseschool.com/system-design/05-validations-and-transformations/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/system-design/06-controllers-services-and-middlewares/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.bitwiseschool.com/projects</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -333,5 +333,13 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/refresh-rotation.svg": [
     880,
     500
+  ],
+  "/images/system-design/validation-gate.svg": [
+    900,
+    400
+  ],
+  "/images/system-design/request-layers.svg": [
+    900,
+    360
   ]
 };
