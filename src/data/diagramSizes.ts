@@ -493,5 +493,25 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/tdd-cycle.svg": [
     900,
     300
+  ],
+  "/images/system-design/queue-vs-log.svg": [
+    900,
+    360
+  ],
+  "/images/system-design/kafka-partitions.svg": [
+    900,
+    360
+  ],
+  "/images/system-design/consumer-groups.svg": [
+    900,
+    380
+  ],
+  "/images/system-design/kafka-replication.svg": [
+    900,
+    360
+  ],
+  "/images/system-design/outbox-pattern.svg": [
+    900,
+    380
   ]
 };

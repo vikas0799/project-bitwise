@@ -1507,3 +1507,149 @@ add(
   b += note(32, 280, 'Writing the test first forces you to decide the behaviour and the interface before the implementation.', { size: 12.5 });
   add('tdd-cycle', W, H, 'The TDD loop: write a failing test, make it pass with the simplest code, refactor with tests green, and repeat', b);
 }
+
+// ---------- 23: queue vs log ----------
+{
+  const W = 900;
+  const H = 360;
+  let b = heading(32, 32, 'A queue hands out work once. A log keeps history for everyone.');
+  b += text(210, 72, 'Queue (RabbitMQ, SQS)', { size: 14, weight: 700 });
+  b += box(32, 100, 80, 44, 'producer', 'plain', { size: 12 });
+  ['job 4', 'job 3', 'job 2'].forEach((j, k) => (b += box(140 + k * 62, 100, 56, 44, j, 'active', { size: 11.5 })));
+  b += arrow(116, 122, 136, 122, 'ink');
+  b += arrow(330, 122, 360, 100, 'ink');
+  b += arrow(330, 122, 360, 146, 'ink');
+  b += box(364, 76, 66, 40, 'worker', 'good', { size: 11.5 });
+  b += box(364, 128, 66, 40, 'worker', 'good', { size: 11.5 });
+  b += text(210, 200, 'each job goes to one worker', { size: 12.5, fill: C.text });
+  b += text(210, 220, 'and is deleted once acknowledged', { size: 12.5, fill: C.text });
+  b += line(450, 60, 450, 330, { color: C.grid, sw: 1 });
+  b += text(680, 72, 'Log (Kafka)', { size: 14, weight: 700 });
+  for (let k = 0; k < 8; k++) {
+    b += rect(476 + k * 48, 100, 44, 40, { fill: k < 7 ? C.brandSoft : '#FFFFFF', stroke: C.brand, rx: 4, dash: k < 7 ? undefined : '4 3' });
+    b += text(498 + k * 48, 120, k < 7 ? k : 'next', { size: 12, fill: '#003A91', weight: 600, mono: k < 7 });
+  }
+  const readers = [['search indexer', 0, 'active', 196], ['orders service', 2, 'good', 248], ['analytics', 5, 'special', 196]];
+  readers.forEach(([name, at, tone, y]) => {
+    const cx = 498 + at * 48;
+    b += line(cx, y, cx, 146, { tone, sw: 1.8, arrow: true });
+    b += box(cx - 56, y, 112, 34, [name, `at offset ${at}`], tone, { size: 11.5, subSize: 10 });
+  });
+  b += text(680, 316, 'append at the end; reading removes nothing;', { size: 12, fill: C.text });
+  b += text(680, 334, 'each group keeps its own position', { size: 12, fill: C.text });
+  add('queue-vs-log', W, H, 'In a queue each job goes to one worker and is deleted; in a log events stay at their offsets and each consumer group reads at its own position', b);
+}
+
+// ---------- 23: topics, partitions and keys ----------
+{
+  const W = 900;
+  const H = 360;
+  let b = heading(32, 32, 'A topic is split into partitions; the key picks the partition');
+  b += text(110, 78, 'producer', { size: 13, weight: 700 });
+  const msgs = [['order-41', 2], ['order-42', 0], ['order-43', 4]];
+  msgs.forEach(([key, p], k) => (b += box(40, 96 + k * 50, 140, 38, [`key ${key}`], k === 1 ? 'brand' : 'plain', { size: 12 })));
+  b += box(220, 140, 130, 56, ['hash(key) %', '6 partitions'], 'active', { size: 12.5, subSize: 12 });
+  msgs.forEach((_, k) => (b += line(184, 115 + k * 50, 216, 168, { color: C.faint, sw: 1.5 })));
+  const parts = [0, 1, 2, 3, 4, 5];
+  parts.forEach((p) => {
+    const y = 66 + p * 44;
+    const used = [0, 2, 4].includes(p);
+    b += text(398, y + 17, `P${p}`, { size: 12.5, weight: 700, anchor: 'end', fill: used ? C.ink : C.faint });
+    for (let o = 0; o < 4; o++) {
+      const filled = used;
+      b += rect(408 + o * 58, y, 54, 34, { fill: filled ? (p === 0 ? C.brandSoft : '#F1F5F9') : '#FFFFFF', stroke: filled ? (p === 0 ? C.brand : C.line) : C.grid, rx: 4 });
+      if (filled) b += text(435 + o * 58, y + 17, o, { size: 11.5, mono: true, fill: p === 0 ? '#003A91' : C.muted });
+    }
+  });
+  b += arrow(354, 168, 404, 83, 'brand');
+  b += text(730, 74, 'order-42, in partition 0:', { size: 12.5, anchor: 'start', weight: 700, fill: '#003A91' });
+  ['0  OrderPlaced', '1  PaymentCaptured', '2  OrderShipped', '3  OrderDelivered'].forEach((t, k) => (b += text(730, 98 + k * 20, t, { size: 12, anchor: 'start', mono: true })));
+  b += text(730, 196, 'Same key → same partition', { size: 12.5, anchor: 'start', weight: 700 });
+  b += text(730, 216, '→ strict order for that key.', { size: 12.5, anchor: 'start' });
+  b += text(730, 248, 'No order between', { size: 12.5, anchor: 'start', weight: 700 });
+  b += text(730, 268, 'different partitions.', { size: 12.5, anchor: 'start' });
+  b += note(32, 344, 'Measured: three orders landed on partitions 2, 0 and 4, and each order’s four events kept their order.', { size: 12.5 });
+  add('kafka-partitions', W, H, 'Records are routed to one of six partitions by hashing their key; all events for order-42 go to partition 0 in order', b);
+}
+
+// ---------- 23: consumer groups ----------
+{
+  const W = 900;
+  const H = 380;
+  let b = heading(32, 32, 'Consumer groups: share work inside a group, every group gets everything');
+  b += rect(330, 60, 200, 290, { fill: '#F8FAFC', stroke: C.line, rx: 10 });
+  b += text(430, 82, 'topic: orders', { size: 13, weight: 700 });
+  [0, 1, 2, 3, 4, 5].forEach((p) => (b += box(352, 96 + p * 40, 156, 32, `partition ${p}`, 'brand', { size: 12 })));
+  b += text(150, 72, 'group "fulfilment"', { size: 13, weight: 700, fill: '#065F46' });
+  const owners = [[[1, 4], 96], [[0, 3], 186], [[2, 5], 276]];
+  owners.forEach(([ps, y], k) => {
+    b += box(60, y, 180, 56, [`consumer ${k + 1}`, `partitions ${ps.join(' and ')}`], 'good', { size: 13, subSize: 11 });
+    ps.forEach((p) => (b += line(244, y + 28, 348, 112 + p * 40, { tone: 'good', sw: 1.5 })));
+  });
+  b += text(720, 72, 'group "analytics"', { size: 13, weight: 700, fill: '#5B21B6' });
+  b += box(620, 176, 200, 56, ['one consumer', 'all 6 partitions'], 'special', { size: 13, subSize: 11 });
+  [0, 1, 2, 3, 4, 5].forEach((p) => (b += line(512, 112 + p * 40, 616, 204, { tone: 'special', sw: 1.2, dash: '4 4' })));
+  b += text(720, 266, 'Measured: each fulfilment', { size: 12, fill: C.text });
+  b += text(720, 284, 'consumer got 4 of 12 events;', { size: 12, fill: C.text });
+  b += text(720, 302, 'analytics got all 12.', { size: 12, fill: C.text });
+  b += note(32, 370, 'One partition goes to one consumer per group, so a group can use at most as many consumers as there are partitions.', { size: 12.5 });
+  add('consumer-groups', W, H, 'Three consumers in the fulfilment group each own two partitions, while the single analytics consumer reads all six partitions', b);
+}
+
+// ---------- 23: replication and acks ----------
+{
+  const W = 900;
+  const H = 360;
+  let b = heading(32, 32, 'Replication: one leader, followers in sync, acks=all');
+  b += box(32, 140, 120, 56, ['producer', 'acks=all'], 'plain', { size: 13, subSize: 11 });
+  const brokers = [['broker 1', 'leader', 'brand', 70], ['broker 2', 'follower, in sync', 'good', 160], ['broker 3', 'follower, in sync', 'good', 250]];
+  brokers.forEach(([name, role, tone, y]) => b += box(260, y, 190, 58, [name, `partition 0: ${role}`], tone, { size: 13, subSize: 11 }));
+  b += arrow(156, 160, 256, 100, 'ink');
+  b += tag(206, 120, 'write', { size: 11 });
+  b += path('M 355 132 L 355 156', { tone: 'good', arrow: true });
+  b += path('M 452 99 C 500 99, 500 279, 454 279', { tone: 'good', arrow: true });
+  b += text(522, 190, 'copy', { size: 11.5, fill: C.green, anchor: 'start' });
+  b += text(560, 82, 'min.insync.replicas = 2', { size: 13, anchor: 'start', weight: 700 });
+  const rows = [
+    ['3 brokers up', 'write OK', C.green],
+    ['broker 3 down', 'new leaders elected, write OK', C.green],
+    ['brokers 2 and 3 down', 'write refused: NotEnoughReplicas', C.red],
+    ['both restarted', 'replicas catch up, write OK', C.green],
+  ];
+  rows.forEach(([state, result, color], k) => {
+    b += text(560, 116 + k * 44, state, { size: 12.5, anchor: 'start', weight: 600 });
+    b += text(560, 134 + k * 44, result, { size: 12, anchor: 'start', fill: color });
+  });
+  b += note(32, 346, 'The write succeeds only when at least 2 copies have it, so losing one broker never loses an acknowledged write.', { size: 12.5 });
+  add('kafka-replication', W, H, 'A partition leader on broker 1 replicates to followers on brokers 2 and 3; with min.insync.replicas of 2, writes succeed with one broker down and are refused with two down', b);
+}
+
+// ---------- 23: the outbox pattern ----------
+{
+  const W = 900;
+  const H = 380;
+  let b = heading(32, 32, 'The dual-write problem and the outbox fix');
+  b += text(210, 70, 'Dual write: two separate systems', { size: 13.5, weight: 700, fill: C.red });
+  b += box(40, 96, 120, 50, 'order service', 'plain', { size: 12.5 });
+  b += box(260, 84, 140, 40, '1. INSERT order', 'good', { size: 12 });
+  b += box(260, 140, 140, 40, '2. publish event', 'bad', { size: 12 });
+  b += arrow(164, 114, 256, 104, 'good');
+  b += arrow(164, 128, 256, 160, 'bad');
+  b += text(210, 210, 'crash between 1 and 2: the order exists,', { size: 12, fill: C.red });
+  b += text(210, 228, 'but no event is ever sent', { size: 12, fill: C.red });
+  b += line(450, 56, 450, 340, { color: C.grid, sw: 1 });
+  b += text(680, 70, 'Outbox: one local transaction', { size: 13.5, weight: 700, fill: C.green });
+  b += rect(476, 88, 230, 110, { fill: C.greenSoft, stroke: C.green, rx: 10 });
+  b += text(591, 108, 'BEGIN … COMMIT', { size: 12, weight: 700, fill: '#065F46', mono: true });
+  b += box(492, 120, 198, 30, 'INSERT INTO orders', 'plain', { size: 11.5, mono: true });
+  b += box(492, 158, 198, 30, 'INSERT INTO outbox', 'plain', { size: 11.5, mono: true });
+  b += box(740, 136, 120, 50, ['relay', 'or Debezium'], 'active', { size: 12.5, subSize: 11 });
+  b += arrow(710, 168, 736, 164, 'active');
+  b += box(740, 236, 120, 44, 'Kafka', 'brand', { size: 13 });
+  b += arrow(800, 190, 800, 232, 'brand');
+  b += text(591, 228, 'both rows commit, or neither', { size: 12, fill: '#065F46' });
+  b += text(591, 246, 'relay retries until published', { size: 12, fill: '#065F46' });
+  b += text(591, 264, '(at least once: keep consumers idempotent)', { size: 11.5, fill: C.muted });
+  b += note(32, 330, 'Measured: an invalid order rolled back with no outbox row; the relay published the two valid orders, then found nothing left.', { size: 12.5 });
+  add('outbox-pattern', W, H, 'Writing to the database and Kafka separately can leave them out of sync; the outbox pattern writes the order and the event in one transaction and a relay publishes it', b);
+}

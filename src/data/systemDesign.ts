@@ -277,6 +277,17 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['Unit tests', 'Testcontainers', 'Pact', 'TDD'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/22-automated-testing/',
   },
+  {
+    slug: '23-message-brokers-and-kafka',
+    number: '23',
+    part: 'advanced',
+    title: 'Message Brokers and Kafka',
+    description:
+      'The append-only log, partitions and keys, replication and acks, consumer groups, offsets and lag, idempotent consumers, compaction, the outbox pattern and dead-letter topics, tested on a three-broker cluster.',
+    minutes: 23,
+    topics: ['Kafka', 'Consumer groups', 'Outbox', 'Event-driven'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/23-message-brokers-and-kafka/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.
