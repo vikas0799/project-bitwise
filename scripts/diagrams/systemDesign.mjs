@@ -1004,3 +1004,75 @@ add(
   b += note(32, 376, 'No single layer is perfect. Logging, monitoring and patched dependencies wrap around all of them.', { size: 12.5 });
   add('defence-in-depth', W, H, 'Nested security layers from the network edge through identity, authorization and input handling, surrounding the data and business logic', b);
 }
+
+// ---------- 18: utilization vs wait time ----------
+{
+  const W = 900;
+  const H = 400;
+  let b = heading(32, 32, 'Why servers slow down sharply as they get busy');
+  const x0 = 90;
+  const y0 = 330;
+  const pw = 520;
+  const ph = 250;
+  const S = 10;   // service time in ms
+  const maxMs = 400;
+  const px = (rho) => x0 + rho * pw;
+  const py = (ms) => y0 - (Math.min(ms, maxMs) / maxMs) * ph;
+  b += line(x0, y0, x0 + pw + 10, y0, { color: C.ink, sw: 1.5 });
+  b += line(x0, y0, x0, y0 - ph - 10, { color: C.ink, sw: 1.5 });
+  [0, 0.2, 0.4, 0.6, 0.8, 1].forEach((r) => (b += text(px(r), y0 + 16, `${Math.round(r * 100)}%`, { size: 11.5, fill: C.muted })));
+  [0, 100, 200, 300, 400].forEach((ms) => {
+    b += text(x0 - 10, py(ms), `${ms}`, { size: 11.5, anchor: 'end', fill: C.muted });
+    if (ms) b += line(x0, py(ms), x0 + pw, py(ms), { color: C.grid, sw: 1 });
+  });
+  b += text(x0 + pw / 2, y0 + 38, 'utilization (how busy the server is)', { size: 12.5, fill: C.text, weight: 600 });
+  b += text(40, y0 - ph / 2, 'time per request (ms)', { size: 12.5, fill: C.text, weight: 600, rotate: -90 });
+  b += rect(px(0.6), y0 - ph, px(0.8) - px(0.6), ph, { fill: C.greenSoft, stroke: 'none', rx: 0 });
+  b += text((px(0.6) + px(0.8)) / 2, y0 - ph + 14, 'target zone', { size: 11.5, fill: C.green, weight: 700 });
+  let d = '';
+  for (let r = 0; r <= 0.975; r += 0.005) d += `${d ? 'L' : 'M'} ${px(r).toFixed(1)} ${py(S / (1 - r)).toFixed(1)} `;
+  b += path(d, { color: C.red, sw: 3 });
+  [[0.5, '20 ms'], [0.8, '50 ms'], [0.9, '100 ms'], [0.95, '200 ms']].forEach(([r, label]) => {
+    b += `<circle cx="${px(r)}" cy="${py(S / (1 - r))}" r="5" fill="${C.red}"/>`;
+    b += text(px(r) - 8, py(S / (1 - r)) - 14, label, { size: 11.5, anchor: 'end', fill: C.red, weight: 700 });
+  });
+  const notes = [
+    'A request that takes 10 ms of work:',
+    '',
+    '50% busy  → about 20 ms',
+    '80% busy  → about 50 ms',
+    '90% busy  → about 100 ms',
+    '95% busy  → about 200 ms',
+    '',
+    'The work never got slower.',
+    'The time is spent waiting',
+    'in the queue.',
+  ];
+  notes.forEach((n, k) => (b += text(650, 96 + k * 22, n, { size: 13, anchor: 'start', fill: k >= 7 ? C.red : C.text, weight: k >= 7 || k === 0 ? 700 : 500, mono: k >= 2 && k <= 5 })));
+  add('utilization-curve', W, H, 'Average time per request rising slowly up to about 70 percent utilization and then sharply as utilization approaches 100 percent', b);
+}
+
+// ---------- 18: scale up vs scale out ----------
+{
+  const W = 900;
+  const H = 360;
+  let b = heading(32, 32, 'Scaling up vs scaling out');
+  b += text(210, 70, 'Vertical: a bigger machine', { size: 14, weight: 700 });
+  b += box(60, 150, 90, 70, ['server', '2 CPU · 4 GB'], 'plain', { size: 13, subSize: 10.5 });
+  b += arrow(154, 185, 196, 185, 'ink');
+  b += box(200, 100, 170, 170, ['server', '32 CPU · 128 GB'], 'brand', { size: 15, subSize: 11.5 });
+  b += note(60, 300, 'Simple: no code changes.', { size: 12.5 });
+  b += note(60, 320, 'But there is a biggest machine, and one box can still fail.', { size: 12.5 });
+  b += line(450, 64, 450, 330, { color: C.grid, sw: 1 });
+  b += text(680, 70, 'Horizontal: more machines', { size: 14, weight: 700 });
+  b += box(480, 150, 110, 70, ['load', 'balancer'], 'active', { size: 13.5, subSize: 13.5 });
+  [96, 160, 224].forEach((y, k) => {
+    b += box(640, y, 120, 50, [`server ${k + 1}`, 'stateless'], 'good', { size: 13, subSize: 10.5 });
+    b += arrow(594, 185, 636, y + 25, 'good');
+    b += line(764, y + 25, 800, 185, { color: C.faint, sw: 1.5, dash: '5 5' });
+  });
+  b += box(804, 160, 70, 50, ['DB'], 'muted', { size: 13 });
+  b += note(480, 300, 'No ceiling, survives a server failing.', { size: 12.5 });
+  b += note(480, 320, 'Needs stateless servers and shared data.', { size: 12.5 });
+  add('scale-up-vs-out', W, H, 'Vertical scaling replaces a small server with a bigger one, while horizontal scaling puts several stateless servers behind a load balancer', b);
+}

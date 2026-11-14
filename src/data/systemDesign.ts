@@ -222,6 +222,17 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['SQL injection', 'XSS', 'BOLA / BFLA', 'Rate limiting', 'Security headers', 'Real breaches'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/17-backend-security/',
   },
+  {
+    slug: '18-scaling-and-performance-part-1',
+    number: '18',
+    part: 'scale',
+    title: 'Scaling and Performance, Part 1',
+    description:
+      'Measure first: latency percentiles, throughput, queueing, profiling, event-loop blocking, indexes, pooling, caching, the cluster module and load balancing.',
+    minutes: 26,
+    topics: ['Percentiles', 'Profiling', 'Indexes', 'Load balancing'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/18-scaling-and-performance-part-1/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.

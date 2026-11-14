@@ -425,5 +425,13 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/defence-in-depth.svg": [
     900,
     390
+  ],
+  "/images/system-design/utilization-curve.svg": [
+    900,
+    400
+  ],
+  "/images/system-design/scale-up-vs-out.svg": [
+    900,
+    360
   ]
 };
