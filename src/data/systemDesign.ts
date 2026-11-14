@@ -200,6 +200,17 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['Logs', 'Metrics', 'Traces', 'pino', 'Prometheus', 'OpenTelemetry'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/15-logging-and-observability/',
   },
+  {
+    slug: '16-graceful-shutdown',
+    number: '16',
+    part: 'production',
+    title: 'Graceful Shutdown',
+    description:
+      'Stop a server without dropping requests or corrupting data. Process lifecycles, Unix signals (SIGTERM, SIGINT, SIGKILL), connection draining with a timeout, coordinating with load balancers and Kubernetes, cleaning up resources in reverse order, and a tested Node.js implementation, plus the Docker, PM2 and Kubernetes details that trip people up.',
+    minutes: 9,
+    topics: ['SIGTERM', 'SIGKILL', 'Draining', 'Cleanup order', 'Kubernetes', 'Docker PID 1'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/16-graceful-shutdown/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.

@@ -929,3 +929,32 @@ add(
   b += note(32, 330, 'Managed alternatives bundle all of this: Datadog, New Relic, Grafana Cloud, Honeycomb; Sentry for errors.', { size: 12.5 });
   add('observability-stack', W, H, 'Services send logs, metrics and traces through an OpenTelemetry collector to Loki, Prometheus and Tempo, viewed in Grafana with alerts sent through Alertmanager', b);
 }
+
+// ---------- 16: shutdown timeline ----------
+{
+  const W = 900;
+  const H = 380;
+  let b = heading(32, 32, 'Graceful shutdown: what happens after SIGTERM');
+  const x0 = 60;
+  const x1 = 860;
+  b += line(x0, 300, x1, 300, { color: C.ink, sw: 2, arrow: true, tone: 'ink' });
+  b += text(x0, 318, '0 s', { size: 11.5, fill: C.muted });
+  b += text(800, 318, '30 s (grace period)', { size: 11.5, fill: C.red, weight: 700 });
+  b += line(800, 80, 800, 300, { color: C.red, sw: 2, dash: '6 5' });
+  b += box(740, 64, 120, 46, ['SIGKILL', 'no cleanup'], 'bad', { size: 13.5, subSize: 11 });
+  b += box(40, 130, 110, 56, ['SIGTERM', 'or Ctrl+C (SIGINT)'], 'active', { size: 13.5, subSize: 10.5 });
+  const steps = [
+    ['1. stop new traffic', 'readiness 503, close port', 'brand', 166],
+    ['2. drain', 'finish in-flight requests', 'brand', 318],
+    ['3. stop workers', 'finish the current job', 'good', 470],
+    ['4. close DB, then Redis', 'reverse order of opening', 'good', 622],
+  ];
+  steps.forEach(([t, s, tone, x], k) => {
+    const y = 130 + (k % 2) * 76;
+    b += box(x, y, 146, 56, [t, s], tone, { size: 12.5, subSize: 10.5 });
+    b += line(x + 73, y + 60, x + 73, 296, { color: C.line, sw: 1.5, dash: '3 4' });
+  });
+  b += text(735, 286, 'exit(0)', { size: 12.5, weight: 700, fill: C.green, mono: true });
+  b += note(32, 350, 'Finish well inside the grace period. If cleanup hangs, exit yourself before the platform sends SIGKILL.', { size: 12.5 });
+  add('shutdown-timeline', W, H, 'After SIGTERM the app stops taking new traffic, drains in-flight requests, stops workers and closes the database and Redis before exiting, well before the SIGKILL deadline', b);
+}

@@ -413,5 +413,9 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/observability-stack.svg": [
     900,
     360
+  ],
+  "/images/system-design/shutdown-timeline.svg": [
+    900,
+    380
   ]
 };
