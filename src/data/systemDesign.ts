@@ -233,6 +233,17 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['Percentiles', 'Profiling', 'Indexes', 'Load balancing'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/18-scaling-and-performance-part-1/',
   },
+  {
+    slug: '19-scaling-and-performance-part-2',
+    number: '19',
+    part: 'scale',
+    title: 'Scaling and Performance, Part 2',
+    description:
+      'Stateless servers, load balancing, read replicas and replication lag, partitioning, sharding and consistent hashing, CDNs, edge, async work, microservices and serverless.',
+    minutes: 22,
+    topics: ['Read replicas', 'Sharding', 'CDN', 'Serverless'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/19-scaling-and-performance-part-2/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.

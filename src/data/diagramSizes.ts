@@ -433,5 +433,17 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/scale-up-vs-out.svg": [
     900,
     360
+  ],
+  "/images/system-design/stateful-vs-stateless.svg": [
+    900,
+    380
+  ],
+  "/images/system-design/read-replicas.svg": [
+    900,
+    390
+  ],
+  "/images/system-design/consistent-hash-ring.svg": [
+    900,
+    430
   ]
 };

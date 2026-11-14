@@ -1,5 +1,5 @@
 // Diagrams for the System Design chapters: HTTP, routing and serialization.
-import { C, TONES, badge, code, heading, line, note, path, rect, spans, tag, text } from './svg.mjs';
+import { C, TONES, badge, circle, code, heading, line, note, path, rect, spans, tag, text } from './svg.mjs';
 import { arrow, box, sequence } from './backend.mjs';
 
 export const systemDesign = [];
@@ -1075,4 +1075,100 @@ add(
   b += note(480, 300, 'No ceiling, survives a server failing.', { size: 12.5 });
   b += note(480, 320, 'Needs stateless servers and shared data.', { size: 12.5 });
   add('scale-up-vs-out', W, H, 'Vertical scaling replaces a small server with a bigger one, while horizontal scaling puts several stateless servers behind a load balancer', b);
+}
+
+// ---------- 19: stateful vs stateless servers ----------
+{
+  const W = 900;
+  const H = 380;
+  let b = heading(32, 32, 'Where the session lives decides whether you can scale out');
+  const panel = (x0, title, stateless) => {
+    let o = text(x0 + 205, 70, title, { size: 14, weight: 700, fill: stateless ? C.green : C.red });
+    o += box(x0, 160, 100, 56, ['load', 'balancer'], 'active', { size: 13, subSize: 13 });
+    o += box(x0 + 170, 96, 140, 56, ['server A', stateless ? 'keeps nothing' : 'session: user 42'], stateless ? 'good' : 'brand', { size: 13, subSize: 11 });
+    o += box(x0 + 170, 222, 140, 56, ['server B', stateless ? 'keeps nothing' : 'no session'], stateless ? 'good' : 'bad', { size: 13, subSize: 11 });
+    o += arrow(x0 + 104, 180, x0 + 166, 128, 'good');
+    o += arrow(x0 + 104, 196, x0 + 166, 248, stateless ? 'good' : 'bad');
+    o += tag(x0 + 128, 136, '1 log in', { size: 11, fill: C.green });
+    o += tag(x0 + 128, 240, '2 GET /me', { size: 11, fill: stateless ? C.green : C.red });
+    if (stateless) {
+      o += box(x0 + 330, 160, 80, 56, ['Redis', 'sessions'], 'special', { size: 13, subSize: 11 });
+      o += line(x0 + 314, 124, x0 + 330, 176, { color: C.violet, sw: 1.5, dash: '5 5' });
+      o += line(x0 + 314, 250, x0 + 330, 200, { color: C.violet, sw: 1.5, dash: '5 5' });
+      o += text(x0 + 240, 306, 'B finds the session in Redis: 200', { size: 12.5, fill: C.green, weight: 700 });
+    } else {
+      o += text(x0 + 240, 306, 'B has never seen you: 401', { size: 12.5, fill: C.red, weight: 700 });
+    }
+    return o;
+  };
+  b += panel(20, 'Stateful: session in server memory', false);
+  b += line(450, 60, 450, 330, { color: C.grid, sw: 1 });
+  b += panel(470, 'Stateless: session in a shared store', true);
+  b += note(32, 356, 'Tested with two Express servers: MemoryStore gave 401 on server B, connect-redis gave 200.', { size: 12.5 });
+  add('stateful-vs-stateless', W, H, 'With sessions in server memory, a second request routed to another server fails; with sessions in Redis, any server can answer', b);
+}
+
+// ---------- 19: read replicas ----------
+{
+  const W = 900;
+  const H = 390;
+  let b = heading(32, 32, 'Read replicas: one primary for writes, copies for reads');
+  b += box(40, 160, 150, 80, ['app servers', 'read/write router'], 'plain', { size: 14, subSize: 11.5 });
+  b += box(340, 64, 190, 64, ['primary', 'all writes'], 'brand', { size: 15, subSize: 12 });
+  b += box(620, 166, 190, 56, ['replica 1', 'read-only copy'], 'good', { size: 14, subSize: 11.5 });
+  b += box(620, 266, 190, 56, ['replica 2', 'read-only copy'], 'good', { size: 14, subSize: 11.5 });
+  b += arrow(194, 180, 336, 104, 'brand');
+  b += tag(262, 128, 'INSERT · UPDATE · DELETE', { size: 11, fill: C.brand });
+  b += arrow(194, 214, 616, 194, 'good');
+  b += arrow(194, 226, 616, 294, 'good');
+  b += tag(400, 232, 'SELECT (most traffic)', { size: 11, fill: C.green });
+  b += path('M 534 96 L 715 96 L 715 160', { tone: 'active', dash: '6 5', arrow: true });
+  b += path('M 534 108 L 850 108 L 850 294 L 816 294', { tone: 'active', dash: '6 5', arrow: true });
+  b += tag(640, 80, 'replication stream (async)', { size: 11, fill: C.amber });
+  b += line(32, 340, 868, 340, { color: C.grid, sw: 1 });
+  b += spans(32, 364, [['Replication lag: ', C.ink, 700], ['a replica is always slightly behind. Send a user’s reads to the primary right after they write.', C.text]], { size: 12.5 });
+  add('read-replicas', W, H, 'App servers send writes to the primary and reads to replicas, which receive changes from the primary through asynchronous replication', b);
+}
+
+// ---------- 19: consistent hashing ring ----------
+{
+  const W = 900;
+  const H = 430;
+  let b = heading(32, 32, 'Consistent hashing: adding a shard moves only its neighbour’s keys');
+  const cx = 230;
+  const cy = 236;
+  const r = 140;
+  const pt = (deg, rad = r) => [cx + rad * Math.sin((deg * Math.PI) / 180), cy - rad * Math.cos((deg * Math.PI) / 180)];
+  b += circle(cx, cy, r, { stroke: C.line, sw: 10, fill: 'none' });
+  const [ax, ay] = pt(110);
+  const [bx, by] = pt(155);
+  b += path(`M ${ax.toFixed(1)} ${ay.toFixed(1)} A ${r} ${r} 0 0 1 ${bx.toFixed(1)} ${by.toFixed(1)}`, { color: C.violet, sw: 10 });
+  const shards = [[20, 's0', 'brand'], [110, 's1', 'brand'], [200, 's2', 'brand'], [290, 's3', 'brand'], [155, 's4 (new)', 'special']];
+  shards.forEach(([deg, label, tone]) => {
+    const [x, y] = pt(deg);
+    b += circle(x, y, 11, { fill: tone === 'special' ? C.violet : C.brand, stroke: '#FFFFFF', sw: 2 });
+    const [lx, ly] = pt(deg, r + 34);
+    b += text(lx, ly, label, { size: 13, weight: 700, fill: tone === 'special' ? C.violet : C.brand });
+  });
+  [[50, 's1'], [80, 's1'], [128, 'moves'], [142, 'moves'], [172, 's2'], [186, 's2'], [240, 's3'], [268, 's3'], [320, 's0'], [350, 's0']].forEach(([deg, owner]) => {
+    const [x, y] = pt(deg);
+    b += circle(x, y, 5, { fill: owner === 'moves' ? C.violet : C.ink, stroke: '#FFFFFF', sw: 1.5 });
+  });
+  b += text(cx, cy - 10, 'hash(key) lands on the ring;', { size: 12, fill: C.muted });
+  b += text(cx, cy + 10, 'walk clockwise to a shard', { size: 12, fill: C.muted });
+  const lines = [
+    ['Going from 4 to 5 shards, 100,000 keys:', C.ink, 700],
+    ['', C.text, 500],
+    ['hash(key) % shards', C.ink, 700],
+    ['79.7% of keys move to a different shard', C.red, 600],
+    ['', C.text, 500],
+    ['consistent hashing (100 virtual nodes each)', C.ink, 700],
+    ['19.8% of keys move, all of them to the new shard', C.green, 600],
+    ['', C.text, 500],
+    ['Only the keys in the purple arc change owner.', C.text, 500],
+    ['Virtual nodes spread each shard around the', C.text, 500],
+    ['ring so the load stays even.', C.text, 500],
+  ];
+  lines.forEach(([t, fill, weight], k) => (b += text(470, 104 + k * 24, t, { size: 13.5, anchor: 'start', fill, weight })));
+  add('consistent-hash-ring', W, H, 'A hash ring with four shards and a new fifth shard; only the keys in the arc before the new shard move to it', b);
 }
