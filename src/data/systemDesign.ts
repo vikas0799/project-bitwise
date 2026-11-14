@@ -288,6 +288,17 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['Kafka', 'Consumer groups', 'Outbox', 'Event-driven'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/23-message-brokers-and-kafka/',
   },
+  {
+    slug: '24-websockets-and-real-time',
+    number: '24',
+    part: 'advanced',
+    title: 'WebSockets and Real-Time Communication',
+    description:
+      'Polling vs SSE vs WebSockets, the handshake and frames on the wire, heartbeats, rooms, backpressure, handshake auth, a Redis backplane across servers, and reconnecting with resume.',
+    minutes: 20,
+    topics: ['WebSockets', 'SSE', 'Backplane', 'Reconnection'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/24-websockets-and-real-time/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.

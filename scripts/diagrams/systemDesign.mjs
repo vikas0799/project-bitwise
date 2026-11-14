@@ -1653,3 +1653,108 @@ add(
   b += note(32, 330, 'Measured: an invalid order rolled back with no outbox row; the relay published the two valid orders, then found nothing left.', { size: 12.5 });
   add('outbox-pattern', W, H, 'Writing to the database and Kafka separately can leave them out of sync; the outbox pattern writes the order and the event in one transaction and a relay publishes it', b);
 }
+
+// ---------- 24: the real-time spectrum ----------
+{
+  const W = 900;
+  const H = 400;
+  let b = heading(32, 32, 'Four ways to get updates from the server');
+  const x0 = 210;
+  const x1 = 860;
+  const lane = (y, title, sub) => {
+    let o = text(32, y + 4, title, { size: 13.5, anchor: 'start', weight: 700 });
+    o += text(32, y + 22, sub, { size: 11, anchor: 'start', fill: C.muted });
+    o += line(x0, y + 10, x1, y + 10, { color: C.grid, sw: 1 });
+    return o;
+  };
+  const events = [330, 610];   // when the server has news
+  events.forEach((x) => {
+    b += line(x, 62, x, 360, { color: C.red, sw: 1.2, dash: '3 4' });
+  });
+  b += text(330, 56, 'news', { size: 11, fill: C.red, weight: 600 });
+  b += text(610, 56, 'news', { size: 11, fill: C.red, weight: 600 });
+  // short polling
+  b += lane(80, 'Short polling', 'ask every few seconds');
+  [230, 380, 530, 680, 830].forEach((x) => {
+    b += line(x, 84, x + 16, 98, { tone: 'plain', sw: 1.5, arrow: true });
+    b += line(x + 22, 98, x + 38, 84, { tone: x === 380 || x === 680 ? 'good' : 'muted', sw: 1.5, arrow: true });
+  });
+  b += text(x1, 116, 'mostly empty answers; news waits for the next poll', { size: 11, anchor: 'end', fill: C.muted });
+  // long polling
+  b += lane(150, 'Long polling', 'server holds the request open');
+  b += path('M 220 154 L 330 168', { tone: 'plain', sw: 1.5 });
+  b += line(332, 168, 340, 156, { tone: 'good', sw: 1.5, arrow: true });
+  b += path('M 350 154 L 610 168', { tone: 'plain', sw: 1.5 });
+  b += line(612, 168, 620, 156, { tone: 'good', sw: 1.5, arrow: true });
+  b += path('M 630 154 L 850 168', { tone: 'plain', sw: 1.5 });
+  b += text(x1, 186, 'answer as soon as there is news, then ask again', { size: 11, anchor: 'end', fill: C.muted });
+  // SSE
+  b += lane(220, 'Server-Sent Events', 'one endless HTTP response');
+  b += rect(220, 222, 630, 16, { fill: C.brandSoft, stroke: C.brand, rx: 8 });
+  events.forEach((x) => (b += line(x, 238, x, 250, { tone: 'good', sw: 2, arrow: true })));
+  b += text(x1, 262, 'server → client only; auto-reconnect built in', { size: 11, anchor: 'end', fill: C.muted });
+  // WebSocket
+  b += lane(290, 'WebSocket', 'one upgraded TCP connection');
+  b += rect(220, 292, 630, 16, { fill: C.violetSoft, stroke: C.violet, rx: 8 });
+  events.forEach((x) => (b += line(x, 308, x, 320, { tone: 'good', sw: 2, arrow: true })));
+  [460, 760].forEach((x) => (b += line(x, 320, x, 308, { tone: 'special', sw: 2, arrow: true })));
+  b += text(x1, 334, 'both sides send whenever they like', { size: 11, anchor: 'end', fill: C.muted });
+  b += note(32, 384, 'Simplest first: polling for rare updates, SSE for one-way push, WebSockets only when the client also talks a lot.', { size: 12.5 });
+  add('realtime-spectrum', W, H, 'Short polling, long polling, Server-Sent Events and WebSockets compared on a timeline showing when news reaches the client', b);
+}
+
+// ---------- 24: the WebSocket handshake ----------
+systemDesign.push({
+  name: 'ws-handshake',
+  width: 880,
+  height: 470,
+  title: 'A WebSocket starts as an HTTP request, switches protocols with 101, then carries frames both ways until a close handshake',
+  body: sequence({
+    W: 880,
+    H: 470,
+    title: 'The WebSocket lifecycle: upgrade, frames, close',
+    actors: [
+      ['client', ['Browser', 'new WebSocket(wss://…)'], 'plain'],
+      ['server', ['Server', 'e.g. Node + ws'], 'brand'],
+    ],
+    messages: [
+      ['client', 'server', 'GET /ws  Upgrade: websocket, Sec-WebSocket-Key, Origin'],
+      ['server', 'client', '101 Switching Protocols  Sec-WebSocket-Accept', 'brand'],
+      ['server', 'client', 'text frame: 81 02 68 69 ("hi")', 'good'],
+      ['client', 'server', 'masked text frame: 81 82 + mask + payload', 'good'],
+      ['server', 'client', 'ping (every N seconds)', 'active'],
+      ['client', 'server', 'pong (no pong in time = dead connection)', 'active'],
+      ['server', 'client', 'close frame 1001 "going away"', 'bad'],
+      ['client', 'server', 'close frame (echo), then TCP closes', 'bad', true],
+    ],
+  }),
+});
+
+// ---------- 24: scaling with a backplane ----------
+{
+  const W = 900;
+  const H = 400;
+  let b = heading(32, 32, 'Scaling WebSockets: servers share messages through a backplane');
+  b += box(32, 90, 130, 50, ['asha', 'room sd-batch'], 'plain', { size: 12.5, subSize: 10.5 });
+  b += box(32, 230, 130, 50, ['ravi', 'room sd-batch'], 'plain', { size: 12.5, subSize: 10.5 });
+  b += box(32, 300, 130, 50, ['meera', 'room dsa-batch'], 'plain', { size: 12.5, subSize: 10.5 });
+  b += box(250, 84, 170, 62, ['server 1', 'asha’s socket lives here'], 'brand', { size: 13, subSize: 10.5 });
+  b += box(250, 250, 170, 80, ['server 2', 'ravi’s and meera’s', 'sockets live here'], 'brand', { size: 13, subSize: 10.5 });
+  b += line(166, 115, 246, 115, { tone: 'plain', sw: 2, arrowStart: true, arrow: true });
+  b += line(166, 255, 246, 280, { tone: 'plain', sw: 2, arrowStart: true, arrow: true });
+  b += line(166, 325, 246, 305, { tone: 'plain', sw: 2, arrowStart: true, arrow: true });
+  b += box(540, 168, 160, 70, ['Redis pub/sub', 'channel room:sd-batch'], 'special', { size: 13, subSize: 10.5 });
+  b += line(424, 110, 536, 186, { tone: 'special', sw: 2, arrow: true });
+  b += tag(486, 130, '1 publish', { size: 11, fill: C.violet });
+  b += line(536, 224, 424, 280, { tone: 'special', sw: 2, arrow: true });
+  b += tag(486, 268, '2 deliver', { size: 11, fill: C.violet });
+  b += text(710, 96, 'Tested with two servers:', { size: 12.5, weight: 700, anchor: 'start' });
+  b += text(710, 120, 'backplane off: ravi misses it', { size: 12, fill: C.red, anchor: 'start' });
+  b += text(710, 140, 'backplane on: ravi gets it', { size: 12, fill: C.green, anchor: 'start' });
+  b += text(710, 160, 'meera (other room): never', { size: 12, fill: C.muted, anchor: 'start' });
+  b += text(710, 280, 'Each server only knows', { size: 12, fill: C.text, anchor: 'start' });
+  b += text(710, 298, 'its own sockets; the bus', { size: 12, fill: C.text, anchor: 'start' });
+  b += text(710, 316, 'makes them act as one.', { size: 12, fill: C.text, anchor: 'start' });
+  b += note(32, 386, 'Redis pub/sub is fire-and-forget; keep recent messages (a list or stream) so reconnecting clients can catch up.', { size: 12.5 });
+  add('ws-backplane', W, H, 'Asha on server 1 and Ravi on server 2 are in the same room; server 1 publishes to Redis, which delivers to server 2, which sends to Ravi', b);
+}

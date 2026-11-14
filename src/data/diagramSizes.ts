@@ -513,5 +513,17 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/outbox-pattern.svg": [
     900,
     380
+  ],
+  "/images/system-design/realtime-spectrum.svg": [
+    900,
+    400
+  ],
+  "/images/system-design/ws-handshake.svg": [
+    880,
+    470
+  ],
+  "/images/system-design/ws-backplane.svg": [
+    900,
+    400
   ]
 };
