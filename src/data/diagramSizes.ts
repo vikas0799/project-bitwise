@@ -525,5 +525,17 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/ws-backplane.svg": [
     900,
     400
+  ],
+  "/images/system-design/openapi-anatomy.svg": [
+    900,
+    420
+  ],
+  "/images/system-design/openapi-uses.svg": [
+    900,
+    420
+  ],
+  "/images/system-design/design-vs-code-first.svg": [
+    900,
+    330
   ]
 };

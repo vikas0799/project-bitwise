@@ -299,6 +299,17 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['WebSockets', 'SSE', 'Backplane', 'Reconnection'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/24-websockets-and-real-time/',
   },
+  {
+    slug: '25-openapi-specification',
+    number: '25',
+    part: 'advanced',
+    title: 'The OpenAPI Specification',
+    description:
+      'A machine-readable API contract: spec structure, security schemes, linting, docs, request and response validation, design-first vs code-first, typed clients, breaking-change checks and safe AI tools.',
+    minutes: 16,
+    topics: ['OpenAPI', 'Validation', 'Typed clients', 'oasdiff'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/25-openapi-specification/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.

@@ -1758,3 +1758,76 @@ systemDesign.push({
   b += note(32, 386, 'Redis pub/sub is fire-and-forget; keep recent messages (a list or stream) so reconnecting clients can catch up.', { size: 12.5 });
   add('ws-backplane', W, H, 'Asha on server 1 and Ravi on server 2 are in the same room; server 1 publishes to Redis, which delivers to server 2, which sends to Ravi', b);
 }
+
+// ---------- 25: anatomy of an OpenAPI document ----------
+{
+  const W = 900;
+  const H = 420;
+  let b = heading(32, 32, 'Anatomy of an OpenAPI document');
+  b += box(32, 170, 150, 60, ['openapi.yaml', 'version 3.1.0'], 'brand', { size: 14, subSize: 11, mono: true });
+  const keys = [
+    ['info', 'title, version, description', 'plain'],
+    ['servers', 'production, staging, local URLs', 'plain'],
+    ['security', 'default auth for every operation', 'active'],
+    ['paths', '/courses → get, post → parameters, requestBody, responses', 'good'],
+    ['components', 'reusable schemas, responses, securitySchemes', 'special'],
+    ['tags', 'groups operations in the docs', 'plain'],
+  ];
+  keys.forEach(([k, desc, tone], i) => {
+    const y = 62 + i * 56;
+    b += box(250, y, 130, 40, k, tone, { size: 13, mono: true });
+    b += line(186, 200, 246, y + 20, { color: C.faint, sw: 1.5 });
+    b += text(446, y + 20, desc, { size: 12.5, anchor: 'start', fill: C.text });
+  });
+  b += path('M 382 258 C 428 258, 428 306, 386 306', { tone: 'special', sw: 1.8, arrow: true });
+  b += text(432, 283, '$ref', { size: 11, fill: C.violet, mono: true, anchor: 'start', weight: 700 });
+  b += note(32, 404, 'One machine-readable file describes every endpoint, input, output, status code and auth requirement.', { size: 12.5 });
+  add('openapi-anatomy', W, H, 'The top-level keys of an OpenAPI document: info, servers, security, paths, components and tags, with paths referencing component schemas', b);
+}
+
+// ---------- 25: one spec drives everything ----------
+{
+  const W = 900;
+  const H = 420;
+  let b = heading(32, 32, 'One spec, many uses');
+  b += box(360, 170, 180, 70, ['openapi.yaml', 'the contract, in git'], 'brand', { size: 14, subSize: 11 });
+  const uses = [
+    [60, 70, 'Interactive docs', 'Swagger UI, Redoc, Scalar', 'plain'],
+    [360, 66, 'Lint', 'Redocly, Spectral', 'plain'],
+    [660, 70, 'Breaking-change check', 'oasdiff in CI', 'bad'],
+    [60, 300, 'Typed clients', 'openapi-typescript + openapi-fetch', 'good'],
+    [360, 314, 'Request/response validation', 'express-openapi-validator', 'active'],
+    [660, 300, 'Mocks and AI tools', 'Prism mocks, agent tool schemas', 'special'],
+  ];
+  uses.forEach(([x, y, title, sub, tone]) => {
+    b += box(x, y, 180, 56, [title, sub], tone, { size: 12.5, subSize: 10 });
+    const fromX = 450;
+    const fromY = y < 170 ? 170 : 240;
+    b += line(fromX, fromY, x + 90, y < 170 ? y + 56 : y, { tone: tone === 'plain' ? 'plain' : tone, sw: 1.5, arrow: true });
+  });
+  b += note(32, 404, 'Everything is generated from or checked against the same file, so docs, clients and server can’t quietly drift apart.', { size: 12.5 });
+  add('openapi-uses', W, H, 'A single OpenAPI file feeds interactive docs, linting, breaking-change checks, typed clients, request and response validation, mocks and AI tool definitions', b);
+}
+
+// ---------- 25: design-first vs code-first ----------
+{
+  const W = 900;
+  const H = 330;
+  let b = heading(32, 32, 'Design-first vs code-first');
+  const flow = (y, title, color, steps) => {
+    let o = text(32, y + 24, title, { size: 13.5, anchor: 'start', weight: 700, fill: color });
+    steps.forEach(([label, tone], k) => {
+      const x = 190 + k * 172;
+      o += box(x, y, 152, 48, label, tone, { size: 12 });
+      if (k < steps.length - 1) o += arrow(x + 154, y + 24, x + 168, y + 24, 'ink');
+    });
+    return o;
+  };
+  b += flow(70, 'Design-first', C.brand, [['write openapi.yaml', 'brand'], ['review with frontend', 'plain'], ['generate types, mocks', 'plain'], ['implement server', 'good']]);
+  b += flow(160, 'Code-first', C.green, [['write routes + Zod', 'good'], ['generate the spec', 'brand'], ['serve docs', 'plain'], ['generate clients', 'plain']]);
+  b += rect(190, 242, 668, 48, { fill: C.amberSoft, stroke: C.amber, rx: 10 });
+  b += text(524, 260, 'Either way: keep the spec in git, validate requests and responses against it,', { size: 12.5, fill: '#92400E', weight: 600 });
+  b += text(524, 278, 'and fail CI on breaking changes.', { size: 12.5, fill: '#92400E', weight: 600 });
+  b += text(32, 266, 'Both', { size: 13.5, anchor: 'start', weight: 700, fill: C.amber });
+  add('design-vs-code-first', W, H, 'Design-first writes the spec before code and generates from it; code-first generates the spec from route code and schemas; both validate against it in CI', b);
+}
