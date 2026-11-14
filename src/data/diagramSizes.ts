@@ -385,5 +385,17 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/circuit-breaker.svg": [
     880,
     372
+  ],
+  "/images/system-design/grpc-call-anatomy.svg": [
+    900,
+    330
+  ],
+  "/images/system-design/grpc-call-types.svg": [
+    900,
+    360
+  ],
+  "/images/system-design/grpc-load-balancing.svg": [
+    900,
+    360
   ]
 };

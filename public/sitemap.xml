@@ -246,6 +246,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.bitwiseschool.com/system-design/13-grpc-and-inter-service-communication/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.bitwiseschool.com/projects</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

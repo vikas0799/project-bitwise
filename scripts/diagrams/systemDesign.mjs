@@ -744,3 +744,78 @@ add(
   b += note(32, 352, 'While open, return a fallback (cached data, a default, "feature unavailable") instead of waiting on timeouts.', { size: 12.5 });
   add('circuit-breaker', W, H, 'The closed, open and half-open states of a circuit breaker and the transitions between them', b);
 }
+
+// ---------- 13: anatomy of a remote call ----------
+{
+  const W = 900;
+  const H = 330;
+  let b = heading(32, 32, 'A remote call that looks local: stubs hide the network');
+  b += text(200, 66, 'Client process', { size: 13, weight: 700, fill: C.muted });
+  b += text(700, 66, 'Server process', { size: 13, weight: 700, fill: C.muted });
+  b += box(40, 84, 150, 56, ['your code', 'client.GetCourse({id: 42})'], 'plain', { size: 13, subSize: 10.5 });
+  b += box(210, 84, 150, 56, ['stub (generated)', 'encode → protobuf'], 'brand', { size: 13, subSize: 11 });
+  b += box(540, 84, 150, 56, ['server skeleton', 'decode protobuf'], 'brand', { size: 13, subSize: 11 });
+  b += box(710, 84, 150, 56, ['your handler', 'GetCourse(call)'], 'good', { size: 13, subSize: 11 });
+  b += arrow(194, 112, 206, 112, 'ink');
+  b += arrow(364, 112, 536, 112, 'brand');
+  b += tag(450, 96, 'HTTP/2 + protobuf', { size: 11.5, fill: C.brand, border: C.brand });
+  b += arrow(694, 112, 706, 112, 'ink');
+  b += path('M 785 144 C 785 210, 115 210, 115 144', { tone: 'good', arrow: true, sw: 2 });
+  b += tag(450, 196, 'the result (or a gRPC status code) comes back the same way', { size: 11.5, fill: C.green, border: C.green });
+  b += line(32, 236, 868, 236, { color: C.grid, sw: 1 });
+  b += spans(32, 260, [['The network is still there. ', C.ink, 700], ['A local call can\'t time out, get lost or arrive twice. A remote one can.', C.text]], { size: 13 });
+  b += spans(32, 284, [['So every call needs a ', C.text], ['deadline', C.ink, 700], [', error handling for ', C.text], ['UNAVAILABLE', C.red, 700], [', and care with retries.', C.text]], { size: 13 });
+  add('grpc-call-anatomy', W, H, 'Client code calls a generated stub that encodes protobuf and sends it over an HTTP/2 stream to a server skeleton that decodes it and runs the handler', b);
+}
+
+// ---------- 13: the four call types ----------
+{
+  const W = 900;
+  const H = 360;
+  let b = heading(32, 32, 'The four kinds of gRPC call');
+  const panels = [
+    ['Unary', '1 request → 1 response', 'GetCourse', [[1, 0]], [[1, 0]]],
+    ['Server streaming', '1 request → many responses', 'ListLessons', [[1, 0]], [[1, 0], [1, 1], [1, 2]]],
+    ['Client streaming', 'many requests → 1 response', 'UploadProgress', [[1, 0], [1, 1], [1, 2]], [[1, 2.4]]],
+    ['Bidirectional', 'both sides send any time', 'Doubts (chat)', [[1, 0], [1, 1.4]], [[1, 0.7], [1, 2.1]]],
+  ];
+  panels.forEach(([title, sub, example, reqs, resps], k) => {
+    const x = 32 + k * 214;
+    b += rect(x, 60, 200, 270, { fill: C.panel, stroke: C.line, rx: 12 });
+    b += text(x + 100, 82, title, { size: 14, weight: 700 });
+    b += text(x + 100, 102, sub, { size: 11.5, fill: C.muted });
+    b += text(x + 40, 128, 'client', { size: 11, fill: C.muted, weight: 600 });
+    b += text(x + 160, 128, 'server', { size: 11, fill: C.muted, weight: 600 });
+    b += line(x + 40, 138, x + 40, 296, { color: C.line, sw: 1.5, dash: '4 4' });
+    b += line(x + 160, 138, x + 160, 296, { color: C.line, sw: 1.5, dash: '4 4' });
+    reqs.forEach(([, t]) => (b += arrow(x + 44, 150 + t * 36, x + 154, 162 + t * 36, 'brand')));
+    resps.forEach(([, t]) => (b += arrow(x + 156, 162 + t * 36, x + 46, 174 + t * 36, 'good')));
+    b += text(x + 100, 314, example, { size: 12, mono: true, fill: C.ink, weight: 600 });
+  });
+  add('grpc-call-types', W, H, 'Unary, server streaming, client streaming and bidirectional streaming gRPC calls shown as message arrows between client and server', b);
+}
+
+// ---------- 13: load balancing ----------
+{
+  const W = 900;
+  const H = 360;
+  let b = heading(32, 32, 'Why gRPC needs a request-aware (L7) load balancer');
+  const side = (x, title, tone, label, spread) => {
+    let o = text(x + 200, 70, title, { size: 14, weight: 700, fill: tone === 'bad' ? C.red : C.green });
+    o += box(x, 150, 110, 56, ['client', '1 HTTP/2 conn'], 'plain', { size: 13, subSize: 11 });
+    o += box(x + 150, 150, 110, 56, [label, tone === 'bad' ? 'L4 (TCP)' : 'L7 (HTTP/2)'], tone === 'bad' ? 'active' : 'brand', { size: 13, subSize: 11 });
+    o += arrow(x + 114, 178, x + 146, 178, 'ink');
+    [90, 160, 230].forEach((y, k) => {
+      const busy = spread || k === 0;
+      o += box(x + 300, y, 100, 46, [`server ${'ABC'[k]}`, busy ? (spread ? '1/3 of calls' : 'ALL calls') : 'idle'], busy ? (spread ? 'good' : 'bad') : 'muted', { size: 12.5, subSize: 11 });
+      if (busy) o += arrow(x + 264, 178, x + 296, y + 23, spread ? 'good' : 'bad');
+    });
+    return o;
+  };
+  b += side(32, 'Connection-level balancing', 'bad', 'balancer', false);
+  b += side(480, 'Per-call balancing', 'good', 'proxy', true);
+  b += line(450, 64, 450, 300, { color: C.grid, sw: 1 });
+  b += note(32, 316, 'gRPC reuses one long-lived connection for many calls. A TCP balancer picks a server once per connection,', { size: 12.5 });
+  b += note(32, 336, 'so every call lands on the same server. Use Envoy/a service mesh, or client-side balancing, to spread each call.', { size: 12.5 });
+  add('grpc-load-balancing', W, H, 'A TCP load balancer sending every gRPC call on one connection to a single server, compared with an HTTP/2-aware proxy spreading calls across three servers', b);
+}

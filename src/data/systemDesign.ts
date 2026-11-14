@@ -167,6 +167,17 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['Deadlocks', 'Timeouts', 'Retries', 'Circuit breaker', 'Health checks', 'Global error handler'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/12-error-handling-and-fault-tolerance/',
   },
+  {
+    slug: '13-grpc-and-inter-service-communication',
+    number: '13',
+    part: 'production',
+    title: 'gRPC and Inter-Service Communication',
+    description:
+      'Call a function on another machine as if it were local. What RPC is, Protocol Buffers and how they encode, HTTP/2 underneath, the four call types, code generation, channels and stubs, metadata, deadlines and cancellation, status codes, interceptors, TLS and mTLS, load balancing, gRPC vs REST, and browser options, with Node.js code.',
+    minutes: 17,
+    topics: ['Protobuf', 'HTTP/2', 'Streaming', 'Deadlines', 'Interceptors', 'Load balancing'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/13-grpc-and-inter-service-communication/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.
