@@ -255,6 +255,17 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['Event loop', 'Worker threads', 'Race conditions', 'Locks'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/20-concurrency-and-parallelism/',
   },
+  {
+    slug: '21-docker-k8s-and-ci-cd',
+    number: '21',
+    part: 'scale',
+    title: 'Docker, Kubernetes and CI/CD',
+    description:
+      'What containers really are, Dockerfiles, layer caching and small images, signals and memory limits, Compose, Kubernetes Deployments, Services, probes and autoscaling, CI/CD pipelines and GitOps.',
+    minutes: 27,
+    topics: ['Docker', 'Kubernetes', 'CI/CD', 'GitOps'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/21-docker-k8s-and-ci-cd/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.

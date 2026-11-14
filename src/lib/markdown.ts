@@ -13,6 +13,8 @@ import java from 'highlight.js/lib/languages/java';
 import protobuf from 'highlight.js/lib/languages/protobuf';
 import yaml from 'highlight.js/lib/languages/yaml';
 import dockerfile from 'highlight.js/lib/languages/dockerfile';
+import go from 'highlight.js/lib/languages/go';
+import nginx from 'highlight.js/lib/languages/nginx';
 
 import { diagramSizes } from '../data/diagramSizes';
 
@@ -29,6 +31,8 @@ hljs.registerLanguage('java', java);
 hljs.registerLanguage('protobuf', protobuf);
 hljs.registerLanguage('yaml', yaml);
 hljs.registerLanguage('dockerfile', dockerfile);
+hljs.registerLanguage('go', go);
+hljs.registerLanguage('nginx', nginx);
 
 // Languages tried when a code block has no language tag.
 const AUTO_LANGUAGES = ['javascript', 'bash', 'json', 'xml', 'sql'];
@@ -47,6 +51,8 @@ const LABELS: Record<string, string> = {
   protobuf: 'Protobuf',
   yaml: 'YAML',
   dockerfile: 'Dockerfile',
+  go: 'Go',
+  nginx: 'Nginx',
 };
 
 export interface Heading {

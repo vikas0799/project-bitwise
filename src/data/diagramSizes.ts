@@ -461,5 +461,25 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/async-race.svg": [
     900,
     360
+  ],
+  "/images/system-design/vm-vs-container.svg": [
+    900,
+    420
+  ],
+  "/images/system-design/image-layers.svg": [
+    900,
+    400
+  ],
+  "/images/system-design/k8s-architecture.svg": [
+    900,
+    420
+  ],
+  "/images/system-design/k8s-traffic.svg": [
+    900,
+    380
+  ],
+  "/images/system-design/ci-cd-pipeline.svg": [
+    900,
+    300
   ]
 };
