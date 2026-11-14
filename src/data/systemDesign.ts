@@ -189,6 +189,17 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['Env vars', '.env', 'YAML', 'Secret managers', 'Feature flags', 'Validation'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/14-configuration-management/',
   },
+  {
+    slug: '15-logging-and-observability',
+    number: '15',
+    part: 'production',
+    title: 'Logging and Observability',
+    description:
+      'See inside a running system. The three pillars (logs, metrics, traces), monitoring vs observability, what and how to log, log levels, structured JSON logs, Prometheus metric types, distributed tracing and OpenTelemetry, the open-source and managed tool stacks, alert design with the four golden signals, and a real debugging walkthrough, with Node.js code.',
+    minutes: 15,
+    topics: ['Logs', 'Metrics', 'Traces', 'pino', 'Prometheus', 'OpenTelemetry'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/15-logging-and-observability/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.

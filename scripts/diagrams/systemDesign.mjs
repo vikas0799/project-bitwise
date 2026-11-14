@@ -847,3 +847,85 @@ add(
   b += note(694, 318, 'with a clear list.', { size: 12 });
   add('config-layers', W, H, 'Defaults, an environment file, environment variables and a secret manager merged by priority, validated with Zod into one frozen config object', b);
 }
+
+// ---------- 15: three pillars ----------
+{
+  const W = 900;
+  const H = 330;
+  let b = heading(32, 32, 'The three pillars of observability');
+  const pillars = [
+    ['Logs', 'What happened?', 'brand', ['one record per event', '{"level":"warn","userId":7,', '"msg":"enrollment failed"}']],
+    ['Metrics', 'What is the pattern?', 'good', ['numbers over time', '820 req/s · 1.2% errors', 'p99 latency 340 ms']],
+    ['Traces', 'Where did the time go?', 'special', ['one request, end to end', 'API 240 ms → DB 220 ms', '← the slow step']],
+  ];
+  pillars.forEach(([name, q, tone, lines], k) => {
+    const x = 32 + k * 286;
+    const t = TONES[tone];
+    b += rect(x, 66, 266, 200, { fill: t.fill, stroke: t.stroke, rx: 14, sw: 2 });
+    b += text(x + 133, 96, name, { size: 18, weight: 800, fill: t.text });
+    b += text(x + 133, 122, q, { size: 13.5, weight: 600, fill: C.ink });
+    b += text(x + 133, 158, lines[0], { size: 12.5, fill: C.muted });
+    b += rect(x + 16, 176, 234, 66, { fill: '#FFFFFF', stroke: t.stroke, rx: 8, sw: 1 });
+    b += code(x + 26, 198, lines[1], { size: 11.5, fill: C.ink });
+    b += code(x + 26, 220, lines[2], { size: 11.5, fill: C.ink });
+  });
+  b += note(32, 296, 'Tie them together with one id: the same trace id in every log line and span lets you jump from an alert to the logs to the exact slow step.', { size: 12.5 });
+  add('observability-pillars', W, H, 'Logs answer what happened, metrics show patterns over time, and traces show where a single request spent its time', b);
+}
+
+// ---------- 15: trace waterfall ----------
+{
+  const W = 900;
+  const H = 330;
+  let b = heading(32, 32, 'A trace: one request, broken into timed spans');
+  const total = 240;
+  const x0 = 300;
+  const scale = 540 / total;
+  b += line(x0, 64, x0 + 540, 64, { color: C.line, sw: 1 });
+  [0, 60, 120, 180, 240].forEach((ms) => {
+    b += line(x0 + ms * scale, 60, x0 + ms * scale, 280, { color: C.grid, sw: 1 });
+    b += text(x0 + ms * scale, 52, `${ms} ms`, { size: 11, fill: C.muted });
+  });
+  const spansList = [
+    ['POST /api/courses/42/enroll', 0, 240, 'brand', 0],
+    ['auth middleware', 2, 3, 'plain', 1],
+    ['enroll (service)', 6, 230, 'good', 1],
+    ['SELECT … FOR UPDATE', 8, 212, 'bad', 2],
+    ['INSERT enrollments', 221, 6, 'plain', 2],
+    ['enqueue welcome email', 228, 6, 'plain', 2],
+  ];
+  spansList.forEach(([name, start, dur, tone, depth], k) => {
+    const y = 76 + k * 34;
+    const t = TONES[tone];
+    b += text(40 + depth * 18, y + 13, name, { size: 12.5, anchor: 'start', mono: true, fill: C.ink, weight: tone === 'bad' ? 700 : 500 });
+    b += rect(x0 + start * scale, y + 2, Math.max(4, dur * scale), 22, { fill: t.fill, stroke: t.stroke, rx: 4 });
+    b += text(x0 + (start + dur) * scale + 6, y + 13, `${dur} ms`, { size: 11, anchor: 'start', fill: tone === 'bad' ? C.red : C.muted, weight: 600 });
+  });
+  b += note(40, 300, 'The database lock wait takes 212 of the 240 ms. Without a trace you would only know "enroll is slow".', { size: 12.5 });
+  add('trace-waterfall', W, H, 'A trace waterfall for an enroll request showing nested spans, where a database query takes most of the time', b);
+}
+
+// ---------- 15: observability stack ----------
+{
+  const W = 900;
+  const H = 360;
+  let b = heading(32, 32, 'A typical open-source observability stack');
+  b += box(32, 140, 150, 70, ['Your services', 'pino · prom-client · OTel'], 'plain', { size: 13.5, subSize: 10.5 });
+  b += box(232, 140, 150, 70, ['OTel Collector', 'receive, filter, route'], 'active', { size: 13.5, subSize: 11 });
+  b += arrow(186, 175, 228, 175, 'ink');
+  const sinks = [
+    ['Loki / Elasticsearch', 'logs', 'brand', 70],
+    ['Prometheus', 'metrics', 'good', 150],
+    ['Tempo / Jaeger', 'traces', 'special', 230],
+  ];
+  sinks.forEach(([name, kind, tone, y]) => {
+    b += box(440, y, 180, 50, [name, kind], tone, { size: 13.5, subSize: 11 });
+    b += arrow(386, 175, 436, y + 25, 'ink');
+    b += arrow(624, y + 25, 676, 175, 'ink');
+  });
+  b += box(680, 140, 100, 70, ['Grafana', 'dashboards'], 'brand', { size: 13.5, subSize: 11 });
+  b += box(656, 250, 220, 50, ['Alertmanager', '→ Slack / PagerDuty'], 'bad', { size: 13, subSize: 11 });
+  b += arrow(730, 214, 730, 246, 'bad');
+  b += note(32, 330, 'Managed alternatives bundle all of this: Datadog, New Relic, Grafana Cloud, Honeycomb; Sentry for errors.', { size: 12.5 });
+  add('observability-stack', W, H, 'Services send logs, metrics and traces through an OpenTelemetry collector to Loki, Prometheus and Tempo, viewed in Grafana with alerts sent through Alertmanager', b);
+}

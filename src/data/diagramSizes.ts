@@ -401,5 +401,17 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/config-layers.svg": [
     900,
     380
+  ],
+  "/images/system-design/observability-pillars.svg": [
+    900,
+    330
+  ],
+  "/images/system-design/trace-waterfall.svg": [
+    900,
+    330
+  ],
+  "/images/system-design/observability-stack.svg": [
+    900,
+    360
   ]
 };
