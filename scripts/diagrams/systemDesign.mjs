@@ -1,5 +1,5 @@
 // Diagrams for the System Design chapters: HTTP, routing and serialization.
-import { C, TONES, badge, circle, code, heading, line, note, path, rect, spans, tag, text } from './svg.mjs';
+import { C, TONES, badge, circle, code, heading, legend, line, note, path, rect, spans, tag, text } from './svg.mjs';
 import { arrow, box, sequence } from './backend.mjs';
 
 export const systemDesign = [];
@@ -1171,4 +1171,118 @@ add(
   ];
   lines.forEach(([t, fill, weight], k) => (b += text(470, 104 + k * 24, t, { size: 13.5, anchor: 'start', fill, weight })));
   add('consistent-hash-ring', W, H, 'A hash ring with four shards and a new fifth shard; only the keys in the arc before the new shard move to it', b);
+}
+
+// ---------- 20: where the time goes in one request ----------
+{
+  const W = 900;
+  const H = 336;
+  let b = heading(32, 32, 'One API request: a little computing, a lot of waiting');
+  const x0 = 150;
+  const scale = 2.5;   // px per ms
+  const steps = [
+    ['cpu', 2, 'parse'], ['io', 50, 'DB query'], ['cpu', 2, ''], ['io', 50, 'DB query'], ['cpu', 2, ''],
+    ['io', 50, 'Redis + DB'], ['cpu', 2, ''], ['io', 50, 'email API'], ['cpu', 2, 'respond'],
+  ];
+  b += text(x0 - 14, 92, 'request 1', { size: 13, anchor: 'end', weight: 700 });
+  let x = x0;
+  steps.forEach(([kind, ms, label]) => {
+    const w = ms * scale;
+    b += rect(x, 76, w, 32, { fill: kind === 'cpu' ? C.brand : C.amberSoft, stroke: kind === 'cpu' ? C.brand : C.amber, rx: 3, sw: 1 });
+    if (kind === 'io') b += text(x + w / 2, 92, label, { size: 11.5, fill: '#92400E', weight: 600 });
+    x += w;
+  });
+  b += text(x0, 130, 'CPU busy ~10 ms', { size: 12.5, anchor: 'start', fill: C.brand, weight: 700 });
+  b += text(x, 130, 'waiting ~200 ms', { size: 12.5, anchor: 'end', fill: C.amber, weight: 700 });
+  b += line(32, 160, 868, 160, { color: C.grid, sw: 1 });
+  b += text(32, 190, 'With concurrency, the CPU serves other requests while request 1 waits:', { size: 13, anchor: 'start', fill: C.ink, weight: 600 });
+  [['request 1', 0, C.brand], ['request 2', 11, C.green], ['request 3', 23, C.violet]].forEach(([label, offset, color], row) => {
+    const y = 210 + row * 30;
+    b += text(x0 - 14, y + 11, label, { size: 12.5, anchor: 'end', weight: 600 });
+    let cx = x0 + offset * scale;
+    steps.forEach(([kind, ms]) => {
+      const w = ms * scale;
+      if (cx + w <= 870) b += rect(cx, y, w, 22, { fill: kind === 'cpu' ? color : C.amberSoft, stroke: kind === 'cpu' ? color : '#F5D9A8', rx: 3, sw: 1 });
+      cx += w;
+    });
+  });
+  b += rect(32, 304, 16, 16, { fill: C.brand, stroke: C.brand, rx: 4 });
+  b += text(56, 312, 'running on the CPU (colour per request)', { size: 12.5, anchor: 'start' });
+  b += rect(330, 304, 16, 16, { fill: C.amberSoft, stroke: C.amber, rx: 4 });
+  b += text(354, 312, 'waiting for I/O: the CPU is free for others', { size: 12.5, anchor: 'start' });
+  add('io-wait-timeline', W, H, 'One request spends about 10 ms computing and about 200 ms waiting for I/O; with concurrency, other requests use the CPU during the waits', b);
+}
+
+// ---------- 20: concurrency vs parallelism ----------
+{
+  const W = 900;
+  const H = 320;
+  let b = heading(32, 32, 'Concurrency vs parallelism');
+  const lane = (y, label, blocks) => {
+    let o = text(150, y + 15, label, { size: 13, anchor: 'end', weight: 700 });
+    o += rect(162, y, 700, 30, { fill: '#F8FAFC', stroke: C.grid, rx: 4, sw: 1 });
+    blocks.forEach(([start, len, task]) => {
+      const tone = { A: 'brand', B: 'good', C: 'special' }[task];
+      o += rect(162 + start * 7, y + 3, len * 7 - 3, 24, { fill: TONES[tone].fill, stroke: TONES[tone].stroke, rx: 3, sw: 1.2 });
+      o += text(162 + start * 7 + (len * 7 - 3) / 2, y + 15, task, { size: 12, weight: 700, fill: TONES[tone].text });
+    });
+    return o;
+  };
+  b += text(32, 72, 'Concurrency: one core switches between tasks whenever one is waiting', { size: 13.5, anchor: 'start', fill: C.ink, weight: 600 });
+  b += lane(88, 'core 1', [[0, 10, 'A'], [10, 8, 'B'], [18, 12, 'C'], [30, 10, 'A'], [40, 10, 'B'], [50, 12, 'C'], [62, 8, 'A'], [70, 10, 'B'], [80, 20, 'C']]);
+  b += text(32, 168, 'Parallelism: several cores run tasks at the same instant', { size: 13.5, anchor: 'start', fill: C.ink, weight: 600 });
+  b += lane(184, 'core 1', [[0, 40, 'A'], [40, 30, 'C'], [70, 30, 'A']]);
+  b += lane(222, 'core 2', [[0, 30, 'B'], [30, 30, 'C'], [60, 40, 'B']]);
+  b += note(32, 290, 'Node.js gives you concurrency on one thread out of the box; worker threads, cluster or more processes add parallelism.', { size: 12.5 });
+  add('concurrency-vs-parallelism', W, H, 'Concurrency interleaves tasks A, B and C on one core; parallelism runs tasks on two cores at the same time', b);
+}
+
+// ---------- 20: inside the Node.js runtime ----------
+{
+  const W = 900;
+  const H = 400;
+  let b = heading(32, 32, 'Inside Node.js: one JavaScript thread, plenty of help');
+  b += rect(32, 60, 300, 290, { fill: C.brandSoft, stroke: C.brand, rx: 12 });
+  b += text(182, 84, 'Main thread', { size: 15, weight: 700, fill: '#003A91' });
+  b += box(56, 104, 252, 52, ['your JavaScript', 'handlers, callbacks, after-await code'], 'plain', { size: 13, subSize: 11 });
+  b += box(56, 176, 252, 52, ['microtasks', 'promise callbacks, process.nextTick'], 'plain', { size: 13, subSize: 11 });
+  b += box(56, 248, 252, 76, ['event loop', 'timers → poll (I/O) → check → close'], 'brand', { size: 14, subSize: 11 });
+  b += rect(400, 60, 468, 290, { fill: '#F8FAFC', stroke: C.line, rx: 12 });
+  b += text(634, 84, 'libuv', { size: 15, weight: 700 });
+  b += box(424, 104, 200, 96, ['OS readiness', 'epoll · kqueue · IOCP'], 'good', { size: 14, subSize: 11.5 });
+  b += text(524, 218, 'sockets: HTTP, DB, Redis', { size: 11.5, fill: C.green, weight: 600 });
+  b += text(524, 236, 'no extra threads needed', { size: 11.5, fill: C.muted });
+  b += rect(644, 104, 200, 96, { fill: C.amberSoft, stroke: C.amber, rx: 10, sw: 2 });
+  b += text(744, 130, 'thread pool', { size: 14, weight: 700, fill: '#92400E' });
+  [0, 1, 2, 3].forEach((k) => (b += rect(668 + k * 40, 150, 30, 22, { fill: '#FFFFFF', stroke: C.amber, rx: 4, sw: 1.2 })));
+  b += text(744, 186, '4 threads by default', { size: 11, fill: C.text });
+  b += text(744, 218, 'fs, dns.lookup, crypto, zlib', { size: 11.5, fill: C.amber, weight: 600 });
+  b += text(744, 236, 'resize: UV_THREADPOOL_SIZE', { size: 11.5, fill: C.muted });
+  b += box(424, 266, 420, 58, ['worker_threads', 'your own CPU-heavy JavaScript on other cores'], 'special', { size: 14, subSize: 11.5 });
+  b += arrow(312, 276, 420, 160, 'good');
+  b += arrow(420, 150, 312, 266, 'good');
+  b += note(32, 378, 'The event loop hands slow work to libuv and runs the callback when it finishes. Only your JavaScript is single-threaded.', { size: 12.5 });
+  add('node-runtime', W, H, 'The Node.js main thread runs JavaScript, microtasks and the event loop, while libuv uses OS readiness APIs for sockets and a thread pool for files, DNS, crypto and compression', b);
+}
+
+// ---------- 20: a race between awaits ----------
+{
+  const W = 900;
+  const H = 360;
+  let b = heading(32, 32, 'A race condition with no threads at all');
+  const rows = [
+    ['withdraw(100) #1', 'brand', [['read balance → 100', 0], ['check 100 ≥ 100 ✓', 2], ['write 100 − 100 = 0', 4]]],
+    ['withdraw(100) #2', 'good', [['read balance → 100', 1], ['check 100 ≥ 100 ✓', 3], ['write 100 − 100 = 0', 5]]],
+  ];
+  const colX = (k) => 210 + k * 108;
+  rows.forEach(([label, tone, steps], r) => {
+    const y = 80 + r * 92;
+    b += text(32, y + 24, label, { size: 13.5, anchor: 'start', weight: 700, fill: TONES[tone].text });
+    steps.forEach(([s, k]) => (b += box(colX(k), y, 150, 48, s, tone, { size: 11.5 })));
+  });
+  b += arrow(210, 300, 868, 300, 'ink');
+  b += text(540, 320, 'time  (each "await" lets the other call run)', { size: 12, fill: C.muted });
+  b += rect(210, 248, 650, 36, { fill: C.redSoft, stroke: C.red, rx: 8 });
+  b += text(535, 266, 'Both checks pass before either write: 200 paid out from a balance of 100', { size: 13, fill: '#9F1239', weight: 700 });
+  add('async-race', W, H, 'Two withdraw calls interleave at their await points, both read 100, both pass the check, and both pay out', b);
 }

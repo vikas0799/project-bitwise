@@ -244,6 +244,17 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['Read replicas', 'Sharding', 'CDN', 'Serverless'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/19-scaling-and-performance-part-2/',
   },
+  {
+    slug: '20-concurrency-and-parallelism',
+    number: '20',
+    part: 'scale',
+    title: 'Concurrency and Parallelism',
+    description:
+      'Why servers mostly wait, threads vs the event loop vs goroutines, libuv and its thread pool, async/await under the hood, worker threads, and fixing race conditions in code and in the database.',
+    minutes: 21,
+    topics: ['Event loop', 'Worker threads', 'Race conditions', 'Locks'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/20-concurrency-and-parallelism/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.

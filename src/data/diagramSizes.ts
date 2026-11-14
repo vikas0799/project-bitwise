@@ -445,5 +445,21 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/consistent-hash-ring.svg": [
     900,
     430
+  ],
+  "/images/system-design/io-wait-timeline.svg": [
+    900,
+    336
+  ],
+  "/images/system-design/concurrency-vs-parallelism.svg": [
+    900,
+    320
+  ],
+  "/images/system-design/node-runtime.svg": [
+    900,
+    400
+  ],
+  "/images/system-design/async-race.svg": [
+    900,
+    360
   ]
 };
