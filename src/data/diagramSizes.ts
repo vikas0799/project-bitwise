@@ -353,5 +353,17 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/index-vs-scan.svg": [
     900,
     380
+  ],
+  "/images/system-design/cache-aside.svg": [
+    880,
+    470
+  ],
+  "/images/system-design/cdn-edge.svg": [
+    900,
+    400
+  ],
+  "/images/system-design/latency-ladder.svg": [
+    900,
+    420
   ]
 };

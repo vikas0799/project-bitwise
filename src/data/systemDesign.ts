@@ -123,6 +123,17 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['Postgres', 'Relationships', 'Constraints', 'Indexes', 'Transactions', 'N+1'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/08-databases/',
   },
+  {
+    slug: '09-caching',
+    number: '09',
+    part: 'data',
+    title: 'Caching',
+    description:
+      'Keep the right subset of data somewhere faster. Cache hits and misses, what to cache, CDNs and DNS caching, CPU caches and why RAM beats disk, Redis and in-memory stores, cache-aside and write-through, invalidation, eviction policies, stampedes, and real use cases with Node.js and Redis code.',
+    minutes: 16,
+    topics: ['Redis', 'CDN', 'Cache-aside', 'Invalidation', 'Eviction', 'Rate limiting'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/09-caching/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.

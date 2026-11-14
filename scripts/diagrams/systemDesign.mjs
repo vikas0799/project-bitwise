@@ -506,3 +506,85 @@ function dbTable(x, y, w, name, cols, tone = 'brand') {
   b += note(360, 360, 'Faster reads, slightly slower writes (the index must be updated).', { size: 12.5 });
   add('index-vs-scan', W, H, 'A sequential scan checking every row compared with a B-tree index lookup that jumps to the matching row', b);
 }
+
+// ---------- 09: cache-aside ----------
+add(
+  'cache-aside',
+  880,
+  470,
+  'Cache-aside: the app checks Redis, falls back to the database on a miss, stores the result with a TTL, and serves later requests from Redis',
+  sequence({
+    W: 880,
+    H: 470,
+    title: 'Cache-aside (lazy caching): fill the cache on the first miss',
+    actors: [
+      ['app', ['Your API', 'Express'], 'brand'],
+      ['cache', ['Redis', 'in RAM'], 'active'],
+      ['db', ['Postgres', 'on disk'], 'good'],
+    ],
+    messages: [
+      ['app', 'cache', 'GET course:42'],
+      ['cache', 'app', 'nil (cache miss)', 'bad', true],
+      ['app', 'db', 'SELECT … WHERE id = 42   (~20 ms)', 'good'],
+      ['db', 'app', 'the course row', 'good', true],
+      ['app', 'cache', 'SET course:42 … EX 600'],
+      ['app', 'app', 'respond to the client'],
+      ['app', 'cache', 'next request: GET course:42'],
+      ['cache', 'app', 'the cached JSON (cache hit, < 1 ms)', 'active', true],
+    ],
+  }),
+);
+
+// ---------- 09: CDN edges ----------
+{
+  const W = 900;
+  const H = 400;
+  let b = heading(32, 32, 'A CDN keeps copies near users, so most requests never reach the origin');
+  b += box(32, 160, 170, 70, ['Origin server', 'one region, far away'], 'muted', { size: 14 });
+  const pops = [
+    ['Delhi PoP', 80],
+    ['Mumbai PoP', 170],
+    ['Chennai PoP', 260],
+  ];
+  pops.forEach(([name, y]) => {
+    b += box(390, y, 170, 56, [name, 'edge servers + cache'], 'active', { size: 13.5 });
+    b += line(386, y + 28, 206, 195, { color: C.faint, sw: 1.75, dash: '6 5' });
+    b += box(700, y + 6, 168, 44, 'users nearby', 'plain', { size: 13 });
+    b += line(696, y + 28, 564, y + 28, { tone: 'good', arrow: true, sw: 2 });
+  });
+  b += tag(296, 120, 'only on a miss', { size: 11.5, fill: C.muted, border: C.line });
+  b += tag(630, 70, '~10 ms', { size: 11.5, fill: C.green, border: C.green });
+  b += tag(296, 300, '~150–250 ms', { size: 11.5, fill: C.muted, border: C.line });
+  b += line(32, 336, 868, 336, { color: C.grid, sw: 1 });
+  b += spans(32, 358, [['Hit: ', C.ink, 700], ['the PoP already has the file and answers immediately. ', C.text], ['Miss: ', C.ink, 700], ['it fetches from the origin once, caches it for its TTL,', C.text]]);
+  b += spans(32, 380, [['then serves every later user in that region from the copy.', C.text]]);
+  add('cdn-edge', W, H, 'An origin server far away and three CDN points of presence in Delhi, Mumbai and Chennai serving nearby users from cache', b);
+}
+
+// ---------- 09: latency ladder ----------
+{
+  const W = 900;
+  const H = 420;
+  let b = heading(32, 32, 'How long things take, and the same times scaled up to human size');
+  b += text(32, 66, 'If one L1 cache read took 1 second…', { size: 13, anchor: 'start', fill: C.muted });
+  const rows = [
+    ['L1 CPU cache', '~1 ns', '1 second', 1, 'good'],
+    ['L2 CPU cache', '~4 ns', '4 seconds', 1.6, 'good'],
+    ['L3 CPU cache', '~15 ns', '15 seconds', 2.2, 'good'],
+    ['RAM (Redis lives here)', '~100 ns', '~2 minutes', 3, 'active'],
+    ['SSD read', '~100 µs', '~1 day', 6, 'brand'],
+    ['Hard disk seek', '~10 ms', '~4 months', 8, 'special'],
+    ['India → US round trip', '~200 ms', '~6 years', 9.3, 'bad'],
+  ];
+  rows.forEach(([name, real, human, scale, tone], k) => {
+    const y = 88 + k * 44;
+    const t = TONES[tone];
+    b += text(32, y + 15, name, { size: 13.5, weight: 600, anchor: 'start' });
+    b += text(252, y + 15, real, { size: 13, anchor: 'start', mono: true, fill: C.text });
+    const w = Math.max(10, scale * 46);
+    b += rect(340, y + 3, w, 24, { fill: t.fill, stroke: t.stroke, rx: 6 });
+    b += text(340 + w + 10, y + 15, human, { size: 13, anchor: 'start', weight: 600, fill: t.text });
+  });
+  b += note(32, 404, 'Bar lengths are on a log scale. Each step down is roughly 10 to 1,000 times slower than the one above.', { size: 12.5 });
+  add('latency-ladder', W, H, 'Latency of CPU caches, RAM, SSD, hard disk and an India to US network round trip, with the same times scaled so an L1 read takes one second', b);
+}
