@@ -345,5 +345,13 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/rest-constraints.svg": [
     900,
     380
+  ],
+  "/images/system-design/db-relationships.svg": [
+    900,
+    404
+  ],
+  "/images/system-design/index-vs-scan.svg": [
+    900,
+    380
   ]
 };

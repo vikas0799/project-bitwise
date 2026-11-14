@@ -112,6 +112,17 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['Six constraints', 'Resource naming', 'Custom actions', 'Pagination', 'Error envelope', 'Versioning'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/07-api-design-rest/',
   },
+  {
+    slug: '08-databases',
+    number: '08',
+    part: 'data',
+    title: 'Databases',
+    description:
+      'Why backends store data on disk, what a DBMS gives you over text files, SQL vs NoSQL, why Postgres is a great default, data types, migrations, modelling relationships, constraints, joins, parameterized queries, indexes, triggers, transactions and ACID, N+1 queries, connection pooling, EXPLAIN and soft deletes.',
+    minutes: 19,
+    topics: ['Postgres', 'Relationships', 'Constraints', 'Indexes', 'Transactions', 'N+1'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/08-databases/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.

@@ -425,3 +425,84 @@ add(
   notes.forEach(([k, v], i) => (b += spans(40, 268 + i * 22, [[`${k}: `, C.ink, 700], [v, C.text]], { size: 13 })));
   add('rest-constraints', W, H, 'A client, CDN, load balancer, three stateless API servers and a database, labelled with the REST constraints each layer represents', b);
 }
+
+// ---------- 08: relationship shapes ----------
+function dbTable(x, y, w, name, cols, tone = 'brand') {
+  const t = TONES[tone];
+  let out = rect(x, y, w, 28 + cols.length * 22 + 6, { fill: '#FFFFFF', stroke: t.stroke, sw: 1.75, rx: 8 });
+  out += `<path d="M${x} ${y + 8} Q${x} ${y} ${x + 8} ${y} L${x + w - 8} ${y} Q${x + w} ${y} ${x + w} ${y + 8} L${x + w} ${y + 28} L${x} ${y + 28} Z" fill="${t.fill}" stroke="${t.stroke}" stroke-width="1.75"/>`;
+  out += text(x + w / 2, y + 14, name, { size: 13.5, weight: 700, fill: t.text, mono: true });
+  cols.forEach(([col, key], k) => {
+    out += code(x + 10, y + 42 + k * 22, col, { size: 12.5, fill: C.ink });
+    if (key) out += text(x + w - 10, y + 42 + k * 22, key, { size: 10.5, weight: 700, anchor: 'end', fill: key.includes('FK') ? C.violet : C.amber });
+  });
+  return out;
+}
+{
+  const W = 900;
+  const H = 404;
+  let b = heading(32, 32, 'Three ways tables relate');
+  const col = (x, title, sub) => text(x, 70, title, { size: 14, weight: 700, anchor: 'start' }) + note(x, 90, sub, { size: 12.5 });
+
+  // one-to-one
+  b += col(32, 'One-to-one', 'each user has at most one profile');
+  b += dbTable(32, 112, 190, 'users', [['id', 'PK'], ['email'], ['full_name']]);
+  b += dbTable(32, 252, 190, 'user_profiles', [['user_id', 'PK + FK'], ['bio'], ['phone']], 'good');
+  b += line(127, 210, 127, 250, { tone: 'ink', arrow: true });
+  b += tag(160, 230, '1 : 1', { size: 12, fill: C.ink, border: C.line });
+
+  // one-to-many
+  b += col(300, 'One-to-many', 'a course has many lessons');
+  b += dbTable(300, 112, 190, 'courses', [['id', 'PK'], ['title'], ['slug']]);
+  b += dbTable(300, 252, 190, 'lessons', [['id', 'PK'], ['course_id', 'FK'], ['position']], 'good');
+  b += line(395, 210, 395, 250, { tone: 'ink', arrow: true });
+  b += tag(428, 230, '1 : many', { size: 12, fill: C.ink, border: C.line });
+
+  // many-to-many
+  b += col(568, 'Many-to-many', 'students and courses, both ways');
+  b += dbTable(568, 112, 130, 'users', [['id', 'PK']]);
+  b += dbTable(738, 112, 130, 'courses', [['id', 'PK']]);
+  b += dbTable(618, 252, 200, 'enrollments', [['user_id', 'PK + FK'], ['course_id', 'PK + FK'], ['progress']], 'special');
+  b += line(633, 168, 680, 248, { tone: 'ink', arrow: true });
+  b += line(803, 168, 756, 248, { tone: 'ink', arrow: true });
+  b += note(32, 382, 'Many-to-many needs a linking table. The pair (user_id, course_id) is its primary key, so each enrollment exists only once.', { size: 12.5 });
+  add('db-relationships', W, H, 'One-to-one users and profiles, one-to-many courses and lessons, and many-to-many users and courses through an enrollments linking table', b);
+}
+
+// ---------- 08: sequential scan vs index ----------
+{
+  const W = 900;
+  const H = 380;
+  let b = heading(32, 32, 'Finding one row: scan everything, or use an index');
+  b += text(32, 70, 'Sequential scan (no index)', { size: 14, weight: 700, anchor: 'start', fill: C.red });
+  const rows = ['Course 17', 'Course 3', 'Course 42', 'Course 8', 'Course 29', '…', 'Course 9'];
+  rows.forEach((r, k) => {
+    const y = 90 + k * 34;
+    const hit = r === 'Course 9';
+    b += rect(60, y, 170, 28, { fill: hit ? C.greenSoft : '#FFFFFF', stroke: hit ? C.green : C.line, rx: 6 });
+    b += code(72, y + 14, r, { size: 12.5, fill: hit ? '#065F46' : C.text });
+    b += text(246, y + 14, hit ? 'found' : r === '…' ? '' : 'no', { size: 11.5, anchor: 'start', fill: hit ? C.green : C.faint, weight: 600 });
+  });
+  b += path('M 44 96 L 44 314', { tone: 'bad', arrow: true, sw: 2 });
+  b += note(32, 340, 'Reads rows one by one until it finds a match.', { size: 12.5 });
+  b += note(32, 360, '50,000 rows → up to 50,000 checks.', { size: 12.5 });
+
+  b += line(330, 64, 330, 360, { color: C.grid, sw: 1 });
+
+  b += text(360, 70, 'Index lookup (B-tree)', { size: 14, weight: 700, anchor: 'start', fill: C.green });
+  const node = (x, y, label, tone = 'plain') => box(x, y, 120, 34, label, tone, { mono: true, size: 12.5 });
+  b += node(560, 92, '< M | ≥ M', 'brand');
+  b += node(420, 168, '< C | C–M', 'brand');
+  b += node(700, 168, 'M–T | ≥ T', 'plain');
+  b += node(344, 244, 'A … B', 'muted');
+  b += box(480, 244, 180, 34, 'Course 9 → row 4182', 'good', { mono: true, size: 12.5 });
+  b += arrow(600, 130, 500, 164, 'good');
+  b += arrow(640, 130, 740, 164, 'muted');
+  b += arrow(456, 206, 410, 240, 'muted');
+  b += arrow(500, 206, 560, 240, 'good');
+  b += path('M 664 261 L 775 261 L 775 298', { tone: 'good', arrow: true, sw: 2 });
+  b += box(700, 302, 150, 34, 'row 4182 on disk', 'good', { size: 12.5 });
+  b += note(360, 340, 'A sorted tree: a few hops, then jump straight to the row.', { size: 12.5 });
+  b += note(360, 360, 'Faster reads, slightly slower writes (the index must be updated).', { size: 12.5 });
+  add('index-vs-scan', W, H, 'A sequential scan checking every row compared with a B-tree index lookup that jumps to the matching row', b);
+}
