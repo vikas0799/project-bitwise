@@ -1429,3 +1429,81 @@ add(
   b += note(32, 268, 'Tagging by commit SHA means you always know which code is running, and rolling back is redeploying an older tag.', { size: 12.5 });
   add('ci-cd-pipeline', W, H, 'A pipeline goes from push to test, build, scan, push to registry and deploy; CI covers the checks and CD covers shipping', b);
 }
+
+// ---------- 22: the testing pyramid ----------
+{
+  const W = 900;
+  const H = 370;
+  let b = heading(32, 32, 'The testing pyramid');
+  const cx = 260;
+  const layers = [
+    { top: 70, bottom: 150, label: 'End-to-end', sub: 'a few critical journeys', tone: 'bad' },
+    { top: 150, bottom: 240, label: 'Integration', sub: 'real DB, HTTP, contracts', tone: 'active' },
+    { top: 240, bottom: 340, label: 'Unit', sub: 'many, fast, isolated', tone: 'good' },
+  ];
+  const half = (y) => ((y - 70) / 270) * 230;
+  layers.forEach(({ top, bottom, label, sub, tone }) => {
+    const t = TONES[tone];
+    const d = `M ${cx - half(top)} ${top} L ${cx + half(top)} ${top} L ${cx + half(bottom)} ${bottom} L ${cx - half(bottom)} ${bottom} Z`;
+    b += path(d, { color: t.stroke, sw: 2, fill: t.fill });
+    b += text(cx, (top + bottom) / 2 + (top === 70 ? 14 : -6), label, { size: 14, weight: 700, fill: t.text });
+    if (top !== 70) b += text(cx, (top + bottom) / 2 + 14, sub, { size: 11.5, fill: t.text });
+  });
+  b += arrow(530, 330, 530, 84, 'ink');
+  b += text(546, 96, 'slower, costlier, more realistic', { size: 12.5, anchor: 'start', weight: 600 });
+  b += text(546, 116, 'harder to tell what broke', { size: 12, anchor: 'start', fill: C.muted });
+  b += text(546, 304, 'faster, cheaper, more precise', { size: 12.5, anchor: 'start', weight: 600 });
+  b += text(546, 324, 'one failure points at one function', { size: 12, anchor: 'start', fill: C.muted });
+  b += text(546, 196, 'Measured in this chapter:', { size: 12.5, anchor: 'start', weight: 700 });
+  b += text(546, 218, '21 unit tests: ~0.2 s', { size: 12.5, anchor: 'start', fill: C.green, weight: 600 });
+  b += text(546, 238, '3 Postgres integration tests: ~3 s', { size: 12.5, anchor: 'start', fill: C.amber, weight: 600 });
+  add('testing-pyramid', W, H, 'A pyramid with many fast unit tests at the base, fewer integration tests in the middle and a few end-to-end tests at the top', b);
+}
+
+// ---------- 22: consumer-driven contract testing ----------
+{
+  const W = 900;
+  const H = 312;
+  let b = heading(32, 32, 'Contract testing: each side tested alone, against the same contract');
+  b += text(170, 74, 'Consumer’s CI', { size: 13.5, weight: 700, fill: '#003A91' });
+  b += box(40, 92, 260, 56, ['web-app tests', 'run against a Pact mock provider'], 'brand', { size: 13, subSize: 11 });
+  b += arrow(304, 120, 362, 120, 'brand');
+  b += box(366, 88, 168, 64, ['contract file', 'request → expected response'], 'special', { size: 13, subSize: 10.5 });
+  b += arrow(538, 120, 596, 120, 'special');
+  b += text(730, 74, 'Provider’s CI', { size: 13.5, weight: 700, fill: '#065F46' });
+  b += box(600, 92, 260, 56, ['course-api verification', 'replays the contract on the real API'], 'good', { size: 13, subSize: 11 });
+  b += text(450, 176, 'shared through a Pact Broker or the repository', { size: 11.5, fill: C.muted });
+  b += rect(40, 206, 400, 82, { fill: C.greenSoft, stroke: C.green, rx: 10 });
+  b += text(240, 230, 'Provider unchanged', { size: 13, weight: 700, fill: '#065F46' });
+  b += text(240, 254, '✔ verification passes', { size: 12.5, fill: '#065F46' });
+  b += rect(460, 206, 400, 82, { fill: C.redSoft, stroke: C.red, rx: 10 });
+  b += text(660, 230, 'Provider renames title → name', { size: 13, weight: 700, fill: '#9F1239' });
+  b += text(660, 254, '✖ "Actual map is missing the following keys: title"', { size: 12, fill: '#9F1239' });
+  b += text(660, 274, 'caught before deploy, without running both services', { size: 11.5, fill: '#9F1239' });
+  add('contract-testing', W, H, 'The consumer test writes a contract file, the provider replays it against the real API; renaming a field the consumer uses makes provider verification fail', b);
+}
+
+// ---------- 22: red, green, refactor ----------
+{
+  const W = 900;
+  const H = 300;
+  let b = heading(32, 32, 'Test-driven development: red, green, refactor');
+  const steps = [
+    [140, 'Red', 'write a test for the next small behaviour; watch it fail', 'bad'],
+    [450, 'Green', 'write the simplest code that makes it pass', 'good'],
+    [760, 'Refactor', 'clean up while all tests stay green', 'brand'],
+  ];
+  steps.forEach(([x, title, sub, tone]) => {
+    const t = TONES[tone];
+    b += circle(x, 140, 56, { fill: t.fill, stroke: t.stroke, sw: 2.5 });
+    b += text(x, 140, title, { size: 17, weight: 700, fill: t.text });
+    b += text(x, 222, sub.split('; ')[0], { size: 12, fill: C.text });
+    if (sub.includes('; ')) b += text(x, 240, sub.split('; ')[1], { size: 12, fill: C.text });
+  });
+  b += arrow(200, 140, 390, 140, 'good');
+  b += arrow(510, 140, 700, 140, 'brand');
+  b += path('M 760 84 C 760 50, 140 50, 140 80', { tone: 'bad', arrow: true, dash: '6 5' });
+  b += tag(450, 59, 'repeat in small steps', { size: 12, fill: C.red });
+  b += note(32, 280, 'Writing the test first forces you to decide the behaviour and the interface before the implementation.', { size: 12.5 });
+  add('tdd-cycle', W, H, 'The TDD loop: write a failing test, make it pass with the simplest code, refactor with tests green, and repeat', b);
+}

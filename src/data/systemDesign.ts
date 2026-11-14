@@ -266,6 +266,17 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['Docker', 'Kubernetes', 'CI/CD', 'GitOps'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/21-docker-k8s-and-ci-cd/',
   },
+  {
+    slug: '22-automated-testing',
+    number: '22',
+    part: 'scale',
+    title: 'Automated Testing',
+    description:
+      'The testing pyramid, unit tests and test doubles, real-database integration tests with Testcontainers, HTTP and contract tests, coverage, flaky tests, TDD, fake timers and load tests with SLOs.',
+    minutes: 23,
+    topics: ['Unit tests', 'Testcontainers', 'Pact', 'TDD'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/22-automated-testing/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.
