@@ -341,5 +341,9 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/request-layers.svg": [
     900,
     360
+  ],
+  "/images/system-design/rest-constraints.svg": [
+    900,
+    380
   ]
 };

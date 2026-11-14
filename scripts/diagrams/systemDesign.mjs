@@ -398,3 +398,30 @@ add(
   b += text(ctxX + ctxW + 16, 316, '(userId, signal), never req itself.', { size: 12.5, anchor: 'start', fill: C.muted });
   add('request-layers', W, H, 'A request passing through the entry point, middleware, router, controller, service and repository to the database, with the request context alongside', b);
 }
+
+// ---------- 07: REST constraints in a real deployment ----------
+{
+  const W = 900;
+  const H = 380;
+  let b = heading(32, 32, "Fielding's constraints, in a real deployment");
+  b += box(32, 120, 130, 64, ['Client', 'React / mobile app'], 'plain', { size: 14 });
+  b += box(200, 120, 130, 64, ['CDN', 'caches responses'], 'active', { size: 14 });
+  b += box(368, 120, 140, 64, ['Load balancer', 'picks any server'], 'brand', { size: 14 });
+  [70, 132, 194].forEach((y, k) => (b += box(548, y, 150, 50, [`API server ${'ABC'[k]}`, 'stateless'], 'good', { size: 13.5, subSize: 11 })));
+  b += box(738, 120, 130, 64, ['Database', 'shared state'], 'muted', { size: 14 });
+  b += arrow(166, 152, 196, 152);
+  b += arrow(334, 152, 364, 152);
+  [95, 157, 219].forEach((y) => {
+    b += arrow(512, 152, 544, y, 'brand');
+    b += line(702, y, 734, 152, { color: C.faint, sw: 1.5, dash: '5 5' });
+  });
+  const notes = [
+    ['Client-server', 'the UI and the data/logic live apart and change independently.'],
+    ['Layered system', 'the client only talks to the next layer; it can\'t tell a CDN from the origin.'],
+    ['Cacheable', 'every response says whether it may be stored (Cache-Control, ETag).'],
+    ['Stateless', 'each request carries everything, so any API server can answer it.'],
+    ['Uniform interface', 'resources at URLs, HTTP methods, self-describing JSON, everywhere.'],
+  ];
+  notes.forEach(([k, v], i) => (b += spans(40, 268 + i * 22, [[`${k}: `, C.ink, 700], [v, C.text]], { size: 13 })));
+  add('rest-constraints', W, H, 'A client, CDN, load balancer, three stateless API servers and a database, labelled with the REST constraints each layer represents', b);
+}

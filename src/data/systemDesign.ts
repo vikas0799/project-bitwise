@@ -101,6 +101,17 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['Layered architecture', 'Middleware', 'next()', 'Error handler', 'Request context'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/06-controllers-services-and-middlewares/',
   },
+  {
+    slug: '07-api-design-rest',
+    number: '07',
+    part: 'foundations',
+    title: 'API Design: REST Done Right',
+    description:
+      'What REST really means and where it came from, Fielding\'s six constraints, naming resources, choosing methods, custom actions, pagination, sorting and filtering, honest status codes, consistent errors (RFC 9457), versioning, and a complete REST API in Express you can run and test.',
+    minutes: 16,
+    topics: ['Six constraints', 'Resource naming', 'Custom actions', 'Pagination', 'Error envelope', 'Versioning'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/07-api-design-rest/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.
