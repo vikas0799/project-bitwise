@@ -11,7 +11,14 @@ const blogFiles = import.meta.glob('../content/blog/*.md', { query: '?raw', impo
   () => Promise<string>
 >;
 
+const chapterFiles = import.meta.glob('../content/system-design/*.md', { query: '?raw', import: 'default' }) as Record<
+  string,
+  () => Promise<string>
+>;
+
 export const loadNote = (slug: string) => noteFiles[`../content/notes/${slug}.md`]?.();
+
+export const loadChapter = (slug: string) => chapterFiles[`../content/system-design/${slug}.md`]?.();
 
 export const loadPost = (id: string) => blogFiles[`../content/blog/${id}.md`]?.();
 

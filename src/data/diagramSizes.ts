@@ -293,5 +293,37 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/backend/jwt-structure.svg": [
     880,
     300
+  ],
+  "/images/system-design/http-stateless.svg": [
+    880,
+    400
+  ],
+  "/images/system-design/http-message-anatomy.svg": [
+    900,
+    400
+  ],
+  "/images/system-design/idempotency-key.svg": [
+    880,
+    490
+  ],
+  "/images/system-design/cors-preflight.svg": [
+    880,
+    420
+  ],
+  "/images/system-design/http-cache-etag.svg": [
+    880,
+    450
+  ],
+  "/images/system-design/routing-table.svg": [
+    900,
+    440
+  ],
+  "/images/system-design/url-anatomy.svg": [
+    720,
+    290
+  ],
+  "/images/system-design/serialization-round-trip.svg": [
+    900,
+    470
   ]
 };

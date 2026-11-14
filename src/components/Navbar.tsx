@@ -14,7 +14,7 @@ const ABOUT_LINKS = [
   { to: '/contact', title: 'Contact', description: 'WhatsApp, email and free demo class', icon: Mail },
 ];
 
-const RESOURCE_PATHS = ['/resources', '/notes', '/dsa-sheet', '/projects', '/links', '/blog'];
+const RESOURCE_PATHS = ['/resources', '/notes', '/dsa-sheet', '/system-design', '/projects', '/links', '/blog'];
 const ABOUT_PATHS = ['/about', '/faqs', '/contact'];
 
 const linkClass = (active: boolean) =>

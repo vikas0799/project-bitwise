@@ -6,6 +6,8 @@ author: Bitwise School
 
 System design interviews test whether you can turn a vague problem ("design Instagram") into a system that works at scale, and explain the trade-offs. There is rarely one right answer. Clear thinking matters more than buzzwords.
 
+> This note is for quick revision. To learn how the backend works step by step, read the chapter-wise [System design series](/system-design/), starting with [HTTP and CORS](/system-design/01-http-and-cors/).
+
 ## A framework for the interview
 
 1. **Clarify requirements (5 min)**

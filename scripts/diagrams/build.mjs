@@ -11,6 +11,7 @@ import { graphs } from './graphs.mjs';
 import { paradigms } from './paradigms.mjs';
 import { javascript } from './javascript.mjs';
 import { backend } from './backend.mjs';
+import { systemDesign } from './systemDesign.mjs';
 
 const IMAGES = new URL('../../public/images/', import.meta.url);
 const SIZES = new URL('../../src/data/diagramSizes.ts', import.meta.url);
@@ -21,6 +22,7 @@ const all = [
   ...inFolder([...foundations, ...structures, ...trees, ...graphs, ...paradigms], 'dsa'),
   ...inFolder(javascript, 'js'),
   ...inFolder(backend, 'backend'),
+  ...inFolder(systemDesign, 'system-design'),
 ];
 
 const seen = new Set();

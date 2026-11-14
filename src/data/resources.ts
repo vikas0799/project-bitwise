@@ -1,6 +1,7 @@
-import { BookOpen, Compass, GraduationCap, Lightbulb, Link2, ListChecks, Newspaper, Sparkles, type LucideIcon } from 'lucide-react';
+import { BookOpen, Compass, GraduationCap, Lightbulb, Link2, ListChecks, Newspaper, Network, Sparkles, type LucideIcon } from 'lucide-react';
 import { allNotes } from './notes';
 import { totalProblems } from './dsaSheet';
+import { systemDesignChapters } from './systemDesign';
 import { projectIdeas } from './projects';
 import { linkGroups } from './links';
 
@@ -17,6 +18,7 @@ const linkCount = linkGroups.reduce((sum, group) => sum + group.links.length, 0)
 export const resources: ResourceItem[] = [
   { to: '/notes', title: 'Interview notes', description: `${allNotes.length} notes: DSA with diagrams, JavaScript, backend, OS, CN, DBMS, system design`, icon: BookOpen },
   { to: '/dsa-sheet', title: 'DSA sheet', description: `${totalProblems} problems by topic, with progress tracking`, icon: ListChecks },
+  { to: '/system-design/', title: 'System design', description: `${systemDesignChapters.length} chapters from first principles: HTTP, CORS, routing, serialization`, icon: Network },
   { to: '/projects', title: 'Project ideas', description: `${projectIdeas.length} resume-worthy projects, from beginner to AI`, icon: Lightbulb },
   { to: '/blog/ai-job-profiles', title: 'AI job profiles', description: 'Forward Deployed, GenAI and Applied AI engineer roles explained', icon: Sparkles },
   { to: '/blog/student-perks', title: 'Student perks', description: 'Free tools and credits your college email unlocks', icon: GraduationCap },
