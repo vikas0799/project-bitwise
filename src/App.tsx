@@ -19,6 +19,8 @@ const Resources = lazy(() => import('./pages/Resources'));
 const NotesIndex = lazy(() => import('./pages/NotesIndex'));
 const NoteDoc = lazy(() => import('./pages/NoteDoc'));
 const DsaSheet = lazy(() => import('./pages/DsaSheet'));
+const SystemDesignIndex = lazy(() => import('./pages/SystemDesignIndex'));
+const SystemDesignChapter = lazy(() => import('./pages/SystemDesignChapter'));
 const Projects = lazy(() => import('./pages/Projects'));
 const Links = lazy(() => import('./pages/Links'));
 
@@ -65,6 +67,8 @@ function App() {
               <Route path="/notes" element={<NotesIndex />} />
               <Route path="/notes/:slug" element={<NoteDoc />} />
               <Route path="/dsa-sheet" element={<DsaSheet />} />
+              <Route path="/system-design" element={<SystemDesignIndex />} />
+              <Route path="/system-design/:slug" element={<SystemDesignChapter />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/links" element={<Links />} />
               <Route path="/faqs" element={<FAQsPage />} />

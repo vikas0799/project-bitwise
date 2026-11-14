@@ -9,6 +9,8 @@ interface SEOProps {
   type?: string;
   name?: string;
   imageUrl?: string;
+  /** Path for the canonical URL when it should differ from the address bar, e.g. to keep a trailing slash. */
+  canonicalPath?: string;
 }
 
 const SEO: React.FC<SEOProps> = ({
@@ -16,10 +18,11 @@ const SEO: React.FC<SEOProps> = ({
   description = 'Bitwise School: coding institute in Delhi offering live programming courses, data structures, algorithms, placement support and a free opportunities portal.',
   type = 'website',
   name = 'Bitwise School',
-  imageUrl = '/og-image.png'
+  imageUrl = '/og-image.png',
+  canonicalPath
 }) => {
   const location = useLocation();
-  const currentUrl = `https://www.bitwiseschool.com${location.pathname}`;
+  const currentUrl = `https://www.bitwiseschool.com${canonicalPath ?? location.pathname}`;
   const absoluteImageUrl = imageUrl.startsWith('http') ? imageUrl : `https://www.bitwiseschool.com${imageUrl}`;
 
   // Create JSON-LD structured data

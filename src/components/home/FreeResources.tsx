@@ -4,8 +4,9 @@ import SectionHeading from './SectionHeading';
 import { Reveal, Stagger, StaggerItem } from '../motion';
 import { resources } from '../../data/resources';
 
-// Everything except the portal and blog, which have their own spots on the page.
-const ITEMS = resources.filter((r) => r.to !== '/opportunities' && r.to !== '/blog');
+// Everything except the portal and blog, which have their own spots on the page,
+// and useful links, so the grid stays at six cards.
+const ITEMS = resources.filter((r) => !['/opportunities', '/blog', '/links'].includes(r.to));
 
 const FreeResources = () => (
   <section className="py-24 sm:py-28">

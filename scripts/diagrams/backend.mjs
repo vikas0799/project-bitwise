@@ -5,7 +5,7 @@ import { C, TONES, heading, line, note, path, rect, spans, table, tag, text } fr
 export const backend = [];
 const add = (name, width, height, title, body) => backend.push({ name, width, height, title, body });
 
-function box(x, y, w, h, label, tone = 'plain', o = {}) {
+export function box(x, y, w, h, label, tone = 'plain', o = {}) {
   const t = TONES[tone];
   let out = rect(x, y, w, h, { fill: t.fill, stroke: t.stroke, rx: o.rx ?? 10, sw: tone === 'plain' ? 1.5 : 2, dash: o.dash ?? t.dash });
   const lines = Array.isArray(label) ? label : [label];
@@ -21,10 +21,10 @@ function box(x, y, w, h, label, tone = 'plain', o = {}) {
   return out;
 }
 
-const arrow = (x1, y1, x2, y2, tone = 'ink', o = {}) => line(x1, y1, x2, y2, { tone, arrow: true, sw: o.sw ?? 2, dash: o.dash });
+export const arrow = (x1, y1, x2, y2, tone = 'ink', o = {}) => line(x1, y1, x2, y2, { tone, arrow: true, sw: o.sw ?? 2, dash: o.dash });
 
 // A simple sequence diagram: lifelines plus numbered messages.
-function sequence({ W, H, title, actors, messages, top = 64, step = 44 }) {
+export function sequence({ W, H, title, actors, messages, top = 64, step = 44 }) {
   let b = heading(32, 32, title);
   const xs = {};
   actors.forEach(([id, label, tone], k) => {

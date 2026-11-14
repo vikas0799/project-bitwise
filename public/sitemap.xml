@@ -181,6 +181,26 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.bitwiseschool.com/system-design/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/system-design/01-http-and-cors/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/system-design/02-routing-in-backend/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.bitwiseschool.com/system-design/03-serialization-and-deserialization/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.bitwiseschool.com/projects</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
