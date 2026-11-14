@@ -417,5 +417,13 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/shutdown-timeline.svg": [
     900,
     380
+  ],
+  "/images/system-design/injection-boundaries.svg": [
+    900,
+    360
+  ],
+  "/images/system-design/defence-in-depth.svg": [
+    900,
+    390
   ]
 };

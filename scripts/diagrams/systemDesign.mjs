@@ -958,3 +958,49 @@ add(
   b += note(32, 350, 'Finish well inside the grace period. If cleanup hangs, exit yourself before the platform sends SIGKILL.', { size: 12.5 });
   add('shutdown-timeline', W, H, 'After SIGTERM the app stops taking new traffic, drains in-flight requests, stops workers and closes the database and Redis before exiting, well before the SIGKILL deadline', b);
 }
+
+// ---------- 17: injection boundaries ----------
+{
+  const W = 900;
+  const H = 360;
+  let b = heading(32, 32, 'Injection: user data crossing into another language and running as code');
+  b += box(32, 150, 150, 64, ['User input', 'forms, URLs, headers'], 'active', { size: 14, subSize: 11 });
+  b += box(310, 140, 180, 84, ['Your backend', 'speaks several languages'], 'brand', { size: 14.5, subSize: 11 });
+  b += arrow(186, 182, 306, 182, 'ink');
+  const targets = [
+    ['Database', 'SQL', 'SQL injection', 70],
+    ['Operating system', 'shell commands', 'command injection', 160],
+    ['Browser', 'HTML + JavaScript', 'XSS', 250],
+  ];
+  targets.forEach(([name, lang, attack, y]) => {
+    b += box(640, y, 230, 54, [name, lang], 'plain', { size: 13.5, subSize: 11 });
+    b += arrow(494, 182, 636, y + 27, 'bad');
+    b += tag(566, 182 + (y + 27 - 182) * (72 / 142), attack, { size: 11.5, fill: C.red, border: C.red });
+  });
+  b += line(32, 318, 868, 318, { color: C.grid, sw: 1 });
+  b += spans(32, 340, [['The fix is always the same idea: ', C.ink, 700], ['keep data and code separate (parameters, argument arrays, escaping and sanitising).', C.text]], { size: 13 });
+  add('injection-boundaries', W, H, 'User input flows through the backend into SQL, shell commands and HTML, where it can become SQL injection, command injection or XSS', b);
+}
+
+// ---------- 17: defence in depth ----------
+{
+  const W = 900;
+  const H = 390;
+  let b = heading(32, 32, 'Defence in depth: an attacker has to get through every layer');
+  const layers = [
+    ['Network: HTTPS everywhere, firewall, WAF, rate limits', 'muted', 0],
+    ['Edge: security headers, CORS, request size limits', 'plain', 1],
+    ['Identity: authentication, MFA, sessions with safe cookies', 'brand', 2],
+    ['Authorization: roles AND ownership checks in every query', 'special', 3],
+    ['Input: validation, parameterized queries, sanitised HTML', 'active', 4],
+  ];
+  layers.forEach(([label, tone, k]) => {
+    const inset = k * 34;
+    const t = TONES[tone];
+    b += rect(60 + inset, 60 + inset * 0.78, 780 - inset * 2, 300 - inset * 1.56, { fill: t.fill, stroke: t.stroke, rx: 16, sw: 1.75 });
+    b += text(80 + inset, 80 + inset * 0.78, label, { size: 12.5, anchor: 'start', weight: 600, fill: t.text === C.faint ? C.muted : t.text });
+  });
+  b += box(330, 236, 240, 48, ['your data and business logic'], 'good', { size: 13.5 });
+  b += note(32, 376, 'No single layer is perfect. Logging, monitoring and patched dependencies wrap around all of them.', { size: 12.5 });
+  add('defence-in-depth', W, H, 'Nested security layers from the network edge through identity, authorization and input handling, surrounding the data and business logic', b);
+}

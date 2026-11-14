@@ -211,6 +211,17 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['SIGTERM', 'SIGKILL', 'Draining', 'Cleanup order', 'Kubernetes', 'Docker PID 1'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/16-graceful-shutdown/',
   },
+  {
+    slug: '17-backend-security',
+    number: '17',
+    part: 'production',
+    title: 'Backend Security',
+    description:
+      'Think like an attacker. SQL, NoSQL and command injection, password storage, cookie flags, JWT pitfalls, rate-limiting logins, broken authorization (BOLA and BFLA), XSS and CSP, CSRF, misconfigurations and leaked secrets, supply-chain risks, defence in depth, security testing, and lessons from real breaches, with tested Node.js examples.',
+    minutes: 20,
+    topics: ['SQL injection', 'XSS', 'BOLA / BFLA', 'Rate limiting', 'Security headers', 'Real breaches'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/17-backend-security/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.
