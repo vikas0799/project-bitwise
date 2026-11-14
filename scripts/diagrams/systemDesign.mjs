@@ -819,3 +819,31 @@ add(
   b += note(32, 336, 'so every call lands on the same server. Use Envoy/a service mesh, or client-side balancing, to spread each call.', { size: 12.5 });
   add('grpc-load-balancing', W, H, 'A TCP load balancer sending every gRPC call on one connection to a single server, compared with an HTTP/2-aware proxy spreading calls across three servers', b);
 }
+
+// ---------- 14: config layers ----------
+{
+  const W = 900;
+  const H = 380;
+  let b = heading(32, 32, 'Build one config object from several sources, then validate it');
+  const layers = [
+    ['1. defaults', 'config/default.yaml', 'muted', 'port 3000, pool 10, flags off'],
+    ['2. environment file', 'config/production.yaml', 'plain', 'pool 50, new checkout for IN'],
+    ['3. environment variables', 'PORT, DATABASE_URL, LOG_LEVEL', 'brand', 'set by the platform per deploy'],
+    ['4. secret manager', 'Vault, AWS SSM, GCP Secret Manager', 'special', 'JWT secret, DB password, API keys'],
+  ];
+  layers.forEach(([title, src, tone, example], k) => {
+    const y = 70 + k * 64;
+    b += box(32, y, 300, 52, [title, src], tone, { size: 13.5, subSize: 11 });
+    b += text(348, y + 26, example, { size: 12.5, anchor: 'start', fill: C.text });
+  });
+  b += text(182, 336, 'later layers override earlier ones ↓', { size: 12, fill: C.muted, weight: 600 });
+  b += path('M 610 96 C 660 96, 660 205, 690 205', { tone: 'ink', arrow: true, sw: 2 });
+  b += path('M 610 300 C 660 300, 660 205, 690 205', { tone: 'ink', arrow: true, sw: 2 });
+  b += box(694, 150, 82, 110, ['merge', '+ Zod'], 'active', { size: 13.5, subSize: 11.5 });
+  b += arrow(780, 205, 794, 205, 'good');
+  b += box(798, 150, 82, 110, ['config', 'frozen, typed'], 'good', { size: 13.5, subSize: 11 });
+  b += note(694, 282, 'Invalid or missing? Exit', { size: 12 });
+  b += note(694, 300, 'before serving traffic,', { size: 12 });
+  b += note(694, 318, 'with a clear list.', { size: 12 });
+  add('config-layers', W, H, 'Defaults, an environment file, environment variables and a secret manager merged by priority, validated with Zod into one frozen config object', b);
+}

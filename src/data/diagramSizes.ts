@@ -397,5 +397,9 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/grpc-load-balancing.svg": [
     900,
     360
+  ],
+  "/images/system-design/config-layers.svg": [
+    900,
+    380
   ]
 };

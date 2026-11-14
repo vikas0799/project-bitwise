@@ -178,6 +178,17 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['Protobuf', 'HTTP/2', 'Streaming', 'Deadlines', 'Interceptors', 'Load balancing'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/13-grpc-and-inter-service-communication/',
   },
+  {
+    slug: '14-configuration-management',
+    number: '14',
+    part: 'production',
+    title: 'Configuration Management',
+    description:
+      'All the settings that decide how the same code behaves in different places. Kinds of configuration, environment variables and .env files, YAML config files, secret managers, merging sources by priority, per-environment values, feature flags and gradual rollouts, keeping secrets safe, and validating everything at startup, with Node.js code.',
+    minutes: 11,
+    topics: ['Env vars', '.env', 'YAML', 'Secret managers', 'Feature flags', 'Validation'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/14-configuration-management/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.
