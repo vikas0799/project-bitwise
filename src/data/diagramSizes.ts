@@ -377,5 +377,13 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/inverted-index.svg": [
     900,
     410
+  ],
+  "/images/system-design/deadlock.svg": [
+    880,
+    360
+  ],
+  "/images/system-design/circuit-breaker.svg": [
+    880,
+    372
   ]
 };

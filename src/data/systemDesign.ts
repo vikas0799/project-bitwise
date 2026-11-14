@@ -156,6 +156,17 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['Inverted index', 'BM25', 'Fuzzy search', 'Postgres FTS', 'pg_trgm', 'Elasticsearch'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/11-full-text-search-elasticsearch/',
   },
+  {
+    slug: '12-error-handling-and-fault-tolerance',
+    number: '12',
+    part: 'production',
+    title: 'Error Handling and Fault Tolerance',
+    description:
+      'Design for failure from day one. The five kinds of backend errors, database errors and deadlocks, timeouts, retries with backoff, circuit breakers and graceful degradation, failing fast on bad configuration, liveness and readiness checks, monitoring business metrics, a global error handler, and what never to reveal in an error, with Express code.',
+    minutes: 14,
+    topics: ['Deadlocks', 'Timeouts', 'Retries', 'Circuit breaker', 'Health checks', 'Global error handler'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/12-error-handling-and-fault-tolerance/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.

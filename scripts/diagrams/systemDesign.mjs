@@ -702,3 +702,45 @@ add(
   b += note(496, 358, 'not on how many documents exist.', { size: 12 });
   add('inverted-index', W, H, 'Three course titles analysed into terms and stored in an inverted index, where a search for learning jumps straight to documents 1 and 3', b);
 }
+
+// ---------- 12: deadlock ----------
+{
+  const W = 880;
+  const H = 360;
+  let b = heading(32, 32, 'A deadlock: each transaction waits for a lock the other holds');
+  b += box(60, 90, 200, 60, ['Transaction A', 'transfer: wallet 1 → 2'], 'brand', { size: 14 });
+  b += box(620, 90, 200, 60, ['Transaction B', 'transfer: wallet 2 → 1'], 'special', { size: 14 });
+  b += box(60, 230, 200, 56, ['row: wallet 1', 'locked by A'], 'brand', { size: 13.5 });
+  b += box(620, 230, 200, 56, ['row: wallet 2', 'locked by B'], 'special', { size: 13.5 });
+  b += line(160, 154, 160, 226, { tone: 'brand', sw: 2.5 });
+  b += tag(160, 190, 'holds', { size: 11.5, fill: C.brand, border: C.brand });
+  b += line(720, 154, 720, 226, { tone: 'special', sw: 2.5 });
+  b += tag(720, 190, 'holds', { size: 11.5, fill: C.violet, border: C.violet });
+  b += line(264, 140, 616, 248, { tone: 'bad', arrow: true, dash: '6 5' });
+  b += line(616, 140, 264, 248, { tone: 'bad', arrow: true, dash: '6 5' });
+  b += tag(440, 168, 'A waits for wallet 2', { size: 12, fill: C.red, border: C.red });
+  b += tag(440, 222, 'B waits for wallet 1', { size: 12, fill: C.red, border: C.red });
+  b += line(32, 310, 848, 310, { color: C.grid, sw: 1 });
+  b += spans(32, 334, [['Postgres notices the cycle and aborts one with error ', C.text], ['40P01', C.red, 700], ['. Retry it, and always lock rows in the same order (e.g. lower id first).', C.text]], { size: 13 });
+  add('deadlock', W, H, 'Two transactions each holding a lock on one wallet row and waiting for the other, forming a deadlock that Postgres breaks by aborting one', b);
+}
+
+// ---------- 12: circuit breaker ----------
+{
+  const W = 880;
+  const H = 372;
+  let b = heading(32, 32, 'Circuit breaker: stop calling a service that keeps failing');
+  b += box(60, 120, 200, 72, ['CLOSED', 'calls go through normally'], 'good', { size: 15 });
+  b += box(340, 120, 200, 72, ['OPEN', 'fail fast, no calls sent'], 'bad', { size: 15 });
+  b += box(620, 120, 200, 72, ['HALF-OPEN', 'let one trial call through'], 'active', { size: 15 });
+  b += arrow(264, 140, 336, 140, 'bad');
+  b += tag(300, 106, 'N failures in a row', { size: 11.5, fill: C.red, border: C.red });
+  b += arrow(544, 140, 616, 140, 'active');
+  b += tag(580, 106, 'cooldown passed', { size: 11.5, fill: C.amber, border: C.amber });
+  b += path('M 720 196 C 720 250, 440 250, 440 198', { tone: 'bad', arrow: true, sw: 2 });
+  b += tag(580, 238, 'trial fails → open again', { size: 11.5, fill: C.red, border: C.red });
+  b += path('M 700 196 C 660 340, 200 340, 160 198', { tone: 'good', arrow: true, sw: 2 });
+  b += tag(430, 304, 'trial succeeds → closed', { size: 11.5, fill: C.green, border: C.green });
+  b += note(32, 352, 'While open, return a fallback (cached data, a default, "feature unavailable") instead of waiting on timeouts.', { size: 12.5 });
+  add('circuit-breaker', W, H, 'The closed, open and half-open states of a circuit breaker and the transitions between them', b);
+}
