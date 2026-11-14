@@ -373,5 +373,9 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/task-queue-flow.svg": [
     900,
     420
+  ],
+  "/images/system-design/inverted-index.svg": [
+    900,
+    410
   ]
 };

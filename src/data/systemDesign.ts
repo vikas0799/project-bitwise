@@ -145,6 +145,17 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['BullMQ', 'Retries + backoff', 'Idempotency', 'Dead-letter queue', 'Schedulers', 'Temporal'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/10-task-queues-and-background-jobs/',
   },
+  {
+    slug: '11-full-text-search-elasticsearch',
+    number: '11',
+    part: 'data',
+    title: 'Full-Text Search and Elasticsearch',
+    description:
+      'Why ILIKE \'%term%\' collapses at scale, how an inverted index and text analysis work, BM25 relevance scoring, typo tolerance with fuzzy matching, Postgres full-text search with tsvector, GIN indexes and pg_trgm, Elasticsearch mappings and queries, keeping a search index in sync, and how to choose.',
+    minutes: 11,
+    topics: ['Inverted index', 'BM25', 'Fuzzy search', 'Postgres FTS', 'pg_trgm', 'Elasticsearch'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/11-full-text-search-elasticsearch/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.

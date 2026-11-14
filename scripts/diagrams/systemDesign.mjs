@@ -656,3 +656,49 @@ add(
   b += note(32, 350, 'they share the queue.', { size: 12.5 });
   add('task-queue-flow', W, H, 'A producer enqueues JSON jobs into a broker, several workers process them and acknowledge success, failures retry with backoff and land in a dead-letter queue when retries run out', b);
 }
+
+// ---------- 11: inverted index ----------
+{
+  const W = 900;
+  const H = 410;
+  let b = heading(32, 32, 'An inverted index maps each word to the documents that contain it');
+  b += text(32, 68, 'Documents', { size: 13, weight: 700, anchor: 'start', fill: C.muted });
+  const docs = ['Introduction to Machine Learning', 'Node.js Backend Development', 'Learning Docker'];
+  docs.forEach((d, k) => {
+    const y = 82 + k * 58;
+    b += rect(32, y, 250, 46, { fill: '#FFFFFF', stroke: C.line, rx: 8 });
+    b += badge(52, y + 23, k + 1, { tone: 'brand' });
+    b += text(72, y + 23, d, { size: 12.5, anchor: 'start' });
+  });
+  b += text(380, 68, 'Analysis', { size: 13, weight: 700, fill: C.muted });
+  ['1. split into words', '2. lowercase', '3. drop "to", "the", "a"', '4. stem: learning → learn'].forEach((s, k) => {
+    b += box(296, 82 + k * 42, 168, 34, s, k === 3 ? 'active' : 'plain', { size: 11.5 });
+  });
+  b += arrow(284, 151, 293, 151, 'ink');
+  b += arrow(467, 151, 486, 151, 'ink');
+  b += text(620, 68, 'Inverted index', { size: 13, weight: 700, fill: C.muted });
+  const terms = [
+    ['introduct', '1'],
+    ['machin', '1'],
+    ['learn', '1, 3'],
+    ['node.js', '2'],
+    ['backend', '2'],
+    ['develop', '2'],
+    ['docker', '3'],
+  ];
+  b += rect(490, 80, 260, terms.length * 30 + 8, { fill: C.panel, stroke: C.line, rx: 10 });
+  terms.forEach(([t, ids], k) => {
+    const y = 84 + k * 30;
+    const hot = t === 'learn';
+    b += rect(498, y, 244, 26, { fill: hot ? C.greenSoft : '#FFFFFF', stroke: hot ? C.green : C.grid, rx: 6, sw: 1 });
+    b += code(508, y + 13, t, { size: 12.5, fill: hot ? '#065F46' : C.ink });
+    b += text(734, y + 13, `docs ${ids}`, { size: 12, anchor: 'end', fill: hot ? C.green : C.muted, weight: 600 });
+  });
+  b += box(32, 336, 250, 44, ['search: "learning"', 'analysed the same way → learn'], 'brand', { size: 13, subSize: 11 });
+  b += path('M 286 358 L 476 358 L 476 167 L 494 167', { tone: 'good', arrow: true, sw: 2 });
+  b += box(770, 140, 110, 54, ['docs 1, 3', 'no table scan'], 'good', { size: 13, subSize: 11 });
+  b += arrow(746, 167, 766, 167, 'good');
+  b += note(496, 340, 'Lookup cost depends on how many documents match,', { size: 12 });
+  b += note(496, 358, 'not on how many documents exist.', { size: 12 });
+  add('inverted-index', W, H, 'Three course titles analysed into terms and stored in an inverted index, where a search for learning jumps straight to documents 1 and 3', b);
+}
