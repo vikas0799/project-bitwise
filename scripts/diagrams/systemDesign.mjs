@@ -269,3 +269,61 @@ add(
   b += note(32, 448, 'Neither side needs to know the other side\'s language. They only agree on JSON.');
   add('serialization-round-trip', W, H, 'A JavaScript object is serialized to JSON, parsed into a Go struct on the server, and the response makes the same trip back', b);
 }
+
+// ---------- 04: OAuth 2.0 authorization code flow with PKCE ----------
+add(
+  'oauth-pkce',
+  900,
+  540,
+  'Sign in with Google using the OAuth authorization code flow with PKCE, from the click to the API call',
+  sequence({
+    W: 900,
+    H: 540,
+    title: 'OAuth 2.0 authorization code flow with PKCE',
+    actors: [
+      ['browser', 'Browser', 'plain'],
+      ['app', ['Your app', 'the client'], 'brand'],
+      ['auth', ['Google', 'authorization server'], 'good'],
+      ['api', ['Google API', 'resource server'], 'special'],
+    ],
+    messages: [
+      ['browser', 'app', 'click "Sign in with Google"'],
+      ['app', 'app', 'make state + code_verifier, send only SHA-256(verifier)'],
+      ['app', 'browser', 'redirect to Google /authorize', 'brand'],
+      ['browser', 'auth', 'user logs in and approves the scopes'],
+      ['auth', 'browser', 'redirect to /callback?code=…&state=…', 'good'],
+      ['browser', 'app', 'GET /callback (app checks state)'],
+      ['app', 'auth', 'POST /token: code + code_verifier'],
+      ['auth', 'app', 'access token + ID token', 'good'],
+      ['app', 'api', 'API call with Bearer access token', 'special'],
+    ],
+  }),
+);
+
+// ---------- 04: refresh token rotation ----------
+add(
+  'refresh-rotation',
+  880,
+  500,
+  'A short-lived access token expires, the client swaps its refresh token for a new pair, and reuse of an old refresh token revokes the whole family',
+  sequence({
+    W: 880,
+    H: 500,
+    title: 'Access + refresh tokens with rotation and reuse detection',
+    actors: [
+      ['client', 'Client', 'plain'],
+      ['api', ['Auth API', 'issues tokens'], 'brand'],
+      ['store', ['Token store', 'refresh token family'], 'good'],
+    ],
+    messages: [
+      ['client', 'api', 'API call with access token (lives 15 min)'],
+      ['api', 'client', '401: access token expired', 'bad', true],
+      ['client', 'api', 'POST /auth/refresh (cookie: refresh token R1)'],
+      ['api', 'store', 'R1 valid and unused? yes, mark it used', 'good'],
+      ['api', 'client', 'new access token + refresh token R2', 'brand'],
+      ['client', 'api', 'a thief replays the old R1', 'bad'],
+      ['api', 'store', 'R1 was already used: revoke the family', 'bad'],
+      ['api', 'client', '401: everyone on this family logs in again', 'bad', true],
+    ],
+  }),
+);

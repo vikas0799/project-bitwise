@@ -2,9 +2,16 @@
 // To add a chapter: write src/content/system-design/<slug>.md (title/description/author
 // frontmatter), then add an entry below in reading order and a <url> in public/sitemap.xml.
 
+export interface SystemDesignPart {
+  id: string;
+  title: string;
+  description: string;
+}
+
 export interface SystemDesignChapter {
   slug: string;
   number: string;
+  part: SystemDesignPart['id'];
   title: string;
   description: string;
   minutes: number;
@@ -18,10 +25,20 @@ export const SYSTEM_DESIGN_SOURCE = {
   url: 'https://backend-from-first-principle.vercel.app/',
 };
 
+// Chapters are grouped into parts on the index page and in the chapter sidebar.
+export const systemDesignParts: SystemDesignPart[] = [
+  { id: 'foundations', title: 'Part I: Foundations', description: 'How a request travels, who sent it, and how a backend is organised to answer it.' },
+  { id: 'data', title: 'Part II: Data and background work', description: 'Databases, caches, queues and search: where data lives and how slow work moves out of the request.' },
+  { id: 'production', title: 'Part III: Production readiness', description: 'Errors, service-to-service calls, configuration, observability, shutdowns and security.' },
+  { id: 'scale', title: 'Part IV: Scale and delivery', description: 'Performance, concurrency, containers, CI/CD and testing.' },
+  { id: 'advanced', title: 'Part V: Advanced topics and a case study', description: 'Event streaming, real-time apps, API specs, AI agents and a full system design walkthrough.' },
+];
+
 export const systemDesignChapters: SystemDesignChapter[] = [
   {
     slug: '01-http-and-cors',
     number: '01',
+    part: 'foundations',
     title: 'HTTP and CORS: How Clients and Servers Talk',
     description:
       'Statelessness, HTTP versions, request and response messages, headers, methods and idempotency, cookies and JWTs, CORS and preflight requests, status codes, redirects, caching, proxies, WebSockets and HTTPS, with Node.js and Express code.',
@@ -32,6 +49,7 @@ export const systemDesignChapters: SystemDesignChapter[] = [
   {
     slug: '02-routing-in-backend',
     number: '02',
+    part: 'foundations',
     title: 'Routing in the Backend',
     description:
       'How a server maps method + path to a handler: static and dynamic routes, path and query parameters, pagination, nested routes, route order, versioning and deprecation, 404 catch-all routes, and a small router built from scratch in JavaScript.',
@@ -42,6 +60,7 @@ export const systemDesignChapters: SystemDesignChapter[] = [
   {
     slug: '03-serialization-and-deserialization',
     number: '03',
+    part: 'foundations',
     title: 'Serialization and Deserialization',
     description:
       'Why a JavaScript client and a Go or Java server need a shared data format, text vs binary formats, JSON rules, JSON.stringify and JSON.parse gotchas, the full request round trip in Express, and why parsed data still has to be validated.',
@@ -49,7 +68,23 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['JSON', 'Protobuf', 'JSON.stringify', 'JSON.parse', 'Validation'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/03-serialization-and-deserialization/',
   },
+  {
+    slug: '04-authentication-and-authorization',
+    number: '04',
+    part: 'foundations',
+    title: 'Authentication and Authorization',
+    description:
+      'Who are you, and what are you allowed to do? Password hashing with Argon2, sessions, JWTs, refresh token rotation, cookies, CSRF, API keys, OAuth 2.0 with PKCE, OpenID Connect, RBAC and ABAC, and timing attacks, with Node.js code.',
+    minutes: 22,
+    topics: ['Argon2', 'Sessions', 'JWT', 'CSRF', 'OAuth + PKCE', 'OIDC', 'RBAC'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/04-authentication-and-authorization/',
+  },
 ];
+
+// Parts that have at least one chapter, each with its chapters in reading order.
+export const chapterGroups = systemDesignParts
+  .map((part) => ({ ...part, chapters: systemDesignChapters.filter((c) => c.part === part.id) }))
+  .filter((group) => group.chapters.length > 0);
 
 export const getChapter = (slug?: string) => systemDesignChapters.find((c) => c.slug === slug);
 

@@ -325,5 +325,13 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/serialization-round-trip.svg": [
     900,
     470
+  ],
+  "/images/system-design/oauth-pkce.svg": [
+    900,
+    540
+  ],
+  "/images/system-design/refresh-rotation.svg": [
+    880,
+    500
   ]
 };
