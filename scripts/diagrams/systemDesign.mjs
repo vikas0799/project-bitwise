@@ -1927,3 +1927,88 @@ systemDesign.push({
   b += note(32, 346, 'Use a fixed workflow when the steps are known; an agent where the next step really depends on what it finds.', { size: 12.5 });
   add('workflow-vs-agent', W, H, 'A fixed five-step chain runs every step for every request, while an agent uses zero to three tools depending on the question', b);
 }
+
+// ---------- 27: URL shortener architecture ----------
+{
+  const W = 900;
+  const H = 460;
+  let b = heading(32, 32, 'URL shortener: the whole system');
+  b += box(32, 190, 100, 56, ['browser'], 'plain', { size: 13 });
+  b += box(170, 190, 110, 56, ['CDN / edge', 'caches redirects'], 'active', { size: 12.5, subSize: 10 });
+  b += box(318, 190, 110, 56, ['load', 'balancer'], 'plain', { size: 12.5, subSize: 12.5 });
+  b += arrow(136, 218, 166, 218, 'ink');
+  b += arrow(284, 218, 314, 218, 'ink');
+  [110, 190, 270].forEach((y, k) => {
+    b += box(470, y, 150, 56, [`app server ${k + 1}`, 'local LRU, id block'], 'brand', { size: 12.5, subSize: 10 });
+    b += arrow(432, 218, 466, y + 28, 'ink');
+  });
+  b += box(690, 80, 180, 56, ['Redis', 'cache, id counter, clicks'], 'special', { size: 13, subSize: 10 });
+  b += box(690, 200, 180, 70, ['Postgres', 'links table (primary', '+ read replicas)'], 'good', { size: 13, subSize: 10 });
+  b += box(690, 330, 180, 56, ['analytics worker', 'batches click events'], 'active', { size: 12.5, subSize: 10 });
+  b += box(470, 380, 150, 50, ['analytics store', 'ClickHouse, BigQuery'], 'muted', { size: 12, subSize: 10 });
+  b += line(624, 138, 686, 108, { tone: 'special', sw: 1.5, arrow: true });
+  b += line(624, 218, 686, 230, { tone: 'good', sw: 1.5, arrow: true });
+  b += line(780, 140, 780, 196, { tone: 'special', sw: 1.5, dash: '5 4' });
+  b += text(788, 168, 'misses', { size: 11, anchor: 'start', fill: C.muted });
+  b += path('M 870 108 C 900 108, 900 358, 874 358', { tone: 'active', sw: 1.5, arrow: true });
+  b += text(886, 240, 'stream', { size: 11, fill: C.amber, anchor: 'middle', rotate: -90 });
+  b += line(686, 370, 624, 398, { tone: 'active', sw: 1.5, arrow: true });
+  b += line(780, 330, 780, 274, { tone: 'active', sw: 1.5, arrow: true, dash: '5 4' });
+  b += text(788, 304, 'click counts', { size: 11, anchor: 'start', fill: C.muted });
+  b += note(32, 330, 'Redirect path: edge → app (L1) → Redis → Postgres.', { size: 12.5 });
+  b += note(32, 352, 'Clicks never touch the database on the request path.', { size: 12.5 });
+  add('shortener-architecture', W, H, 'Browsers reach a CDN, a load balancer and stateless app servers with local caches; the servers use Redis for cache, ids and a click stream, and Postgres for links; a worker turns clicks into counts', b);
+}
+
+// ---------- 27: the redirect path ----------
+{
+  const W = 900;
+  const H = 400;
+  let b = heading(32, 32, 'Serving GET /:code');
+  const steps = [
+    [40, 'valid code?', 'regex check', 'plain'],
+    [225, 'local LRU', '10 s, per process', 'brand'],
+    [410, 'Redis', '1 h; "missing" 60 s', 'special'],
+    [595, 'Postgres', 'one query per code', 'good'],
+  ];
+  steps.forEach(([x, t, s, tone], k) => {
+    b += box(x, 80, 145, 56, [t, s], tone, { size: 13, subSize: 10 });
+    if (k < steps.length - 1) {
+      b += arrow(x + 147, 108, x + 181, 108, 'ink');
+      b += text(x + 164, 96, k === 0 ? 'yes' : 'miss', { size: 10.5, fill: C.muted });
+    }
+  });
+  b += text(112, 160, 'no → 404', { size: 11.5, fill: C.red });
+  b += text(297, 160, 'hit ↓', { size: 11.5, fill: C.green });
+  b += text(482, 160, 'hit ↓', { size: 11.5, fill: C.green });
+  b += text(667, 160, 'single-flight: 1,000', { size: 11.5, fill: C.green });
+  b += text(667, 176, 'misses → 1 query', { size: 11.5, fill: C.green });
+  b += box(210, 200, 490, 50, ['expired? → 410 Gone · deleted or missing → 404 · otherwise 302 to the long URL'], 'plain', { size: 12 });
+  b += box(210, 280, 490, 50, ['XADD clicks (fire and forget) · never awaited for the response'], 'active', { size: 12 });
+  b += line(455, 252, 455, 276, { tone: 'active', sw: 1.5, arrow: true });
+  b += note(32, 366, 'Measured on one machine: 6,595 req/s with a DB query and a DB click update per request, 9,777 req/s with caching and streamed clicks,', { size: 12 });
+  b += note(32, 386, 'and the database load fell from about 12,500 to under 1,000 queries per second.', { size: 12 });
+  add('redirect-path', W, H, 'A redirect checks the code format, then the local cache, Redis and finally Postgres with request coalescing, returns 404, 410 or 302, and streams the click event asynchronously', b);
+}
+
+// ---------- 27: from id to short code ----------
+{
+  const W = 900;
+  const H = 260;
+  let b = heading(32, 32, 'From a counter to a short code');
+  const stages = [
+    ['Redis INCRBY 1000', 'reserve ids 5,000,001…5,001,000', 'special'],
+    ['next id', '5,000,042', 'plain'],
+    ['shuffle', '(A·id + B) mod 62⁷', 'active'],
+    ['base62, 7 chars', 'e.g. 27DYaFl', 'good'],
+  ];
+  stages.forEach(([t, s, tone], k) => {
+    const x = 32 + k * 214;
+    b += box(x, 76, 190, 62, [t, s], tone, { size: 13, subSize: 10.5 });
+    if (k < stages.length - 1) b += arrow(x + 192, 107, x + 210, 107, 'ink');
+  });
+  b += note(32, 176, 'Without the shuffle, ids 1000–1003 become 00000g8 00000g9 00000ga 00000gb: anyone can guess the next link.', { size: 12.5 });
+  b += note(32, 198, 'With it: 27DYaFl ErmM2mE gL5zU3X T4OnLLg. It hides the sequence from casual guessing; it is not encryption.', { size: 12.5 });
+  b += note(32, 230, '62⁷ ≈ 3.5 trillion codes. Reserving ids in blocks served about 495,000 ids/s vs 21,000/s with one INCR per id.', { size: 12.5 });
+  add('id-to-code', W, H, 'Ids are reserved from a Redis counter in blocks, shuffled with an invertible formula, and encoded as seven base62 characters', b);
+}

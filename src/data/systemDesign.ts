@@ -321,6 +321,17 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['AI agents', 'Tool use', 'Prompt injection', 'Loop limits'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/26-ai-agents-and-loop-engineering/',
   },
+  {
+    slug: '27-url-shortener-system-design',
+    number: '27',
+    part: 'advanced',
+    title: 'Designing a URL Shortener',
+    description:
+      'A full case study: requirements, estimates, short-code generation with base62 and id blocks, race-free aliases, multi-level caching, request coalescing, async analytics and failure handling, built and load-tested.',
+    minutes: 18,
+    topics: ['Case study', 'Base62', 'Caching', 'Analytics'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/27-url-shortener-system-design/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.
