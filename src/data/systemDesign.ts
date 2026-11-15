@@ -310,6 +310,17 @@ export const systemDesignChapters: SystemDesignChapter[] = [
     topics: ['OpenAPI', 'Validation', 'Typed clients', 'oasdiff'],
     sourceUrl: 'https://backend-from-first-principle.vercel.app/25-openapi-specification/',
   },
+  {
+    slug: '26-ai-agents-and-loop-engineering',
+    number: '26',
+    part: 'advanced',
+    title: 'AI Agents and Loop Engineering',
+    description:
+      'Agents as backend systems: the model proposes, the backend decides. Tool use with the Claude API, loop limits and exits, validation, approvals, prompt injection, agent APIs and testing with a scripted model.',
+    minutes: 18,
+    topics: ['AI agents', 'Tool use', 'Prompt injection', 'Loop limits'],
+    sourceUrl: 'https://backend-from-first-principle.vercel.app/26-ai-agents-and-loop-engineering/',
+  },
 ];
 
 // Parts that have at least one chapter, each with its chapters in reading order.

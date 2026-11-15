@@ -1831,3 +1831,99 @@ systemDesign.push({
   b += text(32, 266, 'Both', { size: 13.5, anchor: 'start', weight: 700, fill: C.amber });
   add('design-vs-code-first', W, H, 'Design-first writes the spec before code and generates from it; code-first generates the spec from route code and schemas; both validate against it in CI', b);
 }
+
+// ---------- 26: who owns what in an agent ----------
+{
+  const W = 900;
+  const H = 400;
+  let b = heading(32, 32, 'The backend owns the loop. The model proposes the next step.');
+  b += rect(32, 60, 836, 280, { fill: C.brandSoft, stroke: C.brand, rx: 14 });
+  b += text(60, 86, 'Your backend', { size: 14, weight: 700, anchor: 'start', fill: '#003A91' });
+  b += box(56, 110, 170, 60, ['authenticated user', 'and tenant (trusted)'], 'plain', { size: 12.5, subSize: 10.5 });
+  b += box(56, 190, 170, 60, ['run state', 'messages, steps, budget'], 'plain', { size: 12.5, subSize: 10.5 });
+  b += box(56, 270, 170, 50, ['limits', 'steps, time, tool calls'], 'plain', { size: 12.5, subSize: 10.5 });
+  b += box(350, 150, 200, 90, ['model', 'proposes: answer, or', 'call tool X with args Y'], 'special', { size: 14, subSize: 11 });
+  b += arrow(230, 175, 346, 185, 'brand');
+  b += tag(288, 166, 'messages + tools', { size: 10.5, fill: C.brand });
+  b += box(668, 104, 180, 50, ['validate arguments', 'JSON Schema'], 'active', { size: 12.5, subSize: 10.5 });
+  b += box(668, 166, 180, 50, ['authorize', 'is this user allowed?'], 'active', { size: 12.5, subSize: 10.5 });
+  b += box(668, 228, 180, 50, ['execute allowlisted tool', 'timeout, idempotency key'], 'good', { size: 12.5, subSize: 10.5 });
+  b += box(668, 290, 180, 40, 'approval for risky writes', 'bad', { size: 12 });
+  b += arrow(554, 180, 664, 129, 'special');
+  b += tag(610, 140, 'tool_use', { size: 10.5, fill: C.violet });
+  b += line(758, 154, 758, 162, { tone: 'active', sw: 2, arrow: true });
+  b += line(758, 216, 758, 224, { tone: 'active', sw: 2, arrow: true });
+  b += path('M 664 253 C 600 253, 560 230, 554 220', { tone: 'good', arrow: true });
+  b += tag(604, 262, 'tool_result', { size: 10.5, fill: C.green });
+  b += note(32, 372, 'The model never gets a database connection, a URL to build, or the power to approve its own actions.', { size: 12.5 });
+  add('agent-boundary', W, H, 'The backend holds identity, run state and limits, sends messages to the model, and validates, authorizes and executes any tool call the model proposes before returning the result', b);
+}
+
+// ---------- 26: one loop iteration ----------
+{
+  const W = 900;
+  const H = 400;
+  let b = heading(32, 32, 'Loop engineering: inspect, plan, act, observe, evaluate');
+  const cx = 290;
+  const cy = 215;
+  const rx = 180;
+  const ry = 128;
+  const steps = [
+    [-90, 'Inspect', 'state, identity, budget', 'plain'],
+    [-18, 'Plan', 'model proposes a step', 'special'],
+    [54, 'Act', 'validate + run tools', 'good'],
+    [126, 'Observe', 'append a bounded result', 'active'],
+    [198, 'Evaluate', 'done? allowed to continue?', 'brand'],
+  ];
+  b += `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="none" stroke="${C.line}" stroke-width="2" stroke-dasharray="6 6"/>`;
+  steps.forEach(([deg, title, sub, tone]) => {
+    const a = (deg * Math.PI) / 180;
+    const x = cx + rx * Math.cos(a);
+    const y = cy + ry * Math.sin(a);
+    b += box(x - 78, y - 26, 156, 52, [title, sub], tone, { size: 13, subSize: 10 });
+  });
+  b += text(cx, cy - 8, 'one step', { size: 13, fill: C.muted, weight: 600 });
+  b += text(cx, cy + 12, 'per iteration', { size: 13, fill: C.muted, weight: 600 });
+  b += text(560, 82, 'Every loop needs exits:', { size: 13.5, weight: 700, anchor: 'start' });
+  const exits = [
+    ['answer', 'the model replies with no tool call', C.green],
+    ['approval', 'a risky write waits for a person', C.amber],
+    ['step limit', 'too many iterations: typed failure', C.red],
+    ['deadline', 'too much wall-clock time', C.red],
+    ['refusal / truncation', 'check stop_reason first', C.red],
+  ];
+  exits.forEach(([t, d, color], k) => {
+    b += text(560, 114 + k * 46, t, { size: 13, anchor: 'start', weight: 700, fill: color });
+    b += text(560, 132 + k * 46, d, { size: 12, anchor: 'start', fill: C.text });
+  });
+  b += note(32, 386, 'An agent’s reliability comes from the loop’s state, limits and stop conditions, not from giving the model more freedom.', { size: 12.5 });
+  add('agent-loop', W, H, 'A loop of inspect, plan, act, observe and evaluate, with exits for a final answer, approval, step limit, deadline, and refusal or truncation', b);
+}
+
+// ---------- 26: fixed workflow vs agent ----------
+{
+  const W = 900;
+  const H = 360;
+  let b = heading(32, 32, 'A fixed chain of LLM calls vs an agent that chooses');
+  b += text(32, 76, 'Fixed chain: every request pays for every step', { size: 13.5, anchor: 'start', weight: 700 });
+  ['classify', 'fetch order', 'fetch policy', 'draft reply', 'check reply'].forEach((s, k) => {
+    const x = 32 + k * 170;
+    b += box(x, 92, 148, 44, s, 'plain', { size: 12.5 });
+    if (k < 4) b += arrow(x + 150, 114, x + 166, 114, 'ink');
+  });
+  b += text(32, 180, 'Agent: steps depend on what the request needs', { size: 13.5, anchor: 'start', weight: 700 });
+  const rows = [
+    ['"Do you issue certificates?"', 'answer directly', '1 model call, 0 tools'],
+    ['"Where is my order?"', 'get_order → answer', '2 model calls, 1 tool'],
+    ['"Can I get a refund?"', 'get_enrollment + policy → request_refund → answer', '3 model calls, 3 tools'],
+  ];
+  rows.forEach(([q, path, cost], k) => {
+    const y = 198 + k * 44;
+    b += box(32, y, 250, 34, q, 'plain', { size: 12 });
+    b += arrow(286, y + 17, 306, y + 17, 'special');
+    b += box(310, y, 380, 34, path, 'special', { size: 12 });
+    b += text(704, y + 17, cost, { size: 12, anchor: 'start', fill: C.muted });
+  });
+  b += note(32, 346, 'Use a fixed workflow when the steps are known; an agent where the next step really depends on what it finds.', { size: 12.5 });
+  add('workflow-vs-agent', W, H, 'A fixed five-step chain runs every step for every request, while an agent uses zero to three tools depending on the question', b);
+}

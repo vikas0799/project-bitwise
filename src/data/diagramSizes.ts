@@ -537,5 +537,17 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/design-vs-code-first.svg": [
     900,
     330
+  ],
+  "/images/system-design/agent-boundary.svg": [
+    900,
+    400
+  ],
+  "/images/system-design/agent-loop.svg": [
+    900,
+    400
+  ],
+  "/images/system-design/workflow-vs-agent.svg": [
+    900,
+    360
   ]
 };
