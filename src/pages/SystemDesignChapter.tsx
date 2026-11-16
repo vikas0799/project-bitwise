@@ -5,32 +5,37 @@ import Footer from '../components/Footer';
 import SEO from '../components/SEO';
 import Markdown from '../components/Markdown';
 import OnThisPage from '../components/OnThisPage';
-import { SYSTEM_DESIGN_SOURCE, chapterPath, getChapter, systemDesignChapters } from '../data/systemDesign';
+import { SYSTEM_DESIGN_SOURCE, chapterGroups, chapterPath, getChapter, systemDesignChapters } from '../data/systemDesign';
 import { loadChapter } from '../lib/content';
 import { useMarkdownDoc } from '../hooks/useMarkdownDoc';
 
 const Sidebar = () => (
-  <nav aria-label="System design chapters">
-    <Link to="/system-design/" className="px-3 text-xs font-bold uppercase tracking-wider text-slate-400 hover:text-brand-700">
+  <nav aria-label="System design chapters" className="space-y-7">
+    <Link to="/system-design/" className="block px-3 text-sm font-bold text-ink hover:text-brand-700">
       System design
     </Link>
-    <ul className="mt-2 space-y-0.5">
-      {systemDesignChapters.map((chapter) => (
-        <li key={chapter.slug}>
-          <NavLink
-            to={chapterPath(chapter.slug)}
-            className={({ isActive }) =>
-              `flex gap-2 rounded-lg px-3 py-1.5 text-sm transition-colors ${
-                isActive ? 'bg-brand-50 font-semibold text-brand-700' : 'text-slate-600 hover:bg-slate-100 hover:text-ink'
-              }`
-            }
-          >
-            <span className="font-mono text-slate-400">{chapter.number}</span>
-            <span>{chapter.title}</span>
-          </NavLink>
-        </li>
-      ))}
-    </ul>
+    {chapterGroups.map((group) => (
+      <div key={group.id}>
+        <p className="px-3 text-xs font-bold uppercase tracking-wider text-slate-400">{group.title}</p>
+        <ul className="mt-2 space-y-0.5">
+          {group.chapters.map((chapter) => (
+            <li key={chapter.slug}>
+              <NavLink
+                to={chapterPath(chapter.slug)}
+                className={({ isActive }) =>
+                  `flex gap-2 rounded-lg px-3 py-1.5 text-sm transition-colors ${
+                    isActive ? 'bg-brand-50 font-semibold text-brand-700' : 'text-slate-600 hover:bg-slate-100 hover:text-ink'
+                  }`
+                }
+              >
+                <span className="font-mono text-slate-400">{chapter.number}</span>
+                <span>{chapter.title}</span>
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
   </nav>
 );
 
@@ -89,10 +94,14 @@ const SystemDesignChapter = () => {
                 onChange={(event) => navigate(chapterPath(event.target.value))}
                 className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-ink shadow-sm"
               >
-                {systemDesignChapters.map((c) => (
-                  <option key={c.slug} value={c.slug}>
-                    {c.number}. {c.title}
-                  </option>
+                {chapterGroups.map((group) => (
+                  <optgroup key={group.id} label={group.title}>
+                    {group.chapters.map((c) => (
+                      <option key={c.slug} value={c.slug}>
+                        {c.number}. {c.title}
+                      </option>
+                    ))}
+                  </optgroup>
                 ))}
               </select>
             </label>

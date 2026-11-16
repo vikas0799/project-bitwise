@@ -325,5 +325,241 @@ export const diagramSizes: Record<string, [number, number]> = {
   "/images/system-design/serialization-round-trip.svg": [
     900,
     470
+  ],
+  "/images/system-design/oauth-pkce.svg": [
+    900,
+    540
+  ],
+  "/images/system-design/refresh-rotation.svg": [
+    880,
+    500
+  ],
+  "/images/system-design/validation-gate.svg": [
+    900,
+    400
+  ],
+  "/images/system-design/request-layers.svg": [
+    900,
+    360
+  ],
+  "/images/system-design/rest-constraints.svg": [
+    900,
+    380
+  ],
+  "/images/system-design/db-relationships.svg": [
+    900,
+    404
+  ],
+  "/images/system-design/index-vs-scan.svg": [
+    900,
+    380
+  ],
+  "/images/system-design/cache-aside.svg": [
+    880,
+    470
+  ],
+  "/images/system-design/cdn-edge.svg": [
+    900,
+    400
+  ],
+  "/images/system-design/latency-ladder.svg": [
+    900,
+    420
+  ],
+  "/images/system-design/sync-vs-async.svg": [
+    900,
+    400
+  ],
+  "/images/system-design/task-queue-flow.svg": [
+    900,
+    420
+  ],
+  "/images/system-design/inverted-index.svg": [
+    900,
+    410
+  ],
+  "/images/system-design/deadlock.svg": [
+    880,
+    360
+  ],
+  "/images/system-design/circuit-breaker.svg": [
+    880,
+    372
+  ],
+  "/images/system-design/grpc-call-anatomy.svg": [
+    900,
+    330
+  ],
+  "/images/system-design/grpc-call-types.svg": [
+    900,
+    360
+  ],
+  "/images/system-design/grpc-load-balancing.svg": [
+    900,
+    360
+  ],
+  "/images/system-design/config-layers.svg": [
+    900,
+    380
+  ],
+  "/images/system-design/observability-pillars.svg": [
+    900,
+    330
+  ],
+  "/images/system-design/trace-waterfall.svg": [
+    900,
+    330
+  ],
+  "/images/system-design/observability-stack.svg": [
+    900,
+    360
+  ],
+  "/images/system-design/shutdown-timeline.svg": [
+    900,
+    380
+  ],
+  "/images/system-design/injection-boundaries.svg": [
+    900,
+    360
+  ],
+  "/images/system-design/defence-in-depth.svg": [
+    900,
+    390
+  ],
+  "/images/system-design/utilization-curve.svg": [
+    900,
+    400
+  ],
+  "/images/system-design/scale-up-vs-out.svg": [
+    900,
+    360
+  ],
+  "/images/system-design/stateful-vs-stateless.svg": [
+    900,
+    380
+  ],
+  "/images/system-design/read-replicas.svg": [
+    900,
+    390
+  ],
+  "/images/system-design/consistent-hash-ring.svg": [
+    900,
+    430
+  ],
+  "/images/system-design/io-wait-timeline.svg": [
+    900,
+    336
+  ],
+  "/images/system-design/concurrency-vs-parallelism.svg": [
+    900,
+    320
+  ],
+  "/images/system-design/node-runtime.svg": [
+    900,
+    400
+  ],
+  "/images/system-design/async-race.svg": [
+    900,
+    360
+  ],
+  "/images/system-design/vm-vs-container.svg": [
+    900,
+    420
+  ],
+  "/images/system-design/image-layers.svg": [
+    900,
+    400
+  ],
+  "/images/system-design/k8s-architecture.svg": [
+    900,
+    420
+  ],
+  "/images/system-design/k8s-traffic.svg": [
+    900,
+    380
+  ],
+  "/images/system-design/ci-cd-pipeline.svg": [
+    900,
+    300
+  ],
+  "/images/system-design/testing-pyramid.svg": [
+    900,
+    370
+  ],
+  "/images/system-design/contract-testing.svg": [
+    900,
+    312
+  ],
+  "/images/system-design/tdd-cycle.svg": [
+    900,
+    300
+  ],
+  "/images/system-design/queue-vs-log.svg": [
+    900,
+    360
+  ],
+  "/images/system-design/kafka-partitions.svg": [
+    900,
+    360
+  ],
+  "/images/system-design/consumer-groups.svg": [
+    900,
+    380
+  ],
+  "/images/system-design/kafka-replication.svg": [
+    900,
+    360
+  ],
+  "/images/system-design/outbox-pattern.svg": [
+    900,
+    380
+  ],
+  "/images/system-design/realtime-spectrum.svg": [
+    900,
+    400
+  ],
+  "/images/system-design/ws-handshake.svg": [
+    880,
+    470
+  ],
+  "/images/system-design/ws-backplane.svg": [
+    900,
+    400
+  ],
+  "/images/system-design/openapi-anatomy.svg": [
+    900,
+    420
+  ],
+  "/images/system-design/openapi-uses.svg": [
+    900,
+    420
+  ],
+  "/images/system-design/design-vs-code-first.svg": [
+    900,
+    330
+  ],
+  "/images/system-design/agent-boundary.svg": [
+    900,
+    400
+  ],
+  "/images/system-design/agent-loop.svg": [
+    900,
+    400
+  ],
+  "/images/system-design/workflow-vs-agent.svg": [
+    900,
+    360
+  ],
+  "/images/system-design/shortener-architecture.svg": [
+    900,
+    460
+  ],
+  "/images/system-design/redirect-path.svg": [
+    900,
+    400
+  ],
+  "/images/system-design/id-to-code.svg": [
+    900,
+    260
   ]
 };

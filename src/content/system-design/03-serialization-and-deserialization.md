@@ -320,3 +320,5 @@ The same thinking applies in the other direction: when you serialize a response,
 - [RFC 8259: The JSON format](https://www.rfc-editor.org/rfc/rfc8259)
 - [Protocol Buffers overview](https://protobuf.dev/overview/)
 - [Express: express.json()](https://expressjs.com/en/5x/api.html#express.json)
+
+Next: [Chapter 04, Authentication and Authorization](/system-design/04-authentication-and-authorization/).
